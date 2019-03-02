@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#3396ff"
+        android:layout_weight=".3">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/choose_language"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.4">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioGroup
+                android:layout_marginTop="30dp"
+                android:id="@+id/languages"
+                android:layout_marginLeft="10sp"
+                android:layout_marginStart="10sp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/English"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/langEng"
+                    android:textSize="20sp"
+                    android:onClick="SelLanEng"
+                    android:layout_marginBottom="15sp"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:id="@+id/French"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:onClick="SelLanFre"
+                    android:layout_marginBottom="15sp"
+                    android:text="@string/langFre" />
+
+                <RadioButton
+                    android:id="@+id/Spanish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/langcSpa"
+                    android:textSize="20sp"
+                    android:onClick="SelLanSpa"
+                    android:layout_marginBottom="15sp"
+                    />
+
+                <RadioButton
+                    android:id="@+id/Japanese"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:onClick="SelLanJap"
+                    android:layout_marginBottom="15sp"
+                    android:text="@string/langJap" />
+
+                <RadioButton
+                    android:id="@+id/Dutch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/langDut"
+                    android:textSize="20sp"
+                    android:onClick="SelLanDut"
+                    android:layout_marginBottom="15sp"
+                    />
+
+                <RadioButton
+                    android:id="@+id/Thai"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="15sp"
+                    android:onClick="SelLanTha"
+                    android:text="@string/langTha" />
+
+                <RadioButton
+                    android:id="@+id/German"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="15sp"
+                    android:onClick="SelLanGerman"
+                    android:text="@string/langGer" />
+
+                <RadioButton
+                    android:id="@+id/Portuguese"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="15sp"
+                    android:onClick="SelLanPortuguese"
+                    android:text="@string/langPort" />
+
+                <RadioButton
+                    android:id="@+id/Italian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="15sp"
+                    android:onClick="SelLanItalian"
+                    android:text="@string/langItalian" />
+
+                <RadioButton
+                    android:id="@+id/Hindi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:onClick="SelLanHindi"
+                    android:text="@string/langHin" />
+
+            </RadioGroup>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#3396ff"
+        android:layout_weight=".3">
+
+        <TextView
+            android:id="@+id/continue1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/langcontinue"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:onClick="SetLang"
+            android:textColor="#ffffff"
+            />
+
+    </LinearLayout>
+</LinearLayout>

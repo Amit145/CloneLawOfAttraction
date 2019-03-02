@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_info_black_24dp"
+            android:title="@string/navigation_drawer_info" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_filter_5_black_24dp"
+            android:title="@string/navigation_drawer_tips" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_music_note_black_24dp"
+            android:title="@string/navigation_drawer_music" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_lightbulb_outline_black_24dp"
+            android:title="@string/navigation_drawer_quote" />
+
+        <item
+            android:id="@+id/nav_story"
+            android:icon="@drawable/ic_book_black_24dp"
+            android:title="@string/navigation_drawer_story" />
+
+        <item
+            android:id="@+id/nav_calendar"
+            android:icon="@drawable/ic_event_note_black_24dp"
+            android:title="@string/navigation_drawer_progress" />
+
+        <item
+            android:id="@+id/nav_task"
+            android:icon="@drawable/ic_assignment_ind_black_24dp"
+            android:title="@string/navigation_drawer_life" />
+
+        <!-- For version 3.3 -->
+
+       <!-- <item
+            android:id="@+id/nav_lang"
+            android:icon="@drawable/ic_language_black_24dp"
+            android:title="@string/navigation_drawer_language" />
+        -->
+
+    </group>
+
+    <item
+        android:id="@+id/commute" android:title="@string/navigation_drawer_spread">
+        <menu>
+
+            <item
+                android:id="@+id/nav_mail"
+                android:icon="@drawable/ic_email_black_24dp"
+                android:title="@string/navigation_drawer_mail" />
+
+            <item
+                android:id="@+id/action"
+                android:icon="@drawable/ic_fiber_new_black_24dp"
+                android:title="@string/navigation_drawer_pro" />
+
+            <item
+                android:id="@+id/nav_us"
+                android:icon="@drawable/ic_info_black_24dp"
+                android:title="@string/navigation_drawer_about" />
+
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/navigation_drawer_share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_star_black_24dp"
+                android:title="@string/navigation_drawer_rate" />
+            <item
+                android:id="@+id/nav_send1"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/navigation_drawer_feedback" />
+
+            <item
+                android:id="@+id/nav_policy"
+                android:icon="@drawable/ic_info_black_24dp"
+                android:title="@string/navigation_drawer_privacy" />
+        </menu>
+    </item>
+
+</menu>

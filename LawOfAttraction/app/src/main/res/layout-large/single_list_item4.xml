@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:background="#232635"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/singleRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="  #e4eefa  "
+
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/pNametxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="6dp"
+            android:maxLines="2"
+
+            android:text="User Name"
+            android:textAlignment="viewStart"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/pJobProfiletxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/pNametxt"
+            android:layout_alignStart="@+id/pNametxt"
+            android:layout_below="@+id/pNametxt"
+            android:layout_marginTop="10dp"
+            android:maxLines="10"
+            android:text="Job Profile"
+            android:textAlignment="viewStart"
+            android:textSize="14sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/pJobProfiletxt1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/pNametxt"
+            android:layout_alignStart="@+id/pNametxt"
+            android:layout_below="@+id/pNametxt"
+            android:layout_marginTop="10dp"
+            android:maxLines="1"
+            android:gravity="right"
+            android:text="Job Profile"
+
+            android:textSize="12sp"
+            android:textStyle="italic" />
+
+
+
+
+
+
+    </LinearLayout>
+        <View
+            android:layout_below="@+id/singleRow"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#f2f2f2" />
+    </android.support.v7.widget.CardView>
+
+
+
+</RelativeLayout>

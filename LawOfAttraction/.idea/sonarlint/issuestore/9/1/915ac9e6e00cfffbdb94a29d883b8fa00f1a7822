@@ -1,0 +1,10 @@
+
+ksquid:S1215?"TDon't try to be smarter than the JVM, remove this call to run the garbage collector.(Ì°¬“
+Bsquid:S1659Q"+Declare "ptaskViewstxt" on a separate line.(â†
+]squid:S11920"FDefine a constant instead of duplicating this literal " :\t " 3 times.(àÿ•
+gsquid:CommentedOutCodeLineS"<This block of commented-out lines of code should be removed.(è™¥¬øÿÿÿÿ
+bsquid:CommentedOutCodeLinev"<This block of commented-out lines of code should be removed.(¬ï×ì
+.squid:S2176I"Rename this class.(Â×Öúÿÿÿÿ
+gsquid:CommentedOutCodeLine;"<This block of commented-out lines of code should be removed.(ºÈ‡Üûÿÿÿÿ
+gsquid:CommentedOutCodeLines"<This block of commented-out lines of code should be removed.(ëÏçÂıÿÿÿÿ
+‚"squid:ClassVariableVisibilityCheckR"OMake img a static final constant or non-public and provide accessors if needed.(çŸ ÷úÿÿÿÿ

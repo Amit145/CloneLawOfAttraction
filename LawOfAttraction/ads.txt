@@ -1,0 +1,16 @@
+Ad format	Sample ad unit ID
+------------------------------------------------
+Banner	ca-app-pub-3940256099942544/6300978111
+Interstitial	ca-app-pub-3940256099942544/1033173712
+Interstitial Video	ca-app-pub-3940256099942544/8691691433
+Rewarded Video	ca-app-pub-3940256099942544/5224354917
+Native Advanced	ca-app-pub-3940256099942544/2247696110
+Native Advanced Video	ca-app-pub-3940256099942544/1044960115
+
+-----------------------------------------
+
+banner 		- ca-app-pub-2259921691483610/8425551447
+interstitial 	- ca-app-pub-2259921691483610/4649957962
+reward - ca-app-pub-2259921691483610/1702099684
+
+AD UNIT - ca-app-pub-3940256099942544~3347511713

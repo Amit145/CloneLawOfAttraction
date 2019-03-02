@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="#F1F0EE"
+    tools:context=".AboutApp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#767272"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:textSize="30sp"
+                android:fontFamily="@font/abeezee"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/aboutApp"/>
+
+
+
+
+            <TextView
+                android:id="@+id/subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#767272"
+                android:layout_marginTop="50dp"
+                android:textStyle="normal|italic"
+                android:textSize="25sp"
+                android:fontFamily="sans-serif"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/aboutApp1">
+
+            </TextView>
+
+
+
+
+
+
+
+            <TextView
+                android:id="@+id/text0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#767272"
+                android:layout_marginTop="30dp"
+                android:textStyle="normal|bold"
+                android:textSize="30sp"
+                android:fontFamily="@font/abeezee"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/aboutApp2"/>
+
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#767272"
+                android:layout_marginTop="20dp"
+                android:textStyle="normal"
+                android:textSize="20sp"
+                android:padding="10dp"
+                android:fontFamily="@font/abeezee"
+                android:layout_gravity="center"
+                android:gravity="left"
+                android:text="@string/aboutApp3">
+
+            </TextView>
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

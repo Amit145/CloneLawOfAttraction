@@ -1,0 +1,340 @@
+<resources>
+
+    <string name="app_name">LawOfAttraction</string>
+    <string name="admob_interstitial_id">ca-app-pub-2259921691483610/4649957962</string>
+    <string name="langEng">English</string>
+    <string name="langFre">français (French) </string>
+    <string name="langcSpa">español (Spanish) </string>
+    <string name="langJap">日本語 (Japanese) </string>
+    <string name="langDut">Nederlands (Dutch) </string>
+    <string name="langTha">ภาษาไทย (Thai) </string>
+    <string name="langGer">Deutsch (German) </string>
+    <string name="langPort">português (Portuguese) </string>
+    <string name="langItalian">italiano (Italian) </string>
+    <string name="langHin">हिन्दी (Hindi)</string>
+
+
+    <string name="title_activity_feedback">feedback</string>
+    <string name="choose_language">Choose Your Language</string>
+    <string name="langcontinue">CONTINUE</string>
+
+
+    <!--validation message Text-->
+
+    <string name="loading_msg">Loading.....</string>
+    <string name="noInternet_txt">Not connected to Internet</string>
+    <string name="enterName">Please Enter Your Name</string>
+    <string name="enterWish">Please Enter Your Wish</string>
+    <string name="nameError">Name Cannot be more than 25 characters</string>
+    <string name="nameError1">Name Cannot be  less than 3 characters</string>
+    <string name="nameError2">Please enter appropriate name, or remove any obscene word from Name field</string>
+    <string name="nameError3">No Digits or special symbols allowed in Name field</string>
+    <string name="nameError4">Something went wrong</string>
+    <string name="nwError">Network Unstable.. Scroll down to refresh</string>
+    <string name="thankYou"> Thank You For Your Feedback !</string>
+
+
+    <!--Home Activity Text-->
+
+    <string name="Home_title">HOME</string>
+    <string name="Home_subTitle">LAW OF ATTRACTION \n DAILY</string>
+    <string name="Home_textBelowPager">Click Start to begin</string>
+    <string name="Home_textBelowPager1">Hey </string>
+    <string name="Home_textBelowPager2">, Let\'s Begin..</string>
+    <string name="Home_startButtonText">START</string>
+    <string name="Home_myStories">My Stories</string>
+    <string name="Home_sayToUniverse">Say to Universe</string>
+    <string name="Home_settings">Settings</string>
+    <string name="Home_getProBannerText">CLICK HERE TO DISABLE ADS </string>
+    <string name="Home_Notification">, It\'s Time To Manifest Your Dreams !!"</string>
+    <string name="Home_clickToStart">CLICK TO START</string>
+    <string name="Home_pray">You Prayed For \t </string>
+
+
+    <!--Say To Universe Activity Text-->
+
+    <string name="subUniverse_buttonText">SUBMIT TO UNIVERSE</string>
+    <string name="subUniverse_getPro">View My Private Wish</string>
+    <string name="subUniverse_dialogTitle">Share Your Manifestation</string>
+    <string name="subUniverse_dialogName">Name</string>
+    <string name="subUniverse_dialogWish">Wish</string>
+    <string name="subUniverse_dialogSubmit">SUBMIT</string>
+    <string name="subUniverse_dialogCancel">Cancel</string>
+
+    <!--Scroll Down TO Refresh Text-->
+
+    <string name="refresh_text">Scroll Down to refresh</string>
+
+    <!--My Stories Activity Text-->
+
+
+    <string name="myStory_buttonText">SHARE EXPERIENCE</string>
+    <string name="myStory_dialogTitle">Share Your Manifestation Story</string>
+    <string name="myStory_dialogName">Name</string>
+    <string name="myStory_dialogStory">Your Story</string>
+    <string name="myStory_dialogSubmit">SUBMIT</string>
+    <string name="myStory_dialogCancel">Cancel</string>
+    <string name="myStory_exp">Please Share Your Experience"</string>
+    <string name="myStory_warn">Don\'t post any sensitive information"</string>
+
+    <!--Navigation Drawer Activity Text-->
+
+    <string name="nav_header_title">Law Of Attraction</string>
+    <string name="nav_header_subtitle">Turn Your Dreams into Reality !!</string>
+    <string name="navigation_drawer_info">What is Law Of Attraction</string>
+    <string name="navigation_drawer_tips">5 Tips to Manifest Faster</string>
+    <string name="navigation_drawer_music">Mind Relaxing Music</string>
+    <string name="navigation_drawer_quote">Quote of the Day</string>
+    <string name="navigation_drawer_story">Inspiring Stories</string>
+    <string name="navigation_drawer_progress">Track Progress</string>
+    <string name="navigation_drawer_life">Life is Exciting</string>
+    <string name="navigation_drawer_language">Change Language</string>
+    <string name="navigation_drawer_spread">Spread the word</string>
+    <string name="navigation_drawer_mail">Drop a Mail</string>
+    <string name="navigation_drawer_pro">Get Pro Version ( No Ads )</string>
+    <string name="navigation_drawer_about">About the App</string>
+    <string name="navigation_drawer_share">Share the App</string>
+    <string name="navigation_drawer_rate">Rate us</string>
+    <string name="navigation_drawer_feedback">Send Feedback</string>
+    <string name="navigation_drawer_privacy">Privacy Policy</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Get PRO Version ( No ADS )</string>
+
+    <!--Common Text-->
+
+    <string name="start_text">START</string>
+    <string name="skip_text">SKIP</string>
+    <string name="next_text">NEXT</string>
+    <string name="done_text">DONE</string>
+
+    <string name="stopManifestation_text">Do you want to Stop your Manifestation Exercise?</string>
+    <string name="Yes_text">YES</string>
+    <string name="No_text">NO</string>
+    <string name="Exit_Text">Do you want to Exit?</string>
+    <string name="event_add">"Event added to your Progress Tracker"</string>
+    <string name="chooseToShare">"Choose Where to share"</string>
+
+
+    <!--Exercise1 Activity Text-->
+
+    <string name="activity1_text1">RELAX YOUR MIND</string>
+    <string name="activity1_text2">Before proceeding make sure you relax your mind</string>
+    <string name="activity1_text3">Sit in a quiet place where there is no distraction</string>
+    <string name="activity1_text4">Take a Deep Breath</string>
+    <string name="activity1_text5">Close your eyes slowly</string>
+    <string name="activity1_text6">After closing your eyes focus on your breathing for next 60 seconds</string>
+
+
+    <!--Exercise2 Activity Text-->
+
+    <string name="activity2_text1">WISH WHAT YOU NEED</string>
+    <string name="activity2_text2">The Universe is abundant to serve everyone\'s need</string>
+    <string name="activity2_text3">All you need is to wish for it</string>
+    <string name="activity2_text4">Now think about what all you need in your life eg - a car , a house, money etc</string>
+    <string name="activity2_text5">Be clear about what you want, don\'t doubt about it</string>
+    <string name="activity2_text6">Write down your wishlist if required</string>
+
+
+    <!--Exercise3 Activity Text-->
+
+    <string name="activity3_text1">VISUALIZE YOUR DREAMS</string>
+    <string name="activity3_text2">Every invention was once a idea that was visualized</string>
+    <string name="activity3_text3">Humans have the potential to visualize anything they want</string>
+    <string name="activity3_text4">If you wish a car, visualize yourself driving it on your favourite route</string>
+    <string name="activity3_text5">Visualization helps us to manifest our wish faster</string>
+    <string name="activity3_text6">Before going to bed, close your eyes and visualize that your dreams have come true</string>
+
+
+    <!--Exercise4 Activity Text-->
+
+    <string name="activity4_text1">SHOW GRATITUDE</string>
+    <string name="activity4_text2">You won\'t be happy with more until you are happy with what you have got</string>
+    <string name="activity4_text3">Feel gratitude for what you have</string>
+    <string name="activity4_text4">Being grateful has power to block out negative emotions and to send positive energy in the universe</string>
+    <string name="activity4_text5">Make gratitude a daily habit and you will end up having more..</string>
+
+    <!--Exercise5 Activity Text-->
+
+    <string name="activity5_text1">TRUST THE UNIVERSE</string>
+    <string name="activity5_text2">All you need is trust and patience</string>
+    <string name="activity5_text3">The pace of Nature is slow but it is worthy !</string>
+    <string name="activity5_text4">A seed won\'t turn into a plant instantly, patience and consistency is the key</string>
+    <string name="activity5_text5">Don\'t get upset if these things don\'t happen immediately</string>
+    <string name="activity5_text6">Practice all the steps everyday ,until you manifest your dream</string>
+
+
+    <!--Finish Activity Text-->
+
+    <string name="activity6_text1">CONGRATULATIONS !</string>
+    <string name="activity6_text2">You have done Today\'s manifestation</string>
+    <string name="activity6_text3">YOU TOOK</string>
+    <string name="activity6_text4">Track Progress</string>
+    <string name="activity6_text5">Home</string>
+    <string name="activity6_text6">Share our App</string>
+    <string name="activity6_text7">Seconds</string>
+
+    <!--Tracker Activity Text-->
+
+    <string name="activityTracker_text1">MANIFESTATION</string>
+    <string name="activityTracker_text2">TRACKER</string>
+    <string name="activityTracker_text3">TRACK BY DATE</string>
+    <string name="activityTracker_text4">Congrats ! Manifestation has been done for date</string>
+    <string name="activityTracker_text5">Manifestation Done on</string>
+
+    <!--Quotes Activity Text-->
+
+    <string name="activityQuote_text1">QUOTE OF THE DAY</string>
+    <string name="activityQuote_text2">One small positive thought can change your whole day</string>
+    <string name="LIKE_text">LIKE</string>
+
+    <string name="SHARE_text">SHARE</string>
+    <string name="activityQuote_text3">Have some good lines to share ?</string>
+    <string name="activityQuote_text4">SEND US YOUR QUOTES</string>
+    <string name="activityQuote_text5">View All Quotes</string>
+    <string name="LIKED_text">LIKED</string>
+    <string name="activityQuote_share">Share Your Quotes</string>
+    <string name="activityQuote_quoteText">Quote</string>
+    <string name="activityQuote_quote">Please Enter Your Quote</string>
+    <string name="activityQuote_quoteLimit">Quotes should be less than 130 characters</string>
+    <string name="activityQuote_quoteThank">Thank you for submitting your quote</string>
+    <string name="activityQuote_quoteshare">Get more inspirational quotes on Law of attraction daily app, Download Now From Play Store "</string>
+
+    <!--Timer Activity Text-->
+
+    <string name="activityTimer_text1">SET TIMER</string>
+    <string name="activityTimer_text2">Set Timer</string>
+    <string name="activityTimer_text3">Timer is off</string>
+    <string name="on_text">ON</string>
+    <string name="off_text">OFF</string>
+    <string name="seconds_text">seconds</string>
+
+    <string name="timer_text">Please Enter Valid Seconds</string>
+    <string name="timer_set">Time Set</string>
+    <string name="timer_enable">Please Enable Timer</string>
+    <string name="timer_on">Timer is enabled</string>
+    <string name="timer_off">Timer is disabled</string>
+
+    <!--Reminder Activity Text-->
+
+    <string name="activityReminder_text1">SET REMINDER</string>
+    <string name="activityReminder_text2">SET NOTIFICATION</string>
+    <string name="activityReminder_text3">SET REMINDER</string>
+
+    <string name="noti_enable">Please Enable Notifications</string>
+    <string name="noti_daily">Daily Reminder Set</string>
+    <string name="noti_disabletext">Notifications are disabled</string>
+    <string name="noti_enableText">Notifications are enabled</string>
+
+    <!--Info Activity Text-->
+
+    <string name="activity_info">WHAT IS LAW OF ATTRACTION</string>
+    <string name="activity_info1">The law of attraction states that the world is full of vibrations. Vibrations also called as Vibes can be negative or positive. Positive vibes create positive energy around you and negative vibes create negative energy around you. So by using law of attraction you can create a positive energy around you. You are aware about the saying "What goes, comes back". As these world is full of energy vibrating positive energy in universe will return positive energy to you. Noting these fact we can achieve anything in life, all you have to do is radiate positive energy in universe by wishing what you need in life. To achieve these you have to follow some steps. It is mandatory for you to follow these steps everyday so that you can harness Universe\'s energy to achieve your Dreams</string>
+    <string name="activity_info2">Now you have a fair idea what law of attraction is, so lets move further. Click on EXERCISES button below to know about exercises</string>
+    <string name="activity_info3">EXERCISES</string>
+    <string name="activity_info4">HOME</string>
+
+    <!--ExerciseInfo Activity Text-->
+
+    <string name="activity_exer">LAW OF ATTRACTION EXERCISE</string>
+    <string name="activity_exer1">1.)RELAX YOUR MIND</string>
+    <string name="activity_exer2">It is very important to relax your mind before you start the law of attraction exercise. Being relaxed helps you to be more attentive and focus on whatever wish your desire to manifest. To relax your mind close your eyes and try to focus on your breathing, try to divert all the unnecessary thoughts from your mind."</string>
+    <string name="activity_exer3">2.)MAKE A WISH</string>
+    <string name="activity_exer4">After relaxing your mind the next step is to wish whatever things you want in your life example - a car, a house, a perfect relation or a healthy life. There is no bound to your wishes, you can wish whatever you want and the universe will serve it to you."</string>
+    <string name="activity_exer5">3.)VISUALIZE AND FEEL IT</string>
+    <string name="activity_exer6">Another important step is visualization. Once you had a note of your a wish, its time to visualize and feel that wish. Imagine you need you wish to have a House. So visualize how your dream house would be, visualize its interior, color of the walls, your sofa set, television set etc along with Visualization feel as if you really have it now. Practice it everyday and soon you will manifest your wish."</string>
+    <string name="activity_exer7">4.)BE THANKFUL</string>
+    <string name="activity_exer8"> You should be thankful for whatever you have in life. Don\'t crib about the things that you don\'t have in life instead be thankful and be happy about your life. Doing this will create a happy and positive environment around you and will release positive vibes which indeed will serve your wish from universe faster."</string>
+    <string name="activity_exer9">5.)TRUST THE UNIVERSE</string>
+    <string name="activity_exer10">Well everything comes down to trust, if you trust the Law you the universe will fulfill all your desires. The pace of universe is slow so patience and consistency is the key. As said a seed wont turn into a tree instantly, it requires patience and consistency in terms of water ,oxygen and sunlight. So same lie with the law , practice it daily but don\'t give up, everday you practice the app you come one step closer to your dreams."</string>
+    <string name="activity_exer11">Now you can start Practicing the law of attraction. Click on buton below to know how to use this app</string>
+    <string name="activity_exer12">how to use this app</string>
+    <string name="activity_exer13">HOME</string>
+
+    <!--ExerciseManual Activity Text-->
+
+    <string name="activity_manual">HOW TO USE THE APP</string>
+    <string name="activity_manual1">1.)TRACK PROGRESS</string>
+    <string name="activity_manual2"> You can view log of your exercise that you have done on a particular date. This helps you to have a track of your manifestation. It also provides the time taken by you to complete the exercise.By default it shows the recent exercise log.</string>
+    <string name="activity_manual3">2.)SET TIME</string>
+    <string name="activity_manual4">Our app has some key points in the exercise activity which you can use when you start practicing the law everyday morever you have the option to set exercise duration so as you can customize your own time for the exercise like if you want your exercise to be for 50 seconds. Navigate up to the settings tab on Home Screen and click on settings-> set workout time and provide any time (n seconds) and press the button to set the value.</string>
+    <string name="activity_manual5">3.)SET REMINDER</string>
+    <string name="activity_manual6">You can set a reminder to carry on your exercise daily at a particular time. All you have to do is to navigate to the app Home Screen and click on settings icon and then set reminder. Customize your time and get a reminder on daily intervals for you to practice the law on daily basis.</string>
+    <string name="activity_manual7">4.) START BUTTON</string>
+    <string name="activity_manual8">Click on the Start button to start your daily exercise once clicked you start with the 1st step. Here you have some hints to do the step and when you want to begin click on start. The timer begins as per the value set by the user. There are two options HOME and SKIP. Home returns user to home page terminating the exercise and skip proceeds you to the next step.Perform all the activities daily and manifest whatever you need in life.</string>
+    <string name="activity_manual9">Now you have got all the information about the exercise and the app . Click on START buton below to begin with your Exercise</string>
+    <string name="activity_manual10">START MANIFESTING</string>
+    <string name="activity_manual11">HOME</string>
+
+    <!--About App-->
+
+    <string name="aboutApp">LawOfAttraction v3.3</string>
+    <string name="aboutApp1">Turn Your Dreams Into the Reality with power of positive thoughts</string>
+    <string name="aboutApp2">Why ADS ?</string>
+    <string name="aboutApp3">
+            \t\t\tAdvertisement\'s are frustrating we all know that moreover ads decrease app performance too but advertisement is the only way to maintain our servers and keep the app Free.
+            \n\n\t\t\tHowever you can buy the PRO version, The PRO Version is AD-Free and is available on Play Store at the lowest price
+    </string>
+
+    <!--FEEDBACK Activity-->
+
+    <string name="feedback">YOUR FEEDBACK IS VALUABLE</string>
+    <string name="feedback1">How often do you use our App ?</string>
+    <string name="daily">Daily</string>
+    <string name="weekly">Weekly</string>
+    <string name="monthly">Monthly</string>
+    <string name="feedback2">How good is our NEW Graphics and UI ?</string>
+    <string name="needImprovement">Needs Improvement</string>
+    <string name="good">Good</string>
+    <string name="best">Best</string>
+    <string name="feedback3">Loved our new feature ? (Disable ADS )</string>
+    <string name="feedback4">Does our app help in your Manifestation ?</string>
+    <string name="feedback5">Any Other Suggestions ? Write below: or Drop a mail</string>
+    <string name="storyShare">Get Inspirational short stories only on the Law of Attraction App.Download Now from Playstore</string>
+    <string name="subTaskCongrats">Congrats..! You have done your task</string>
+    <string name="subTaskShare">Make Your Life exciting through various tasks on Law of attraction daily app, Download Now From Play Store</string>
+    <string name="subTaskShareExp">Share how exciting was this Task :</string>
+    <string name="subTaskLikes">LIKES</string>
+    <string name="subTaskDailogShare">Share your experience :</string>
+    <string name="subTaskHaveYou">Have you done the task.. ?</string>
+    <string name="subTAskDoneQue">DONE ?</string>
+    <string name="musicInternetMsg">Your Internet is not working fine &#8230; Please check your Internet</string>
+    <string name="musicSaveOff">Saving Offline, Please Wait</string>
+    <string name="musicShare">Relax and Calm your Brain using the Law of Attraction App.Download Now from Playstore</string>
+    <string name="musicsaveoffsubTitle">(Click Allow when ask for Permission)</string>
+    <string name="musicSaveOffTitle">Have Issues with audio ..? Save it Offline</string>
+    <string name="musicButtonSave">Save Offline</string>
+    <string name="offMusicTitle">RELAX YOUR MIND</string>
+    <string name="offMusicSubtitle">Powerful music of bells that will relax and calm your Brain. Get stress free and have powerful manifestation\'s daily</string>
+    <string name="offMusicplay">PLAY</string>
+    <string name="offMusicPAuse">PAUSE</string>
+    <string name="offMusicResume">RESUME</string>
+    <string name="offMusicText1">Before proceeding make sure you relax your mind</string>
+    <string name="offMusicText2">( Use earphone for better experience )</string>
+    <string name="offMusicText3">Warning that people should not use this music while driving or operating heavy machinery as this music is very deep and takes you in a trance state fast. Bed time is best to listen to the music as this may remove all stress from your mind and can lead to better and relaxed sleep</string>
+    <string name="expReply">Enter Your Reply..</string>
+    <string name="expReply1">REPLY</string>
+    <string name="expReply2">Please Enter Your Comment</string>
+    <string name="expRplyText">Your Text:</string>
+
+
+    <string name="notiLoad">Loading.. Please Wait</string>
+    <string name="notiSuccessTitle">HURRAY !!!</string>
+    <string name="notiSuccessSubTitle">Full Screen ADS have been disabled</string>
+    <string name="notiSuccessHead">Full Screen AD Serving has been disabled until</string>
+    <string name="notiSuccessBody">Let\'s Begin</string>
+    <string name="notigetRewarded">Get Rewarded</string>
+
+    <string name="notiDef6">CLICK TO DISABLE ADS</string>
+    <string name="notiDef5">Click on Below button and get Rewarded</string>
+    <string name="notiDef4">and get yourself rewarded with AD-FREE for Next 2 Days</string>
+    <string name="notiDef3">All you have to do is watch a small AD</string>
+    <string name="notiDef2">As said \'One Nail Drives Out Another\' so does one AD Disables Others</string>
+    <string name="notiDef1">Now you can disable them as per your choice</string>
+    <string name="notiDef">DISABLE ADS</string>
+
+
+    <!--TP-->
+
+</resources>

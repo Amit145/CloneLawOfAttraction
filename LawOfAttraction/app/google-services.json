@@ -1,0 +1,71 @@
+{
+  "project_info": {
+    "project_number": "432028196782",
+    "firebase_url": "https://lawofattraction-b0b6d.firebaseio.com",
+    "project_id": "lawofattraction-b0b6d",
+    "storage_bucket": "lawofattraction-b0b6d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432028196782:android:2e343f33623563e2",
+        "android_client_info": {
+          "package_name": "com.apps.amit.lawofattraction"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432028196782-mfvm3irim7lfk3ai99ab1hnjvgp934sk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.apps.amit.lawofattraction",
+            "certificate_hash": "5f5e7905d2cd4d74ed4c7c3da759d3bf6d9a6fe8"
+          }
+        },
+        {
+          "client_id": "432028196782-dq332369qj8e95cg9skjfqee8qqg0l6m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.apps.amit.lawofattraction",
+            "certificate_hash": "f25fe7b3f04bcd902bcf5a003fc0a146531ea172"
+          }
+        },
+        {
+          "client_id": "432028196782-9ook3uhrg04m0kopho4tjo44i8vogoq0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.apps.amit.lawofattraction",
+            "certificate_hash": "1bbdcceb46d0066c76cfa3911b8a416299d744f6"
+          }
+        },
+        {
+          "client_id": "432028196782-fdnq30l26ghvj58nelkqfns7tm0mk963.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD000PrrMZqp_2wzqKyZqj5JjpU1uByl2c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432028196782-fdnq30l26ghvj58nelkqfns7tm0mk963.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

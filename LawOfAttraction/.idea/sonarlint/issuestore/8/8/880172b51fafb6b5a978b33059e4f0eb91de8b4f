@@ -1,0 +1,35 @@
+
+>squid:S1659H""Declare "txt1" on a separate line.(Á¹¾Ÿıÿÿÿÿ
+ksquid:S00116F"SRename this field "UserName" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â‚öá
+tsquid:S00116M"WRename this field "DataParseUrl" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î·œøÿÿÿÿ
+]squid:S2147ï"ECombine this catch with the one at line 491, which has the same body.(ï­£Ä
+:squid:S1659F"#Declare "timee" on a separate line.(Â‚öá
+hsquid:CommentedOutCodeLineğ"<This block of commented-out lines of code should be removed.(È‚®•úÿÿÿÿ
+Asquid:S00108¥")Either remove or fill this block of code.(ÂÓ¤v
+lsquid:S1215„"TDon't try to be smarter than the JVM, remove this call to run the garbage collector.(Ì°¬“
+csquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(óşÆø
+dsquid:S2147õ"ECombine this catch with the one at line 491, which has the same body.(§Ôë½8ªÕ×å“-
+jsquid:S00101?"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ø¼¥áıÿÿÿÿ
+Gsquid:S00108´")Either remove or fill this block of code.(ÒÌâ–øÿÿÿÿ
+nsquid:S00116F"VRename this field "UserComment" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â‚öá
+msquid:S00116T"VRename this field "request_url" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(É°ê<
+@squid:S1148°"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+Asquid:S00108Ğ")Either remove or fill this block of code.(ÂÓ¤v
+:squid:S1148¬"#Use a logger to log this exception.(ˆñA
+csquid:CommentedOutCodeLineå"<This block of commented-out lines of code should be removed.(„àÌı
+Asquid:S00108Ç")Either remove or fill this block of code.(ÂÓ¤v
+asquid:S1192Ô"IDefine a constant instead of duplicating this literal "userName" 3 times.(œŞæ
+hsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(‡é“üøÿÿÿÿ
+Bsquid:S1659H"&Declare "wishText" on a separate line.(Á¹¾Ÿıÿÿÿÿ
+hsquid:CommentedOutCodeLineâ"<This block of commented-out lines of code should be removed.(‡é“üøÿÿÿÿ
+bsquid:CallToDeprecatedMethodà"9Remove this use of "DefaultHttpClient"; it is deprecated.(è—ÄŒ
+nsquid:S3776}"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(¨Œşÿÿÿÿ
+gsquid:S2095à"OUse try-with-resources or close this "DefaultHttpClient" in a "finally" clause.(è—ÄŒ
+csquid:CommentedOutCodeLine¡"<This block of commented-out lines of code should be removed.(„àÌı
+dsquid:S1192Ó"LDefine a constant instead of duplicating this literal "timerEnable" 3 times.(§áÅ
+@squid:S1659F")Declare "UserComment" on a separate line.(Â‚öá
+Rsquid:S1141 "5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+Bsquid:S1659H"&Declare "nameText" on a separate line.(Á¹¾Ÿıÿÿÿÿ
+csquid:CommentedOutCodeLine¨"<This block of commented-out lines of code should be removed.(è×ˆµ
+9squid:S1659D""Declare "edt1" on a separate line.(Ü´°¹
+osquid:S3776·"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(Éá£òÿÿÿÿÿ

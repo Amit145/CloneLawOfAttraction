@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:weightSum="7"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background=" #581845 "
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:text="@string/feedback"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/subUniverse_dialogName"
+
+            android:textStyle="normal"
+            android:textSize="15sp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000000"
+            />
+
+
+
+        <EditText
+            android:id="@+id/feedbackName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textStyle="normal"
+
+            android:textSize="15sp"
+            android:maxLines="1"
+            android:inputType="text|textCapWords"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#d3d3d3"/>
+
+        <TextView
+            android:id="@+id/feed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/feedback1"
+            android:textStyle="normal"
+            android:textSize="15sp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000000"
+            />
+
+
+
+        <RadioButton
+            android:id="@+id/radioDaily"
+            android:layout_weight=".5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/daily"
+            android:textColor="#000000"
+            android:textStyle="normal"
+            android:textSize="12sp"
+            android:onClick="radioFeedback1"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/radioWeekly"
+            android:layout_weight=".5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/weekly"
+            android:textStyle="normal"
+            android:textSize="12sp"
+
+            android:onClick="radioFeedback11"
+            android:checked="false" />
+
+        <RadioButton
+            android:id="@+id/radioMonthly"
+            android:layout_weight=".5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/monthly"
+            android:textStyle="normal"
+            android:textSize="12sp"
+            android:onClick="radioFeedback111"
+            android:checked="false" />
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#d3d3d3"/>
+
+        <TextView
+            android:id="@+id/feed1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/feedback2"
+            android:textStyle="normal"
+            android:textSize="15sp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000000"/>
+
+
+
+        <RadioButton
+            android:id="@+id/radioWorse"
+            android:layout_weight=".5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/needImprovement"
+            android:textStyle="normal"
+            android:textSize="12sp"
+            android:onClick="radioFeedback2"
+            android:checked="false" />
+
+        <RadioButton
+            android:id="@+id/radioAverage"
+            android:layout_weight=".5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/good"
+            android:textStyle="normal"
+            android:textSize="12sp"
+            android:onClick="radioFeedback22"
+            android:checked="false" />
+
+        <RadioButton
+            android:id="@+id/radioBest"
+            android:layout_weight=".5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/best"
+            android:textStyle="normal"
+            android:textSize="12sp"
+            android:onClick="radioFeedback222"
+            android:checked="true" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#d3d3d3"/>
+
+        <TextView
+
+            android:id="@+id/feed2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/feedback3"
+            android:textStyle="normal"
+            android:textSize="15sp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000000"
+            />
+
+
+
+        <RadioButton
+            android:id="@+id/radioYes"
+            android:layout_weight=".5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/Yes_text"
+            android:textStyle="normal"
+            android:textSize="12sp"
+            android:onClick="radioFeedback3"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/radioNo"
+            android:layout_weight=".5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/No_text"
+            android:textStyle="normal"
+            android:textSize="12sp"
+            android:onClick="radioFeedback33"
+            android:checked="false" />
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#d3d3d3"/>
+
+        <TextView
+            android:id="@+id/feed3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/feedback4"
+            android:textStyle="normal"
+            android:textSize="13sp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000000"
+            />
+
+
+
+        <RadioButton
+            android:id="@+id/radioYes1"
+            android:layout_weight=".5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/Yes_text"
+            android:textStyle="normal"
+            android:textSize="12sp"
+            android:onClick="radioFeedback4"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/radioNo1"
+            android:layout_weight=".5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/No_text"
+            android:textStyle="normal"
+            android:textSize="12sp"
+            android:onClick="radioFeedback44"
+            android:checked="false" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#d3d3d3"/>
+
+        <TextView
+            android:id="@+id/feed4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/feedback5"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            android:textColor="#000000"
+            />
+
+
+
+        <EditText
+            android:id="@+id/feedback4"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColor="#000000"
+            android:textStyle="normal"
+            android:textSize="15sp"
+            android:inputType="textMultiLine|textCapSentences"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_weight="1"
+        android:layout_height="wrap_content">
+
+
+
+        <Button
+            android:id="@+id/btncancel1"
+            android:layout_weight=".5"
+            android:text="@string/subUniverse_dialogCancel"
+            android:textStyle="bold"
+            android:background="#ff3333"
+            android:textColor="#ffffff"
+            android:onClick="cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btnsubmit1"
+            android:layout_weight=".5"
+            android:text="@string/subUniverse_dialogSubmit"
+            android:background=" #ff5733"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:onClick="submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

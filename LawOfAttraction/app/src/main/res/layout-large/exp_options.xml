@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:weightSum="4"
+    android:layout_height="match_parent">
+
+
+
+    <LinearLayout
+
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#d3d3d3"/>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enterName"
+            android:textStyle="normal"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000000"
+            android:fontFamily="@font/abeezee"/>
+
+
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textStyle="normal"
+            android:textSize="20sp"
+            android:maxLines="1"
+            android:inputType="text|textCapWords"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/experience"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/expRplyText"
+            android:textSize="20sp"
+            android:textStyle="normal"
+            android:textColor="#000000"
+            android:fontFamily="@font/abeezee"/>
+
+
+
+        <EditText
+            android:id="@+id/comments"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:textColor="#000000"
+            android:textStyle="normal"
+            android:textSize="20sp"
+            android:inputType="textMultiLine|textCapSentences"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_height="wrap_content">
+
+
+
+        <Button
+            android:id="@+id/btncancel"
+            android:layout_weight=".5"
+            android:text="@string/subUniverse_dialogCancel"
+            android:textStyle="bold"
+            android:background="#ff3333"
+            android:textColor="#ffffff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btnsubmit"
+            android:layout_weight=".5"
+            android:text="@string/subUniverse_dialogSubmit"
+            android:background=" #ff5733"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

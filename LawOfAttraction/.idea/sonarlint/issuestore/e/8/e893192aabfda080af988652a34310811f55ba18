@@ -1,0 +1,24 @@
+
+]squid:S2147"ECombine this catch with the one at line 650, which has the same body.(ï­£Ä
+Rsquid:S1141è"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+osquid:S3776½"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ğß¤ÿÿÿÿÿ
+isquid:CallToDeprecatedMethod¼"9Remove this use of "DefaultHttpClient"; it is deprecated.(è—ÄŒ8¶÷Èç“-
+]squid:S2147¸"ECombine this catch with the one at line 691, which has the same body.(ï­£Ä
+jsquid:S00117ƒ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆÆŒÆ
+jsquid:S00117õ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÏÙÇ
+[squid:HiddenFieldCheck÷"8Rename "date" which hides the field declared at line 78.(´ƒä
+csquid:CommentedOutCodeLine¸"<This block of commented-out lines of code should be removed.(…ØŠî
+]squid:S2147ã"ECombine this catch with the one at line 735, which has the same body.(ï­£Ä
+bsquid:CallToDeprecatedMethodÿ"9Remove this use of "DefaultHttpClient"; it is deprecated.(è—ÄŒ
+qsquid:S1192»"YDefine a constant instead of duplicating this literal "Data Submit Successfully" 6 times.(Å´×
+^squid:CallToDeprecatedMethod™"0Remove this use of "getToken"; it is deprecated.(¸œºûÿÿÿÿ
+bsquid:CallToDeprecatedMethod¨"9Remove this use of "DefaultHttpClient"; it is deprecated.(è—ÄŒ
+bsquid:CallToDeprecatedMethod§"9Remove this use of "DefaultHttpClient"; it is deprecated.(è—ÄŒ
+]squid:S2147å"ECombine this catch with the one at line 609, which has the same body.(ï­£Ä
+]squid:S2147¶"ECombine this catch with the one at line 562, which has the same body.(ï­£Ä
+bsquid:CallToDeprecatedMethodÔ"9Remove this use of "DefaultHttpClient"; it is deprecated.(è—ÄŒ
+jsquid:S00117ƒ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆÆŒÆ
+jsquid:S00117ö"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(› ªë
+dsquid:S2147Î"ECombine this catch with the one at line 841, which has the same body.(ï­£Ä8¶÷Èç“-
+osquid:S3776‚"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(¨Œşÿÿÿÿ
+bsquid:CallToDeprecatedMethodÖ"9Remove this use of "DefaultHttpClient"; it is deprecated.(è—ÄŒ

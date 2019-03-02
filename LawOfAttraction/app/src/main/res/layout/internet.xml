@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#4297c5 "
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_gravity="bottom"
+        android:fontFamily="@font/abeezee"
+
+        android:text="Not connected to internet  "
+        />
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:layout_gravity="bottom"
+        android:fontFamily="@font/abeezee"
+        android:text="  Pull Down to Refresh  "
+        />
+
+
+
+
+</LinearLayout>
+
+</android.support.v4.widget.SwipeRefreshLayout>
