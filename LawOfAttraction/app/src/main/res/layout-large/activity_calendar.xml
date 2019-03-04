@@ -29,7 +29,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/subtitle"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -37,6 +37,7 @@
         android:background=" #232635 ">
 
         <TextView
+            android:id="@+id/subtitle"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:text="@string/activityTracker_text2"
@@ -95,7 +96,7 @@
         android:layout_height="60dp"
         android:layout_gravity="bottom"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-2259921691483610/8425551447" />
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
 
     </LinearLayout>
 

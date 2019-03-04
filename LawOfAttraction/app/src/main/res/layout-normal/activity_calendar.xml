@@ -81,7 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@drawable/buton"
-            android:fontFamily="@font/"
+            android:fontFamily="@font/abeezee"
             android:textColor="#ffffff"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -95,7 +95,7 @@
         android:layout_height="60dp"
         android:layout_gravity="bottom"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-2259921691483610/8425551447" />
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
 
     </LinearLayout>
 

@@ -1,51 +1,0 @@
-
-hsquid:CommentedOutCodeLineƒ"<This block of commented-out lines of code should be removed.(íãÕþÿÿÿÿ
-hsquid:CommentedOutCodeLineÀ"<This block of commented-out lines of code should be removed.(ªËƒ§þÿÿÿÿ
-nsquid:S3776x"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ž¨Œþÿÿÿÿ
-?squid:S1659;"#Declare "inter" on a separate line.(›¶Ã“úÿÿÿÿ
-Šsquid:S001169"mRename this field "REQUEST_WRITE_STORAGE_REQUEST_CODE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(óòÒ·ûÿÿÿÿ
-csquid:CommentedOutCodeLine·"<This block of commented-out lines of code should be removed.(æù»
-asquid:CommentedOutCodeLineU"<This block of commented-out lines of code should be removed.(Àÿå
-bsquid:CommentedOutCodeLine¦"<This block of commented-out lines of code should be removed.(Ð‰ž
-Csquid:S1075â"&Remove this hard-coded path-delimiter.(°ö¥Ûýÿÿÿÿ
-=squid:S1659{"&Declare "subTitle" on a separate line.(þˆº²
-Jsquid:S1199"-Extract this nested code block into a method.(ÒÌâ–øÿÿÿÿ
-csquid:CommentedOutCodeLineÝ"<This block of commented-out lines of code should be removed.(…ØŠî
-hsquid:CommentedOutCodeLine‰"<This block of commented-out lines of code should be removed.(Û¾²÷üÿÿÿÿ
-osquid:S00117š"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°’íÍùÿÿÿÿ
-bsquid:CommentedOutCodeLine´"<This block of commented-out lines of code should be removed.(¨ú=
-hsquid:CommentedOutCodeLineÆ"<This block of commented-out lines of code should be removed.(ªËƒ§þÿÿÿÿ
-Csquid:S1075›"&Remove this hard-coded path-delimiter.(¶¨…Þøÿÿÿÿ
-csquid:CommentedOutCodeLineû"<This block of commented-out lines of code should be removed.(®‚¹…
-hsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ëµîÉþÿÿÿÿ
-osquid:S00117œ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(îå€úÿÿÿÿ
-csquid:CommentedOutCodeLinež"<This block of commented-out lines of code should be removed.(´‡¦Î
-bsquid:S2147Ä"ECombine this catch with the one at line 318, which has the same body.(šµõÖýÿÿÿÿ
-lsquid:S1215È"TDon't try to be smarter than the JVM, remove this call to run the garbage collector.(Ì°¬“
-hsquid:CommentedOutCodeLine¤"<This block of commented-out lines of code should be removed.(€÷Áêÿÿÿÿÿ
-hsquid:CommentedOutCodeLine¢"<This block of commented-out lines of code should be removed.(€÷Áêÿÿÿÿÿ
-lsquid:S1215Â"TDon't try to be smarter than the JVM, remove this call to run the garbage collector.(Ì°¬“
-=squid:S11709"!Make this final field static too.(óòÒ·ûÿÿÿÿ
-csquid:CommentedOutCodeLineþ"<This block of commented-out lines of code should be removed.(þ²öÉ
-hsquid:CommentedOutCodeLine³"<This block of commented-out lines of code should be removed.(íãÕþÿÿÿÿ
-hsquid:CommentedOutCodeLineê"<This block of commented-out lines of code should be removed.(”íïùúÿÿÿÿ
-hsquid:CommentedOutCodeLineÃ"<This block of commented-out lines of code should be removed.(þ³Þƒýÿÿÿÿ
-osquid:S3776Ê"RRefactor this method to reduce its Cognitive Complexity from 28 to the 15 allowed.(«Ý¹¸øÿÿÿÿ
-Csquid:S1075â"&Remove this hard-coded path-delimiter.(°ö¥Ûýÿÿÿÿ
-csquid:CommentedOutCodeLine™"<This block of commented-out lines of code should be removed.(½©¥É
-Csquid:S1075Õ"&Remove this hard-coded path-delimiter.(¡ìýäûÿÿÿÿ
-csquid:CommentedOutCodeLineû"<This block of commented-out lines of code should be removed.(¡ÿÖô
-hsquid:CommentedOutCodeLine¹"<This block of commented-out lines of code should be removed.(ìƒ«Ùÿÿÿÿÿ
-hsquid:CommentedOutCodeLineá"<This block of commented-out lines of code should be removed.(¿Ö¡ýüÿÿÿÿ
-Csquid:S1075›"&Remove this hard-coded path-delimiter.(¶¨…Þøÿÿÿÿ
-hsquid:CommentedOutCodeLine¶"<This block of commented-out lines of code should be removed.(íãÕþÿÿÿÿ
-Csquid:S1075Õ"&Remove this hard-coded path-delimiter.(¡ìýäûÿÿÿÿ
-usquid:S1192›"XDefine a constant instead of duplicating this literal ".LawOfAttractionAffirms" 4 times.(¶¨…Þøÿÿÿÿ
-bsquid:CommentedOutCodeLineJ"<This block of commented-out lines of code should be removed.(Ãþ¢Ä
-csquid:S1192›"FDefine a constant instead of duplicating this literal "1.mp3" 3 times.(¶¨…Þøÿÿÿÿ
-csquid:CommentedOutCodeLine–"<This block of commented-out lines of code should be removed.(À”Ìý
-csquid:CommentedOutCodeLineƒ"<This block of commented-out lines of code should be removed.(õçõù
-hsquid:CommentedOutCodeLine²"<This block of commented-out lines of code should be removed.(Ô¡×Ùýÿÿÿÿ
-hsquid:CommentedOutCodeLineå"<This block of commented-out lines of code should be removed.(íãÕþÿÿÿÿ
-csquid:CommentedOutCodeLine "<This block of commented-out lines of code should be removed.(ˆô©™
-hsquid:CommentedOutCodeLineß"<This block of commented-out lines of code should be removed.(­—¿¼þÿÿÿÿ

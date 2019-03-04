@@ -1,25 +1,0 @@
-
-Bsquid:S1659"&Declare "subtitle" on a separate line.(„Î©‡úÿÿÿÿ
-Dsquid:S1659"(Declare "timervalue" on a separate line.(®§ÅÃùÿÿÿÿ
-<squid:S1659" Declare "r2" on a separate line.(ş£¡ôüÿÿÿÿ
-_squid:S1192]"IDefine a constant instead of duplicating this literal "language" 3 times.(Ğˆúi
-lsquid:S1192S"PDefine a constant instead of duplicating this literal "timerNotiEnable" 8 times.(ùñìışÿÿÿÿ
-esquid:S1192Z"IDefine a constant instead of duplicating this literal "UserLang" 3 times.(¾¶Ûüÿÿÿÿ
-bsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(œå÷
-gsquid:CommentedOutCodeLine)"<This block of commented-out lines of code should be removed.(‰ÀÛÃûÿÿÿÿ
-gsquid:CommentedOutCodeLine4"<This block of commented-out lines of code should be removed.(‰ÀÛÃûÿÿÿÿ
-gsquid:CommentedOutCodeLine="<This block of commented-out lines of code should be removed.(‰ÀÛÃûÿÿÿÿ
-gsquid:CommentedOutCodeLineA"<This block of commented-out lines of code should be removed.(‰ÀÛÃûÿÿÿÿ
-gsquid:CommentedOutCodeLinev"<This block of commented-out lines of code should be removed.(¸ÌÍçøÿÿÿÿ
-bsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÃŒ•2
-hsquid:CommentedOutCodeLine "<This block of commented-out lines of code should be removed.(¯ØŒíúÿÿÿÿ
-hsquid:CommentedOutCodeLineÄ"<This block of commented-out lines of code should be removed.(ÒÌâ–øÿÿÿÿ
-hsquid:CommentedOutCodeLine›"<This block of commented-out lines of code should be removed.(»Ş×ûÿÿÿÿ
-csquid:CommentedOutCodeLine¦"<This block of commented-out lines of code should be removed.(³¾–
-Nsquid:S2696³"6Make the enclosing method "static" or remove this set.(›Œˆ
-Nsquid:S2696´"6Make the enclosing method "static" or remove this set.(º¬Ï²
-„"squid:ClassVariableVisibilityCheck"QMake notID a static final constant or non-public and provide accessors if needed.(®§ÅÃùÿÿÿÿ
-‰"squid:ClassVariableVisibilityCheck"VMake timervalue a static final constant or non-public and provide accessors if needed.(®§ÅÃùÿÿÿÿ
-esquid:S00101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(È•÷
-Dsquid:S11852"(Remove this method to simply inherit it.(èüù±ùÿÿÿÿ
-msquid:S00116"PRename this field "Title" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„Î©‡úÿÿÿÿ

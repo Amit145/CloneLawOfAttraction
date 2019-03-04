@@ -42,7 +42,7 @@ public class NotificationActivity extends AppCompatActivity {
     private TextView notificationSubBody1;
     private TextView notificationSubBody2;
     private RewardedVideoAd rewardedVideoAd;
-    private static final String AD_UNIT_ID = "ca-app-pub-2259921691483610/1702099684";
+    private static final String AD_UNIT_ID = "ca-app-pub-3940256099942544/5224354917";
     private static final String APP_ID = "ca-app-pub-3940256099942544~3347511713";
     private static final String IS_ADS_ENABLED_STATUS = "AdvsPref";
     private static final String CURRENT_ADS_STATUS = "adsDate";

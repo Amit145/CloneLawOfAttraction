@@ -1,43 +1,0 @@
-
-7squid:S16598" Declare "t2" on a separate line.(§üó
-7squid:S16598" Declare "t3" on a separate line.(§üó
-7squid:S16598" Declare "t4" on a separate line.(§üó
->squid:S16598"'Declare "textView1" on a separate line.(§üó
->squid:S16598"'Declare "textView2" on a separate line.(§üó
-9squid:S1659:""Declare "edt1" on a separate line.(Ü´°¹
-@squid:S1659<"$Declare "UToken" on a separate line.(Â¼‹øÿÿÿÿ
-gsquid:S2095™"OUse try-with-resources or close this "DefaultHttpClient" in a "finally" clause.(è—ÄŒ
-gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ö™µùÿÿÿÿ
-hsquid:CommentedOutCodeLineÕ"<This block of commented-out lines of code should be removed.(ÒÌâ–øÿÿÿÿ
-csquid:CommentedOutCodeLineò"<This block of commented-out lines of code should be removed.(¢ç³«
-bsquid:CommentedOutCodeLine‡"<This block of commented-out lines of code should be removed.(ìÜˆ2
-bsquid:CommentedOutCodeLine‘"<This block of commented-out lines of code should be removed.(ìÜˆ2
-csquid:CommentedOutCodeLine­"<This block of commented-out lines of code should be removed.(·êÚ‰
-csquid:CommentedOutCodeLine¾"<This block of commented-out lines of code should be removed.(‘Õê
-hsquid:CommentedOutCodeLineÕ"<This block of commented-out lines of code should be removed.(¶Şè´úÿÿÿÿ
-hsquid:CommentedOutCodeLineá"<This block of commented-out lines of code should be removed.(ÅÔäùÿÿÿÿ
-csquid:CommentedOutCodeLineã"<This block of commented-out lines of code should be removed.(ÊÌ¢ü
-hsquid:CommentedOutCodeLineø"<This block of commented-out lines of code should be removed.(†Ñ²áÿÿÿÿÿ
-csquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(×´¯Ç
-hsquid:CommentedOutCodeLine™"<This block of commented-out lines of code should be removed.(¥ƒÈıÿÿÿÿ
-hsquid:CommentedOutCodeLine¡"<This block of commented-out lines of code should be removed.(³®ÅÏıÿÿÿÿ
-hsquid:CommentedOutCodeLineõ"<This block of commented-out lines of code should be removed.(–Í„šıÿÿÿÿ
-hsquid:CommentedOutCodeLine÷"<This block of commented-out lines of code should be removed.(–µµ­şÿÿÿÿ
-hsquid:CommentedOutCodeLineŒ"<This block of commented-out lines of code should be removed.(éÖ„ğúÿÿÿÿ
-hsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(è®‡áıÿÿÿÿ
-csquid:CommentedOutCodeLineÀ"<This block of commented-out lines of code should be removed.(ûä×
-csquid:CommentedOutCodeLineÂ"<This block of commented-out lines of code should be removed.(•ÅæÅ
-csquid:CommentedOutCodeLineÄ"<This block of commented-out lines of code should be removed.(«€İˆ
-„"squid:ClassVariableVisibilityCheck;"QMake alert a static final constant or non-public and provide accessors if needed.(æ“Óıúÿÿÿÿ
-bsquid:CallToDeprecatedMethod™"9Remove this use of "DefaultHttpClient"; it is deprecated.(è—ÄŒ
-esquid:S001013"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(¨şÊÏ
-]squid:S2147«"ECombine this catch with the one at line 550, which has the same body.(ï­£Ä
-nsquid:S00116<"QRename this field "UToken" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â¼‹øÿÿÿÿ
-qsquid:S00116?"TRename this field "ServerKey" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷³ÅÕùÿÿÿÿ
-nsquid:S00116F"VRename this field "request_url" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŞşÓ
-jsquid:S00117ö"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÏÙÇ
-isquid:S00117÷"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(â‡ù(
-jsquid:S00117…"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÅÇŒ³
-jsquid:S00117…"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÅÇŒ³
-:squid:S1148Ÿ"#Use a logger to log this exception.(ˆñA
-5squid:S2119y"Save and re-use this "Random".(¡Å”¦
