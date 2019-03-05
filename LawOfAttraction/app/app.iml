@@ -152,6 +152,7 @@
     <orderEntry type="library" name="Gradle: __local_aars__:D.\v3.4\LawOfAttraction\app\libs\jna-4.4.0.jar:unspecified@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.squareup.leakcanary:leakcanary-android-no-op:1.5.4@aar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:D.\v3.4\LawOfAttraction\app\libs\jna-platform-4.4.0.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: dyanamitechetan.vusikview:vusikview:1.1@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.android.support.test:monitor:1.0.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:appcompat-v7:27.1.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:D.\v3.4\LawOfAttraction\app\libs\httpmime-4.5.5.jar:unspecified@jar" level="project" />

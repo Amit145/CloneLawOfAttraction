@@ -175,7 +175,7 @@ public class Home extends AppCompatActivity {
 
                         } else if (id == R.id.nav_slideshow) {
 
-                            Intent art1 = new Intent(getApplicationContext(), Music.class);
+                            Intent art1 = new Intent(getApplicationContext(), NewMusic.class);
                             startActivity(art1);
 
                         } else if (id == R.id.nav_manage) {

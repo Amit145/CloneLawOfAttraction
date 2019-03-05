@@ -25,12 +25,11 @@
         android:supportsRtl="true"
         android:taskAffinity=""
         android:theme="@style/AppTheme">
-        <activity android:name=".PrivateWishes"></activity>
-
+        <activity android:name=".NewMusic"></activity>
+        <activity android:name=".PrivateWishes" />
         <activity
             android:name=".NotificationActivity"
-            android:screenOrientation="portrait"/>
-
+            android:screenOrientation="portrait" />
         <activity android:name=".MainActivity" />
         <activity
             android:name=".Home"
@@ -79,7 +78,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".experiences"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".expStory"
             android:screenOrientation="portrait" />
@@ -118,7 +117,7 @@
             <intent-filter>
                 <action android:name="DAILY_QUOTE" />
 
-                <category android:name="android.intent.category.DEFAULT"></category>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
@@ -178,7 +177,7 @@
             <intent-filter>
                 <action android:name="STORY" />
 
-                <category android:name="android.intent.category.DEFAULT"></category>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
     </application>
