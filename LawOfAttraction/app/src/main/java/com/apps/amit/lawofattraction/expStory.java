@@ -43,9 +43,13 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 
 public class expStory extends AppCompatActivity {
@@ -116,13 +120,41 @@ public class expStory extends AppCompatActivity {
 
             @Override
             public void onAdLoaded() {
-                // Call displayInterstitial() function
 
-                Random r = new Random();
-                int num = r.nextInt(4 - 1) + 1;
+                {
 
-                if(num==2) {
-                    displayInterstitial();
+                    Calendar c1 = Calendar.getInstance();
+
+                    SharedPreferences pref = getSharedPreferences("AdvsPref",MODE_PRIVATE);
+
+                    Calendar dummyDate = Calendar.getInstance();
+
+                    dummyDate.set(Calendar.YEAR, 2011);
+
+                    //Store selected language in a Variable called value
+                    String value = pref.getString("adsDate",dummyDate.getTime().toString());
+
+                    if(!value.isEmpty())
+                    {
+                        Calendar cal = Calendar.getInstance();
+                        SimpleDateFormat sdf = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
+                        try {
+                            cal.setTime(sdf.parse(value));// all done
+
+                        } catch (ParseException e) {
+
+                            e.printStackTrace();
+                        }
+
+                        if(cal.getTime().after(c1.getTime()))
+                        {
+                        }
+                        else {
+                            displayInterstitial();
+                        }
+
+                    }
+
                 }
             }
 

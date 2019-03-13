@@ -21,8 +21,6 @@
             android:layout_weight="3.6"
             android:orientation="vertical">
 
-
-
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recyclerView1"
                 android:background="@drawable/stars"
@@ -31,7 +29,6 @@
                 android:layout_height="match_parent">
 
             </android.support.v7.widget.RecyclerView>
-
 
 
         </LinearLayout>

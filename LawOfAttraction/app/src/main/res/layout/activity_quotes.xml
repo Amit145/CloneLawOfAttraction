@@ -15,13 +15,13 @@
         tools:context=".Quotes">
 
         <TextView
-
             android:id="@+id/qtext"
             android:layout_width="match_parent"
             android:layout_marginTop="5dp"
             android:layout_height="50dp"
             android:fontFamily="@font/abeezee"
-            android:text="@string/activityQuote_text1"        android:textAlignment="center"
+            android:text="@string/activityQuote_text1"
+            android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:layout_gravity="center"
             android:gravity="center"
@@ -36,7 +36,8 @@
             android:background="#c656ad"
             android:gravity="center"
             android:fontFamily="@font/abeezee"
-            android:text="@string/activityQuote_text2"        android:textAlignment="center"
+            android:text="@string/activityQuote_text2"
+            android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="13sp"
             android:textStyle="bold" />
@@ -100,7 +101,8 @@
                 android:gravity="center"
                 android:background="#ff5733"
                 android:fontFamily="@font/abeezee"
-                android:text="@string/LIKE_text"            android:onClick="quolike"
+                android:text="@string/LIKE_text"
+                android:onClick="quolike"
                 android:textAlignment="center"
                 android:textColor="#ffffff"
 

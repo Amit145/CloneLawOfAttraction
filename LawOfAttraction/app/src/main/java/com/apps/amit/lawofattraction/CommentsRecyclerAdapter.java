@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.apps.amit.lawofattraction.helper.LocaleHelper;
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -50,6 +51,10 @@ public class CommentsRecyclerAdapter extends RecyclerView.Adapter<CommentsRecycl
         holder.pJobProfile.setText(String.valueOf("\t\t\t"+"\""+pu.getPersonLastName()+"\""));
         holder.pTime.setText(String.valueOf(" - "+pu.getJobProfile()));
 
+       // Glide.with(context).load()
+
+
+
     }
 
     @Override
@@ -63,12 +68,14 @@ public class CommentsRecyclerAdapter extends RecyclerView.Adapter<CommentsRecycl
          TextView pTime;
          TextView pJobProfile;
 
+
         public ViewHolder(View itemView) {
             super(itemView);
 
             pName =  itemView.findViewById(R.id.pNametxt);
             pJobProfile =  itemView.findViewById(R.id.pJobProfiletxt);
             pTime =  itemView.findViewById(R.id.ptime);
+
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -62,7 +62,6 @@
             android:layout_width="match_parent"
             android:layout_height="27sp"
             android:fontFamily="@font/abeezee"
-
             android:textAlignment="center"
             android:textColor="#ffffff"
             android:textSize="13sp"
@@ -170,7 +169,6 @@
     </LinearLayout>
 
     <LinearLayout
-
         android:layout_width="650dp"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
@@ -188,8 +186,7 @@
             android:fontFamily="@font/abeezee"
             android:textColor="#ffffff"
             android:textStyle="bold"
-            android:gravity="center"
-            />
+            android:gravity="center" />
 
     </LinearLayout>
 

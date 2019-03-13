@@ -19,30 +19,30 @@
             android:layout_height="3dp"
             android:background="#d3d3d3"/>
 
-   <TextView
+        <TextView
+            android:id="@+id/name"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name:"
+            android:textStyle="normal"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000000"
+            android:fontFamily="@font/abeezee"/>
 
-       android:layout_marginTop="20dp"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="Name:"
-       android:textStyle="normal"
-       android:textSize="20sp"
-       android:layout_marginLeft="10dp"
-       android:textColor="#000000"
-       android:fontFamily="@font/abeezee"/>
 
 
-
-    <EditText
-        android:id="@+id/username"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:textStyle="normal"
-        android:textSize="20sp"
-        android:maxLines="1"
-        android:inputType="text|textCapWords"
-        />
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textStyle="normal"
+            android:textSize="20sp"
+            android:maxLines="1"
+            android:inputType="text|textCapWords"
+            />
 
     </LinearLayout>
 
@@ -66,14 +66,14 @@
 
 
 
-    <EditText
-        android:id="@+id/comments"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:textColor="#000000"
-        android:textStyle="normal"
-        android:textSize="20sp"
-        android:inputType="textMultiLine|textCapSentences"/>
+        <EditText
+            android:id="@+id/comments"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:textColor="#000000"
+            android:textStyle="normal"
+            android:textSize="20sp"
+            android:inputType="textMultiLine|textCapSentences"/>
 
     </LinearLayout>
 
@@ -105,7 +105,7 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
 
-    
+
 
 
 </LinearLayout>

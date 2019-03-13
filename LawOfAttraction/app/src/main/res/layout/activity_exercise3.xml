@@ -87,7 +87,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:fontFamily="@font/abeezee"
-            android:text="@string/activity3_text3"            android:textAlignment="center"
+            android:text="@string/activity3_text3"
+            android:textAlignment="center"
             android:textColor="#eaeded"
             android:textSize="14sp"
             android:textStyle="bold" />

@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -21,19 +22,51 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
 import org.w3c.dom.Text;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import dyanamitechetan.vusikview.VusikView;
+
+import static com.apps.amit.lawofattraction.SubTask.UTF_ENCODING;
 
 public class NewMusic extends AppCompatActivity implements MediaPlayer.OnBufferingUpdateListener,MediaPlayer.OnCompletionListener{
 
     private ImageButton btn_play_pause;
     private SeekBar seekBar;
     private TextView textView;
+    private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
 
     private ImageView musicView;
+    TextView title1;
+    TextView tbod;
+    String musicURL;
+    String shares;
+    String name;
+    String views;
+    private int viewcount;
+    String token;
+    String naam;
+    Button taskLike;
+    Button taskDone;
+    Button expButton1;
+    ImageView cover;
+    ImageView taskShares;
+    private int taskID;
+    String date;
+    TextView doneTASK;
+    String taskBody1;
 
     private MediaPlayer mediaPlayer;
     private int mediaFileLength;
@@ -99,15 +132,52 @@ public class NewMusic extends AppCompatActivity implements MediaPlayer.OnBufferi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_music);
 
-        musicView = findViewById(R.id.musicView);
+       // musicView = findViewById(R.id.musicView);
 
        // GlideDrawableImageViewTarget imageViewTarget = new GlideDrawableImageViewTarget(musicView);
         //Glide.with(this).load(R.drawable.giphy).into(imageViewTarget);
-        Glide.with(this).load(R.drawable.giphy).asGif().into(musicView);
+//        Glide.with(this).load(R.drawable.giphy).asGif().into(musicView);
         //Glide.with(getApplicationContext()).load(R.drawable.giphy).asGif().into(musicView);
 
 
+        Intent result = getIntent();
 
+        if(result.getExtras()!=null) {
+
+            name = result.getExtras().getString("taskTitle");
+            date = result.getExtras().getString("takImg");
+            taskBody1 = result.getExtras().getString("taskBody");
+            musicURL  = result.getExtras().getString("taskLikes");
+            shares  = result.getExtras().getString("taskShares");
+            views  = result.getExtras().getString("taskViews");
+            taskID =  result.getExtras().getInt("taskID");
+        }
+
+        taskLike = findViewById(R.id.taskLikeId);
+        taskShares = findViewById(R.id.taskShareId);
+        taskDone = findViewById(R.id.taskDoneId);
+        doneTASK = findViewById(R.id.doneTaskTitle);
+
+        title1 = findViewById(R.id.taskTitle);
+        cover = findViewById(R.id.taskCover);
+        tbod= findViewById(R.id.tbody);
+
+        title1.setText(name);
+        tbod.setText(taskBody1);
+
+        //Update Views
+
+        try {
+            viewcount = Integer.parseInt(views) + 1;
+        } catch (NumberFormatException e) {
+            Toast.makeText(getApplicationContext(), getString(R.string.nwError) , Toast.LENGTH_LONG).show();
+        }
+        views = String.valueOf(viewcount);
+
+        SendViewsToServer(views,String.valueOf(taskID));
+
+
+        Glide.with(getApplicationContext()).load(date).into(cover);
         seekBar = (SeekBar)findViewById(R.id.seekbar);
         seekBar.setMax(99); // 100% (0~99)
         seekBar.setOnTouchListener(new View.OnTouchListener() {
@@ -183,7 +253,7 @@ public class NewMusic extends AppCompatActivity implements MediaPlayer.OnBufferi
                     }
                 };
 
-                mp3Play.execute("https://pagalworld3.org/10908/Suit%20-%20Arjun%20n%20Guru%20Randhawa%20320Kbps.mp3"); // direct link mp3 file
+                mp3Play.execute(musicURL); // direct link mp3 file
 
                 //musicView.start();
             }
@@ -194,6 +264,106 @@ public class NewMusic extends AppCompatActivity implements MediaPlayer.OnBufferi
         mediaPlayer.setOnCompletionListener(this);
 
 
+    }
+
+    public void musicShare(View view) {
+
+        view.startAnimation(buttonClick);
+
+        view.startAnimation(buttonClick);
+        Intent share = new Intent(Intent.ACTION_SEND);
+        share.setType("text/plain");
+        share.putExtra(Intent.EXTRA_TEXT, " \n ---------------------------\n "+getString(R.string.subTaskShare)+"  https://play.google.com/store/apps/details?id=com.apps.amit.lawofattractionpro");
+        try {
+            startActivity(Intent.createChooser(share,getString(R.string.chooseToShare)));
+            SendSharesToServer(shares, String.valueOf(taskID));
+
+        } catch (android.content.ActivityNotFoundException ex) {
+
+            Toast.makeText(getApplicationContext(), getString(R.string.nameError4), Toast.LENGTH_LONG).show();
+        }
+
+    }
+
+    public void SendSharesToServer(final String Shares,final String id){
+        class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
+            @Override
+            protected String doInBackground(String... params) {
+
+
+                List<NameValuePair> nameValuePairs = new ArrayList<>();
+
+                nameValuePairs.add(new BasicNameValuePair("shares", Shares));
+                nameValuePairs.add(new BasicNameValuePair("id", id));
+
+
+                try {
+                    HttpClient httpClient = new DefaultHttpClient();
+
+                    HttpPost httpPost = new HttpPost("http://www.innovativelabs.xyz/insertMusicShares.php");
+
+                    httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs,UTF_ENCODING));
+
+                    HttpResponse response = httpClient.execute(httpPost);
+
+                    response.getEntity();
+
+
+                } catch (ClientProtocolException e) {
+
+                    Toast.makeText(getApplicationContext(), getString(R.string.myStory_warn), Toast.LENGTH_LONG).show();
+
+                } catch (IOException e) {
+
+                    Toast.makeText(getApplicationContext(), getString(R.string.myStory_warn), Toast.LENGTH_LONG).show();
+
+                }
+                return "Data Submit Successfully";
+            }
+
+        }
+        SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
+        sendPostReqAsyncTask.execute(Shares, id);
+    }
+
+    public void SendViewsToServer(final String Views,final String id){
+        class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
+            @Override
+            protected String doInBackground(String... params) {
+
+                List<NameValuePair> nameValuePairs = new ArrayList<>();
+
+                nameValuePairs.add(new BasicNameValuePair("views", Views));
+                nameValuePairs.add(new BasicNameValuePair("id", id));
+
+
+
+                try {
+                    HttpClient httpClient = new DefaultHttpClient();
+
+                    HttpPost httpPost = new HttpPost("http://www.innovativelabs.xyz/insertMusicViews.php");
+
+                    httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs,UTF_ENCODING));
+
+                    HttpResponse response = httpClient.execute(httpPost);
+
+                    response.getEntity();
+
+
+                } catch (ClientProtocolException e) {
+
+                    Toast.makeText(getApplicationContext(), getString(R.string.myStory_warn), Toast.LENGTH_LONG).show();
+
+                } catch (IOException e) {
+
+                    Toast.makeText(getApplicationContext(), getString(R.string.myStory_warn), Toast.LENGTH_LONG).show();
+
+                }
+                return "Data Submit Successfully";
+            }
+        }
+        SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
+        sendPostReqAsyncTask.execute(Views, id);
     }
 
     private void updateSeekBar() {

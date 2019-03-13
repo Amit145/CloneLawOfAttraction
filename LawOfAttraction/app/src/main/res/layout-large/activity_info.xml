@@ -99,7 +99,8 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/buton1"
                 android:fontFamily="@font/abeezee"
-                android:text="@string/activity_info3"                android:textColor="#ffffff"
+                android:text="@string/activity_info3"
+                android:textColor="#ffffff"
                 android:textSize="30sp"
                 android:textStyle="bold"
 
@@ -109,7 +110,8 @@
                 android:id="@+id/ihome"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:text="@string/activity_info4"                android:textAlignment="center"
+                android:text="@string/activity_info4"
+                android:textAlignment="center"
                 android:textAllCaps="true"
                 android:layout_marginBottom="50dp"
                 android:textColor="#000000"
@@ -130,7 +132,6 @@
             android:id="@+id/adViewi221"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:layout_marginTop="10dp"
             android:layout_gravity="bottom"
 

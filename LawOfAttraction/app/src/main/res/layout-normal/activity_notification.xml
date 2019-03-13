@@ -36,7 +36,6 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/abeezee"
             android:gravity="center"
-
             android:layout_marginTop="15dp"
             android:text="@string/notiDef1"
             android:textAlignment="center"

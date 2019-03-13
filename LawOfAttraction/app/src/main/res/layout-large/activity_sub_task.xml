@@ -35,7 +35,8 @@
                 android:id="@+id/taskCover"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                android:layout_marginTop="15dp" />
+                android:layout_marginTop="15dp"
+                android:scaleType="fitXY"/>
 
             <TextView
                 android:id="@+id/taskTitle"
@@ -119,7 +120,6 @@
                 android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
-
 
 
             <Button

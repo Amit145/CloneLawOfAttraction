@@ -5,38 +5,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/homeimage1"
     android:orientation="vertical"
     android:weightSum="3"
-    android:background="@drawable/homeimage1"
     tools:context=".SubTask">
 
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_weight="2"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_weight="2">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
             android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
             android:background="#EFFBFB"
             android:orientation="vertical"
-            android:paddingEnd="10dp"
+            android:paddingStart="10dp"
             android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingStart="10dp">
+            android:paddingEnd="10dp"
+            android:paddingRight="10dp">
 
             <ImageView
                 android:id="@+id/taskCover"
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
-                android:scaleType="fitXY"
-                android:layout_marginTop="15dp" />
+                android:layout_marginTop="15dp"
+                android:scaleType="fitXY" />
 
             <TextView
                 android:id="@+id/taskTitle"
@@ -54,11 +54,11 @@
                 android:id="@+id/tbody"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
                 android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_marginBottom="20dp"
                 android:fontFamily="@font/abeezee"
                 android:textColor="#909090"
@@ -76,16 +76,16 @@
                 android:id="@+id/doneTaskTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="5dp"
-                android:layout_marginLeft="5dp"
                 android:layout_gravity="center"
-                android:gravity="center"
-                android:layout_marginRight="5dp"
-                android:text="@string/subTaskHaveYou"
                 android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_marginBottom="20dp"
                 android:fontFamily="@font/abeezee"
+                android:gravity="center"
+                android:text="@string/subTaskHaveYou"
                 android:textColor="#909090"
                 android:textSize="17sp"
                 android:textStyle="bold|italic" />
@@ -93,49 +93,48 @@
 
             <Button
                 android:id="@+id/taskDoneId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginTop="15dp"
+                android:background="#FF40C939"
+                android:fontFamily="@font/abeezee"
+                android:onClick="taskDone"
                 android:text="@string/subTAskDoneQue"
                 android:textAlignment="center"
                 android:textColor="#ffffff"
-                android:layout_gravity="center"
-                android:onClick="taskDone"
-                android:background="#FF40C939"
-                android:fontFamily="@font/abeezee"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/taskLikeId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginTop="15dp"
+                android:background="#FFF96767"
+                android:fontFamily="@font/abeezee"
+                android:onClick="taskLikes"
                 android:text="@string/LIKE_text"
                 android:textAlignment="center"
                 android:textColor="#ffffff"
-                android:layout_gravity="center"
-                android:onClick="taskLikes"
-                android:background="#FFF96767"
-                android:fontFamily="@font/abeezee"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
+                android:textStyle="bold" />
 
 
             <Button
                 android:id="@+id/expButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:layout_gravity="center"
-                android:text="@string/myStory_buttonText"
-                android:background="#0073A1"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
+                android:background="#0073A1"
                 android:onClick="ShareExperience"
+                android:text="@string/myStory_buttonText"
+                android:textColor="#ffffff"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#ffffff" />
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -151,17 +150,15 @@
         android:orientation="vertical">
 
 
-
         <ImageView
             android:id="@+id/taskShareId"
             android:layout_width="match_parent"
-            android:scaleX="1"
-            android:onClick="taskShare"
             android:layout_height="match_parent"
-            android:src="@drawable/crop"/>
-
+            android:onClick="taskShare"
+            android:scaleX="1"
+            android:src="@drawable/crop" />
 
 
     </LinearLayout>
 
-    </LinearLayout>
+</LinearLayout>

@@ -24,7 +24,8 @@
             android:layout_marginTop="5dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/abeezee"
-            android:text="@string/activity5_text1"            android:textAlignment="center"
+            android:text="@string/activity5_text1"
+            android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="50sp"
             android:textStyle="bold" />
@@ -61,6 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+            android:textAlignment="center"
             android:fontFamily="@font/abeezee"
             android:text="@string/activity5_text2"
             android:textColor="#ffffff"
@@ -101,6 +103,7 @@
             android:fontFamily="@font/abeezee"
             android:text="@string/activity5_text4"
             android:textColor="#eaeded"
+            android:textAlignment="center"
             android:textSize="23sp"
             android:textStyle="bold" />
 
@@ -122,6 +125,7 @@
             android:fontFamily="@font/abeezee"
             android:text="@string/activity5_text6"
             android:textColor="#eaeded"
+            android:textAlignment="center"
             android:textSize="23sp"
             android:textStyle="bold" />
 

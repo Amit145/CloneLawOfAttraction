@@ -486,7 +486,6 @@ public class SubTask extends AppCompatActivity {
                                 {
                                     int n = 0;
                                     try {
-
                                         n = Integer.parseInt(likes);
                                     } catch (NumberFormatException e) {
 
@@ -503,11 +502,6 @@ public class SubTask extends AppCompatActivity {
                                     taskLike.setTextSize(18f);
                                     taskLike.setTextColor(Color.parseColor("#ffffff"));
                                 }
-
-
-
-
-
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();

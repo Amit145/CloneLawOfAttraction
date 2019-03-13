@@ -30,6 +30,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="#767272"
                 android:textStyle="bold"
+                android:layout_marginTop="20dp"
                 android:textSize="25sp"
                 android:fontFamily="@font/abeezee"
                 android:layout_gravity="center"

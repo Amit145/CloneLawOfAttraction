@@ -50,6 +50,8 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.ViewHolder> 
             holder.ptaskViewstxt.setText(String.valueOf(" :\t "+pu.getViews()));
 
             Glide.with(context).load(pu.getimgUrl()).thumbnail(0.1f).fitCenter().into(holder.img);
+            Glide.with(context).load(R.drawable.viewicon).thumbnail(0.1f).fitCenter().into(holder.img1);
+            Glide.with(context).load(R.drawable.shareicon).thumbnail(0.1f).fitCenter().into(holder.img2);
 
         }
         catch (Exception e) {
@@ -69,7 +71,7 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.ViewHolder> 
          TextView pName;
          TextView pJobProfile;
          TextView ptaskSharestxt,ptaskViewstxt;
-         ImageView img;
+         ImageView img,img1,img2;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -79,6 +81,8 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.ViewHolder> 
             ptaskSharestxt =  itemView.findViewById(R.id.taskSharestxt);
             ptaskViewstxt =  itemView.findViewById(R.id.taskViewstxt);
             img =  itemView.findViewById(R.id.taskImg);
+            img1 =  itemView.findViewById(R.id.imgViews);
+            img2=  itemView.findViewById(R.id.imgShares);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

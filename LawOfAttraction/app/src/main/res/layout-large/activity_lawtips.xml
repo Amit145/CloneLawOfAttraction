@@ -8,7 +8,7 @@
     android:background="#232635"
     android:orientation="vertical"
     android:weightSum="1"
-    tools:context=".music">
+    tools:context=".Lawtips">
 
     <android.support.v4.widget.SwipeRefreshLayout
         xmlns:android="http://schemas.android.com/apk/res/android"

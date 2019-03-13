@@ -25,12 +25,12 @@
         android:supportsRtl="true"
         android:taskAffinity=""
         android:theme="@style/AppTheme">
-        <activity android:name=".NewMusic"></activity>
+        <activity android:name=".MusicList"></activity>
+        <activity android:name=".NewMusic" />
         <activity android:name=".PrivateWishes" />
         <activity
             android:name=".NotificationActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".MainActivity" />
         <activity
             android:name=".Home"
             android:screenOrientation="portrait">
@@ -121,9 +121,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Music"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".Lawtips"
             android:screenOrientation="portrait" />
 
@@ -167,9 +164,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".SubTask"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".offlineMusic"
             android:screenOrientation="portrait" />
         <activity
             android:name=".storyList"

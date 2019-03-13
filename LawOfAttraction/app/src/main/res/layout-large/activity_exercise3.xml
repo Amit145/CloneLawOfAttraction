@@ -48,6 +48,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:layout_weight="1"
         >
 
@@ -96,7 +98,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/abeezee"
-            android:text="@string/activity3_text4"            android:textAlignment="center"
+            android:text="@string/activity3_text4"
+            android:textAlignment="center"
             android:textColor="#eaeded"
             android:textSize="23sp"
             android:textStyle="bold" />
@@ -106,7 +109,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/abeezee"
-            android:text="@string/activity3_text5"            android:textAlignment="center"
+            android:text="@string/activity3_text5"
+            android:textAlignment="center"
             android:textColor="#eaeded"
             android:textSize="23sp"
             android:textStyle="bold" />
@@ -116,7 +120,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/abeezee"
-            android:text="@string/activity3_text6"            android:textAlignment="center"
+            android:text="@string/activity3_text6"
+            android:textAlignment="center"
             android:textColor="#eaeded"
             android:textSize="23sp"
             android:textStyle="bold" />
@@ -139,7 +144,8 @@
             android:layout_marginTop="5dp"
             android:background="@drawable/buton1"
             android:fontFamily="@font/abeezee"
-            android:text="@string/start_text"            android:textColor="#ffffff"
+            android:text="@string/start_text"
+            android:textColor="#ffffff"
             android:textSize="30sp"
             android:textStyle="bold"
 
@@ -149,7 +155,8 @@
             android:id="@+id/skip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/skip_text"            android:textAlignment="center"
+            android:text="@string/skip_text"
+            android:textAlignment="center"
             android:textAllCaps="true"
             android:textColor="#ffffff"
             android:textSize="30sp"

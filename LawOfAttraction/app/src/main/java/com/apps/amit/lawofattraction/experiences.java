@@ -567,13 +567,10 @@ public class experiences extends AppCompatActivity {
                     alert.dismiss();
 
 
-                } catch (ClientProtocolException e) {
+                } catch (Exception e) {
 
-                    Toast.makeText(getApplicationContext(), resources.getString(R.string.nameError4), Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.nameError4), Toast.LENGTH_LONG).show();
 
-                } catch (IOException e) {
-
-                    Toast.makeText(getApplicationContext(), resources.getString(R.string.nameError4), Toast.LENGTH_LONG).show();
                 }
                 return "Data Submit Successfully";
 

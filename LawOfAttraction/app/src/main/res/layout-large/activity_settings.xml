@@ -4,10 +4,10 @@
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background=" #1f618d "
+    android:layout_height="match_parent"
+    android:background="#232635"
     android:orientation="vertical"
     android:weightSum="4"
-    android:layout_height="match_parent"
     tools:context="com.apps.amit.lawofattraction.Settings">
 
     <LinearLayout
@@ -16,15 +16,13 @@
         android:layout_gravity="center"
         android:layout_weight="1"
         android:layout_height="180dp"
-        android:padding="15dp"
-        >
+        android:padding="15dp">
 
         <ImageView
             android:id="@+id/img1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="timePicker"
-            />
+            android:onClick="timePicker" />
 
     </LinearLayout>
 
@@ -40,8 +38,7 @@
             android:id="@+id/img2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="setTime"
-            />
+            android:onClick="setTime" />
 
     </LinearLayout>
 
