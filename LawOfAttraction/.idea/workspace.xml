@@ -14,101 +14,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6797050e-5a51-4230-bc6c-e7be0864b6cd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/MusicAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/MusicList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/MusicUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_music_list.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/music_list.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileContent/fileContent.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/CommentsRecyclerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/CommentsRecyclerAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/MainActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/Music.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/NewMusic.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/NewMusic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/StoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/StoryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/SubTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/SubTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/comments.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/comments.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/expStory.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/expStory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/experiences.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/experiences.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/feedback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/offlineMusic.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_allquotes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_allquotes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_calendar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_calendar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_comments.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_comments.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_exercise1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_exercise1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_exercise2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_exercise2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_exercise3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_exercise3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_exercise4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_exercise4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_exercise5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_exercise5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_experiences.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_experiences.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_feedback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_feedback.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_finish.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_finish.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_info.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_lawtips.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_lawtips.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_music.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_offline_music.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_policy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_policy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_quotes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_quotes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_set_time.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_set_time.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_story.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_story.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_sub_task.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-large/activity_sub_task.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-large/content_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-large/content_home.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-large/nav_header_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-large/nav_header_home.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-large/single_list_item6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-large/single_list_item6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_aboutapp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_aboutapp.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_allquotes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_allquotes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_comments.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_comments.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_exercise3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_exercise3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_experiences.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_experiences.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_info.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_lawtips.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_lawtips.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_music.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_notification.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_notification.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_offline_music.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_policy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_policy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_quotes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_quotes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_set_time.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_set_time.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_sub_task.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_sub_task.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-normal/content_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-normal/content_home.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-normal/single_list_item6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-normal/single_list_item6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_aboutapp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_aboutapp.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_allquotes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_allquotes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_comments.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_comments.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_exercise3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_exercise3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_experiences.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_experiences.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_info.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_lawtips.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_lawtips.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_music.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_music.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_music.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_notification.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_notification.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_offline_music.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_policy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_policy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_quotes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_quotes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_set_time.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_set_time.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_story.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_story.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_sub_task.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sub_task.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_home.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/internet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/internet.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_home.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/single_list_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/single_list_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/single_list_item6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/single_list_item6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/taskdialog_options.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/taskdialog_options.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/whatsnew.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/whatsnew.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/wish_options.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/wish_options.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/MyCustomPagerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/MyCustomPagerAdapter.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -144,7 +56,7 @@
         <counts>
           <entry key="gif" value="1" />
           <entry key="gradle" value="3" />
-          <entry key="java" value="54" />
+          <entry key="java" value="55" />
           <entry key="xml" value="200" />
         </counts>
       </usages-collector>
@@ -152,28 +64,38 @@
         <counts>
           <entry key="Groovy" value="3" />
           <entry key="Image" value="1" />
-          <entry key="JAVA" value="54" />
+          <entry key="JAVA" value="55" />
           <entry key="XML" value="200" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gradle" value="4" />
-          <entry key="java" value="667" />
+          <entry key="java" value="671" />
           <entry key="xml" value="385" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="4" />
-          <entry key="JAVA" value="667" />
+          <entry key="JAVA" value="671" />
           <entry key="XML" value="385" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/MyCustomPagerAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="127">
+              <caret line="74" column="55" selection-start-line="74" selection-start-column="55" selection-end-line="74" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -207,7 +129,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/layout-large/activity_feedback.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_feedback.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout-large/activity_finish.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_finish.xml" />
@@ -258,10 +179,11 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/taskdialog_options.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/whatsnew.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/wish_options.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/MyCustomPagerAdapter.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -281,28 +203,6 @@
             <path>
               <item name="LawOfAttraction" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="LawOfAttraction" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="LawOfAttraction" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="LawOfAttraction" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="LawOfAttraction" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="menu" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="LawOfAttraction" type="1abcf292:AndroidViewProjectNode" />
@@ -421,9 +321,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.3207262" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.3207262" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -437,7 +338,7 @@
       <window_info anchor="bottom" id="Find" order="3" />
       <window_info anchor="bottom" id="Terminal" order="4" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="6" weight="0.3295082" />
+      <window_info active="true" anchor="bottom" id="Build" order="6" visible="true" weight="0.3295082" />
       <window_info anchor="bottom" id="Android Profiler" order="7" />
       <window_info anchor="bottom" id="Run" order="8" weight="0.3295082" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.63442624" />
@@ -483,12 +384,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-large/dates_list.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-269" />
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-normal/dates_list.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="37">
@@ -852,6 +747,13 @@
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/MyCustomPagerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="74" column="55" selection-start-line="74" selection-start-column="55" selection-end-line="74" selection-end-column="55" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
