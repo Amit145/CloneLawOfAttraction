@@ -5,15 +5,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#232635"
+    android:background="@drawable/homeimage1"
     android:weightSum="3"
     android:orientation="vertical"
     tools:context="com.apps.amit.lawofattraction.Manual">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_weight=".7"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
         android:orientation="vertical">
 
         <TextView
@@ -31,16 +31,17 @@
     </LinearLayout>
 
     <ScrollView
-        android:layout_weight="2"
+        android:layout_weight="2.5"
         android:layout_marginTop="10dp"
+        android:padding="15dp"
         android:layout_width="match_parent"
-        android:background="#ffffff"
-        android:padding="10dp"
         android:layout_height="300dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
+            android:background="#ffffff"
+            android:padding="15dp"
             android:layout_height="wrap_content">
 
 
@@ -49,7 +50,7 @@
             <ImageView
                 android:id="@+id/igg"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="300dp"
                 android:layout_gravity="center"
                  />
 
@@ -78,6 +79,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:padding="10dp"
                 android:text="@string/activity_manual2"
                 android:textAlignment="viewStart"
                 android:textSize="25sp" />
@@ -98,6 +100,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:padding="10dp"
                 android:text="@string/activity_manual4"
                 android:textAlignment="viewStart"
                 android:textSize="25sp" />
@@ -118,6 +121,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:padding="10dp"
                 android:text="@string/activity_manual6"
                 android:textAlignment="viewStart"
                 android:textSize="25sp" />
@@ -139,6 +143,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:padding="10dp"
                 android:text="@string/activity_manual8"
                 android:textSize="25sp" />
 
@@ -153,6 +158,7 @@
                 android:layout_marginTop="30dp"
                 android:textStyle="bold"
                 android:textSize="30sp"
+                android:padding="10dp"
                 android:fontFamily="@font/abeezee"
                 android:text="@string/activity_manual9"
                 />
@@ -178,6 +184,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:text="@string/activity_manual11"
+                android:layout_marginTop="20dp"
                 android:textAlignment="center"
                 android:textAllCaps="true"
                 android:layout_marginBottom="50dp"

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#232635"
+    android:background="@drawable/homeimage1"
     android:weightSum="3"
     android:orientation="vertical"
     tools:context="com.apps.amit.lawofattraction.info">
@@ -33,19 +33,18 @@
     </LinearLayout>
 
     <ScrollView
-        android:layout_weight="2.3"
+        android:layout_weight="2.5"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:background="#ffffff"
         android:padding="10dp"
         android:layout_height="300dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
+            android:padding="10dp"
+            android:background="#ffffff"
             android:layout_height="wrap_content">
-
-
 
 
             <ImageView
@@ -72,10 +71,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:padding="10dp"
+
                 android:text="@string/activity_info1"
                 android:textSize="15sp" />
-
-
 
 
 
@@ -86,6 +85,8 @@
                 android:layout_marginTop="20dp"
                 android:textStyle="bold"
                 android:textSize="18sp"
+                android:padding="10dp"
+
                 android:fontFamily="@font/abeezee"
                 android:text="@string/activity_info2"
                 />

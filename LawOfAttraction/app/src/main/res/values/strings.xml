@@ -238,15 +238,15 @@
     <!--ExerciseInfo Activity Text-->
 
     <string name="activity_exer">LAW OF ATTRACTION EXERCISE</string>
-    <string name="activity_exer1">1.)RELAX YOUR MIND</string>
+    <string name="activity_exer1">1.) RELAX YOUR MIND</string>
     <string name="activity_exer2">It is very important to relax your mind before you start the law of attraction exercise. Being relaxed helps you to be more attentive and focus on whatever wish your desire to manifest. To relax your mind close your eyes and try to focus on your breathing, try to divert all the unnecessary thoughts from your mind."</string>
-    <string name="activity_exer3">2.)MAKE A WISH</string>
+    <string name="activity_exer3">2.) MAKE A WISH</string>
     <string name="activity_exer4">After relaxing your mind the next step is to wish whatever things you want in your life example - a car, a house, a perfect relation or a healthy life. There is no bound to your wishes, you can wish whatever you want and the universe will serve it to you."</string>
-    <string name="activity_exer5">3.)VISUALIZE AND FEEL IT</string>
+    <string name="activity_exer5">3.) VISUALIZE AND FEEL IT</string>
     <string name="activity_exer6">Another important step is visualization. Once you had a note of your a wish, its time to visualize and feel that wish. Imagine you need you wish to have a House. So visualize how your dream house would be, visualize its interior, color of the walls, your sofa set, television set etc along with Visualization feel as if you really have it now. Practice it everyday and soon you will manifest your wish."</string>
-    <string name="activity_exer7">4.)BE THANKFUL</string>
+    <string name="activity_exer7">4.) BE THANKFUL</string>
     <string name="activity_exer8"> You should be thankful for whatever you have in life. Don\'t crib about the things that you don\'t have in life instead be thankful and be happy about your life. Doing this will create a happy and positive environment around you and will release positive vibes which indeed will serve your wish from universe faster."</string>
-    <string name="activity_exer9">5.)TRUST THE UNIVERSE</string>
+    <string name="activity_exer9">5.) TRUST THE UNIVERSE</string>
     <string name="activity_exer10">Well everything comes down to trust, if you trust the Law you the universe will fulfill all your desires. The pace of universe is slow so patience and consistency is the key. As said a seed wont turn into a tree instantly, it requires patience and consistency in terms of water ,oxygen and sunlight. So same lie with the law , practice it daily but don\'t give up, everday you practice the app you come one step closer to your dreams."</string>
     <string name="activity_exer11">Now you can start Practicing the law of attraction. Click on buton below to know how to use this app</string>
     <string name="activity_exer12">how to use this app</string>
@@ -255,11 +255,11 @@
     <!--ExerciseManual Activity Text-->
 
     <string name="activity_manual">HOW TO USE THE APP</string>
-    <string name="activity_manual1">1.)TRACK PROGRESS</string>
+    <string name="activity_manual1">1.) TRACK PROGRESS</string>
     <string name="activity_manual2"> You can view log of your exercise that you have done on a particular date. This helps you to have a track of your manifestation. It also provides the time taken by you to complete the exercise.By default it shows the recent exercise log.</string>
-    <string name="activity_manual3">2.)SET TIME</string>
+    <string name="activity_manual3">2.) SET TIME</string>
     <string name="activity_manual4">Our app has some key points in the exercise activity which you can use when you start practicing the law everyday morever you have the option to set exercise duration so as you can customize your own time for the exercise like if you want your exercise to be for 50 seconds. Navigate up to the settings tab on Home Screen and click on settings-> set workout time and provide any time (n seconds) and press the button to set the value.</string>
-    <string name="activity_manual5">3.)SET REMINDER</string>
+    <string name="activity_manual5">3.) SET REMINDER</string>
     <string name="activity_manual6">You can set a reminder to carry on your exercise daily at a particular time. All you have to do is to navigate to the app Home Screen and click on settings icon and then set reminder. Customize your time and get a reminder on daily intervals for you to practice the law on daily basis.</string>
     <string name="activity_manual7">4.) START BUTTON</string>
     <string name="activity_manual8">Click on the Start button to start your daily exercise once clicked you start with the 1st step. Here you have some hints to do the step and when you want to begin click on start. The timer begins as per the value set by the user. There are two options HOME and SKIP. Home returns user to home page terminating the exercise and skip proceeds you to the next step.Perform all the activities daily and manifest whatever you need in life.</string>
@@ -333,8 +333,9 @@
     <string name="notiDef2">As said \'One Nail Drives Out Another\' so does one AD Disables Others</string>
     <string name="notiDef1">Now you can disable them as per your choice</string>
     <string name="notiDef">DISABLE ADS</string>
-
+    <string name="Home_setProBannerText">HURRAY ! ADS ARE DISABLED</string>
     <string name="musicInfoGoBack">Stop Music and Go Back ?</string>
+
 
 
     <!--TP-->

@@ -35,6 +35,7 @@ public class Policy extends AppCompatActivity {
     WebView mywebview;
     SwipeRefreshLayout mSwipeRefreshLayout;
 
+    String webUrl = "http://innovativelabs.xyz/privacy_policy.html";
     ProgressBar bar;
 
     ConnectivityManager connMngr;
@@ -132,7 +133,7 @@ public class Policy extends AppCompatActivity {
 
                 mywebview.setWebViewClient(new MyAppWebViewClient());
                 mywebview.getSettings().setJavaScriptEnabled(true);
-                mywebview.loadUrl("http://innovativelabs.xyz/privacy_policy.html");
+                mywebview.loadUrl(webUrl);
             }
             else
             {
@@ -280,7 +281,7 @@ public class Policy extends AppCompatActivity {
 
                 mywebview.setWebViewClient(new MyAppWebViewClient());
                 mywebview.getSettings().setJavaScriptEnabled(true);
-                mywebview.loadUrl("http://innovativelabs.xyz/privacy_policy.html");
+                mywebview.loadUrl(webUrl);
             }
             else
             {

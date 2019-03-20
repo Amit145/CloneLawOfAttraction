@@ -169,6 +169,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearBanner"
         android:layout_width="650dp"
         android:layout_gravity="center"
         android:layout_height="wrap_content"

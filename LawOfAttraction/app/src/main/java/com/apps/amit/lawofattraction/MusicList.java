@@ -268,8 +268,8 @@ public class MusicList extends AppCompatActivity {
 
                         personUtils.setPersonFirstName(jsonObject.getString("name"));
                         personUtils.setPersonLastName(jsonObject.getString("body"));
-                        personUtils.setJobProfile(jsonObject.getString("likes"));
-                        personUtils.setimgUrl(jsonObject.getString("imgUrl"));
+                        personUtils.setJobProfile(jsonObject.getString("imgUrl"));
+                        personUtils.setimgUrl(jsonObject.getString("webUrl"));
                         personUtils.setid(jsonObject.getInt("id"));
                         personUtils.setShares(jsonObject.getString("shares"));
                         personUtils.setViews(jsonObject.getString("views"));

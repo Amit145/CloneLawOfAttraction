@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#232635"
+        android:orientation="vertical"
+        android:weightSum="1"
+        tools:context=".Story">
+
+    <LinearLayout
+        android:layout_weight=".8"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <WebView
+            android:id="@+id/webView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="match_parent"
+                android:progressDrawable="@drawable/progress"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content" />
+
+
+        </WebView>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/internet"
+        android:layout_width="match_parent"
+        android:layout_weight="0"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/abeezee"
+            android:textColor="#ffffff"
+            android:text="No Internet.. Please go back and check your Internet "/>
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutshare"
+            android:layout_width="match_parent"
+            android:layout_weight=".1"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+
+
+            <ImageView
+                android:id="@+id/share"
+                android:layout_width="match_parent"
+                android:scaleX="1"
+
+                android:layout_height="match_parent"
+                android:src="@drawable/crop"/>
+
+        </LinearLayout>
+
+    </LinearLayout>

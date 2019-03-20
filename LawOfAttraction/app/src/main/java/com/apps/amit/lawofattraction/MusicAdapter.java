@@ -49,7 +49,7 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.ViewHolder> 
             holder.ptaskViewstxt.setText(String.valueOf(" :\t "+pu.getViews()));
 
             //Glide.with(context).load(pu.getimgUrl()).thumbnail(0.1f).fitCenter().into(holder.img);
-            Glide.with(context).load(pu.getimgUrl()).thumbnail(0.1f).fitCenter().into(holder.img);
+            Glide.with(context).load(pu.getJobProfile()).thumbnail(0.1f).fitCenter().into(holder.img);
             Glide.with(context).load(R.drawable.viewicon).thumbnail(0.1f).fitCenter().into(holder.img1);
             Glide.with(context).load(R.drawable.shareicon).thumbnail(0.1f).fitCenter().into(holder.img3);
 

@@ -48,6 +48,15 @@ public class NotificationActivity extends AppCompatActivity {
     private static final String CURRENT_ADS_STATUS = "adsDate";
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        Intent art1 = new Intent(getApplicationContext(), Home.class);
+        // art1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(art1);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background=" #c656ad  "
+    android:layout_height="match_parent"
+    tools:context=".Quotes">
+
+    <TextView
+        android:id="@+id/qtext"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/abeezee"
+        android:text="@string/activityQuote_text1"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="60sp"
+        android:textStyle="bold" />
+
+    <TextView
+
+        android:id="@+id/def"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="#c656ad"
+        android:gravity="center"
+        android:fontFamily="@font/abeezee"
+        android:text="@string/activityQuote_text2"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/quotbox"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:background="@drawable/rt"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+
+        android:layout_marginEnd="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+        <TextView
+            android:id="@+id/quotetxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
+            android:gravity="center"
+            android:fontFamily="@font/abeezee"
+            android:textAlignment="center"
+            android:textColor="#909090"
+            android:textSize="30sp"
+            android:textStyle="bold|italic" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/quotcnt"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginRight="20dp"
+
+        android:layout_marginEnd="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:background="#ffffff"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/qlike"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="#ff5733"
+            android:fontFamily="@font/abeezee"
+            android:text="@string/LIKE_text"
+            android:onClick="quolike"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+
+
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/qshare"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#c70039"
+            android:gravity="center"
+            android:fontFamily="@font/abeezee"
+            android:text="@string/SHARE_text"            android:onClick="quoshare"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+
+        android:id="@+id/quotcnt1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_weight="2"
+        android:background="#c656ad"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+
+
+        <TextView
+            android:id="@+id/quotelike"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:fontFamily="@font/abeezee"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="#FF5733"
+
+
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/quoteshare"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:fontFamily="@font/abeezee"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="#c70039"
+
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+
+
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+        android:layout_weight="2"
+        android:background="#c656ad"
+
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+        <TextView
+
+            android:id="@+id/netin"
+            android:layout_width="match_parent"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="40dp"
+            android:background="#c656ad"
+            android:gravity="center"
+            android:fontFamily="@font/abeezee"
+            android:text="@string/activityQuote_text3"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+
+
+        <Button
+            android:id="@+id/quoteSend"
+            android:layout_width="450dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/buttrack"
+            android:fontFamily="@font/abeezee"
+            android:text="@string/activityQuote_text4"
+            android:textSize="30sp"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/allquo"
+            android:layout_width="match_parent"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="40dp"
+            android:background="#c656ad"
+            android:gravity="center"
+            android:fontFamily="@font/abeezee"
+            android:text="@string/activityQuote_text5"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</LinearLayout>
+</android.support.v4.widget.SwipeRefreshLayout>

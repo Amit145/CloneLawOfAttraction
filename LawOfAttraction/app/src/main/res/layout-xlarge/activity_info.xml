@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/homeimage1"
+    android:weightSum="3"
+    android:orientation="vertical"
+    tools:context="com.apps.amit.lawofattraction.info">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/abeezee"
+            android:text="@string/activity_info"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="60sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_weight="2.5"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+
+        android:padding="10dp"
+        android:layout_height="300dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:background="#ffffff"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/igg1"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_gravity="center"
+                />
+
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adViewi111"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
+                ads:adSize="BANNER"
+                ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
+
+
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+
+                android:text="@string/activity_info1"
+                android:textSize="30sp" />
+
+
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:textSize="40sp"
+                android:padding="10dp"
+
+                android:fontFamily="@font/abeezee"
+                android:text="@string/activity_info2"
+                />
+
+
+            <Button
+                android:id="@+id/infoButtonn1"
+                android:layout_width="450dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/buton1"
+                android:fontFamily="@font/abeezee"
+                android:text="@string/activity_info3"
+                android:textColor="#ffffff"
+                android:textSize="30sp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:id="@+id/ihome"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="@string/activity_info4"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:layout_marginTop="20dp"
+                android:textColor="#000000"
+                android:textSize="35sp"
+                android:layout_marginBottom="30dp"
+                android:textStyle="bold|italic" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_weight=".5"
+        android:orientation="vertical">
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adViewi221"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

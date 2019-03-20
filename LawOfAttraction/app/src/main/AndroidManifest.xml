@@ -25,9 +25,15 @@
         android:supportsRtl="true"
         android:taskAffinity=""
         android:theme="@style/AppTheme">
-        <activity android:name=".MusicList"></activity>
-        <activity android:name=".NewMusic" />
-        <activity android:name=".PrivateWishes" />
+        <activity
+            android:name=".MusicList"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".NewMusic"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".PrivateWishes"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".NotificationActivity"
             android:screenOrientation="portrait" />

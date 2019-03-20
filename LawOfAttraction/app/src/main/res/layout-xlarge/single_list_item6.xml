@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+
+
+    <android.support.v7.widget.CardView
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:id="@+id/singleRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/taskImg"
+                android:layout_width="match_parent"
+                android:scaleType="fitXY"
+                android:layout_height="400dp" />
+
+
+            <TextView
+                android:id="@+id/pNametxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="6dp"
+                android:maxLines="1"
+
+                android:text="User Name"
+                android:textAlignment="viewStart"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/pJobProfiletxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/pNametxt"
+                android:layout_alignStart="@+id/pNametxt"
+                android:layout_below="@+id/pNametxt"
+                android:layout_marginTop="5dp"
+                android:maxLines="2"
+                android:text="Job Profile"
+                android:textAlignment="viewStart"
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <View
+
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="5dp"
+                android:background="#f2f2f2" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="4"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+
+
+                <ImageView
+                    android:id="@+id/imgViews"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/taskViewstxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="views"
+                    android:layout_gravity="center"
+                    android:maxLines="1"
+                    android:textSize="20sp"
+                    android:textStyle="italic" />
+
+
+
+                <ImageView
+                    android:id="@+id/imgShares"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/taskSharestxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="shares"
+                    android:layout_gravity="center"
+                    android:maxLines="1"
+                    android:textSize="20sp"
+                    android:textStyle="italic" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <View
+            android:layout_below="@+id/singleRow"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#f2f2f2" />
+    </android.support.v7.widget.CardView>
+
+
+
+</RelativeLayout>

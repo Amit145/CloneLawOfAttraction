@@ -3,6 +3,7 @@ package com.apps.amit.lawofattraction;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -25,12 +26,18 @@ import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.content.Context;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.apps.amit.lawofattraction.helper.LocaleHelper;
 import com.bumptech.glide.Glide;
 
 import com.google.firebase.messaging.FirebaseMessaging;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
 import butterknife.ButterKnife;
@@ -44,6 +51,7 @@ public class Home extends AppCompatActivity {
     ImageView img1;
     ImageView img2;
     ImageView img3;
+    LinearLayout linearBanner;
     TextView homeSubTitle;
     TextView homeMyStories;
     TextView homeSayToUniverse;
@@ -122,6 +130,8 @@ public class Home extends AppCompatActivity {
 	    Toolbar toolbar =  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+
         FloatingActionButton fab =  findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,13 +149,56 @@ public class Home extends AppCompatActivity {
         homeSettings=  findViewById(R.id.textView6);
         homeGetProBannerText =  findViewById(R.id.prover);
         button1 =  findViewById(R.id.staButton);
+        linearBanner = findViewById(R.id.linearBanner);
+
+        //if ads enabled
+
+        Calendar c1 = Calendar.getInstance();
+
+        SharedPreferences pref = getSharedPreferences("AdvsPref",MODE_PRIVATE);
+
+        Calendar dummyDate = Calendar.getInstance();
+
+        dummyDate.set(Calendar.YEAR, 2011);
+
+        //Store selected language in a Variable called value
+        String value = pref.getString("adsDate",dummyDate.getTime().toString());
+
+        if(!value.isEmpty())
+        {
+            Calendar cal = Calendar.getInstance();
+            SimpleDateFormat sdf = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
+            try {
+                cal.setTime(sdf.parse(value));// all done
+
+            } catch (ParseException e) {
+
+                e.printStackTrace();
+            }
+
+            if(cal.getTime().after(c1.getTime()))
+            {
+                //Home_setProBannerText
+                homeGetProBannerText.setText(getString(R.string.Home_setProBannerText));
+                linearBanner.setBackgroundColor(Color.parseColor("#229954"));
+            }
+            else {
+
+
+                homeGetProBannerText.setText(getString(R.string.Home_getProBannerText));
+            }
+
+        }
+
+
+        ///
 
         homeSubTitle.setText(getString(R.string.Home_subTitle));
         button1.setText(getString(R.string.Home_startButtonText));
         homeMyStories.setText(getString(R.string.Home_myStories));
         homeSayToUniverse.setText(getString(R.string.Home_sayToUniverse));
         homeSettings.setText(getString(R.string.Home_settings));
-        homeGetProBannerText.setText(getString(R.string.Home_getProBannerText));
+
 
         drawer =  findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(

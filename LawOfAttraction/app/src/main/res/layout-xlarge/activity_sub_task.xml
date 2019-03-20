@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="3"
+    android:background="@drawable/homeimage1"
+    tools:context=".SubTask">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_weight="2"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:background="#EFFBFB"
+            android:orientation="vertical"
+            android:paddingEnd="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingStart="10dp">
+
+            <ImageView
+                android:id="@+id/taskCover"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="15dp"
+                android:scaleType="fitXY"/>
+
+            <TextView
+                android:id="@+id/taskTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/abeezee"
+                android:textAlignment="center"
+                android:textColor="#797575"
+                android:textSize="50sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tbody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:padding="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/abeezee"
+                android:textColor="#909090"
+                android:textSize="25sp"
+                android:textStyle="bold|italic" />
+
+            <View
+
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="5dp"
+                android:background="#f2f2f2" />
+
+            <TextView
+                android:id="@+id/doneTaskTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginRight="5dp"
+                android:text="@string/subTaskHaveYou"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/abeezee"
+                android:textColor="#909090"
+                android:textSize="30sp"
+                android:textStyle="bold|italic" />
+
+
+            <Button
+                android:id="@+id/taskDoneId"
+                android:layout_marginTop="15dp"
+                android:text="@string/subTAskDoneQue"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:layout_gravity="center"
+                android:onClick="taskDone"
+                android:background="#FF40C939"
+                android:fontFamily="@font/abeezee"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/taskLikeId"
+                android:layout_marginTop="15dp"
+                android:text="@string/LIKE_text"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:layout_gravity="center"
+                android:onClick="taskLikes"
+                android:background="#FFF96767"
+                android:fontFamily="@font/abeezee"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <Button
+                android:id="@+id/expButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:text="@string/myStory_buttonText"
+                android:background="#0073A1"
+                android:layout_marginBottom="20dp"
+                android:onClick="ShareExperience"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#ffffff" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_weight="1"
+        android:background="#0073A1"
+        android:orientation="vertical">
+
+
+
+        <ImageView
+            android:id="@+id/taskShareId"
+            android:layout_width="match_parent"
+            android:scaleX="1"
+            android:onClick="taskShare"
+            android:layout_height="match_parent"
+            android:src="@drawable/crop"/>
+
+
+
+    </LinearLayout>
+
+    </LinearLayout>
