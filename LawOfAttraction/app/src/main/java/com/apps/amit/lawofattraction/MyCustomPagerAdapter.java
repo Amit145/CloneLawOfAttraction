@@ -72,7 +72,7 @@ public class MyCustomPagerAdapter extends PagerAdapter{
           else if((position + 1) == 4)
           {
 
-            Intent art1 = new Intent(context, MusicList.class);
+            Intent art1 = new Intent(context, MainActivity.class);
             context.startActivity(art1);
 
           }

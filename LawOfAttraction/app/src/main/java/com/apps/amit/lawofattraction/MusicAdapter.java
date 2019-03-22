@@ -99,15 +99,15 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.ViewHolder> 
 
                     MusicUtils cpu = (MusicUtils) view.getTag();
 
-                    Intent i = new Intent (view.getContext(), NewMusic.class);
-                    i.putExtra("taskTitle", cpu.getPersonFirstName());
-                    i.putExtra("taskSubtitle",cpu.getPersonLastName());
-                    i.putExtra("takImg",cpu.getimgUrl());
-                    i.putExtra("taskID",cpu.getid());
-                    i.putExtra("taskBody",cpu.getbody());
-                    i.putExtra("taskLikes",cpu.getJobProfile());
-                    i.putExtra("taskShares",cpu.getShares());
-                    i.putExtra("taskViews",cpu.getViews());
+                    Intent i = new Intent (view.getContext(), MainActivity.class);
+                    i.putExtra("taskTitle", cpu.getPersonFirstName());       //name
+                    i.putExtra("taskSubtitle",cpu.getPersonLastName());     //body
+                    i.putExtra("takImg",cpu.getimgUrl());                   //web url  music
+                    i.putExtra("taskID",cpu.getid());                       //id
+                    i.putExtra("taskBody",cpu.getbody());                   //body
+                    i.putExtra("taskLikes",cpu.getJobProfile());       //imgurl    pic
+                    i.putExtra("taskShares",cpu.getShares());           //shares
+                    i.putExtra("taskViews",cpu.getViews());             //views
                     //i.putExtra("idKey",cpu.getcount());
                     view.getContext().startActivity(i);
 
