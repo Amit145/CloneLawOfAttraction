@@ -45,7 +45,7 @@
             android:layout_marginRight="10dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:text="\t View Advertisement once and go AD-FREE for next 48 Hours. Click to get rewarded "
+            android:text="\t New Relaxation Music that will help you to calm and relax your mind"
             android:textSize="15sp"
             android:textStyle="normal"
             android:fontFamily="@font/abeezee"/>
@@ -74,7 +74,7 @@
         <Button
             android:id="@+id/btnsubmit"
             android:layout_weight=".5"
-            android:text="GET REWARDED"
+            android:text="LISTEN NOW"
             android:background=" #ff5733"
             android:textColor="#ffffff"
             android:textStyle="bold"

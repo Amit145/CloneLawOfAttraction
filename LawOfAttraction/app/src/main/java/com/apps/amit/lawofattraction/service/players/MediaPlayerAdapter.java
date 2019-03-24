@@ -18,6 +18,7 @@ package com.apps.amit.lawofattraction.service.players;
 
 import android.content.Context;
 import android.media.MediaPlayer;
+import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v4.media.MediaMetadataCompat;
 import android.support.v4.media.session.PlaybackStateCompat;
@@ -47,6 +48,7 @@ public final class MediaPlayerAdapter extends PlayerAdapter {
     // Work-around for a MediaPlayer bug related to the behavior of MediaPlayer.seekTo()
     // while not playing.
     private int mSeekWhileNotPlaying = -1;
+
 
     public MediaPlayerAdapter(Context context, PlaybackInfoListener listener) {
         super(context);
@@ -127,15 +129,17 @@ public final class MediaPlayerAdapter extends PlayerAdapter {
 
         try {
             mMediaPlayer.prepare();
+            Toast.makeText(mContext, "Loading Media.. Please Wait", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
            // throw new RuntimeException("Failed to open file: " + mFilename, e);
         }
+
 
         mMediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                Toast.makeText(mContext, "Loaded", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(mContext, "Loaded", Toast.LENGTH_SHORT).show();
             }
         });
         /*

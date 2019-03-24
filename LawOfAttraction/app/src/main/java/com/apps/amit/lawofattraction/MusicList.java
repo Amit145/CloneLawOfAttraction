@@ -274,6 +274,7 @@ public class MusicList extends AppCompatActivity {
                         personUtils.setShares(jsonObject.getString("shares"));
                         personUtils.setViews(jsonObject.getString("views"));
                         personUtils.setbody(jsonObject.getString("body"));
+                        personUtils.setDuration(jsonObject.getInt("duration"));
 
 
 

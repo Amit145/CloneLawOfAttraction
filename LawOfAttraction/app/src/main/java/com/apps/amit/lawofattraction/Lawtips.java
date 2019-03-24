@@ -224,7 +224,7 @@ public class Lawtips extends AppCompatActivity {
                     Intent share = new Intent(Intent.ACTION_SEND);
                     share.setType("text/plain");
                     //share.setPackage("com.whatsapp");
-                    share.putExtra(Intent.EXTRA_TEXT, "Learn how to enhance your manifestation's using the Law of Attraction App.Download Now from Playstore\n-------------------------\nhttps://play.google.com/store/apps/details?id=com.apps.amit.lawofattractionpro");
+                    share.putExtra(Intent.EXTRA_TEXT, "Learn how to enhance your manifestation's using the Law of Attraction App.Download Now from Playstore\n-------------------------\nhttps://play.google.com/store/apps/details?id=com.apps.amit.lawofattraction");
                     try {
                         startActivity(Intent.createChooser(share,"Choose Where to share"));
 

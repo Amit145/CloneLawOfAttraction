@@ -82,7 +82,7 @@ public class iquote extends RecyclerView.Adapter<iquote.ViewHolder> {
           Intent share = new Intent(Intent.ACTION_SEND);
           share.setType("text/plain");
           //share.setPackage("com.whatsapp");
-          share.putExtra(Intent.EXTRA_TEXT, " \" "+cpu.getPersonFirstName()+" \" "+"\n ---------------------------\n Get more inspirational Quotes on Law of attraction daily app, Download Now From Play Store "+" https://play.google.com/store/apps/details?id=com.apps.amit.lawofattractionpro");
+          share.putExtra(Intent.EXTRA_TEXT, " \" "+cpu.getPersonFirstName()+" \" "+"\n ---------------------------\n Get more inspirational Quotes on Law of attraction daily app, Download Now From Play Store "+" https://play.google.com/store/apps/details?id=com.apps.amit.lawofattraction");
           try {
             context.startActivity(Intent.createChooser(share,"Choose Where to share"));
 

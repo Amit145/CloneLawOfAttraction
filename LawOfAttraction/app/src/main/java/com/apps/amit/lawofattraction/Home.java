@@ -190,9 +190,6 @@ public class Home extends AppCompatActivity {
 
         }
 
-
-        ///
-
         homeSubTitle.setText(getString(R.string.Home_subTitle));
         button1.setText(getString(R.string.Home_startButtonText));
         homeMyStories.setText(getString(R.string.Home_myStories));
@@ -381,7 +378,7 @@ public class Home extends AppCompatActivity {
             LayoutInflater inflater = Home.this.getLayoutInflater();
             final View dialogView = inflater.inflate(R.layout.whatsnew, null);
             builder.setCancelable(false);
-            builder.setMessage("What's New In v3.2");
+            builder.setMessage("What's New In v3.4");
 
             builder.setView(dialogView);
             alert = builder.create();
@@ -390,14 +387,14 @@ public class Home extends AppCompatActivity {
             Button cancel =  dialogView.findViewById(R.id.btncancel);
             ImageView img =  dialogView.findViewById(R.id.storyImage);
 
-            Glide.with(getApplicationContext()).load(R.drawable.rewardpage).thumbnail(0.1f).centerCrop().into(img);
+            Glide.with(getApplicationContext()).load(R.drawable.p1).thumbnail(0.1f).into(img);
 
             submit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     v.startAnimation(buttonClick);
 
-                    Intent art1 = new Intent(getApplicationContext(),NotificationActivity.class);
+                    Intent art1 = new Intent(getApplicationContext(),MusicList.class);
                     startActivity(art1);
 
                     alert.dismiss();
@@ -489,7 +486,6 @@ public class Home extends AppCompatActivity {
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(LocaleHelper.onAttach(base));
     }
-
 
 
     public  class MyTimerTask extends TimerTask

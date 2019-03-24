@@ -408,7 +408,7 @@ public class SubTask extends AppCompatActivity {
         view.startAnimation(buttonClick);
         Intent share = new Intent(Intent.ACTION_SEND);
         share.setType("text/plain");
-        share.putExtra(Intent.EXTRA_TEXT, " \n ---------------------------\n "+resources.getString(R.string.subTaskShare)+"  https://play.google.com/store/apps/details?id=com.apps.amit.lawofattractionpro");
+        share.putExtra(Intent.EXTRA_TEXT, " \n ---------------------------\n "+resources.getString(R.string.subTaskShare)+"  https://play.google.com/store/apps/details?id=com.apps.amit.lawofattraction");
         try {
             startActivity(Intent.createChooser(share,resources.getString(R.string.chooseToShare)));
             SendSharesToServer(shares, String.valueOf(taskID));

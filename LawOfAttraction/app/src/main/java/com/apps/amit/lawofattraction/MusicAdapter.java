@@ -108,6 +108,7 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.ViewHolder> 
                     i.putExtra("taskLikes",cpu.getJobProfile());       //imgurl    pic
                     i.putExtra("taskShares",cpu.getShares());           //shares
                     i.putExtra("taskViews",cpu.getViews());             //views
+                    i.putExtra("musicDuration",cpu.getDuration());
                     //i.putExtra("idKey",cpu.getcount());
                     view.getContext().startActivity(i);
 

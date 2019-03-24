@@ -12,6 +12,7 @@ public class MusicUtils {
     private String imgUrl;
     private String body;
     private int id;
+    private int duration;
     private String shares,views;
 
     public String getPersonFirstName() {
@@ -76,6 +77,14 @@ public class MusicUtils {
 
     public void setViews(String views) {
         this.views = views;
+    }
+
+    public Integer getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Integer duration) {
+        this.duration = duration;
     }
 
 

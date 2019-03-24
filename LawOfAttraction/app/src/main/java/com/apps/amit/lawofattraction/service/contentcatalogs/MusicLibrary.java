@@ -41,6 +41,7 @@ public class MusicLibrary {
     private static final HashMap<String, String> musicFileName = new HashMap<>();
 
 
+    /*
     static {
 
 
@@ -50,14 +51,14 @@ public class MusicLibrary {
                     MainActivity.musicBody,
                     "Calmness",
                     "Calm",
-                    160,
+                    MainActivity.musicDuration,
                     TimeUnit.SECONDS,
                     MainActivity.musicURL,  ////http://innovativelabs.xyz/Mp3/1.mp3  //the_coldest_shoulder.mp3
                     R.drawable.lawimg,
                     "album_youtube_audio_library_rock_2");
         }
 
-
+    */
 
     public static void addToList() {
         createMediaMetadataCompat(
@@ -66,7 +67,7 @@ public class MusicLibrary {
                 MainActivity.musicBody,
                 "Calmness",
                 "Calm",
-                160,
+                MainActivity.musicDuration,
                 TimeUnit.SECONDS,
                 MainActivity.musicURL,  ////http://innovativelabs.xyz/Mp3/1.mp3  //the_coldest_shoulder.mp3
                 R.drawable.lawimg,

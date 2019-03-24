@@ -591,7 +591,7 @@ public class Quotes extends AppCompatActivity {
         Intent share = new Intent(Intent.ACTION_SEND);
         share.setType("text/plain");
         //share.setPackage("com.whatsapp");
-        share.putExtra(Intent.EXTRA_TEXT, quoted+" \n ---------------------------\n " +resources.getString(R.string.activityQuote_quoteshare)+" https://play.google.com/store/apps/details?id=com.apps.amit.lawofattractionpro");
+        share.putExtra(Intent.EXTRA_TEXT, quoted+" \n ---------------------------\n " +resources.getString(R.string.activityQuote_quoteshare)+" https://play.google.com/store/apps/details?id=com.apps.amit.lawofattraction");
         try {
             startActivity(Intent.createChooser(share,resources.getString(R.string.chooseToShare)));
             SendSharesToServer(shared,quoted);

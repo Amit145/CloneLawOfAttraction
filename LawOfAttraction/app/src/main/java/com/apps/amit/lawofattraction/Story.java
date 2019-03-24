@@ -356,7 +356,7 @@ public class Story extends AppCompatActivity {
                     Intent share = new Intent(Intent.ACTION_SEND);
                     share.setType("text/plain");
                     //share.setPackage("com.whatsapp");
-                    share.putExtra(Intent.EXTRA_TEXT, resources.getString(R.string.storyShare)+"\n-------------------------\nhttps://play.google.com/store/apps/details?id=com.apps.amit.lawofattractionpro");
+                    share.putExtra(Intent.EXTRA_TEXT, resources.getString(R.string.storyShare)+"\n-------------------------\nhttps://play.google.com/store/apps/details?id=com.apps.amit.lawofattraction");
                     try {
                         startActivity(Intent.createChooser(share,resources.getString(R.string.chooseToShare)));
 
