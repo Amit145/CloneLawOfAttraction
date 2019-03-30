@@ -1,7 +1,7 @@
 <resources>
 
     <string name="app_name">LawOfAttraction</string>
-    <string name="admob_interstitial_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="admob_interstitial_id">ca-app-pub-2259921691483610/4649957962</string>
     <string name="langEng">English</string>
     <string name="langFre">français (French) </string>
     <string name="langcSpa">español (Spanish) </string>
