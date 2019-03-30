@@ -3,6 +3,8 @@ package com.apps.amit.lawofattraction;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -33,6 +35,8 @@ public class feedback extends AppCompatActivity {
     public RadioButton r1,r2,r3,r4,r5,r6,r7,r8,r9,r10;
     public String Name,F1,F2,F3,F4;
     Resources resources;
+    NetworkInfo netInfo;
+    ConnectivityManager connMngr;
     TextView title,usrname,feed,feed1,feed2,feed3,feed4;
     private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
     EditText et1,et2;
@@ -233,7 +237,7 @@ public class feedback extends AppCompatActivity {
             editor.apply();
 
             SendDataToServer(et1.getText().toString(),F1,F2,F3,F4,"FREE: "+et2.getText().toString());
-            Toast.makeText(this, resources.getString(R.string.thankYou), Toast.LENGTH_LONG).show();
+
             this.finish();
         }
     }
@@ -276,7 +280,14 @@ public class feedback extends AppCompatActivity {
 
                 } catch (Exception e) {
 
-                    Toast.makeText(getApplicationContext(), getString(R.string.nameError4), Toast.LENGTH_LONG).show();
+                    runOnUiThread(new Runnable() {
+                        public void run() {
+                            final Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.noInternet_txt),Toast.LENGTH_LONG);
+
+                            toast.show();
+                        }
+                    });
+
 
                 }
                 return "Data Submit Successfully";
@@ -285,6 +296,22 @@ public class feedback extends AppCompatActivity {
             @Override
             protected void onPostExecute(String result) {
                 super.onPostExecute(result);
+
+                connMngr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+                if(connMngr!=null && connMngr.getActiveNetworkInfo() != null){
+
+                    netInfo = connMngr.getActiveNetworkInfo();
+                }
+
+                if(netInfo!=null && netInfo.isConnected())
+                {
+                    Toast.makeText(getApplicationContext(), resources.getString(R.string.thankYou), Toast.LENGTH_LONG).show();
+
+                } else {
+
+                    Toast.makeText(getApplicationContext(), resources.getString(R.string.noInternet_txt), Toast.LENGTH_LONG).show();
+
+                }
 
             }
         }

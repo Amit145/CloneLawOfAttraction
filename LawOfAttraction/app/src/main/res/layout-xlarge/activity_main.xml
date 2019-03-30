@@ -48,7 +48,7 @@
             <ImageView
                 android:id="@+id/imageView8"
                 android:layout_width="match_parent"
-                android:layout_height="220dp"
+                android:layout_height="420dp"
                 android:layout_marginTop="15dp"
                 android:scaleType="fitXY" />
 
@@ -61,7 +61,7 @@
                 android:fontFamily="@font/abeezee"
                 android:textAlignment="center"
                 android:textColor="#797575"
-                android:textSize="30sp"
+                android:textSize="50sp"
                 android:textStyle="bold"
                 tools:text="Song Title" />
 
@@ -77,14 +77,14 @@
                 android:layout_marginBottom="20dp"
                 android:fontFamily="@font/abeezee"
                 android:textColor="#909090"
-                android:textSize="17sp"
+                android:textSize="30sp"
                 android:textStyle="bold|italic"
                 tools:text="Song Artist" />
 
             <com.apps.amit.lawofattraction.MediaSeekBar
                 android:id="@+id/seekbar_audio"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="45dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
@@ -97,10 +97,10 @@
 
             <ImageButton
                 android:id="@+id/button_play"
-                android:layout_width="250dp"
-                android:layout_height="40dp"
+                android:layout_width="450dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="50dp"
                 android:background="@drawable/buttrack"
                 android:fontFamily="@font/abeezee"
@@ -108,37 +108,22 @@
                 android:textColor="#ffffff"
                 android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/button_previous"
-                android:layout_width="50dp"
-                android:layout_height="0dp"
-                android:background="@android:color/transparent"
-                android:contentDescription="@string/label_previous"
-                android:text=""
-                app:layout_constraintBottom_toBottomOf="@+id/media_controls"
-                app:layout_constraintStart_toStartOf="@+id/media_controls"
-                app:layout_constraintTop_toTopOf="@+id/media_controls" />
-
-
-
-            <Button
-                android:id="@+id/button_next"
-                android:layout_width="50dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="8dp"
-                android:background="@android:color/transparent"
-                android:contentDescription="@string/label_next"
-                android:text=""
-                app:layout_constraintBottom_toBottomOf="@+id/media_controls"
-                app:layout_constraintEnd_toEndOf="@+id/media_controls"
-                app:layout_constraintTop_toTopOf="@+id/media_controls" />
-
-            <android.support.constraint.Guideline
-                android:id="@+id/guideline"
-                android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.67" />
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/abeezee"
+                android:textColor="#909090"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:text="NOTE - Depending on your Internet Speed and Connectivity, Music may stop or may take some time to load. Please make sure you have a good Internet connection to avoid any interruptions" />
+
+
 
 
 

@@ -122,7 +122,7 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
 	    FirebaseMessaging.getInstance().subscribeToTopic("FREE");
-
+       // FirebaseMessaging.getInstance().subscribeToTopic("ADTEST");
 
         SharedPreferences nameSp1 = getSharedPreferences("timerEnable", experiences.MODE_PRIVATE);
         String naam = nameSp1.getString("userName","");
@@ -535,11 +535,11 @@ public class Home extends AppCompatActivity {
     private boolean isFirstTime()
     {
         SharedPreferences pref = getPreferences(MODE_PRIVATE);
-        boolean ranBefore = pref.getBoolean("whatsNew",false);
+        boolean ranBefore = pref.getBoolean("whatsNewv3.4",false);
         if(!ranBefore)
         {
             SharedPreferences.Editor editor = pref.edit();
-            editor.putBoolean("whatsNew",true);
+            editor.putBoolean("whatsNewv3.4",true);
             editor.apply();
         }
         return !ranBefore;

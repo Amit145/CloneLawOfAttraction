@@ -29,7 +29,7 @@
     <string name="nameError1">Name Cannot be  less than 3 characters</string>
     <string name="nameError2">Please enter appropriate name, or remove any obscene word from Name field</string>
     <string name="nameError3">No Digits or special symbols allowed in Name field</string>
-    <string name="nameError4">Something went wrong</string>
+    <string name="nameError4">Something went wrong.. Go back and try again</string>
     <string name="nwError">Network Unstable.. Scroll down to refresh</string>
     <string name="thankYou"> Thank You For Your Feedback !</string>
 
@@ -288,7 +288,7 @@
     <string name="needImprovement">Needs Improvement</string>
     <string name="good">Good</string>
     <string name="best">Best</string>
-    <string name="feedback3">Loved our new feature ? (Disable ADS )</string>
+    <string name="feedback3">Loved our new feature ? (New Music, Disable ADS )</string>
     <string name="feedback4">Does our app help in your Manifestation ?</string>
     <string name="feedback5">Any Other Suggestions ? Write below: or Drop a mail</string>
     <string name="storyShare">Get Inspirational short stories only on the Law of Attraction App.Download Now from Playstore</string>

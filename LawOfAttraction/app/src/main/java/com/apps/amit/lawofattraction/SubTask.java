@@ -555,11 +555,11 @@ public class SubTask extends AppCompatActivity {
 
                 } catch (ClientProtocolException e) {
 
-                    Toast.makeText(getApplicationContext(), resources.getString(R.string.myStory_warn), Toast.LENGTH_LONG).show();
+                   // Toast.makeText(getApplicationContext(), resources.getString(R.string.myStory_warn), Toast.LENGTH_LONG).show();
 
                 } catch (IOException e) {
 
-                    Toast.makeText(getApplicationContext(), resources.getString(R.string.myStory_warn), Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(), resources.getString(R.string.myStory_warn), Toast.LENGTH_LONG).show();
 
                 }
                 return "Data Submit Successfully";
@@ -606,7 +606,7 @@ public class SubTask extends AppCompatActivity {
 
                 } catch (IOException e) {
 
-                    Toast.makeText(getApplicationContext(), resources.getString(R.string.myStory_warn), Toast.LENGTH_LONG).show();
+                   // Toast.makeText(getApplicationContext(), resources.getString(R.string.myStory_warn), Toast.LENGTH_LONG).show();
 
                 }
                 return "Data Submit Successfully";
@@ -627,9 +627,8 @@ public class SubTask extends AppCompatActivity {
                 nameValuePairs.add(new BasicNameValuePair("views", Views));
                 nameValuePairs.add(new BasicNameValuePair("id", id));
 
-
-
                 try {
+
                     HttpClient httpClient = new DefaultHttpClient();
 
                     HttpPost httpPost = new HttpPost("http://www.innovativelabs.xyz/insertTaskViews.php");
@@ -647,7 +646,7 @@ public class SubTask extends AppCompatActivity {
 
                 } catch (IOException e) {
 
-                    Toast.makeText(getApplicationContext(), resources.getString(R.string.myStory_warn), Toast.LENGTH_LONG).show();
+                   // Toast.makeText(getApplicationContext(), resources.getString(R.string.myStory_warn), Toast.LENGTH_LONG).show();
 
                 }
                 return "Data Submit Successfully";
@@ -689,7 +688,7 @@ public class SubTask extends AppCompatActivity {
 
                 } catch (IOException e) {
 
-                    Toast.makeText(getApplicationContext(), resources.getString(R.string.myStory_warn), Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(), resources.getString(R.string.myStory_warn), Toast.LENGTH_LONG).show();
 
                 }
                 return "Data Submit Successfully";
@@ -732,7 +731,7 @@ public class SubTask extends AppCompatActivity {
 
                 } catch (IOException e) {
 
-                    Toast.makeText(getApplicationContext(), resources.getString(R.string.myStory_warn), Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(), resources.getString(R.string.myStory_warn), Toast.LENGTH_LONG).show();
 
                 }
                 return "Data Submit Successfully";
@@ -839,7 +838,7 @@ public class SubTask extends AppCompatActivity {
 
                 } catch (IOException e) {
 
-                    Toast.makeText(getApplicationContext(), resources.getString(R.string.myStory_warn), Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(), resources.getString(R.string.myStory_warn), Toast.LENGTH_LONG).show();
 
                 }
                 return "Data Submit Successfully";

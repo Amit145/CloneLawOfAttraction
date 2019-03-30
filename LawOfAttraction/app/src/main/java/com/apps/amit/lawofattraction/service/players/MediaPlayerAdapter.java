@@ -128,7 +128,7 @@ public final class MediaPlayerAdapter extends PlayerAdapter {
         }
 
         try {
-            mMediaPlayer.prepare();
+            mMediaPlayer.prepareAsync();
             Toast.makeText(mContext, "Loading Media.. Please Wait", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
            // throw new RuntimeException("Failed to open file: " + mFilename, e);
@@ -139,7 +139,8 @@ public final class MediaPlayerAdapter extends PlayerAdapter {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-               // Toast.makeText(mContext, "Loaded", Toast.LENGTH_SHORT).show();
+                play();
+                Toast.makeText(mContext, "Playing...", Toast.LENGTH_SHORT).show();
             }
         });
         /*
@@ -161,7 +162,7 @@ public final class MediaPlayerAdapter extends PlayerAdapter {
 
         */
 
-        play();
+
     }
 
     @Override

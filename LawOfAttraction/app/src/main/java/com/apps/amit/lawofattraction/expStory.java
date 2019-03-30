@@ -586,7 +586,7 @@ public class expStory extends AppCompatActivity {
 
                 } catch (IOException e) {
 
-                    Toast.makeText(getApplicationContext(),resources.getString(R.string.nameError4),Toast.LENGTH_LONG).show();
+                   // Toast.makeText(getApplicationContext(),resources.getString(R.string.nameError4),Toast.LENGTH_LONG).show();
                 }
                 return " Submitted Successfully";
 

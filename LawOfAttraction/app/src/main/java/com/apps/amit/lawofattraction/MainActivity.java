@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
         }
         musicViews = String.valueOf(viewcount);
 
-        Toast.makeText(this, "Views : "+musicViews+" Task ID "+musicID, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Views : "+musicViews+" Task ID "+musicID, Toast.LENGTH_SHORT).show();
 
         SendViewsToServer(musicViews,String.valueOf(musicID));
 

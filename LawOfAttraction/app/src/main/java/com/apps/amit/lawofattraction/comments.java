@@ -65,6 +65,7 @@ public class comments extends AppCompatActivity {
     Button story;
     private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
     Resources resources;
+    AlertDialog alert;
     EditText edt, edt1;
     SwipeRefreshLayout mSwipeRefreshLayout;
     String UserName, UserComment, timee;
@@ -320,7 +321,7 @@ public class comments extends AppCompatActivity {
                 builder.setMessage(resources.getString(R.string.subUniverse_dialogTitle));
 
                 builder.setView(dialogView);
-                final AlertDialog alert = builder.create();
+                alert = builder.create();
                 alert.show();
 
                 nameText =  dialogView.findViewById(R.id.name);
@@ -490,7 +491,6 @@ public class comments extends AppCompatActivity {
 
                 } catch (Exception e) {
 
-                    Toast.makeText(getApplicationContext(), getString(R.string.nameError4), Toast.LENGTH_LONG).show();
 
                 }
                 return "Data Submit Successfully";
@@ -506,6 +506,7 @@ public class comments extends AppCompatActivity {
         }
         SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
         sendPostReqAsyncTask.execute(name, email, website);
+        alert.dismiss();
     }
 
 
