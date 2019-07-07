@@ -62,7 +62,7 @@
                 android:layout_gravity="bottom"
                 android:layout_marginBottom="10dp"
                 ads:adSize="BANNER"
-                ads:adUnitId="ca-app-pub-2259921691483610/8425551447" />
+                ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
 
 
 
@@ -137,7 +137,7 @@
             android:layout_gravity="bottom"
 
             ads:adSize="BANNER"
-            ads:adUnitId="ca-app-pub-2259921691483610/8425551447" />
+            ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
 
     </LinearLayout>
 

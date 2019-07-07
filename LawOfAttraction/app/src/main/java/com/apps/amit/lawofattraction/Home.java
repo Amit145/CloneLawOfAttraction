@@ -452,7 +452,7 @@ public class Home extends AppCompatActivity {
             public void onClick(View v) {
 
                 v.startAnimation(buttonClick);
-                Intent art1 = new Intent(getApplicationContext(), Settings.class);
+                Intent art1 = new Intent(getApplicationContext(), Intro1.class);
                 startActivity(art1);
 
             }

@@ -1,7 +1,7 @@
 <resources>
 
     <string name="app_name">LawOfAttraction</string>
-    <string name="admob_interstitial_id">ca-app-pub-2259921691483610/4649957962</string>
+    <string name="admob_interstitial_id">ca-app-pub-3940256099942544/1033173712</string>
     <string name="langEng">English</string>
     <string name="langFre">français (French) </string>
     <string name="langcSpa">español (Spanish) </string>
@@ -17,6 +17,10 @@
     <string name="title_activity_feedback">feedback</string>
     <string name="choose_language">Choose Your Language</string>
     <string name="langcontinue">CONTINUE</string>
+
+    <string name="intro1">What are you Manifesting ?</string>
+    <string name="intro2">Choose Your Language</string>
+    <string name="intro3">CONTINUE</string>
 
 
     <!--validation message Text-->
@@ -269,7 +273,7 @@
 
     <!--About App-->
 
-    <string name="aboutApp">LawOfAttraction v3.4</string>
+    <string name="aboutApp">LawOfAttraction v3.5</string>
     <string name="aboutApp1">Turn Your Dreams Into the Reality with power of positive thoughts</string>
     <string name="aboutApp2">Why ADS ?</string>
     <string name="aboutApp3">
@@ -342,7 +346,6 @@
     <string name="label_play_pause">Play and pause toggle</string>
     <string name="label_previous">Previous track</string>
     <string name="label_next">Next track</string>
-
 
 
     <!--TP-->
