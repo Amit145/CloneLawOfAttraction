@@ -45,8 +45,6 @@ public class storyList extends AppCompatActivity {
 
    // String showComments = "http://www.innovativelabs.xyz/storyData.php";
 
-
-
     TextView intText;
     RecyclerView recyclerView;
     RecyclerView.Adapter mAdapter;

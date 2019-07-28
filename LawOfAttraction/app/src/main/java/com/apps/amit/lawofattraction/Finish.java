@@ -114,6 +114,7 @@ public class Finish extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_finish);
 
+
             AdRequest adRequest = new AdRequest.Builder().build();
 
             // Prepare the Interstitial Ad

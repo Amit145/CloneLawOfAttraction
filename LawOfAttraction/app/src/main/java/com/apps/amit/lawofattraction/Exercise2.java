@@ -247,15 +247,112 @@ public class Exercise2 extends AppCompatActivity {
          context = LocaleHelper.setLocale(this, languageCode);
          resources = context.getResources();
 
+        SharedPreferences sharedPreferencesManifestationType = getSharedPreferences("MANIFESTATION_TYPE", Exercise1.MODE_PRIVATE);
+        String manifestationTypeValue = sharedPreferencesManifestationType.getString("MANIFESTATION_TYPE_VALUE", "");
+
         //Story
-        txt.setText(resources.getString(R.string.skip_text));
-        actText1.setText(resources.getString(R.string.activity2_text1));
-        actText2.setText(resources.getString(R.string.activity2_text2));
-        actText3.setText(resources.getString(R.string.activity2_text3));
-        actText4.setText(resources.getString(R.string.activity2_text4));
-        actText5.setText(resources.getString(R.string.activity2_text5));
-        actText6.setText(resources.getString(R.string.activity2_text6));
-        buttonStart.setText(resources.getString(R.string.start_text));
+        if (manifestationTypeValue.equalsIgnoreCase(getString(R.string.value))) {
+
+            txt.setVisibility(View.INVISIBLE);
+            txt.setText(getString(R.string.skip_text));
+            actText1.setText("MONEY");
+            actText2.setText("MONEY");
+            actText3.setText("MONEY");
+            actText4.setText("MONEY");
+            actText5.setText("MONEY");
+            actText6.setText("MONEY");
+            buttonStart.setText(getString(R.string.start_text));
+            Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
+
+        } if (manifestationTypeValue.equalsIgnoreCase(getString(R.string.value1))) {
+
+            txt.setVisibility(View.INVISIBLE);
+            txt.setText(getString(R.string.skip_text));
+            actText1.setText("Home");
+            actText2.setText("Home");
+            actText3.setText("Home");
+            actText4.setText("Home");
+            actText5.setText("Home");
+            actText6.setText("Home");
+            buttonStart.setText(getString(R.string.start_text));
+            Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
+
+        } if (manifestationTypeValue.equalsIgnoreCase(getString(R.string.value2))) {
+
+            txt.setVisibility(View.INVISIBLE);
+            txt.setText(getString(R.string.skip_text));
+            actText1.setText("Love");
+            actText2.setText("Love");
+            actText3.setText("Love");
+            actText4.setText("Love");
+            actText5.setText("Love");
+            actText6.setText("Love");
+            buttonStart.setText(getString(R.string.start_text));
+            Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
+
+        } if (manifestationTypeValue.equalsIgnoreCase(getString(R.string.value3))) {
+
+            txt.setVisibility(View.INVISIBLE);
+            txt.setText(getString(R.string.skip_text));
+            actText1.setText("Car");
+            actText2.setText("Car");
+            actText3.setText("Car");
+            actText4.setText("Car");
+            actText5.setText("Car");
+            actText6.setText("Car");
+            buttonStart.setText(getString(R.string.start_text));
+            Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
+
+        } if (manifestationTypeValue.equalsIgnoreCase(getString(R.string.value4))) {
+
+            txt.setVisibility(View.INVISIBLE);
+            txt.setText(getString(R.string.skip_text));
+            actText1.setText("Happyness");
+            actText2.setText("Happyness");
+            actText3.setText("Happyness");
+            actText4.setText("Happyness");
+            actText5.setText("Happyness");
+            actText6.setText("Happyness");
+            buttonStart.setText(getString(R.string.start_text));
+            Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
+
+        } if (manifestationTypeValue.equalsIgnoreCase(getString(R.string.value5))) {
+
+            txt.setVisibility(View.INVISIBLE);
+            txt.setText(getString(R.string.skip_text));
+            actText1.setText("Health");
+            actText2.setText("Health");
+            actText3.setText("Health");
+            actText4.setText("Health");
+            actText5.setText("Health");
+            actText6.setText("Health");
+            buttonStart.setText(getString(R.string.start_text));
+            Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
+
+        } if (manifestationTypeValue.equalsIgnoreCase(getString(R.string.value6))) {
+
+            txt.setVisibility(View.INVISIBLE);
+            txt.setText(getString(R.string.skip_text));
+            actText1.setText("Job");
+            actText2.setText("Job");
+            actText3.setText("Job");
+            actText4.setText("Job");
+            actText5.setText("Job");
+            actText6.setText("Job");
+            buttonStart.setText(getString(R.string.start_text));
+            Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
+
+        }  if (manifestationTypeValue.equalsIgnoreCase(getString(R.string.value7)) || manifestationTypeValue.equalsIgnoreCase("")) {
+            txt.setText(resources.getString(R.string.skip_text));
+            actText1.setText(resources.getString(R.string.activity2_text1));
+            actText2.setText(resources.getString(R.string.activity2_text2));
+            actText3.setText(resources.getString(R.string.activity2_text3));
+            actText4.setText(resources.getString(R.string.activity2_text4));
+            actText5.setText(resources.getString(R.string.activity2_text5));
+            actText6.setText(resources.getString(R.string.activity2_text6));
+            buttonStart.setText(resources.getString(R.string.start_text));
+
+        }
 
     }
 }

@@ -22,6 +22,15 @@
     <string name="intro2">Choose Your Language</string>
     <string name="intro3">CONTINUE</string>
 
+    <!--Manifestation Type-->
+    <string name="value">Money</string>
+    <string name="value1">Home</string>
+    <string name="value2">Love</string>
+    <string name="value3">Car</string>
+    <string name="value4">Happyness</string>
+    <string name="value5">Health</string>
+    <string name="value6">Job</string>
+    <string name="value7">Others</string>
 
     <!--validation message Text-->
 
@@ -184,8 +193,8 @@
     <string name="activityTracker_text1">MANIFESTATION</string>
     <string name="activityTracker_text2">TRACKER</string>
     <string name="activityTracker_text3">TRACK BY DATE</string>
-    <string name="activityTracker_text4">Congrats ! Manifestation has been done for date</string>
-    <string name="activityTracker_text5">Manifestation Done on</string>
+    <string name="activityTracker_text4">Trust the Universe ! you are so close to your dreams </string>
+    <string name="activityTracker_text5">You Manifested</string>
 
     <!--Quotes Activity Text-->
 

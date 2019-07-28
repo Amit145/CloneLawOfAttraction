@@ -4,6 +4,9 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.CountDownTimer;
 import android.os.SystemClock;
 import android.os.Vibrator;
@@ -15,6 +18,8 @@ import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.bumptech.glide.Glide;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -36,6 +41,12 @@ public class Exercise1 extends AppCompatActivity {
     int value;
     public static long startTime;
 
+
+    ImageView button,button1,button2,button3,button4,button5,button6,button7;
+    Button continueButton;
+
+    String value1 = "NA";
+
     @Override
     public void onBackPressed() {
 
@@ -52,14 +63,14 @@ public class Exercise1 extends AppCompatActivity {
                 startActivity(art1);
             }
         });
-        builder.setNegativeButton(getString(R.string.No_text),new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(getString(R.string.No_text), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 //if user select "No", just cancel this dialog and continue with app
                 dialog.cancel();
             }
         });
-        AlertDialog alert=builder.create();
+        AlertDialog alert = builder.create();
         alert.show();
 
     }
@@ -67,60 +78,474 @@ public class Exercise1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exercise1);
 
-        AdView mAdView =  findViewById(R.id.adView1);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+        SharedPreferences sharedPreferencesManifestationType = getSharedPreferences("MANIFESTATION_TYPE", Exercise1.MODE_PRIVATE);
+        String manifestationTypeValue = sharedPreferencesManifestationType.getString("MANIFESTATION_TYPE_VALUE", "");
 
-        buttonStart =  findViewById(R.id.startButton);
-        txt =  findViewById(R.id.skip);
-        actText1=  findViewById(R.id.textView2);
-        actText2=  findViewById(R.id.textView3);
-        actText3=  findViewById(R.id.textView4);
-        actText4=  findViewById(R.id.textView5);
-        actText5=  findViewById(R.id.textView6);
-        actText6=  findViewById(R.id.textView7);
+        Boolean bool = sharedPreferencesManifestationType.getBoolean("RAN_BEFORE", false);
 
-        img =  findViewById(R.id.imageView2);
+        if (!bool)  {
 
-        txt.setVisibility(View.INVISIBLE);
-        final Vibrator vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+            setContentView(R.layout.activity_intro1);
 
-        txt.setText(getString(R.string.skip_text));
-        actText1.setText(getString(R.string.activity1_text1));
-        actText2.setText(getString(R.string.activity1_text2));
-        actText3.setText(getString(R.string.activity1_text3));
-        actText4.setText(getString(R.string.activity1_text4));
-        actText5.setText(getString(R.string.activity1_text5));
-        actText6.setText(getString(R.string.activity1_text6));
-        buttonStart.setText(getString(R.string.start_text));
+            button = findViewById(R.id.imgButton1);
+            button1 = findViewById(R.id.imgButton2);
+            button2 = findViewById(R.id.imgButton3);
+            button3 = findViewById(R.id.imgButton4);
+            button4 = findViewById(R.id.imgButton5);
+            button5 = findViewById(R.id.imgButton6);
+            button6 = findViewById(R.id.imgButton7);
+            button7 = findViewById(R.id.imgButton8);
 
-        startTime = SystemClock.elapsedRealtime();
+            continueButton = findViewById(R.id.continueButton);
+
+            //.thumbnail(0.1f)
+            Glide.with(getApplicationContext()).load(R.drawable.money_picsay).into(button);
+            Glide.with(getApplicationContext()).load(R.drawable.home_picsay).into(button1);
+            Glide.with(getApplicationContext()).load(R.drawable.love_picsay).into(button2);
+            Glide.with(getApplicationContext()).load(R.drawable.car_picsay).into(button3);
+            Glide.with(getApplicationContext()).load(R.drawable.happy_picsay).into(button4);
+            Glide.with(getApplicationContext()).load(R.drawable.health_picsay).into(button5);
+            Glide.with(getApplicationContext()).load(R.drawable.job_picsay).into(button6);
+            Glide.with(getApplicationContext()).load(R.drawable.other_picsay).into(button7);
+
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    value1 = getString(R.string.value);
+
+                    Drawable highlight = getResources().getDrawable( R.drawable.highlight);
+                    button.setBackgroundResource(R.drawable.highlight);
+                    button.setColorFilter(Color.RED, PorterDuff.Mode.LIGHTEN);
+
+                    button1.setBackgroundResource(0);
+                    button1.setColorFilter(0);
+
+                    button2.setBackgroundResource(0);
+                    button2.setColorFilter(0);
+
+                    button3.setBackgroundResource(0);
+                    button3.setColorFilter(0);
+
+                    button4.setBackgroundResource(0);
+                    button4.setColorFilter(0);
+
+                    button5.setBackgroundResource(0);
+                    button5.setColorFilter(0);
+
+                    button6.setBackgroundResource(0);
+                    button6.setColorFilter(0);
+
+                    button7.setBackgroundResource(0);
+                    button7.setColorFilter(0);
+                }
+            });
+
+            button1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    value1 = getString(R.string.value1);
+                    Drawable highlight = getResources().getDrawable( R.drawable.highlight);
+                    button1.setBackgroundResource(R.drawable.highlight);
+                    button1.setColorFilter(Color.RED, PorterDuff.Mode.LIGHTEN);
+
+                    button.setBackgroundResource(0);
+                    button.setColorFilter(0);
+
+                    button2.setBackgroundResource(0);
+                    button2.setColorFilter(0);
+
+                    button3.setBackgroundResource(0);
+                    button3.setColorFilter(0);
+
+                    button4.setBackgroundResource(0);
+                    button4.setColorFilter(0);
+
+                    button5.setBackgroundResource(0);
+                    button5.setColorFilter(0);
+
+                    button6.setBackgroundResource(0);
+                    button6.setColorFilter(0);
+
+                    button7.setBackgroundResource(0);
+                    button7.setColorFilter(0);
 
 
-        SharedPreferences sp = getSharedPreferences("your_prefs", Exercise1.MODE_PRIVATE);
-        value = sp.getInt("your_int_key", 60);
+                }
+            });
+
+            button2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    value1 = getString(R.string.value2);
+                    Drawable highlight = getResources().getDrawable( R.drawable.highlight);
+                    button2.setBackgroundResource(R.drawable.highlight);
+                    button2.setColorFilter(Color.RED, PorterDuff.Mode.LIGHTEN);
+
+                    button.setBackgroundResource(0);
+                    button.setColorFilter(0);
+
+                    button1.setBackgroundResource(0);
+                    button1.setColorFilter(0);
+
+                    button3.setBackgroundResource(0);
+                    button3.setColorFilter(0);
+
+                    button4.setBackgroundResource(0);
+                    button4.setColorFilter(0);
+
+                    button5.setBackgroundResource(0);
+                    button5.setColorFilter(0);
+
+                    button6.setBackgroundResource(0);
+                    button6.setColorFilter(0);
+
+                    button7.setBackgroundResource(0);
+                    button7.setColorFilter(0);
+                }
+            });
+
+            button3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    value1 = getString(R.string.value3);
+                    Drawable highlight = getResources().getDrawable( R.drawable.highlight);
+                    button3.setBackgroundResource(R.drawable.highlight);
+                    button3.setColorFilter(Color.RED, PorterDuff.Mode.LIGHTEN);
+
+                    button.setBackgroundResource(0);
+                    button.setColorFilter(0);
+
+                    button2.setBackgroundResource(0);
+                    button2.setColorFilter(0);
+
+                    button1.setBackgroundResource(0);
+                    button1.setColorFilter(0);
+
+                    button4.setBackgroundResource(0);
+                    button4.setColorFilter(0);
+
+                    button5.setBackgroundResource(0);
+                    button5.setColorFilter(0);
+
+                    button6.setBackgroundResource(0);
+                    button6.setColorFilter(0);
+
+                    button7.setBackgroundResource(0);
+                    button7.setColorFilter(0);
+                }
+            });
+
+            button4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    value1 = getString(R.string.value4);
+                    Drawable highlight = getResources().getDrawable( R.drawable.highlight);
+                    button4.setBackgroundResource(R.drawable.highlight);
+                    button4.setColorFilter(Color.RED, PorterDuff.Mode.LIGHTEN);
+
+                    button.setBackgroundResource(0);
+                    button.setColorFilter(0);
+
+                    button2.setBackgroundResource(0);
+                    button2.setColorFilter(0);
+
+                    button3.setBackgroundResource(0);
+                    button3.setColorFilter(0);
+
+                    button1.setBackgroundResource(0);
+                    button1.setColorFilter(0);
+
+                    button5.setBackgroundResource(0);
+                    button5.setColorFilter(0);
+
+                    button6.setBackgroundResource(0);
+                    button6.setColorFilter(0);
+
+                    button7.setBackgroundResource(0);
+                    button7.setColorFilter(0);
+                }
+            });
+
+            button5.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    value1 = getString(R.string.value5);
+                    Drawable highlight = getResources().getDrawable( R.drawable.highlight);
+                    button5.setBackgroundResource(R.drawable.highlight);
+                    button5.setColorFilter(Color.RED, PorterDuff.Mode.LIGHTEN);
+
+                    button.setBackgroundResource(0);
+                    button.setColorFilter(0);
+
+                    button2.setBackgroundResource(0);
+                    button2.setColorFilter(0);
+
+                    button3.setBackgroundResource(0);
+                    button3.setColorFilter(0);
+
+                    button4.setBackgroundResource(0);
+                    button4.setColorFilter(0);
+
+                    button1.setBackgroundResource(0);
+                    button1.setColorFilter(0);
+
+                    button6.setBackgroundResource(0);
+                    button6.setColorFilter(0);
+
+                    button7.setBackgroundResource(0);
+                    button7.setColorFilter(0);
+                }
+            });
+            button6.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    value1 = getString(R.string.value6);
+                    Drawable highlight = getResources().getDrawable( R.drawable.highlight);
+                    button6.setBackgroundResource(R.drawable.highlight);
+                    button6.setColorFilter(Color.RED, PorterDuff.Mode.LIGHTEN);
+
+                    button.setBackgroundResource(0);
+                    button.setColorFilter(0);
+
+                    button2.setBackgroundResource(0);
+                    button2.setColorFilter(0);
+
+                    button3.setBackgroundResource(0);
+                    button3.setColorFilter(0);
+
+                    button4.setBackgroundResource(0);
+                    button4.setColorFilter(0);
+
+                    button5.setBackgroundResource(0);
+                    button5.setColorFilter(0);
+
+                    button1.setBackgroundResource(0);
+                    button1.setColorFilter(0);
+
+                    button7.setBackgroundResource(0);
+                    button7.setColorFilter(0);
+                }
+            });
+
+            button7.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    value1 = getString(R.string.value7);
+                    Drawable highlight = getResources().getDrawable( R.drawable.highlight);
+                    button7.setBackgroundResource(R.drawable.highlight);
+                    button7.setColorFilter(Color.RED, PorterDuff.Mode.LIGHTEN);
+                    //button7.setColorFilter();
+
+                    button.setBackgroundResource(0);
+                    button.setColorFilter(0);
+
+                    button2.setBackgroundResource(0);
+                    button2.setColorFilter(0);
+
+                    button3.setBackgroundResource(0);
+                    button3.setColorFilter(0);
+
+                    button4.setBackgroundResource(0);
+                    button4.setColorFilter(0);
+
+                    button5.setBackgroundResource(0);
+                    button5.setColorFilter(0);
+
+                    button6.setBackgroundResource(0);
+                    button6.setColorFilter(0);
+
+                    button1.setBackgroundResource(0);
+                    button1.setColorFilter(0);
+                }
+            });
+
+            continueButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    if(value1.equalsIgnoreCase("NA")) {
+                        Toast.makeText(getApplicationContext(), " Please select a value ", Toast.LENGTH_LONG).show();
+
+                    } else {
+                        Toast.makeText(getApplicationContext(), " Value : " + value1, Toast.LENGTH_LONG).show();
+
+                        SharedPreferences sp = getSharedPreferences("MANIFESTATION_TYPE", Intro1.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sp.edit();
+                        editor.putString("MANIFESTATION_TYPE_VALUE", value1);
+                        editor.putBoolean("RAN_BEFORE", true);
+                        editor.apply();
+
+                        v.startAnimation(buttonClick);
+                        Intent art1 = new Intent(getApplicationContext(), Exercise1.class);
+                        startActivity(art1);
+
+                    }
+
+                }
+            });
+
+        } else {
+
+            setContentView(R.layout.activity_exercise1);
+
+            SharedPreferences sp = getSharedPreferences("your_prefs", Exercise1.MODE_PRIVATE);
+            value = sp.getInt("your_int_key", 60);
 
 
-        SharedPreferences sp1 = getSharedPreferences("timerEnable", Exercise1.MODE_PRIVATE);
-        String timervalue = sp1.getString("timerEnable","ON");
+            SharedPreferences sp1 = getSharedPreferences("timerEnable", Exercise1.MODE_PRIVATE);
+            String timervalue = sp1.getString("timerEnable", "ON");
 
-        Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
+            AdView mAdView = findViewById(R.id.adView1);
+            AdRequest adRequest = new AdRequest.Builder().build();
+            mAdView.loadAd(adRequest);
+            startTime = SystemClock.elapsedRealtime();
+            final Vibrator vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+
+            buttonStart = findViewById(R.id.startButton);
+            txt = findViewById(R.id.skip);
+            actText1 = findViewById(R.id.textView2);
+            actText2 = findViewById(R.id.textView3);
+            actText3 = findViewById(R.id.textView4);
+            actText4 = findViewById(R.id.textView5);
+            actText5 = findViewById(R.id.textView6);
+            actText6 = findViewById(R.id.textView7);
+            img = findViewById(R.id.imageView2);
+
+
+            if (manifestationTypeValue.equalsIgnoreCase(getString(R.string.value))) {
+
+                txt.setVisibility(View.INVISIBLE);
+                txt.setText(getString(R.string.skip_text));
+                actText1.setText("MONEY");
+                actText2.setText("MONEY");
+                actText3.setText("MONEY");
+                actText4.setText("MONEY");
+                actText5.setText("MONEY");
+                actText6.setText("MONEY");
+                buttonStart.setText(getString(R.string.start_text));
+                Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
+
+            } if (manifestationTypeValue.equalsIgnoreCase(getString(R.string.value1))) {
+
+                txt.setVisibility(View.INVISIBLE);
+                txt.setText(getString(R.string.skip_text));
+                actText1.setText("Home");
+                actText2.setText("Home");
+                actText3.setText("Home");
+                actText4.setText("Home");
+                actText5.setText("Home");
+                actText6.setText("Home");
+                buttonStart.setText(getString(R.string.start_text));
+                Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
+
+            } if (manifestationTypeValue.equalsIgnoreCase(getString(R.string.value2))) {
+
+                txt.setVisibility(View.INVISIBLE);
+                txt.setText(getString(R.string.skip_text));
+                actText1.setText("Love");
+                actText2.setText("Love");
+                actText3.setText("Love");
+                actText4.setText("Love");
+                actText5.setText("Love");
+                actText6.setText("Love");
+                buttonStart.setText(getString(R.string.start_text));
+                Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
+
+            } if (manifestationTypeValue.equalsIgnoreCase(getString(R.string.value3))) {
+
+                txt.setVisibility(View.INVISIBLE);
+                txt.setText(getString(R.string.skip_text));
+                actText1.setText("Car");
+                actText2.setText("Car");
+                actText3.setText("Car");
+                actText4.setText("Car");
+                actText5.setText("Car");
+                actText6.setText("Car");
+                buttonStart.setText(getString(R.string.start_text));
+                Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
+
+            } if (manifestationTypeValue.equalsIgnoreCase(getString(R.string.value4))) {
+
+                txt.setVisibility(View.INVISIBLE);
+                txt.setText(getString(R.string.skip_text));
+                actText1.setText("Happyness");
+                actText2.setText("Happyness");
+                actText3.setText("Happyness");
+                actText4.setText("Happyness");
+                actText5.setText("Happyness");
+                actText6.setText("Happyness");
+                buttonStart.setText(getString(R.string.start_text));
+                Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
+
+            } if (manifestationTypeValue.equalsIgnoreCase(getString(R.string.value5))) {
+
+                txt.setVisibility(View.INVISIBLE);
+                txt.setText(getString(R.string.skip_text));
+                actText1.setText("Health");
+                actText2.setText("Health");
+                actText3.setText("Health");
+                actText4.setText("Health");
+                actText5.setText("Health");
+                actText6.setText("Health");
+                buttonStart.setText(getString(R.string.start_text));
+                Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
+
+            } if (manifestationTypeValue.equalsIgnoreCase(getString(R.string.value6))) {
+
+                txt.setVisibility(View.INVISIBLE);
+                txt.setText(getString(R.string.skip_text));
+                actText1.setText("Job");
+                actText2.setText("Job");
+                actText3.setText("Job");
+                actText4.setText("Job");
+                actText5.setText("Job");
+                actText6.setText("Job");
+                buttonStart.setText(getString(R.string.start_text));
+                Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
+
+            } if (manifestationTypeValue.equalsIgnoreCase(getString(R.string.value7)) || manifestationTypeValue.equalsIgnoreCase("")) {
+
+                txt.setVisibility(View.INVISIBLE);
+                txt.setText(getString(R.string.skip_text));
+                actText1.setText(getString(R.string.activity1_text1));
+                actText2.setText(getString(R.string.activity1_text2));
+                actText3.setText(getString(R.string.activity1_text3));
+                actText4.setText(getString(R.string.activity1_text4));
+                actText5.setText(getString(R.string.activity1_text5));
+                actText6.setText(getString(R.string.activity1_text6));
+                buttonStart.setText(getString(R.string.start_text));
+                Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
+
+
+        }
+
+
+
+        Toast.makeText(getApplicationContext(), " Value : " + manifestationTypeValue, Toast.LENGTH_LONG).show();
+
 
         txt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 v.startAnimation(buttonClick);
-                Intent art1 = new Intent(getApplicationContext(),Home.class);
+                Intent art1 = new Intent(getApplicationContext(), Home.class);
                 startActivity(art1);
 
 
             }
         });
 
-        if(timervalue.contains("ON")) {
+        if (timervalue.contains("ON")) {
             buttonStart.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -143,7 +568,7 @@ public class Exercise1 extends AppCompatActivity {
                                     v.startAnimation(buttonClick);
                                     Intent art1 = new Intent(getApplicationContext(), Exercise2.class);
                                     startActivity(art1);
-                                    img=null;
+                                    img = null;
                                     cancel();
 
                                 }
@@ -154,7 +579,7 @@ public class Exercise1 extends AppCompatActivity {
                         public void onFinish() {
 
 
-                            if(vib != null) {
+                            if (vib != null) {
                                 vib.vibrate(500);
                             }
 
@@ -170,7 +595,7 @@ public class Exercise1 extends AppCompatActivity {
                                     v.startAnimation(buttonClick);
                                     Intent art1 = new Intent(getApplicationContext(), Exercise2.class);
                                     startActivity(art1);
-                                    img=null;
+                                    img = null;
 
 
                                 }
@@ -185,19 +610,22 @@ public class Exercise1 extends AppCompatActivity {
 
             buttonStart.setText(getString(R.string.next_text));
 
-                    buttonStart.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
+            buttonStart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
-                            v.startAnimation(buttonClick);
-                            Intent art1 = new Intent(Exercise1.this, Exercise2.class);
-                            startActivity(art1);
-                            img=null;
+                    v.startAnimation(buttonClick);
+                    Intent art1 = new Intent(Exercise1.this, Exercise2.class);
+                    startActivity(art1);
+                    img = null;
 
 
-                        }
-                    });
+                }
+            });
         }
     }
+
+
+}
 
 }

@@ -75,37 +75,41 @@
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:weightSum="4"
+            android:layout_marginBottom="20dp"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <Button
-                android:layout_width="match_parent"
-                android:padding="5dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/comments"
-                android:text="LOVE"/>
+            <ImageView
+                android:id="@+id/imgButton1"
+                android:layout_width="185dp"
+                android:padding="3dp"
+                android:tint="@color/colorAccent"
+                android:layout_height="185dp"
+                android:text=""/>
 
-            <Button
-                android:layout_width="match_parent"
-                android:padding="5dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/comments"
+            <ImageView
+                android:id="@+id/imgButton2"
+                android:layout_width="185dp"
+                android:layout_height="185dp"
+                android:padding="3dp"
+                android:tint="@color/colorAccent"
+                android:text=""/>
 
-                android:text="JOB"/>
+            <ImageView
+                android:id="@+id/imgButton3"
+                android:layout_width="185dp"
+                android:layout_height="185dp"
+                android:padding="3dp"
+                android:tint="@color/colorAccent"
+                android:text=""/>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:background="@drawable/comments"
-                android:text="Money"/>
-
-            <Button
-                android:layout_width="match_parent"
-                android:padding="5dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/comments"
-                android:text="HEALTH"/>
+            <ImageView
+                android:id="@+id/imgButton4"
+                android:layout_width="185dp"
+                android:layout_height="185dp"
+                android:padding="3dp"
+                android:tint="@color/colorAccent"
+                android:text=""/>
 
 
         </LinearLayout>
@@ -114,36 +118,41 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:layout_marginBottom="20dp"
             android:background="#F7FAF8"
             android:orientation="vertical">
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:background="@drawable/comments"
-                android:text="Money"/>
+            <ImageView
+                android:id="@+id/imgButton5"
+                android:layout_width="185dp"
+                android:layout_height="185dp"
+                android:tint="@color/colorAccent"
+                android:padding="3dp"
+                android:text=""/>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:background="@drawable/comments"
-                android:text="HEALTH"/>
+            <ImageView
+                android:id="@+id/imgButton6"
+                android:layout_width="185dp"
+                android:layout_height="185dp"
+                android:tint="@color/colorAccent"
+                android:padding="3dp"
+                android:text=""/>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:background="@drawable/comments"
-                android:text="LOVE"/>
+            <ImageView
+                android:id="@+id/imgButton7"
+                android:layout_width="185dp"
+                android:layout_height="185dp"
+                android:tint="@color/colorAccent"
+                android:padding="3dp"
+                android:text=""/>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:background="@drawable/comments"
-                android:text="JOB"/>
+            <ImageView
+                android:id="@+id/imgButton8"
+                android:layout_width="185dp"
+                android:layout_height="185dp"
+                android:tint="@color/colorAccent"
+                android:padding="3dp"
+                android:text=""/>
 
         </LinearLayout>
 
@@ -162,7 +171,7 @@
         android:layout_weight=".1">
 
         <Button
-            android:id="@+id/startButton"
+            android:id="@+id/continueButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
