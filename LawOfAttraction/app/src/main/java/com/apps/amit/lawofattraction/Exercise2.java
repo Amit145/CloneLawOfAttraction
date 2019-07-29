@@ -143,81 +143,6 @@ public class Exercise2 extends AppCompatActivity {
                 }
             });
 
-            if (timervalue.contains("ON")) {
-                buttonStart.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        v.startAnimation(buttonClick);
-
-                        txt.setVisibility(View.VISIBLE);
-
-                        new CountDownTimer((value + 1) * 1000, 1000) {
-                            @Override
-                            public void onTick(long millisUntilFinished) {
-
-
-                                context = LocaleHelper.setLocale(getApplicationContext(), value1);
-                                resources = context.getResources();
-                                buttonStart.setEnabled(false);
-                                String textTime = "" + millisUntilFinished / 1000;
-                                buttonStart.setText(textTime);
-                                txt.setText(resources.getString(R.string.skip_text));
-
-                                txt.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-
-
-                                        v.startAnimation(buttonClick);
-                                        Intent art1 = new Intent(getApplicationContext(), Exercise3.class);
-                                        startActivity(art1);
-                                        cancel();
-                                        img = null;
-
-
-                                    }
-                                });
-
-                            }
-
-                            @Override
-                            public void onFinish() {
-
-
-                                if(vib != null) {
-                                    vib.vibrate(500);
-                                }
-
-                                context = LocaleHelper.setLocale(getApplicationContext(), value1);
-                                resources = context.getResources();
-                                buttonStart.setText(resources.getString(R.string.done_text));
-                                buttonStart.setEnabled(true);
-                                txt.setText("");
-
-                                buttonStart.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-
-                                        v.startAnimation(buttonClick);
-                                        Intent art1 = new Intent(getApplicationContext(), Exercise3.class);
-                                        startActivity(art1);
-                                        img = null;
-                                        cancel();
-
-
-                                    }
-                                });
-
-
-                            }
-                        }.start();
-
-                    }
-                });
-
-            } else {
-
                 context = LocaleHelper.setLocale(getApplicationContext(), value1);
                 resources = context.getResources();
                 buttonStart.setText(resources.getString(R.string.next_text));
@@ -234,7 +159,7 @@ public class Exercise2 extends AppCompatActivity {
 
                     }
                 });
-            }
+
 
         } catch(OutOfMemoryError e) {
 
@@ -255,12 +180,12 @@ public class Exercise2 extends AppCompatActivity {
 
             txt.setVisibility(View.INVISIBLE);
             txt.setText(getString(R.string.skip_text));
-            actText1.setText("MONEY");
-            actText2.setText("MONEY");
-            actText3.setText("MONEY");
-            actText4.setText("MONEY");
-            actText5.setText("MONEY");
-            actText6.setText("MONEY");
+            actText1.setText(resources.getString(R.string.activity2_text1_Money));
+            actText2.setText(resources.getString(R.string.activity2_text2_Money));
+            actText3.setText(resources.getString(R.string.activity2_text3_Money));
+            actText4.setText(resources.getString(R.string.activity2_text4_Money));
+            actText5.setText(resources.getString(R.string.activity2_text5_Money));
+            actText6.setText(resources.getString(R.string.activity2_text6_Money));
             buttonStart.setText(getString(R.string.start_text));
             Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
 
@@ -268,12 +193,12 @@ public class Exercise2 extends AppCompatActivity {
 
             txt.setVisibility(View.INVISIBLE);
             txt.setText(getString(R.string.skip_text));
-            actText1.setText("Home");
-            actText2.setText("Home");
-            actText3.setText("Home");
-            actText4.setText("Home");
-            actText5.setText("Home");
-            actText6.setText("Home");
+            actText1.setText(resources.getString(R.string.activity2_text1_Home));
+            actText2.setText(resources.getString(R.string.activity2_text2_Home));
+            actText3.setText(resources.getString(R.string.activity2_text3_Home));
+            actText4.setText(resources.getString(R.string.activity2_text4_Home));
+            actText5.setText(resources.getString(R.string.activity2_text5_Home));
+            actText6.setText(resources.getString(R.string.activity2_text6_Home));
             buttonStart.setText(getString(R.string.start_text));
             Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
 
@@ -281,12 +206,12 @@ public class Exercise2 extends AppCompatActivity {
 
             txt.setVisibility(View.INVISIBLE);
             txt.setText(getString(R.string.skip_text));
-            actText1.setText("Love");
-            actText2.setText("Love");
-            actText3.setText("Love");
-            actText4.setText("Love");
-            actText5.setText("Love");
-            actText6.setText("Love");
+            actText1.setText(resources.getString(R.string.activity2_text1_Love));
+            actText2.setText(resources.getString(R.string.activity2_text2_Love));
+            actText3.setText(resources.getString(R.string.activity2_text3_Love));
+            actText4.setText(resources.getString(R.string.activity2_text4_Love));
+            actText5.setText(resources.getString(R.string.activity2_text5_Love));
+            actText6.setText(resources.getString(R.string.activity2_text6_Love));
             buttonStart.setText(getString(R.string.start_text));
             Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
 
@@ -294,12 +219,12 @@ public class Exercise2 extends AppCompatActivity {
 
             txt.setVisibility(View.INVISIBLE);
             txt.setText(getString(R.string.skip_text));
-            actText1.setText("Car");
-            actText2.setText("Car");
-            actText3.setText("Car");
-            actText4.setText("Car");
-            actText5.setText("Car");
-            actText6.setText("Car");
+            actText1.setText(resources.getString(R.string.activity2_text1_Car));
+            actText2.setText(resources.getString(R.string.activity2_text2_Car));
+            actText3.setText(resources.getString(R.string.activity2_text3_Car));
+            actText4.setText(resources.getString(R.string.activity2_text4_Car));
+            actText5.setText(resources.getString(R.string.activity2_text5_Car));
+            actText6.setText(resources.getString(R.string.activity2_text6_Car));
             buttonStart.setText(getString(R.string.start_text));
             Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
 
@@ -307,12 +232,12 @@ public class Exercise2 extends AppCompatActivity {
 
             txt.setVisibility(View.INVISIBLE);
             txt.setText(getString(R.string.skip_text));
-            actText1.setText("Happyness");
-            actText2.setText("Happyness");
-            actText3.setText("Happyness");
-            actText4.setText("Happyness");
-            actText5.setText("Happyness");
-            actText6.setText("Happyness");
+            actText1.setText(resources.getString(R.string.activity2_text1_Happy));
+            actText2.setText(resources.getString(R.string.activity2_text2_Happy));
+            actText3.setText(resources.getString(R.string.activity2_text3_Happy));
+            actText4.setText(resources.getString(R.string.activity2_text4_Happy));
+            actText5.setText(resources.getString(R.string.activity2_text5_Happy));
+            actText6.setText(resources.getString(R.string.activity2_text6_Happy));
             buttonStart.setText(getString(R.string.start_text));
             Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
 
@@ -320,12 +245,12 @@ public class Exercise2 extends AppCompatActivity {
 
             txt.setVisibility(View.INVISIBLE);
             txt.setText(getString(R.string.skip_text));
-            actText1.setText("Health");
-            actText2.setText("Health");
-            actText3.setText("Health");
-            actText4.setText("Health");
-            actText5.setText("Health");
-            actText6.setText("Health");
+            actText1.setText(resources.getString(R.string.activity2_text1_Health));
+            actText2.setText(resources.getString(R.string.activity2_text2_Health));
+            actText3.setText(resources.getString(R.string.activity2_text3_Health));
+            actText4.setText(resources.getString(R.string.activity2_text4_Health));
+            actText5.setText(resources.getString(R.string.activity2_text5_Health));
+            actText6.setText(resources.getString(R.string.activity2_text6_Health));
             buttonStart.setText(getString(R.string.start_text));
             Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
 
@@ -333,12 +258,12 @@ public class Exercise2 extends AppCompatActivity {
 
             txt.setVisibility(View.INVISIBLE);
             txt.setText(getString(R.string.skip_text));
-            actText1.setText("Job");
-            actText2.setText("Job");
-            actText3.setText("Job");
-            actText4.setText("Job");
-            actText5.setText("Job");
-            actText6.setText("Job");
+            actText1.setText(resources.getString(R.string.activity2_text1_Job));
+            actText2.setText(resources.getString(R.string.activity2_text2_Job));
+            actText3.setText(resources.getString(R.string.activity2_text3_Job));
+            actText4.setText(resources.getString(R.string.activity2_text4_Job));
+            actText5.setText(resources.getString(R.string.activity2_text5_Job));
+            actText6.setText(resources.getString(R.string.activity2_text6_Job));
             buttonStart.setText(getString(R.string.start_text));
             Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
 

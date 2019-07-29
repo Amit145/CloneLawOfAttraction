@@ -111,6 +111,10 @@ public class Finish extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         try {
+
+            SharedPreferences sharedPreferencesManifestationType = getApplicationContext().getSharedPreferences("MANIFESTATION_TYPE", Exercise1.MODE_PRIVATE);
+            String manifestationTypeValue = sharedPreferencesManifestationType.getString("MANIFESTATION_TYPE_VALUE", "");
+
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_finish);
 
@@ -223,8 +227,8 @@ public class Finish extends AppCompatActivity {
             elapsedMilliSeconds = endTime - startTime;
             elapsedSeconds = elapsedMilliSeconds / 1000.0;
             int t = (int) (long) elapsedSeconds;
-            String text = t +" "+ getString(R.string.activity6_text7);
-            txt.setText(text);
+            //String text = t +" "+ getString(R.string.activity6_text7);
+            txt.setText(manifestationTypeValue);
 
             Date c = Calendar.getInstance().getTime();
 
@@ -232,7 +236,7 @@ public class Finish extends AppCompatActivity {
                     Locale.getDefault());
             String date = df.format(c);
 
-            db.addContact(new Contact(date, t));
+            db.addContact(new Contact(date, manifestationTypeValue));
 
             Toast.makeText(getApplicationContext(), getString(R.string.event_add), Toast.LENGTH_LONG).show();
 

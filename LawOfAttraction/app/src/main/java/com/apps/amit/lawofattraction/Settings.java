@@ -99,7 +99,7 @@ public class Settings extends AppCompatActivity {
     public void setTime(View view) {
 
         view.startAnimation(buttonClick);
-        art1 = new Intent(getApplicationContext(), SetTime.class);
+        art1 = new Intent(getApplicationContext(), Intro1.class);
         startActivity(art1);
     }
 

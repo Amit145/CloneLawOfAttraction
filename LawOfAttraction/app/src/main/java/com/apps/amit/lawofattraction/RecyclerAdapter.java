@@ -64,8 +64,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
         Contact obj = listItems.get(position);
         date = resources.getString(R.string.activityTracker_text4);
-        holder.txt1.setText(resources.getString(R.string.activityTracker_text5)+" "+manifestationTypeValue+" on " +obj.getName());
-        holder.txt2.setText(resources.getString(R.string.activity6_text3)+" "+String.valueOf(obj.getPhoneNumber())+" "+resources.getString(R.string.seconds_text));
+        holder.txt1.setText(resources.getString(R.string.activityTracker_text5)+" "+obj.getName());
+        holder.txt2.setText(resources.getString(R.string.activity6_text3)+" "+String.valueOf(obj.getPhoneNumber()));
 
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
