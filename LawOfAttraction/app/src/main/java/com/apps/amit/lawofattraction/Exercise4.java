@@ -125,7 +125,6 @@ public class Exercise4 extends AppCompatActivity {
 
             updateViews(value1);
 
-            Glide.with(getApplicationContext()).load(R.drawable.ex4).thumbnail(0.1f).into(img);
 
 
             txt.setOnClickListener(new View.OnClickListener() {
@@ -185,7 +184,7 @@ public class Exercise4 extends AppCompatActivity {
             actText4.setText(resources.getString(R.string.activity4_text4_Money));
             actText5.setText(resources.getString(R.string.activity4_text5_Money));
             buttonStart.setText(getString(R.string.start_text));
-            Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
+            Glide.with(getApplicationContext()).load(R.drawable.ex4).thumbnail(0.1f).into(img);
 
         } if (manifestationTypeValue.equalsIgnoreCase(getString(R.string.value1))) {
 
@@ -197,7 +196,7 @@ public class Exercise4 extends AppCompatActivity {
             actText4.setText(resources.getString(R.string.activity4_text4_Home));
             actText5.setText(resources.getString(R.string.activity4_text5_Home));
             buttonStart.setText(getString(R.string.start_text));
-            Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
+            Glide.with(getApplicationContext()).load(R.drawable.ex4).thumbnail(0.1f).into(img);
 
         } if (manifestationTypeValue.equalsIgnoreCase(getString(R.string.value2))) {
 
@@ -209,7 +208,7 @@ public class Exercise4 extends AppCompatActivity {
             actText4.setText(resources.getString(R.string.activity4_text4_Love));
             actText5.setText(resources.getString(R.string.activity4_text5_Love));
             buttonStart.setText(getString(R.string.start_text));
-            Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
+            Glide.with(getApplicationContext()).load(R.drawable.ex4).thumbnail(0.1f).into(img);
 
         } if (manifestationTypeValue.equalsIgnoreCase(getString(R.string.value3))) {
 
@@ -221,7 +220,7 @@ public class Exercise4 extends AppCompatActivity {
             actText4.setText(resources.getString(R.string.activity4_text4_Car));
             actText5.setText(resources.getString(R.string.activity4_text5_Car));
             buttonStart.setText(getString(R.string.start_text));
-            Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
+            Glide.with(getApplicationContext()).load(R.drawable.ex4).thumbnail(0.1f).into(img);
 
         } if (manifestationTypeValue.equalsIgnoreCase(getString(R.string.value4))) {
 
@@ -233,7 +232,7 @@ public class Exercise4 extends AppCompatActivity {
             actText4.setText(resources.getString(R.string.activity4_text4_Happy));
             actText5.setText(resources.getString(R.string.activity4_text5_Happy));
             buttonStart.setText(getString(R.string.start_text));
-            Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
+            Glide.with(getApplicationContext()).load(R.drawable.ex4).thumbnail(0.1f).into(img);
 
         } if (manifestationTypeValue.equalsIgnoreCase(getString(R.string.value5))) {
 
@@ -245,7 +244,7 @@ public class Exercise4 extends AppCompatActivity {
             actText4.setText(resources.getString(R.string.activity4_text4_Health));
             actText5.setText(resources.getString(R.string.activity4_text5_Health));
             buttonStart.setText(getString(R.string.start_text));
-            Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
+            Glide.with(getApplicationContext()).load(R.drawable.ex4).thumbnail(0.1f).into(img);
 
         } if (manifestationTypeValue.equalsIgnoreCase(getString(R.string.value6))) {
 
@@ -257,7 +256,7 @@ public class Exercise4 extends AppCompatActivity {
             actText4.setText(resources.getString(R.string.activity4_text4_Job));
             actText5.setText(resources.getString(R.string.activity4_text5_Job));
             buttonStart.setText(getString(R.string.start_text));
-            Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
+            Glide.with(getApplicationContext()).load(R.drawable.ex4).thumbnail(0.1f).into(img);
 
         } if (manifestationTypeValue.equalsIgnoreCase(getString(R.string.value7)) || manifestationTypeValue.equalsIgnoreCase("")) {
             txt.setText(resources.getString(R.string.skip_text));
@@ -267,6 +266,8 @@ public class Exercise4 extends AppCompatActivity {
             actText4.setText(resources.getString(R.string.activity4_text4));
             actText5.setText(resources.getString(R.string.activity4_text5));
             buttonStart.setText(resources.getString(R.string.start_text));
+            Glide.with(getApplicationContext()).load(R.drawable.ex4).thumbnail(0.1f).into(img);
+
         }
 
 

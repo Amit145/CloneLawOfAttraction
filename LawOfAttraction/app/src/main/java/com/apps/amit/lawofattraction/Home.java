@@ -111,12 +111,12 @@ public class Home extends AppCompatActivity {
         TextView nameText;
         ButterKnife.bind(this);
 
-        images[0] = R.drawable.p7;
-        images[1] = R.drawable.p6;
-        images[2] = R.drawable.p4;
-        images[3] = R.drawable.p1;
-        images[4] = R.drawable.p2;
-        images[5] = R.drawable.p3;
+        images[0] = R.drawable.p;
+        images[1] = R.drawable.p7;
+        images[2] = R.drawable.p6;
+        images[3] = R.drawable.p4;
+        images[4] = R.drawable.p1;
+        images[5] = R.drawable.p2;
 
         setTitle(getString(R.string.Home_title));
         setContentView(R.layout.activity_home);
@@ -255,6 +255,12 @@ public class Home extends AppCompatActivity {
 
                         }
 
+                        else if (id == R.id.nav_thanks) {
+
+                            Intent art1 = new Intent(getApplicationContext(),ThankYou.class);
+                            startActivity(art1);
+
+                        }
                         else if (id == R.id.nav_share) {
 
                             Intent share = new Intent(Intent.ACTION_SEND);
@@ -361,7 +367,7 @@ public class Home extends AppCompatActivity {
         //Timer for Pager
 
         timer = new Timer();
-        timer.scheduleAtFixedRate(new MyTimerTask(),3000,3000);
+        timer.scheduleAtFixedRate(new MyTimerTask(),3500,3500);
 
         Glide.with(getApplicationContext()).load(R.drawable.experience).thumbnail(0.1f).fitCenter().into(img1);
 

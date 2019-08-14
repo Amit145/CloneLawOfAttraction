@@ -36,6 +36,12 @@
             android:icon="@drawable/ic_assignment_ind_black_24dp"
             android:title="@string/navigation_drawer_life" />
 
+        <item
+            android:id="@+id/nav_thanks"
+            android:icon="@drawable/ic_sentiment_very_satisfied_black_24dp"
+            android:title="@string/navigation_thank_you" />
+
+
         <!-- For version 3.3 -->
 
        <!-- <item

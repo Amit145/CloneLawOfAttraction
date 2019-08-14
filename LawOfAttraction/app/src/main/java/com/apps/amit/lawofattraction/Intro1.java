@@ -316,7 +316,7 @@ public class Intro1 extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), " Please select a value ", Toast.LENGTH_LONG).show();
 
                 } else {
-                    Toast.makeText(getApplicationContext(), " Value : " + value, Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(), " Value : " + value, Toast.LENGTH_LONG).show();
 
                     SharedPreferences sp = getSharedPreferences("MANIFESTATION_TYPE", Intro1.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sp.edit();

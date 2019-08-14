@@ -44,7 +44,7 @@ public class Exercise1 extends AppCompatActivity {
 
     ImageView button,button1,button2,button3,button4,button5,button6,button7;
     Button continueButton;
-
+    Boolean bool;
     String value1 = "NA";
 
     @Override
@@ -52,26 +52,34 @@ public class Exercise1 extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setCancelable(false);
-        builder.setMessage(getString(R.string.stopManifestation_text));
-        builder.setPositiveButton(getString(R.string.Yes_text), new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                //if user pressed "yes", then he is allowed to exit from application
-                Intent art1 = new Intent(getApplicationContext(), Home.class);
-                startActivity(art1);
-            }
-        });
-        builder.setNegativeButton(getString(R.string.No_text), new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                //if user select "No", just cancel this dialog and continue with app
-                dialog.cancel();
-            }
-        });
-        AlertDialog alert = builder.create();
-        alert.show();
+        if (bool) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setCancelable(false);
+            builder.setMessage(getString(R.string.stopManifestation_text));
+            builder.setPositiveButton(getString(R.string.Yes_text), new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    //if user pressed "yes", then he is allowed to exit from application
+                    Intent art1 = new Intent(getApplicationContext(), Home.class);
+                    startActivity(art1);
+                }
+            });
+            builder.setNegativeButton(getString(R.string.No_text), new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    //if user select "No", just cancel this dialog and continue with app
+                    dialog.cancel();
+                }
+            });
+            AlertDialog alert = builder.create();
+            alert.show();
+
+        } else {
+
+            Intent art1 = new Intent(getApplicationContext(), Home.class);
+            // art1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(art1);
+        }
 
     }
 
@@ -82,7 +90,7 @@ public class Exercise1 extends AppCompatActivity {
         SharedPreferences sharedPreferencesManifestationType = getSharedPreferences("MANIFESTATION_TYPE", Exercise1.MODE_PRIVATE);
         String manifestationTypeValue = sharedPreferencesManifestationType.getString("MANIFESTATION_TYPE_VALUE", "");
 
-        Boolean bool = sharedPreferencesManifestationType.getBoolean("RAN_BEFORE", false);
+        bool = sharedPreferencesManifestationType.getBoolean("RAN_BEFORE", false);
 
         if (!bool)  {
 
@@ -376,7 +384,7 @@ public class Exercise1 extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), " Please select a value ", Toast.LENGTH_LONG).show();
 
                     } else {
-                        Toast.makeText(getApplicationContext(), " Value : " + value1, Toast.LENGTH_LONG).show();
+                       // Toast.makeText(getApplicationContext(), " Value : " + value1, Toast.LENGTH_LONG).show();
 
                         SharedPreferences sp = getSharedPreferences("MANIFESTATION_TYPE", Intro1.MODE_PRIVATE);
                         SharedPreferences.Editor editor = sp.edit();
@@ -530,7 +538,7 @@ public class Exercise1 extends AppCompatActivity {
 
 
 
-        Toast.makeText(getApplicationContext(), " Value : " + manifestationTypeValue, Toast.LENGTH_LONG).show();
+       // Toast.makeText(getApplicationContext(), " Value : " + manifestationTypeValue, Toast.LENGTH_LONG).show();
 
 
         txt.setOnClickListener(new View.OnClickListener() {

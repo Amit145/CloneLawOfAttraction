@@ -2,5 +2,8 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/almendra_italic</item>
+        <item>@font/cabin_bold</item>
+        <item>@font/nunito</item>
+        <item>@font/nunito_extrabold</item>
     </array>
 </resources>

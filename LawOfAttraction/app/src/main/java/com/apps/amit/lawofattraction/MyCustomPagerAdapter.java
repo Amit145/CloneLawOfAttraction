@@ -54,49 +54,47 @@ public class MyCustomPagerAdapter extends PagerAdapter{
         public void onClick(View v) {
           if((position + 1) == 1)
           {
-            Intent art1 = new Intent(context,storyList.class);
+            Intent art1 = new Intent(context, ThankYou.class);
             context.startActivity(art1);
+
+
           }
           else if((position + 1) == 2)
           {
-            Intent art1 = new Intent(context,Task.class);
+            Intent art1 = new Intent(context,storyList.class);
             context.startActivity(art1);
+
 
           }
           else if((position + 1) == 3)
           {
-            Intent art1 = new Intent(context,comments.class);
+            Intent art1 = new Intent(context,Task.class);
             context.startActivity(art1);
+
 
           }
           else if((position + 1) == 4)
           {
-
-            Intent art1 = new Intent(context, MusicList.class);
+            Intent art1 = new Intent(context,comments.class);
             context.startActivity(art1);
+
 
           }
 
           else if((position + 1) == 5)
           {
-
-            Intent art1 = new Intent(context, Quotes.class);
+            Intent art1 = new Intent(context, MusicList.class);
             context.startActivity(art1);
+
           }
 
           else if((position + 1) == 6)
           {
-
-            Uri uri = Uri.parse("market://details?id=com.apps.amit.lawofattractionpro");
-            Intent rate = new Intent(Intent.ACTION_VIEW,uri);
-            try {
-              context.startActivity(rate);
-
-            } catch (android.content.ActivityNotFoundException ex) {
-              //Toast.makeText(this,"Error".toString(),Toast.LENGTH_SHORT);
-            }
+            Intent art1 = new Intent(context, Quotes.class);
+            context.startActivity(art1);
 
           }
+
 
           // else if((position + 1) == 6)
           //{

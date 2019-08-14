@@ -101,6 +101,7 @@
     <string name="navigation_drawer_story">Inspiring Stories</string>
     <string name="navigation_drawer_progress">Track Progress</string>
     <string name="navigation_drawer_life">Life is Exciting</string>
+    <string name="navigation_thank_you">Say Thank You !</string>
     <string name="navigation_drawer_language">Change Language</string>
     <string name="navigation_drawer_spread">Spread the word</string>
     <string name="navigation_drawer_mail">Drop a Mail</string>

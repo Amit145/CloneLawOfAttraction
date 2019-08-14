@@ -26,10 +26,11 @@
         android:supportsRtl="true"
         android:taskAffinity=""
         android:theme="@style/AppTheme">
-        <activity android:name=".Intro1"></activity>
+        <activity android:name=".ThankYou"></activity>
+        <activity android:name=".Intro1" />
         <activity
             android:name=".MusicList"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="MUSIC" />
 
@@ -178,13 +179,13 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Task"
-            android:screenOrientation="portrait" >
-        <intent-filter>
-            <action android:name="TASK" />
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="TASK" />
 
-            <category android:name="android.intent.category.DEFAULT" />
-        </intent-filter>
-    </activity>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".SubTask"
             android:screenOrientation="portrait" />
