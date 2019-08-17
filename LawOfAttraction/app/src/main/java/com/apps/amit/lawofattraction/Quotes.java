@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -28,6 +29,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.apps.amit.lawofattraction.helper.LocaleHelper;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
@@ -42,9 +47,14 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+import java.util.Random;
 
 import butterknife.ButterKnife;
 
@@ -54,12 +64,13 @@ public class Quotes extends AppCompatActivity {
     RequestQueue requestQueue;
    // private InterstitialAd interstitial;
     Button b1;
-     AlertDialog alert;
+    int dummy = 99;
+    AlertDialog alert;
     Resources resources;
     SwipeRefreshLayout mSwipeRefreshLayout;
-    LinearLayout l1,l2,l3;
+    LinearLayout l1,l2,l3,activity;
     private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
-
+    boolean flag = false;
     String UserName,UserComment,timee;
     TextView usrName,usrQuote;
     EditText edt,edt1;
@@ -67,16 +78,27 @@ public class Quotes extends AppCompatActivity {
     ConnectivityManager connMngr;
     NetworkInfo netInfo;
     String value  = "en";
-    //SwipeRefreshLayout mSwipeRefreshLayout1;
+    List<String> colorList = new ArrayList<String>();
+    //SwipeRefreshLayout mSwipeRefreshLayout1;FF04B15D, c656ad
+
+    private InterstitialAd interstitial;
+
+    public void displayInterstitial() {
+        // If Ads are loaded, show Interstitial else show nothing.
+        if (interstitial.isLoaded()) {
+            interstitial.show();
+        }
+    }
 
 
 
  @Override
     protected void onDestroy() {
         super.onDestroy();
-       
-       
-        //interstitial.setAdListener(null);
+
+     interstitial.setAdListener(null);
+
+     //interstitial.setAdListener(null);
         this.finish();
 
 
@@ -85,6 +107,7 @@ public class Quotes extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
+        interstitial.setAdListener(null);
         //interstitial.setAdListener(null);
     }
 
@@ -92,6 +115,10 @@ public class Quotes extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         //interstitial.setAdListener(null);
+
+        if(flag) {
+            displayInterstitial();
+        }
         
     }
 
@@ -103,6 +130,7 @@ public class Quotes extends AppCompatActivity {
         l1 = findViewById(R.id.quotbox) ;
         l2 = findViewById(R.id.quotcnt) ;
         l3 = findViewById(R.id.quotcnt1) ;
+        activity = findViewById(R.id.quoteLayout);
 
         title=  findViewById(R.id.qtext);
         //subtitle= findViewById(R.id.def);
@@ -111,7 +139,88 @@ public class Quotes extends AppCompatActivity {
         def =  findViewById(R.id.def);
         allq =  findViewById(R.id.allquo);
 
+        colorList.add("#FF04B15D");
+        colorList.add("#c656ad");
 
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        // Prepare the Interstitial Ad
+        interstitial = new InterstitialAd(getApplicationContext());
+        // Insert the Ad Unit ID
+        interstitial.setAdUnitId(getString(R.string.admob_interstitial_id));
+
+        interstitial.loadAd(adRequest);
+
+        interstitial.setAdListener(new AdListener() {
+
+
+            @Override
+            public void onAdLoaded() {
+
+                Calendar c1 = Calendar.getInstance();
+
+                SharedPreferences pref = getSharedPreferences("AdvsPref",MODE_PRIVATE);
+
+                Calendar dummyDate = Calendar.getInstance();
+
+                dummyDate.set(Calendar.YEAR, 2011);
+
+                //Store selected language in a Variable called value
+                String value = pref.getString("adsDate",dummyDate.getTime().toString());
+
+                if(!value.isEmpty())
+                {
+                    Calendar cal = Calendar.getInstance();
+                    SimpleDateFormat sdf = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
+                    try {
+                        cal.setTime(sdf.parse(value));// all done
+
+                    } catch (ParseException e) {
+
+                        Toast.makeText(getApplicationContext(), getString(R.string.nameError4), Toast.LENGTH_LONG).show();
+                    }
+
+                    if(cal.getTime().after(c1.getTime()))
+                    {
+                        //your code
+                        dummy = 0;
+                    }
+                    else {
+
+                        flag = true;
+                    }
+
+                }
+            }
+
+
+            @Override
+            public void onAdFailedToLoad(int errorCode) {
+                // Code to be executed when an ad request fails.
+                interstitial.setAdListener(null);
+            }
+
+            @Override
+            public void onAdOpened() {
+                // Code to be executed when the ad is displayed.
+            }
+
+            @Override
+            public void onAdLeftApplication() {
+
+                interstitial.setAdListener(null);
+                // Code to be executed when the user has left the app.
+            }
+
+            @Override
+            public void onAdClosed() {
+                interstitial.setAdListener(null);
+                // Code to be executed when when the interstitial ad is closed.
+            }
+
+
+        });
 
         ButterKnife.bind(this);
 
@@ -177,6 +286,10 @@ public class Quotes extends AppCompatActivity {
             qlike.setText(resources.getString(R.string.LIKE_text));
             qshare.setText(resources.getString(R.string.SHARE_text));
 
+            Random rn = new Random();
+            int answer = rn.nextInt(colorList.size());
+
+            activity.setBackgroundColor(Color.parseColor(colorList.get(answer)));
             l1.setVisibility(View.VISIBLE);
             l2.setVisibility(View.VISIBLE);
             l3.setVisibility(View.VISIBLE);

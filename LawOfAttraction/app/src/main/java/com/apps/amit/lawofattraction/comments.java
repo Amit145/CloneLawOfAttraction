@@ -216,9 +216,9 @@ public class comments extends AppCompatActivity {
 
         });
 
-        mAdView69 =  findViewById(R.id.adView69);
-        AdRequest adRequest1 = new AdRequest.Builder().build();
-        mAdView69.loadAd(adRequest1);
+        //mAdView69 =  findViewById(R.id.adView69);
+        //AdRequest adRequest1 = new AdRequest.Builder().build();
+        //mAdView69.loadAd(adRequest1);
 
         ButterKnife.bind(this);
 

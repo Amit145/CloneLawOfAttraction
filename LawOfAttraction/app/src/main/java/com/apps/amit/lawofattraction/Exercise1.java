@@ -381,7 +381,7 @@ public class Exercise1 extends AppCompatActivity {
                 public void onClick(View v) {
 
                     if(value1.equalsIgnoreCase("NA")) {
-                        Toast.makeText(getApplicationContext(), " Please select a value ", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), " Please select what you would like to manifest ", Toast.LENGTH_LONG).show();
 
                     } else {
                        // Toast.makeText(getApplicationContext(), " Value : " + value1, Toast.LENGTH_LONG).show();

@@ -27,10 +27,10 @@
     <string name="value1">Home</string>
     <string name="value2">Love</string>
     <string name="value3">Car</string>
-    <string name="value4">Happyness</string>
+    <string name="value4">Happiness</string>
     <string name="value5">Health</string>
     <string name="value6">Job</string>
-    <string name="value7">Others</string>
+    <string name="value7">Other Manifestation</string>
 
     <!--validation message Text-->
 
@@ -57,7 +57,7 @@
     <string name="Home_startButtonText">START</string>
     <string name="Home_myStories">My Stories</string>
     <string name="Home_sayToUniverse">Say to Universe</string>
-    <string name="Home_settings">Settings</string>
+    <string name="Home_sayThankYou">Say Thank You !</string>
     <string name="Home_getProBannerText">CLICK HERE TO DISABLE ADS </string>
     <string name="Home_Notification">, It\'s Time To Manifest Your Dreams !!"</string>
     <string name="Home_clickToStart">CLICK TO START</string>
@@ -101,7 +101,7 @@
     <string name="navigation_drawer_story">Inspiring Stories</string>
     <string name="navigation_drawer_progress">Track Progress</string>
     <string name="navigation_drawer_life">Life is Exciting</string>
-    <string name="navigation_thank_you">Say Thank You !</string>
+    <string name="navigation_settings">Settings</string>
     <string name="navigation_drawer_language">Change Language</string>
     <string name="navigation_drawer_spread">Spread the word</string>
     <string name="navigation_drawer_mail">Drop a Mail</string>
@@ -127,7 +127,7 @@
     <string name="Yes_text">YES</string>
     <string name="No_text">NO</string>
     <string name="Exit_Text">Do you want to Exit?</string>
-    <string name="event_add">"Event added to your Progress Tracker"</string>
+    <string name="event_add">"Manifestation added to your Progress Tracker"</string>
     <string name="chooseToShare">"Choose Where to share"</string>
 
 
@@ -193,7 +193,7 @@
     <string name="activity2_text1_Home">MY DREAM HOME</string>
     <string name="activity2_text2_Home">Decide how your Dream Home should be</string>
     <string name="activity2_text3_Home">Be the architect of your Dream Home</string>
-    <string name="activity2_text4_Home">Be clear about how your dream home should beand where it should be located</string>
+    <string name="activity2_text4_Home">Be clear about how your dream home should be and where it should be located</string>
     <string name="activity2_text5_Home">Decide how many bedrooms, bathroom, dining room etc it should have</string>
     <string name="activity2_text6_Home">Write down all the things that you want to include in your Dream home</string>
 
@@ -212,7 +212,7 @@
 
     <string name="activity4_text1_Home">SHOW GRATITUDE</string>
     <string name="activity4_text2_Home">Be thankful for your current place where you are living</string>
-    <string name="activity4_text3_Home">Show gratitude for it as it has protected you and kept you safe from extreme environmental condiions</string>
+    <string name="activity4_text3_Home">Show gratitude for it as it has protected you and kept you safe from extreme environmental conditions</string>
     <string name="activity4_text4_Home">Being grateful has power to block out negative emotions and to send positive energy in the universe</string>
     <string name="activity4_text5_Home">Make gratitude a daily habit and you will always end up having more than you ever thought</string>
 
@@ -478,7 +478,7 @@
     <string name="activity2_text3">All you need is to wish for it</string>
     <string name="activity2_text4">Now think about what all you need in your life eg - a car , a house, money etc</string>
     <string name="activity2_text5">Be clear about what you want, don\'t doubt about it</string>
-    <string name="activity2_text6">Write down your wishlist if required</string>
+    <string name="activity2_text6">Write down your wish list if required</string>
 
 
     <!--Exercise3 Activity Text - Default-->
@@ -513,7 +513,7 @@
 
     <string name="activity6_text1">CONGRATULATIONS !</string>
     <string name="activity6_text2">You have done Today\'s manifestation</string>
-    <string name="activity6_text3">You Manifested for : </string>
+    <string name="activity6_text3">You Manifested for </string>
     <string name="activity6_text4">Track Progress</string>
     <string name="activity6_text5">Home</string>
     <string name="activity6_text6">Share our App</string>

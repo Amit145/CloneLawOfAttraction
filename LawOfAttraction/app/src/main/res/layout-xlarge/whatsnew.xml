@@ -45,8 +45,8 @@
             android:layout_marginRight="10dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:text="\t View Advertisement once and reward yourself with AD-FREE. Click to know more "
-            android:textSize="15sp"
+            android:text="\t Join the Thank You Movement by showing the 'Act of Gratitude !'"
+            android:textSize="30sp"
             android:textStyle="normal"
             android:fontFamily="@font/abeezee"/>
 
@@ -67,6 +67,7 @@
             android:layout_weight=".5"
             android:text="DISMISS"
             android:textStyle="bold"
+            android:textSize="25sp"
             android:background="#ff3333"
             android:textColor="#ffffff"
             android:layout_width="wrap_content"
@@ -74,7 +75,8 @@
         <Button
             android:id="@+id/btnsubmit"
             android:layout_weight=".5"
-            android:text="GET REWARDED"
+            android:text="OPEN"
+            android:textSize="25sp"
             android:background=" #ff5733"
             android:textColor="#ffffff"
             android:textStyle="bold"

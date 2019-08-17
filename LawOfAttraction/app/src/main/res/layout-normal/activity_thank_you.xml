@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:orientation="vertical"
+
+    tools:context=".ThankYou">
+
+    <LinearLayout
+        android:id="@+id/thankActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#4C9246"
+        android:layout_weight=".9"
+
+        android:orientation="vertical">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/swipe_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <ScrollView
+
+            android:layout_weight="2.5"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="GRATITUDE !"
+                    android:textColor="#ffffff"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/nunito_extrabold" />
+
+                <ImageView
+                    android:id="@+id/gratitudelayoutimage"
+                    android:layout_width="600dp"
+                    android:layout_gravity="center"
+                    android:layout_height="200dp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Showing gratitude is one of the simplest yet most powerful things humans can do for each other"
+                    android:textColor="#ffffff"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/nunito_extrabold" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="The World is a beautiful place, the Universe has provided mankind enough for which he can be grateful for \n We should appreciate the act of a good deed and the time it took to perform that deed \n It is important to recognize the time it took, especially because we are a time deprived society. \n\n Scroll down to say thank you "
+                    android:textColor="#F8F7F7"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/nunito" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="“When you realize there is nothing lacking, the whole world belongs to you.”"
+                    android:textColor="#F8F7F7"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/nunito_extrabold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginTop="20dp"
+                    android:background="#ffffff"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:textSize="20sp"
+                        android:text="To whom are you grateful for ?"
+                        android:layout_gravity="bottom"
+                        android:textStyle="bold"
+                        app:fontFamily="@font/nunito_extrabold"
+                        android:gravity="center"/>
+
+                    <Button
+                        android:layout_width="350dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:background="#E1306C"
+                        android:gravity="center"
+                        app:fontFamily="@font/nunito_extrabold"
+                        android:onClick="sayThankYou"
+                        android:text="SAY THANK YOU"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:background="#ffffff"
+                        android:text="LIVE Thank you Count "
+                        android:textColor="#8A00AEFF"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        app:fontFamily="@font/nunito" />
+
+                    <TextView
+                        android:id="@+id/thankYouCount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="#ffffff"
+                        app:fontFamily="@font/nunito_extrabold"
+                        android:gravity="center"
+                        android:text="Loading...."
+                        android:textColor="#F1355A"
+                        android:textSize="50sp"
+                        android:textStyle="bold"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:textColor="#C13584"
+                        android:textSize="15sp"
+                        android:text="Say Thank You and Join The Thank You Movement"
+                        android:onClick="openInsta"
+                        android:layout_gravity="bottom"
+                        app:fontFamily="@font/nunito_extrabold"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:textColor="#E1306C"
+                        android:textSize="25sp"
+                        android:text="#TheThankYouMovement"
+                        android:onClick="openInsta"
+                        app:fontFamily="@font/nunito_extrabold"
+                        android:gravity="center"/>
+
+                    <ImageView
+                        android:id="@+id/instaImage"
+                        android:layout_width="100dp"
+                        android:layout_gravity="center"
+                        android:layout_height="100dp"
+                        android:onClick="openInsta"
+                        android:layout_marginBottom="20dp"
+                        />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>

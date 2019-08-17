@@ -83,27 +83,19 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="10dp"
             android:text="@string/activity6_text3"
             android:textColor="#1f618d"
+            android:gravity="center"
             android:layout_gravity="center"
             android:textStyle="bold|italic"
-            android:textSize="40sp"/>
+            android:textSize="30sp"/>
 
-        <TextView
-            android:layout_marginTop="2dp"
-            android:id="@+id/sec"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textColor="#64b5f6"
-            android:layout_gravity="center"
-            android:textStyle="bold|italic"
-            android:textSize="45sp"/>
 
     </LinearLayout>
 
     <LinearLayout
-        android:background="#71052d"
+        android:background="#413E3F"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:orientation="horizontal"
@@ -135,7 +127,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:background="#71052d"
+        android:background="#413E3F"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_weight="1"
@@ -185,16 +177,21 @@
     </LinearLayout>
 
 
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="#413E3F"
+        android:layout_height="wrap_content">
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView7"
         android:layout_marginTop="5dp"
+        android:background="#413E3F"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         ads:adSize="BANNER"
         ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
         />
+    </LinearLayout>
 
 
 

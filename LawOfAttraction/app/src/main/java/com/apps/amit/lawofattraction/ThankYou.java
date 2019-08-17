@@ -10,6 +10,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -79,6 +80,7 @@ public class ThankYou extends AppCompatActivity {
     LinearLayout linearLayout;
     List<Integer> drawableList = new ArrayList<>();
     ImageView img,img1;
+    List<String> colorList = new ArrayList<>();
 
     @Override
     public void onBackPressed() {
@@ -101,6 +103,12 @@ public class ThankYou extends AppCompatActivity {
         img =  findViewById(R.id.gratitudelayoutimage);
         img1 =  findViewById(R.id.instaImage);
 
+        colorList.add("#3498DB");
+        colorList.add("#17A589");
+        colorList.add("#2E86C1");
+        colorList.add("#52BE80");
+        colorList.add("#4C9246");
+        colorList.add("#27AE60");
 
         mSwipeRefreshLayout =  findViewById(R.id.swipe_container);
         mSwipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary,
@@ -135,8 +143,11 @@ public class ThankYou extends AppCompatActivity {
 
         if(netInfo!=null && netInfo.isConnected()) {
 
+            Random rn = new Random();
+            int answer = rn.nextInt(colorList.size());
 
                 linearLayout.setVisibility(View.VISIBLE);
+                linearLayout.setBackgroundColor(Color.parseColor(colorList.get(answer)));
                 getCount();
 
                 thankYouCount = findViewById(R.id.thankYouCount);

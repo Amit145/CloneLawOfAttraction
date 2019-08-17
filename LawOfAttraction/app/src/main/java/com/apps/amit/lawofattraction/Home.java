@@ -194,7 +194,7 @@ public class Home extends AppCompatActivity {
         button1.setText(getString(R.string.Home_startButtonText));
         homeMyStories.setText(getString(R.string.Home_myStories));
         homeSayToUniverse.setText(getString(R.string.Home_sayToUniverse));
-        homeSettings.setText(getString(R.string.Home_settings));
+        homeSettings.setText(getString(R.string.Home_sayThankYou));
 
 
         drawer =  findViewById(R.id.drawer_layout);
@@ -257,7 +257,7 @@ public class Home extends AppCompatActivity {
 
                         else if (id == R.id.nav_thanks) {
 
-                            Intent art1 = new Intent(getApplicationContext(),ThankYou.class);
+                            Intent art1 = new Intent(getApplicationContext(),Settings.class);
                             startActivity(art1);
 
                         }
@@ -373,7 +373,7 @@ public class Home extends AppCompatActivity {
 
         Glide.with(getApplicationContext()).load(R.drawable.comments).thumbnail(0.1f).fitCenter().into(img2);
 
-        Glide.with(getApplicationContext()).load(R.drawable.settings).thumbnail(0.1f).fitCenter().into(img3);
+        Glide.with(getApplicationContext()).load(R.drawable.ethankyou).thumbnail(0.1f).fitCenter().into(img3);
 
 
         if(isFirstTime())
@@ -384,7 +384,7 @@ public class Home extends AppCompatActivity {
             LayoutInflater inflater = Home.this.getLayoutInflater();
             final View dialogView = inflater.inflate(R.layout.whatsnew, null);
             builder.setCancelable(false);
-            builder.setMessage("What's New In v3.4");
+            builder.setMessage("What's New In v3.5");
 
             builder.setView(dialogView);
             alert = builder.create();
@@ -393,14 +393,14 @@ public class Home extends AppCompatActivity {
             Button cancel =  dialogView.findViewById(R.id.btncancel);
             ImageView img =  dialogView.findViewById(R.id.storyImage);
 
-            Glide.with(getApplicationContext()).load(R.drawable.p1).thumbnail(0.1f).into(img);
+            Glide.with(getApplicationContext()).load(R.drawable.p).thumbnail(0.1f).into(img);
 
             submit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     v.startAnimation(buttonClick);
 
-                    Intent art1 = new Intent(getApplicationContext(),MusicList.class);
+                    Intent art1 = new Intent(getApplicationContext(),ThankYou.class);
                     startActivity(art1);
 
                     alert.dismiss();
@@ -458,7 +458,7 @@ public class Home extends AppCompatActivity {
             public void onClick(View v) {
 
                 v.startAnimation(buttonClick);
-                Intent art1 = new Intent(getApplicationContext(), Settings.class);
+                Intent art1 = new Intent(getApplicationContext(), ThankYou.class);
                 startActivity(art1);
 
             }
@@ -541,11 +541,11 @@ public class Home extends AppCompatActivity {
     private boolean isFirstTime()
     {
         SharedPreferences pref = getPreferences(MODE_PRIVATE);
-        boolean ranBefore = pref.getBoolean("whatsNewv3.4",false);
+        boolean ranBefore = pref.getBoolean("whatsNewv3.5",false);
         if(!ranBefore)
         {
             SharedPreferences.Editor editor = pref.edit();
-            editor.putBoolean("whatsNewv3.4",true);
+            editor.putBoolean("whatsNewv3.5",true);
             editor.apply();
         }
         return !ranBefore;

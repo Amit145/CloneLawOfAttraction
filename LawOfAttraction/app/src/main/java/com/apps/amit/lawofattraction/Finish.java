@@ -20,9 +20,13 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
+import java.util.Random;
+
 import static com.apps.amit.lawofattraction.Exercise1.startTime;
 
 public class Finish extends AppCompatActivity {
@@ -46,6 +50,7 @@ public class Finish extends AppCompatActivity {
     DatabaseHandler db;
     private AdView mAdView;
     private InterstitialAd interstitial;
+    List <String> quoteList = new ArrayList<>();
 
     public void displayInterstitial() {
     // If Ads are loaded, show Interstitial else show nothing.
@@ -118,6 +123,14 @@ public class Finish extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_finish);
 
+            Random rn = new Random();
+
+
+            quoteList.add("\"You're one step closer to your dreams..\"");
+            quoteList.add("\"Trust the process ! You will manifest all your dreams..\"");
+            quoteList.add("\"Great thing's take time ! Stay Focused..\"");
+            quoteList.add("\"It is not over, unless you mean it..\"");
+            quoteList.add("\"Trust the Universe ! It is always there for you ..\"");
 
             AdRequest adRequest = new AdRequest.Builder().build();
 
@@ -197,6 +210,8 @@ public class Finish extends AppCompatActivity {
 
             });
 
+            int answer = rn.nextInt(quoteList.size());
+
             mAdView =  findViewById(R.id.adView7);
             AdRequest adRequest1 = new AdRequest.Builder().build();
             mAdView.loadAd(adRequest1);
@@ -207,7 +222,7 @@ public class Finish extends AppCompatActivity {
             track =  findViewById(R.id.track);
             share =  findViewById(R.id.share);
             img =  findViewById(R.id.imageView2);
-            txt =  findViewById(R.id.sec);
+
             actText1=  findViewById(R.id.textView1);
             actText2=  findViewById(R.id.textView2);
             actText3=  findViewById(R.id.textView3);
@@ -218,7 +233,7 @@ public class Finish extends AppCompatActivity {
 
             actText1.setText(getString(R.string.activity6_text1));
             actText2.setText(getString(R.string.activity6_text2));
-            actText3.setText(getString(R.string.activity6_text3));
+            actText3.setText(quoteList.get(answer));
             actText4.setText(getString(R.string.activity6_text4));
             actText5.setText(getString(R.string.activity6_text5));
             actText6.setText(getString(R.string.activity6_text6));
@@ -228,7 +243,7 @@ public class Finish extends AppCompatActivity {
             elapsedSeconds = elapsedMilliSeconds / 1000.0;
             int t = (int) (long) elapsedSeconds;
             //String text = t +" "+ getString(R.string.activity6_text7);
-            txt.setText(manifestationTypeValue);
+            //txt.setText(manifestationTypeValue);
 
             Date c = Calendar.getInstance().getTime();
 
