@@ -1,7 +1,7 @@
 package com.apps.amit.lawofattraction;
 
 import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.iid.FirebaseInstanceIdService;
+import com.google.firebase.messaging.FirebaseMessagingService;
 
 import java.io.IOException;
 
@@ -10,12 +10,12 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 
-public class FirebaseInstanceIDService extends FirebaseInstanceIdService {
+public class FirebaseInstanceIDService extends FirebaseMessagingService {
 
   @Override
-  public void onTokenRefresh() {
+  public void onNewToken(String token) {
 
-    String token = FirebaseInstanceId.getInstance().getToken();
+     token = FirebaseInstanceId.getInstance().getToken();
 
     registerToken(token);
   }

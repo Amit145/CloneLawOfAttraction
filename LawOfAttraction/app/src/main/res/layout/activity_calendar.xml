@@ -56,10 +56,10 @@
         android:layout_weight="4"
         android:layout_marginTop="10dp">
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+            android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
 
 
 
@@ -95,7 +95,7 @@
             android:layout_height="60dp"
             android:layout_gravity="bottom"
             ads:adSize="BANNER"
-            ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
+            ads:adUnitId="ca-app-pub-2259921691483610/8425551447" />
 
     </LinearLayout>
 

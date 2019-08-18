@@ -20,14 +20,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
 import android.support.v4.media.MediaBrowserCompat;
 import android.support.v4.media.MediaMetadataCompat;
 import android.support.v4.media.session.MediaControllerCompat;
 import android.support.v4.media.session.MediaSessionCompat;
 import android.support.v4.media.session.PlaybackStateCompat;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.ImageButton;
@@ -35,10 +35,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.media.MediaBrowserServiceCompat;
+
 import com.apps.amit.lawofattraction.client.MediaBrowserHelper;
 import com.apps.amit.lawofattraction.service.MusicService;
 import com.apps.amit.lawofattraction.service.contentcatalogs.MusicLibrary;
-import com.apps.amit.lawofattraction.service.players.MediaPlayerAdapter;
 import com.bumptech.glide.Glide;
 
 import org.apache.http.HttpResponse;
@@ -329,7 +330,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Customize the connection to our {@link android.support.v4.media.MediaBrowserServiceCompat}
+     * Customize the connection to our {@link MediaBrowserServiceCompat}
      * and implement our app specific desires.
      */
     private class MediaBrowserConnection extends MediaBrowserHelper {
