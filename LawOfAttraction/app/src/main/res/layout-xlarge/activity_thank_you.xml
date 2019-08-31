@@ -162,7 +162,7 @@
                         android:layout_marginTop="20dp"
                         android:textColor="#C13584"
                         android:textSize="30sp"
-                        android:text="Say Thank You and Join The Thank You Movement"
+                        android:text="Say Thank You and Join The Thank You Movement \n Use the hashtag #TheThankYouMovement in your posts"
                         android:onClick="openInsta"
                         android:layout_gravity="bottom"
                         app:fontFamily="@font/nunito_extrabold"

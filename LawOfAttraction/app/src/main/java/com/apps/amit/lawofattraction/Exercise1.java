@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
+import android.os.CountDownTimer;
 import android.os.SystemClock;
 import android.os.Vibrator;
 import androidx.appcompat.app.AlertDialog;
@@ -90,6 +91,8 @@ public class Exercise1 extends AppCompatActivity {
         String manifestationTypeValue = sharedPreferencesManifestationType.getString("MANIFESTATION_TYPE_VALUE", "");
 
         bool = sharedPreferencesManifestationType.getBoolean("RAN_BEFORE", false);
+
+
 
         if (!bool)  {
 
@@ -404,13 +407,6 @@ public class Exercise1 extends AppCompatActivity {
 
             setContentView(R.layout.activity_exercise1);
 
-            SharedPreferences sp = getSharedPreferences("your_prefs", Exercise1.MODE_PRIVATE);
-            value = sp.getInt("your_int_key", 60);
-
-
-            SharedPreferences sp1 = getSharedPreferences("timerEnable", Exercise1.MODE_PRIVATE);
-            String timervalue = sp1.getString("timerEnable", "ON");
-
             AdView mAdView = findViewById(R.id.adView1);
             AdRequest adRequest = new AdRequest.Builder().build();
             mAdView.loadAd(adRequest);
@@ -540,32 +536,108 @@ public class Exercise1 extends AppCompatActivity {
        // Toast.makeText(getApplicationContext(), " Value : " + manifestationTypeValue, Toast.LENGTH_LONG).show();
 
 
-        txt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                v.startAnimation(buttonClick);
-                Intent art1 = new Intent(getApplicationContext(), Home.class);
-                startActivity(art1);
+            startTime = SystemClock.elapsedRealtime();
 
 
-            }
-        });
+            SharedPreferences sp = getSharedPreferences("your_prefs", Exercise1.MODE_PRIVATE);
+            value = sp.getInt("your_int_key", 60);
 
-            buttonStart.setText(getString(R.string.next_text));
 
-            buttonStart.setOnClickListener(new View.OnClickListener() {
+            SharedPreferences sp1 = getSharedPreferences("timerEnable", Exercise1.MODE_PRIVATE);
+            String timervalue = sp1.getString("timerEnable","ON");
+
+            Glide.with(getApplicationContext()).load(R.drawable.ex1).thumbnail(0.1f).into(img);
+
+            txt.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
                     v.startAnimation(buttonClick);
-                    Intent art1 = new Intent(Exercise1.this, Exercise2.class);
+                    Intent art1 = new Intent(getApplicationContext(),Home.class);
                     startActivity(art1);
-                    img = null;
 
 
                 }
             });
+
+            if(timervalue.contains("ON")) {
+                buttonStart.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        v.startAnimation(buttonClick);
+                        txt.setVisibility(View.VISIBLE);
+                        new CountDownTimer(+((value + 1) * 1000), 1000) {
+                            @Override
+                            public void onTick(long millisUntilFinished) {
+
+                                buttonStart.setEnabled(false);
+                                String textTime = "" + millisUntilFinished / 1000;
+                                buttonStart.setText(textTime);
+                                txt.setText(getString(R.string.skip_text));
+
+                                txt.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+
+                                        v.startAnimation(buttonClick);
+                                        Intent art1 = new Intent(getApplicationContext(), Exercise2.class);
+                                        startActivity(art1);
+                                        img=null;
+                                        cancel();
+
+                                    }
+                                });
+                            }
+
+                            @Override
+                            public void onFinish() {
+
+
+                                if(vib != null) {
+                                    vib.vibrate(500);
+                                }
+
+
+                                buttonStart.setText(getString(R.string.done_text));
+                                buttonStart.setEnabled(true);
+                                txt.setText("");
+
+                                buttonStart.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+
+                                        v.startAnimation(buttonClick);
+                                        Intent art1 = new Intent(getApplicationContext(), Exercise2.class);
+                                        startActivity(art1);
+                                        img=null;
+
+
+                                    }
+                                });
+                            }
+
+                        }.start();
+                    }
+                });
+
+            } else {
+
+                buttonStart.setText(getString(R.string.next_text));
+
+                buttonStart.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        v.startAnimation(buttonClick);
+                        Intent art1 = new Intent(Exercise1.this, Exercise2.class);
+                        startActivity(art1);
+                        img=null;
+
+
+                    }
+                });
+            }
 
     }
 

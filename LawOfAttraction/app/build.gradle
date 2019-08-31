@@ -7,8 +7,8 @@ android {
         applicationId "com.apps.amit.lawofattraction"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 27
-        versionName "3.5"
+        versionCode 29
+        versionName "3.6"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         useLibrary 'org.apache.http.legacy'

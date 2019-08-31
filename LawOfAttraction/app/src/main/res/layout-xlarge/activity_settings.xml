@@ -16,7 +16,7 @@
         android:layout_gravity="center"
         android:layout_weight="1"
         android:layout_height="wrap_content"
-        android:padding="15dp">
+        android:padding="5dp">
 
         <ImageView
             android:id="@+id/img1"
@@ -31,7 +31,7 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_gravity="center"
-        android:padding="15dp"
+        android:padding="5dp"
         android:layout_height="wrap_content">
 
         <ImageView
@@ -47,7 +47,7 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_gravity="center"
-        android:padding="15dp"
+        android:padding="5dp"
         android:layout_height="wrap_content">
 
         <ImageView
@@ -62,16 +62,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
         android:orientation="horizontal"
-        android:layout_weight="1">
+        android:padding="5dp">
 
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/adView10"
+        <ImageView
+            android:id="@+id/img4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            ads:adSize="BANNER"
-            ads:adUnitId="ca-app-pub-2259921691483610/8425551447" />
+            android:layout_height="match_parent"
+            android:onClick="userInfo" />
 
     </LinearLayout>
+
 </LinearLayout>

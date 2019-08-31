@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -17,6 +18,7 @@
     <application
         android:networkSecurityConfig="@xml/network_security_config"
         android:allowBackup="true"
+        android:name=".MainApplication"
         android:allowTaskReparenting="false"
         android:excludeFromRecents="true"
         android:icon="@mipmap/ic_launcher"
@@ -222,6 +224,7 @@
                 <action android:name="android.intent.action.MEDIA_BUTTON" />
             </intent-filter>
         </receiver>
+
         <uses-library android:name="org.apache.http.legacy" android:required="false"/>
 
     </application>

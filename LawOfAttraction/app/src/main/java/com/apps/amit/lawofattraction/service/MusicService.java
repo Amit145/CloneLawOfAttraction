@@ -123,7 +123,11 @@ public class MusicService extends MediaBrowserServiceCompat {
 
             final String mediaId = mPlaylist.get(mQueueIndex).getDescription().getMediaId();
             mPreparedMedia = MusicLibrary.getMetadata(MusicService.this, mediaId);   //calls MusicLibrary and calls function get MetaData
-            mSession.setMetadata(mPreparedMedia);
+            try {
+                mSession.setMetadata(mPreparedMedia);
+            } catch (Exception e) {
+
+            }
 
             if (!mSession.isActive()) {
                 mSession.setActive(true);

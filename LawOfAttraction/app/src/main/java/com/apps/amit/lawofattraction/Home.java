@@ -384,7 +384,7 @@ public class Home extends AppCompatActivity {
             LayoutInflater inflater = Home.this.getLayoutInflater();
             final View dialogView = inflater.inflate(R.layout.whatsnew, null);
             builder.setCancelable(false);
-            builder.setMessage("What's New In v3.5");
+            builder.setMessage("What's New In v3.6");
 
             builder.setView(dialogView);
             alert = builder.create();
@@ -393,14 +393,14 @@ public class Home extends AppCompatActivity {
             Button cancel =  dialogView.findViewById(R.id.btncancel);
             ImageView img =  dialogView.findViewById(R.id.storyImage);
 
-            Glide.with(getApplicationContext()).load(R.drawable.p).thumbnail(0.1f).into(img);
+            Glide.with(getApplicationContext()).load(R.drawable.sett2).thumbnail(0.1f).into(img);
 
             submit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     v.startAnimation(buttonClick);
 
-                    Intent art1 = new Intent(getApplicationContext(),ThankYou.class);
+                    Intent art1 = new Intent(getApplicationContext(),Settings.class);
                     startActivity(art1);
 
                     alert.dismiss();

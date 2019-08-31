@@ -5,6 +5,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.os.CountDownTimer;
+import android.os.SystemClock;
 import android.os.Vibrator;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -38,7 +40,7 @@ public class Exercise4 extends AppCompatActivity {
     TextView actText5;
     ImageView img;
     int value;
-
+    public static long startTime;
 
     @Override
     public void onBackPressed() {
@@ -139,20 +141,6 @@ public class Exercise4 extends AppCompatActivity {
                 }
             });
 
-
-                buttonStart.setText(resources.getString(R.string.next_text));
-                buttonStart.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        v.startAnimation(buttonClick);
-                        Intent art1 = new Intent(Exercise4.this, Exercise5.class);
-                        startActivity(art1);
-                        img = null;
-                        finish();
-
-                    }
-                });
 
 
         } catch(OutOfMemoryError e) {
@@ -269,7 +257,108 @@ public class Exercise4 extends AppCompatActivity {
 
         }
 
+        startTime = SystemClock.elapsedRealtime();
+        final Vibrator vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
+
+        SharedPreferences sp = getSharedPreferences("your_prefs", Exercise4.MODE_PRIVATE);
+        value = sp.getInt("your_int_key", 60);
+
+
+        SharedPreferences sp1 = getSharedPreferences("timerEnable", Exercise4.MODE_PRIVATE);
+        String timervalue = sp1.getString("timerEnable","ON");
+
+
+        txt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                v.startAnimation(buttonClick);
+                Intent art1 = new Intent(getApplicationContext(),Home.class);
+                startActivity(art1);
+
+
+            }
+        });
+
+        if(timervalue.contains("ON")) {
+            buttonStart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    v.startAnimation(buttonClick);
+                    txt.setVisibility(View.VISIBLE);
+                    new CountDownTimer(+((value + 1) * 1000), 1000) {
+                        @Override
+                        public void onTick(long millisUntilFinished) {
+
+                            buttonStart.setEnabled(false);
+                            String textTime = "" + millisUntilFinished / 1000;
+                            buttonStart.setText(textTime);
+                            txt.setText(getString(R.string.skip_text));
+
+                            txt.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+
+                                    v.startAnimation(buttonClick);
+                                    Intent art1 = new Intent(getApplicationContext(), Exercise5.class);
+                                    startActivity(art1);
+                                    img=null;
+                                    cancel();
+
+                                }
+                            });
+                        }
+
+                        @Override
+                        public void onFinish() {
+
+
+                            if(vib != null) {
+                                vib.vibrate(500);
+                            }
+
+
+                            buttonStart.setText(getString(R.string.done_text));
+                            buttonStart.setEnabled(true);
+                            txt.setText("");
+
+                            buttonStart.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+
+                                    v.startAnimation(buttonClick);
+                                    Intent art1 = new Intent(getApplicationContext(), Exercise5.class);
+                                    startActivity(art1);
+                                    img=null;
+
+
+                                }
+                            });
+                        }
+
+                    }.start();
+                }
+            });
+
+        } else {
+
+            buttonStart.setText(getString(R.string.next_text));
+
+            buttonStart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    v.startAnimation(buttonClick);
+                    Intent art1 = new Intent(Exercise4.this, Exercise5.class);
+                    startActivity(art1);
+                    img=null;
+
+
+                }
+            });
+        }
 
 
     }

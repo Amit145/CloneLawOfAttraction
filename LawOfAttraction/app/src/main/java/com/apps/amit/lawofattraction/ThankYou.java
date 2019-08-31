@@ -86,75 +86,79 @@ public class ThankYou extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thank_you);
 
-        linearLayout = findViewById(R.id.thankActivity);
-        img =  findViewById(R.id.gratitudelayoutimage);
-        img1 =  findViewById(R.id.instaImage);
+        try {
+            linearLayout = findViewById(R.id.thankActivity);
+            img =  findViewById(R.id.gratitudelayoutimage);
+            img1 =  findViewById(R.id.instaImage);
 
-        colorList.add("#3498DB");
-        colorList.add("#17A589");
-        colorList.add("#2E86C1");
-        colorList.add("#52BE80");
-        colorList.add("#4C9246");
-        colorList.add("#27AE60");
+            colorList.add("#3498DB");
+            colorList.add("#17A589");
+            colorList.add("#2E86C1");
+            colorList.add("#52BE80");
+            colorList.add("#4C9246");
+            colorList.add("#27AE60");
 
-        mSwipeRefreshLayout =  findViewById(R.id.swipe_container);
-        mSwipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary,
-                android.R.color.holo_green_dark,
-                android.R.color.holo_orange_dark,
-                android.R.color.holo_blue_dark);
+            mSwipeRefreshLayout =  findViewById(R.id.swipe_container);
+            mSwipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary,
+                    android.R.color.holo_green_dark,
+                    android.R.color.holo_orange_dark,
+                    android.R.color.holo_blue_dark);
 
-        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                mSwipeRefreshLayout.setRefreshing(true);
-                Toast.makeText(getApplicationContext(),getApplicationContext().getString(R.string.loading_msg), Toast.LENGTH_SHORT).show();
-                ( new Handler()).postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        mSwipeRefreshLayout.setRefreshing(false);
-                        Intent i = new Intent(getApplicationContext(), ThankYou.class);
-                        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        ThankYou.this.finish();
-                        startActivity(i);
-                    }
-                },2000);
+            mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+                @Override
+                public void onRefresh() {
+                    mSwipeRefreshLayout.setRefreshing(true);
+                    Toast.makeText(getApplicationContext(),getApplicationContext().getString(R.string.loading_msg), Toast.LENGTH_SHORT).show();
+                    ( new Handler()).postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            mSwipeRefreshLayout.setRefreshing(false);
+                            Intent i = new Intent(getApplicationContext(), ThankYou.class);
+                            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            ThankYou.this.finish();
+                            startActivity(i);
+                        }
+                    },2000);
+                }
+            });
+
+            connMngr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+            if(connMngr!=null && connMngr.getActiveNetworkInfo() != null){
+
+                netInfo = connMngr.getActiveNetworkInfo();
             }
-        });
 
-        connMngr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        if(connMngr!=null && connMngr.getActiveNetworkInfo() != null){
+            if(netInfo!=null && netInfo.isConnected()) {
 
-            netInfo = connMngr.getActiveNetworkInfo();
-        }
+                Random rn = new Random();
+                int answer = rn.nextInt(colorList.size());
 
-        if(netInfo!=null && netInfo.isConnected()) {
+                    linearLayout.setVisibility(View.VISIBLE);
+                    linearLayout.setBackgroundColor(Color.parseColor(colorList.get(answer)));
+                    getCount();
 
-            Random rn = new Random();
-            int answer = rn.nextInt(colorList.size());
+                    thankYouCount = findViewById(R.id.thankYouCount);
+                    drawableList.add(R.drawable.thank_share1);
+                    drawableList.add(R.drawable.thank_share2);
+                    drawableList.add(R.drawable.thank_share3);
+                    drawableList.add(R.drawable.thank_share4);
 
-                linearLayout.setVisibility(View.VISIBLE);
-                linearLayout.setBackgroundColor(Color.parseColor(colorList.get(answer)));
-                getCount();
-
-                thankYouCount = findViewById(R.id.thankYouCount);
-                drawableList.add(R.drawable.thank_share1);
-                drawableList.add(R.drawable.thank_share2);
-                drawableList.add(R.drawable.thank_share3);
-                drawableList.add(R.drawable.thank_share4);
-
-            Glide.with(getApplicationContext()).load(R.drawable.thank_act_image).thumbnail(0.1f).into(img);
-            Glide.with(getApplicationContext()).load(R.drawable.insta).thumbnail(0.1f).into(img1);
+                Glide.with(getApplicationContext()).load(R.drawable.thank_act_image).thumbnail(0.1f).into(img);
+                Glide.with(getApplicationContext()).load(R.drawable.insta).thumbnail(0.1f).into(img1);
 
 
 
-        }
+            }
 
-        else
-        {
-            linearLayout.setVisibility(View.INVISIBLE);
+            else
+            {
+                linearLayout.setVisibility(View.INVISIBLE);
 
-            Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.noInternet_txt), Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.noInternet_txt), Toast.LENGTH_LONG).show();
+            }
+        } catch (Exception e) {
+
         }
 
     }
@@ -348,7 +352,7 @@ public class ThankYou extends AppCompatActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                requestQueue = Volley.newRequestQueue(getApplicationContext());
+                                requestQueue = MainApplication.getInstance().getRequestQueue();
 
                                 String url= "http://www.innovativelabs.xyz/showThankYouCount.php";
 
@@ -407,7 +411,7 @@ public class ThankYou extends AppCompatActivity {
 
     public void openInsta(View view) {
 
-        Uri uri = Uri.parse("http://instagram.com/_u/thelaw24x7");
+        Uri uri = Uri.parse("https://www.instagram.com/explore/tags/thethankyoumovement/");
         Intent likeIng = new Intent(Intent.ACTION_VIEW, uri);
 
         likeIng.setPackage("com.instagram.android");
@@ -415,8 +419,12 @@ public class ThankYou extends AppCompatActivity {
         try {
             startActivity(likeIng);
         } catch (ActivityNotFoundException e) {
-            startActivity(new Intent(Intent.ACTION_VIEW,
-                    Uri.parse("http://instagram.com/thelaw24x7")));
+            try {
+                startActivity(new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("https://www.instagram.com/explore/tags/thethankyoumovement/")));
+            } catch (Exception e1) {
+
+            }
         }
     }
 }

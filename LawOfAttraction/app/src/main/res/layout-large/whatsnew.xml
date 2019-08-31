@@ -45,7 +45,7 @@
             android:layout_marginRight="10dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:text="\t Join the Thank You Movement by showing the 'Act of Gratitude !'"
+            android:text="\t Enabled Manifestation Timer in the settings Tab !"
             android:textSize="17sp"
             android:textStyle="normal"
             android:fontFamily="@font/abeezee"/>
@@ -74,7 +74,7 @@
         <Button
             android:id="@+id/btnsubmit"
             android:layout_weight=".5"
-            android:text="GET REWARDED"
+            android:text="Settings"
             android:background=" #ff5733"
             android:textColor="#ffffff"
             android:textStyle="bold"
