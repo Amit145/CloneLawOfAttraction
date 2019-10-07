@@ -2,42 +2,47 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.apps.amit.lawofattraction">
 
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
     <supports-screens
         android:anyDensity="true"
         android:largeScreens="true"
         android:normalScreens="true" />
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
-        android:networkSecurityConfig="@xml/network_security_config"
-        android:allowBackup="true"
         android:name=".MainApplication"
+        android:allowBackup="true"
         android:allowTaskReparenting="false"
         android:excludeFromRecents="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:launchMode="singleTask"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:taskAffinity=""
         android:theme="@style/AppTheme">
-        <activity android:name=".ThankYou"
+        <activity android:name=".ChallengeTask"></activity>
+        <activity android:name=".Challenge" />
+        <activity
+            android:name=".ThankYou"
             android:screenOrientation="portrait" />
-        <activity android:name=".Intro1"
+        <activity
+            android:name=".Intro1"
             android:screenOrientation="portrait" />
         <activity
             android:name=".MusicList"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="MUSIC" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -104,11 +109,6 @@
         <activity
             android:name=".expStory"
             android:screenOrientation="portrait" />
-
-        <receiver android:name=".AlarmReceiver" />
-        <receiver android:name=".Notify" />
-        <receiver android:name=".CommentsReminder" />
-
         <activity
             android:name=".SetTime"
             android:screenOrientation="portrait"
@@ -145,39 +145,6 @@
         <activity
             android:name=".Lawtips"
             android:screenOrientation="portrait" />
-
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" /> <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-2259921691483610~8730116859" />
-
-        <service android:name=".FirebaseMessagingService">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service>
-        <service android:name=".FirebaseInstanceIDService">
-            <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
-            </intent-filter>
-        </service>
-        <!--
-    Set custom default icon. This is used when no icon is set for incoming notification messages.
-    See README(https://goo.gl/l4GJaQ) for more.
-        -->
-        <meta-data
-            android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@drawable/status" />
-        <!--
-             Set color used with incoming notification messages. This is used when no color is set for the incoming
-             notification message. See README(https://goo.gl/6BKBk7) for more.
-        -->
-        <meta-data
-            android:name="com.google.firebase.messaging.default_notification_color"
-            android:resource="@color/colorPrimary" />
-
         <activity
             android:name=".Policy"
             android:screenOrientation="portrait" />
@@ -201,14 +168,44 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity>
-
-        <service
-            android:name=".service.MusicService"
-            android:enabled="true"
-            android:exported="true">
+        </activity> <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-2259921691483610~8730116859" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/status" />
+        <!--
+    Set custom default icon. This is used when no icon is set for incoming notification messages.
+    See README(https://goo.gl/l4GJaQ) for more.
+        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorPrimary" />
+        <!--
+             Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more.
+        -->
+        <receiver android:name=".AlarmReceiver" />
+        <receiver android:name=".Notify" />
+        <receiver android:name=".CommentsReminder" />
+        <receiver android:name="androidx.media.session.MediaButtonReceiver">
             <intent-filter>
-                <action android:name="android.media.browse.MediaBrowserService" />
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".FirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".FirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
         <!--
@@ -219,14 +216,18 @@
              Additionally, this is used to resume the service from an inactive state upon
              receiving a media button event (such as "play").
         -->
-        <receiver android:name="androidx.media.session.MediaButtonReceiver">
+        <service
+            android:name=".service.MusicService"
+            android:enabled="true"
+            android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MEDIA_BUTTON" />
+                <action android:name="android.media.browse.MediaBrowserService" />
             </intent-filter>
-        </receiver>
+        </service>
 
-        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
-
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
     </application>
 
 </manifest>
