@@ -24,12 +24,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#ffffff"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_gravity="center"
         android:gravity="center"
         android:textAlignment="center"
-        android:padding="15sp"
-        android:textSize="40sp"
+        android:padding="20sp"
+        android:textSize="50sp"
         android:textStyle="bold"
         android:text="affirmation"/>
 
@@ -38,26 +38,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#ffffff"
-        android:padding="5dp"
-        android:layout_marginTop="30dp"
+        android:padding="20dp"
+        android:layout_marginTop="40dp"
         android:layout_gravity="center"
         android:gravity="center"
         android:fontFamily="@font/abeezee"
         android:textAlignment="center"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:text="subtitle"/>
 
     <Button
         android:id="@+id/affirmationDoneButton"
-        android:layout_width="200dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/transparent_bg_bordered_button"
         android:fontFamily="@font/nunito_extrabold"
         android:text="AFFIRM"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:textColor="#ffffff" />
 
 </LinearLayout>

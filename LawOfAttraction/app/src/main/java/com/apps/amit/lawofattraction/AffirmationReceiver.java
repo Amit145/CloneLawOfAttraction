@@ -1,4 +1,4 @@
-package com.apps.amit.lawofattraction.service;
+package com.apps.amit.lawofattraction;
 
 /*
  * Created by amit on 6/2/18.
@@ -18,22 +18,19 @@ import android.graphics.Color;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.TaskStackBuilder;
 
-import com.apps.amit.lawofattraction.Affirmations;
 import com.apps.amit.lawofattraction.Home;
 import com.apps.amit.lawofattraction.R;
 import com.apps.amit.lawofattraction.helper.LocaleHelper;
 
 import static android.content.Context.MODE_PRIVATE;
-//import static com.apps.amit.lawofattraction.timepicker.p1;
+import static com.apps.amit.lawofattraction.timepicker.p1;
 
 public class AffirmationReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent arg1) {
 
-
-
-        int notificationID = 2344;
+        int notificationID = 2341;
         NotificationManager mngr = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
         SharedPreferences sp1 = context.getSharedPreferences("timerEnable", MODE_PRIVATE);
@@ -42,19 +39,15 @@ public class AffirmationReceiver extends BroadcastReceiver {
 
         //Store selected language in a Variable called value
         String value = "en";
-
         context = LocaleHelper.setLocale(context, value);
         Resources resources = context.getResources();
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
 
-
-            String channelID = "my_channel_03";
-            CharSequence name = "my_channel3";
-            String description = "This is my channel3";
+            String channelID = "my_channel_011";
+            CharSequence name = "my_channel1";
+            String description = "This is my channel1";
             int importance = NotificationManager.IMPORTANCE_HIGH;
-            Intent i = new Intent(context, Affirmations.class);
-            PendingIntent p1 = PendingIntent.getActivity(context, 0, i, 0);
             NotificationChannel mChannel = new NotificationChannel(channelID, name, importance);
             mChannel.setDescription(description);
             mChannel.enableLights(true);
@@ -74,7 +67,7 @@ public class AffirmationReceiver extends BroadcastReceiver {
                     .setSmallIcon(R.drawable.status)
                     .addAction(R.drawable.ic_play_arrow_white_24dp, resources.getString(R.string.Home_clickToStart), p1)
                     .setContentTitle("Law Of Attraction Daily")
-                    .setContentText(resources.getString(R.string.Home_textBelowPager1)+" "+name1[0]+" It's time for your affirmation")
+                    .setContentText(resources.getString(R.string.Home_textBelowPager1)+""+name1[0]+" It's Time for your Affirmation")
                     .setDefaults(Notification.DEFAULT_LIGHTS | Notification.DEFAULT_SOUND)
                     .setContentInfo("");
 
@@ -90,12 +83,11 @@ public class AffirmationReceiver extends BroadcastReceiver {
 
                 mngr.notify(notificationID, builder.build());
             }
-
         }
 
-
         else {
-            String channelID = "my_channel_023";
+
+            String channelID = "my_channel_021";
             Intent i = new Intent(context, Affirmations.class);
             PendingIntent p1 = PendingIntent.getActivity(context, 0, i, 0);
             NotificationCompat.Builder builder = new NotificationCompat.Builder(context,channelID);
@@ -106,15 +98,14 @@ public class AffirmationReceiver extends BroadcastReceiver {
                     .setAutoCancel(true)
                     .addAction(R.drawable.ic_play_arrow_white_24dp, resources.getString(R.string.Home_clickToStart), p1)
                     .setContentTitle("Law Of Attraction Daily")
-                    .setContentText(resources.getString(R.string.Home_textBelowPager1)+" "+name1[0]+" It's time for your affirmation")
+                    .setContentText(resources.getString(R.string.Home_textBelowPager1)+""+name1[0]+" It's Time for your Affirmation")
                     .setDefaults(Notification.DEFAULT_LIGHTS | Notification.DEFAULT_SOUND)
                     .setContentInfo("");
 
             if(mngr!=null ){
 
-                mngr.notify(9993, builder.build());
+                mngr.notify(9991, builder.build());
             }
-
         }
     }
 }

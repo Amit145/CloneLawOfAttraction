@@ -1,11 +1,7 @@
 package com.apps.amit.lawofattraction;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -16,11 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.apps.amit.lawofattraction.service.AffirmationReceiver;
 import com.bumptech.glide.Glide;
-
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -35,31 +27,54 @@ public class Affirmations extends AppCompatActivity {
     Button button;
     int count = 0 ;
     private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
-
     Long timeRemaining = 0L;
     String buttonText;
     Calendar calendarToday;
     Calendar calendarYesterday;
     ProgressBar progressBar;
-    TextView setText,affirmTitle,affirmTextSubtitle,trackMyProgress;
+    TextView setText,affirmTitle,affirmTextSubtitle,trackMyProgress,affirmTryAgain;
     ImageView imageView;
-    Affirmations affirmations;
     Double percentage = 0d;
 
     public Affirmations() {
 
         affirmationList = new ArrayList<>();
-        affirmationList.add("\"You're one step closer to your dreams..\"");
-        affirmationList.add("\"Trust the process ! You will manifest all your dreams..\"");
-        affirmationList.add("\"Great thing's take time ! Stay Focused..\"");
-        affirmationList.add("\"It is not over, unless you mean it..\"");
-        affirmationList.add("\"Trust the Universe ! It is always there for you ..\"");
+
+        affirmationList.add("\"I have the ability to create anything that I want.\"");
+        affirmationList.add("\"My life is filled with great abundance in every area.\"");
+        affirmationList.add("\"I accept and allow success in all areas of my life.\"");
+        affirmationList.add("\"I firmly believe in my ability to attract success.\"");
+        affirmationList.add("\"Great things are coming to me today.\"");
+        affirmationList.add("\"I attract everything that I desire.\"");
+        affirmationList.add("\"I am totally committed to achieve my goals and dreams.\"");
+        affirmationList.add("\"Money comes to me easily and effortlessly.\"");
+        affirmationList.add("\"All good things flow into my life.\"");
+        affirmationList.add("\"I am a Powerful Money Magnet.\"");
+        affirmationList.add("\"I attract success into my life effortlessly.\"");
+        affirmationList.add("\"I am open and ready to attract abundance into my life.\"");
+        affirmationList.add("\"I am a magnet for financial abundance and prosperity.\"");
+        affirmationList.add("\"I am attracting positive and abundant people into my life.\"");
+        affirmationList.add("\"I am positive, passionate and successful.\"");
+        affirmationList.add("\"I learn from the past, live in the present and plan for the future.\"");
+        affirmationList.add("\"I easily attract the things that I desire most.\"");
+        affirmationList.add("\"My positive belief in myself is transforming my life.\"");
+        affirmationList.add("\"My dreams are manifesting before my eyes.\"");
+        affirmationList.add("\"I am filled with limitless potential.\"");
+        affirmationList.add("\"I am worthy of love, abundance, success, happiness & fullfilment.\"");
+        affirmationList.add("\"Abundance surrounds me everywhere I go.\"");
+        affirmationList.add("\"I rejoice in others success, wealth, and prosperity.\"");
+        affirmationList.add("\"Everyday I turn my dreams into reality.\"");
+        affirmationList.add("\"I have the power to manifest wealth and abundance in my life.\"");
+        affirmationList.add("\"The power to be successful is within me.\"");
+        affirmationList.add("\"Everything I need for success comes to me easily and effortlessly.\"");
+        affirmationList.add("\"Every day I attract people who help me achieve my goals.\"");
+        affirmationList.add("\"I am Living the Life of my Dreams.\"");
+        affirmationList.add("\"Money flows easily into my life.\"");
     }
 
     public List<String> getList() {
         return affirmationList;
     }
-
 
 
     @Override
@@ -68,37 +83,59 @@ public class Affirmations extends AppCompatActivity {
         setContentView(R.layout.activity_affirmations);
 
         calendarToday = Calendar.getInstance();
-        //cal.getTimeInMillis();
         progressBar = findViewById(R.id.progressBar);
         imageView = findViewById(R.id.imageView2);
 
         Glide.with(getApplicationContext()).load(R.drawable.likeaffirm).into(imageView);
-
-
         SharedPreferences sharedPreferencesManifestationType = getSharedPreferences("Affirmation_Counter", Affirmations.MODE_PRIVATE);
         count = sharedPreferencesManifestationType.getInt("counter", 0);
         buttonText = sharedPreferencesManifestationType.getString("Time", "NA");
-
 
         button = findViewById(R.id.affirmationButton);
         setText = findViewById(R.id.setText);
         affirmTitle = findViewById(R.id.affirmTitle);
         affirmTextSubtitle = findViewById(R.id.affirmTextSubtitle);
+        affirmTryAgain= findViewById(R.id.affirmTryAgain);
         trackMyProgress = findViewById(R.id.trackMyProgress);
 
         percentage = Double.valueOf(count)/Double.valueOf(affirmationList.size())*100;
         int val = (int) Math.round(percentage);
-
         progressBar.setVisibility(View.INVISIBLE);
 
         if(val==0){
             progressBar.setVisibility(View.INVISIBLE);
             trackMyProgress.setVisibility(View.INVISIBLE);
+
+        } else if(val==100){
+
+            progressBar.setVisibility(View.VISIBLE);
+            Glide.with(getApplicationContext()).load(R.drawable.tick).into(imageView);
+            progressBar.setProgress(val);
+            affirmTitle.setText("Congratulations ! You have completed your Challenge");
+            affirmTextSubtitle.setText(val+getString(R.string.percentSign));
+            affirmTextSubtitle.setTextSize(40f);
+            affirmTryAgain.setText("Wanna Try Again ?");
+
+            button.setText(getString(R.string.Home_startButtonText));
+            setText.setText(getString(R.string.Home_textBelowPager));
+            button.setEnabled(true);
+
+            trackMyProgress.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    v.startAnimation(buttonClick);
+                    Intent intent = new Intent(getApplicationContext(),calendar.class);
+                    startActivity(intent);
+
+                }
+            });
+
         } else {
             progressBar.setVisibility(View.VISIBLE);
             progressBar.setProgress(val);
-            affirmTitle.setText("My Progress");
-            affirmTextSubtitle.setText(val+"%");
+            affirmTitle.setText(getString(R.string.myProgress));
+            affirmTextSubtitle.setText(val+getString(R.string.percentSign));
             affirmTextSubtitle.setTextSize(40f);
 
             trackMyProgress.setOnClickListener(new View.OnClickListener() {
@@ -120,41 +157,33 @@ public class Affirmations extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        if(calendarYesterday.getTime().after(calendarToday.getTime()))
+        if(calendarYesterday.getTime().after(calendarToday.getTime()) && val!=100 )
         {
-
-
             timeRemaining = calendarYesterday.getTimeInMillis() - calendarToday.getTimeInMillis();
             new CountDownTimer(timeRemaining, 1000) {
 
                 public void onTick(long timeRemaining) {
 
                     button.setText(calculateTime(timeRemaining));
-                    setText.setText("Next Affirmation In:");
+                    setText.setText(getString(R.string.nextAffirm));
                     button.setEnabled(false);
                 }
 
                 public void onFinish() {
 
-                    button.setText("START");
-                    setText.setText("Click Start to begin");
-                    //startAlarm(calendarToday.getTimeInMillis());
+                    button.setText(getString(R.string.Home_startButtonText));
+                    setText.setText(getString(R.string.Home_textBelowPager));
                     button.setEnabled(true);
                 }
             }.start();
 
-
-
-            Toast.makeText(getApplicationContext(), "Progress "+val , Toast.LENGTH_LONG).show();
-
+            //Toast.makeText(getApplicationContext(), "Progress "+val , Toast.LENGTH_LONG).show();
         }
         if(buttonText.equalsIgnoreCase("NA")){
 
-            button.setText("BEGIN");
+            button.setText(getString(R.string.Home_startButtonText));
 
         }
-
-
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -164,8 +193,6 @@ public class Affirmations extends AppCompatActivity {
                 intent.putExtra("counter",count);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
-
-
             }
         });
     }
@@ -177,22 +204,5 @@ public class Affirmations extends AppCompatActivity {
                 TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished)));
 
         return hms;
-    }
-
-    private void startAlarm(long timeInMilli)
-    {
-        AlarmManager m = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        Intent i = new Intent(getApplicationContext(), AffirmationReceiver.class);
-        //open = new Intent(getApplicationContext(),Home.class);
-        //share = new Intent(getApplicationContext(), Settings.class);
-        PendingIntent p = PendingIntent.getBroadcast(getApplicationContext(),0,i,0);
-
-        if(m!=null) {
-
-            m.setRepeating(AlarmManager.RTC, timeInMilli, AlarmManager.INTERVAL_DAY, p);
-        }
-
-        //Toast.makeText(getApplicationContext(), "",Toast.LENGTH_SHORT).show();
-
     }
 }

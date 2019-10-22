@@ -705,6 +705,17 @@
     <string name="affirm_Title">POSITIVE AFFIRMATIONS</string>
     <string name="affirm_SubTitle">Take the 30 day Positive affirmation challenge and make a positive change in your life which will make you confident and will create a positive environment around you</string>
     <string name="affirm_SubTitle1">It\'s good to practice Affirmations every night before sleeping</string>
+    <string name="hashTag">#</string>
+    <string name="percentSign">%</string>
+    <string name="nextAffirm">Next Affirmation In:</string>
+    <string name="myProgress">My Progress</string>
+    <string name="myAffirmSubtitle">Take a deep breath\n
+Stand in front of a mirror and look yourself in the eyes\n
+Say the affirmation slowly and clearly\n
+Repeat the affirmation 3-5 times, really focusing on the meaning of each word\n
+Take another deep breath, allowing your body to absorb the positive feeling of the affirmation\n
+        \n\n Click on Affirm once Done
+    </string>
     <!--TP-->
 
 </resources>

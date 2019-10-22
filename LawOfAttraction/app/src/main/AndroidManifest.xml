@@ -192,7 +192,7 @@
              notification message. See README(https://goo.gl/6BKBk7) for more.
         -->
         <receiver android:name=".AlarmReceiver" />
-        <receiver android:name=".service.AffirmationReceiver" />
+        <receiver android:name=".AffirmationReceiver" />
         <receiver android:name=".Notify" />
         <receiver android:name=".CommentsReminder" />
         <receiver android:name="androidx.media.session.MediaButtonReceiver">

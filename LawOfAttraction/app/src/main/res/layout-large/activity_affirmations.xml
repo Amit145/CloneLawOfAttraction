@@ -13,8 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textAlignment="center"
-        android:textSize="24sp"
-        android:layout_marginTop="20dp"
+        android:textSize="25sp"
+        android:layout_marginTop="30dp"
         android:text="@string/affirm_Title"
         android:textColor="#ffffff"
         android:fontFamily="@font/abeezee"
@@ -23,8 +23,8 @@
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:layout_marginTop="20dp"
-        android:layout_height="200dp"
+        android:layout_marginTop="30dp"
+        android:layout_height="250dp"
         />
 
 
@@ -33,21 +33,21 @@
         android:id="@+id/affirmTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/abeezee"
         android:text="30 Days Positive Affirmation Challenge"
         android:textAlignment="center"
         android:textColor="#ffffff"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:visibility="visible" />
 
     <ProgressBar
         android:id="@+id/progressBar"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="350dp"
+        android:layout_width="450dp"
         android:min="0"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:max="100"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
         android:text="@string/affirm_SubTitle"
         android:textAlignment="center"
         android:textColor="#eaeded"
-        android:textSize="14sp"
+        android:textSize="15sp"
         android:textStyle="bold" />
 
     <TextView
@@ -74,7 +74,7 @@
         android:text="@string/affirm_SubTitle1"
         android:textAlignment="center"
         android:textColor="#eaeded"
-        android:textSize="14sp"
+        android:textSize="15sp"
         android:textStyle="bold" />
 
     <TextView

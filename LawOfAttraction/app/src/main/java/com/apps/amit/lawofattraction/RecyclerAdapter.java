@@ -64,16 +64,24 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
         String temp = String.valueOf(obj.getPhoneNumber());
 
+        date = resources.getString(R.string.activityTracker_text4);
+
         if(temp.length()>20) {
 
-            //date = resources.getString(R.string.affirmOnClick_text);
             holder.txt1.setText(resources.getString(R.string.affirmationTracker_text5)+" "+obj.getName());
             holder.txt2.setText(resources.getString(R.string.affirmation_text)+" "+String.valueOf(obj.getPhoneNumber()));
+
+            holder.linearLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Toast.makeText(context,date,Toast.LENGTH_LONG).show();
+                }
+            });
 
 
         } else {
 
-            date = resources.getString(R.string.activityTracker_text4);
             holder.txt1.setText(resources.getString(R.string.activityTracker_text5)+" "+obj.getName());
             holder.txt2.setText(resources.getString(R.string.activity6_text3)+" "+String.valueOf(obj.getPhoneNumber()));
 
