@@ -87,9 +87,9 @@ public class calendar extends AppCompatActivity {
             }
         });
 
-        AdView mAdView =  findViewById(R.id.adView8);
-        AdRequest adRequest1 = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest1);
+        //AdView mAdView =  findViewById(R.id.adView8);
+       // AdRequest adRequest1 = new AdRequest.Builder().build();
+       // mAdView.loadAd(adRequest1);
 
         recyclerView =  findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);

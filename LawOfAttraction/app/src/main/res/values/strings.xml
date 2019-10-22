@@ -23,7 +23,6 @@
     <string name="taskInfo3">Info Day 3</string>
 
 
-
     <string name="title_activity_feedback">feedback</string>
     <string name="choose_language">Choose Your Language</string>
     <string name="langcontinue">CONTINUE</string>
@@ -527,6 +526,7 @@
     <string name="activity6_text1">CONGRATULATIONS !</string>
     <string name="activity6_text2">You have done Today\'s manifestation</string>
     <string name="activity6_text3">You Manifested for </string>
+    <string name="affirmation_text">You Affirmed for </string>
     <string name="activity6_text4">Track Progress</string>
     <string name="activity6_text5">Home</string>
     <string name="activity6_text6">Share our App</string>
@@ -534,11 +534,13 @@
 
     <!--Tracker Activity Text-->
 
-    <string name="activityTracker_text1">MANIFESTATION</string>
+    <string name="activityTracker_text1">ACTIVITY</string>
     <string name="activityTracker_text2">TRACKER</string>
     <string name="activityTracker_text3">TRACK BY DATE</string>
     <string name="activityTracker_text4">Trust the Universe ! you are so close to your dreams </string>
+    <string name="affirmOnClick_text">Well Done ! Practice Affirmations daily to make a positive change in your Life </string>
     <string name="activityTracker_text5">Manifestation done on </string>
+    <string name="affirmationTracker_text5">Affirmation done on </string>
 
     <!--Quotes Activity Text-->
 
@@ -700,9 +702,9 @@
     <string name="label_previous">Previous track</string>
     <string name="label_next">Next track</string>
 
-
-
-
+    <string name="affirm_Title">POSITIVE AFFIRMATIONS</string>
+    <string name="affirm_SubTitle">Take the 30 day Positive affirmation challenge and make a positive change in your life which will make you confident and will create a positive environment around you</string>
+    <string name="affirm_SubTitle1">It\'s good to practice Affirmations every night before sleeping</string>
     <!--TP-->
 
 </resources>

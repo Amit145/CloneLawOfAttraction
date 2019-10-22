@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/starshd"
+    android:orientation="vertical"
+    tools:context=".affirmationactivity">
+
+    <TextView
+        android:id="@+id/affirmationCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:textColor="#FFEA00"
+        android:textSize="100sp"
+        android:textStyle="bold"
+        android:text="#1"/>
+
+    <TextView
+        android:id="@+id/affirmationTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:padding="15sp"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:text="affirmation"/>
+
+    <TextView
+        android:id="@+id/affirmationSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:padding="25sp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:text="subtitle"/>
+
+    <Button
+        android:id="@+id/affirmationDoneButton"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/transparent_bg_bordered_button"
+        android:fontFamily="@font/nunito_extrabold"
+        android:text="AFFIRM"
+        android:textSize="20sp"
+        android:textColor="#ffffff" />
+
+</LinearLayout>

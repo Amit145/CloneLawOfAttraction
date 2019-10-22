@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#232635"
+    tools:context=".Affirmations">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:layout_marginTop="20dp"
+        android:text="@string/affirm_Title"
+        android:textColor="#ffffff"
+        android:fontFamily="@font/abeezee"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="200dp"
+        />
+
+
+
+    <TextView
+        android:id="@+id/affirmTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/abeezee"
+        android:text="30 Days Positive Affirmation Challenge"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="350dp"
+        android:min="0"
+        android:layout_marginTop="20dp"
+        android:max="100"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/affirmTextSubtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/abeezee"
+        android:text="@string/affirm_SubTitle"
+        android:textAlignment="center"
+        android:textColor="#eaeded"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/abeezee"
+        android:text="@string/affirm_SubTitle1"
+        android:textAlignment="center"
+        android:textColor="#eaeded"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/setText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/nunito_extrabold"
+        android:text="@string/Home_textBelowPager"
+        android:textColor="#DFDFDE"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/affirmationButton"
+        android:layout_marginTop="30dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/buton1"
+        android:fontFamily="@font/nunito_extrabold"
+        android:text="@string/start_text"
+        android:textSize="20sp"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/trackMyProgress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/abeezee"
+        android:text="View My Affirmations"
+        android:textAlignment="center"
+        android:textColor="#eaeded"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

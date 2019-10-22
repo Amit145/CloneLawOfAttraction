@@ -245,7 +245,7 @@ public class Home extends AppCompatActivity {
 
                         }  else if (id == R.id.nav_policy) {
 
-                            Intent art1 = new Intent(getApplicationContext(), Challenge.class);
+                            Intent art1 = new Intent(getApplicationContext(), Affirmations.class);
                             startActivity(art1);
 
                         }else if (id == R.id.nav_task) {

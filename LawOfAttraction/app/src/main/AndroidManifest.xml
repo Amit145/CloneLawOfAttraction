@@ -29,7 +29,9 @@
         android:supportsRtl="true"
         android:taskAffinity=""
         android:theme="@style/AppTheme">
-        <activity android:name=".ChallengeTask"></activity>
+        <activity android:name=".affirmationactivity"></activity>
+        <activity android:name=".Affirmations" />
+        <activity android:name=".ChallengeTask" />
         <activity android:name=".Challenge" />
         <activity
             android:name=".ThankYou"
@@ -190,6 +192,7 @@
              notification message. See README(https://goo.gl/6BKBk7) for more.
         -->
         <receiver android:name=".AlarmReceiver" />
+        <receiver android:name=".service.AffirmationReceiver" />
         <receiver android:name=".Notify" />
         <receiver android:name=".CommentsReminder" />
         <receiver android:name="androidx.media.session.MediaButtonReceiver">
