@@ -1,21 +1,47 @@
 package com.apps.amit.lawofattraction;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.apps.amit.lawofattraction.helper.LocaleHelper;
 import com.bumptech.glide.Glide;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.text.SimpleDateFormat;
@@ -28,13 +54,38 @@ public class Affirmations extends AppCompatActivity {
     int count = 0 ;
     private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
     Long timeRemaining = 0L;
-    String buttonText;
+    String buttonText, value;
+    EditText edt, edt1;
     Calendar calendarToday;
+    AlertDialog alert;
     Calendar calendarYesterday;
     ProgressBar progressBar;
     TextView setText,affirmTitle,affirmTextSubtitle,trackMyProgress,affirmTryAgain;
+    TextView txt,txt1,nameText,wishText;
     ImageView imageView;
     Double percentage = 0d;
+    private InterstitialAd interstitial;
+    ConnectivityManager connMngr;
+    NetworkInfo netInfo;
+    Affirmations affirmations;
+    String DataParseUrl = "";
+    private static final String IS_ADS_ENABLED_STATUS = "AdvsPref";
+    private static final String CURRENT_ADS_STATUS = "adsDate";
+
+    public void displayInterstitial() {
+        // If Ads are loaded, show Interstitial else show nothing.
+
+        if (interstitial.isLoaded() ) {
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    interstitial.show();
+                }
+            }, 3000);
+        }
+
+
+    }
 
     public Affirmations() {
 
@@ -70,6 +121,7 @@ public class Affirmations extends AppCompatActivity {
         affirmationList.add("\"Every day I attract people who help me achieve my goals.\"");
         affirmationList.add("\"I am Living the Life of my Dreams.\"");
         affirmationList.add("\"Money flows easily into my life.\"");
+
     }
 
     public List<String> getList() {
@@ -111,10 +163,11 @@ public class Affirmations extends AppCompatActivity {
             progressBar.setVisibility(View.VISIBLE);
             Glide.with(getApplicationContext()).load(R.drawable.tick).into(imageView);
             progressBar.setProgress(val);
-            affirmTitle.setText("Congratulations ! You have completed your Challenge");
+            affirmTitle.setText(getString(R.string.affirmCongrats));
             affirmTextSubtitle.setText(val+getString(R.string.percentSign));
             affirmTextSubtitle.setTextSize(40f);
-            affirmTryAgain.setText("Wanna Try Again ?");
+            affirmTryAgain.setText(getString(R.string.affirmWannaTryAgain));
+            affirmTryAgain.setTextSize(20f);
 
             button.setText(getString(R.string.Home_startButtonText));
             setText.setText(getString(R.string.Home_textBelowPager));
@@ -132,6 +185,73 @@ public class Affirmations extends AppCompatActivity {
             });
 
         } else {
+
+
+            AdRequest adRequest = new AdRequest.Builder().build();
+
+            // Prepare the Interstitial Ad
+            interstitial = new InterstitialAd(getApplicationContext());
+            // Insert the Ad Unit ID
+            interstitial.setAdUnitId(getString(R.string.admob_interstitial_id));
+
+            interstitial.loadAd(adRequest);
+
+            interstitial.setAdListener(new AdListener() {
+
+                @Override
+                public void onAdLoaded() {
+
+                    Calendar c1 = Calendar.getInstance();
+                    SharedPreferences pref = getSharedPreferences("AdvsPref",MODE_PRIVATE);
+
+                    Calendar dummyDate = Calendar.getInstance();
+                    dummyDate.set(Calendar.YEAR, 2011);
+
+                    String value = pref.getString("adsDate",dummyDate.getTime().toString());
+
+                    if(value!=null && !value.isEmpty())
+                    {
+                        Calendar cal = Calendar.getInstance();
+                        SimpleDateFormat sdf = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
+                        try {
+                            cal.setTime(sdf.parse(value));// all done
+
+                        } catch (ParseException e) {
+
+                            e.printStackTrace();
+                        }
+
+                        if(!cal.getTime().after(c1.getTime()))
+                        {
+                            displayInterstitial();
+                        }
+                    }
+                }
+                @Override
+                public void onAdFailedToLoad(int errorCode) {
+                    // Code to be executed when an ad request fails.
+                    interstitial.setAdListener(null);
+                }
+
+                @Override
+                public void onAdOpened() {
+                    // Code to be executed when the ad is displayed.
+                }
+
+                @Override
+                public void onAdLeftApplication() {
+
+                    interstitial.setAdListener(null);
+                    // Code to be executed when the user has left the app.
+                }
+
+                @Override
+                public void onAdClosed() {
+                    interstitial.setAdListener(null);
+                    // Code to be executed when when the interstitial ad is closed.
+                }
+            });
+
             progressBar.setVisibility(View.VISIBLE);
             progressBar.setProgress(val);
             affirmTitle.setText(getString(R.string.myProgress));
@@ -148,7 +268,9 @@ public class Affirmations extends AppCompatActivity {
 
                 }
             });
+
         }
+
         calendarYesterday = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
         try {
@@ -178,6 +300,8 @@ public class Affirmations extends AppCompatActivity {
             }.start();
 
             //Toast.makeText(getApplicationContext(), "Progress "+val , Toast.LENGTH_LONG).show();
+
+
         }
         if(buttonText.equalsIgnoreCase("NA")){
 

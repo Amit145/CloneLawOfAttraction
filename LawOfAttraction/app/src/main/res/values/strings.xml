@@ -2,6 +2,7 @@
 
     <string name="app_name">LawOfAttraction</string>
     <string name="admob_interstitial_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="admob_banner_id">ca-app-pub-3940256099942544/6300978111</string>
     <string name="langEng">English</string>
     <string name="langFre">français (French) </string>
     <string name="langcSpa">español (Spanish) </string>
@@ -628,7 +629,7 @@
 
     <!--About App-->
 
-    <string name="aboutApp">LawOfAttraction v3.6</string>
+    <string name="aboutApp">LawOfAttraction v3.7</string>
     <string name="aboutApp1">Turn Your Dreams Into the Reality with power of positive thoughts</string>
     <string name="aboutApp2">Why ADS ?</string>
     <string name="aboutApp3">
@@ -716,6 +717,12 @@ Repeat the affirmation 3-5 times, really focusing on the meaning of each word\n
 Take another deep breath, allowing your body to absorb the positive feeling of the affirmation\n
         \n\n Click on Affirm once Done
     </string>
+
+    <string name="affirmCongrats">Congratulations ! You have completed your Challenge</string>
+    <string name="affirmWannaTryAgain">Wanna Try Again ?</string>
+    <string name="affirmationsDrawerTitle">Affirmations</string>
+
+
     <!--TP-->
 
 </resources>

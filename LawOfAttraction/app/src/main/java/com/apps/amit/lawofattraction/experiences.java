@@ -70,6 +70,7 @@ public class experiences extends AppCompatActivity {
     ConnectivityManager connMngr;
     NetworkInfo netInfo;
     String token;
+    LinearLayout layoutExperience;
     String value = "en";
 
     RequestQueue rq;
@@ -85,8 +86,13 @@ public class experiences extends AppCompatActivity {
 
     public void displayInterstitial() {
 // If Ads are loaded, show Interstitial else show nothing.
-        if (interstitial.isLoaded()) {
-            interstitial.show();
+        if (interstitial.isLoaded() ) {
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    interstitial.show();
+                }
+            }, 2000);
         }
     }
 
@@ -100,7 +106,7 @@ public class experiences extends AppCompatActivity {
         l1 =  findViewById(R.id.linSto);
         butSub =  findViewById(R.id.butSub);
         txtInt =  findViewById(R.id.txtInt);
-
+        layoutExperience = findViewById(R.id.layoutExperiences);
 
         AdRequest adRequest = new AdRequest.Builder().build();
 

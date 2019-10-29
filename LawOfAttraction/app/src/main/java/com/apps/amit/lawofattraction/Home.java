@@ -220,7 +220,7 @@ public class Home extends AppCompatActivity {
                             // Handle the camera action
                         } else if (id == R.id.nav_gallery) {
 
-                            Intent art1 = new Intent(getApplicationContext(),Lawtips.class);
+                            Intent art1 = new Intent(getApplicationContext(),Affirmations.class);
                             startActivity(art1);
 
                         } else if (id == R.id.nav_slideshow) {
@@ -245,7 +245,7 @@ public class Home extends AppCompatActivity {
 
                         }  else if (id == R.id.nav_policy) {
 
-                            Intent art1 = new Intent(getApplicationContext(), Affirmations.class);
+                            Intent art1 = new Intent(getApplicationContext(), Policy.class);
                             startActivity(art1);
 
                         }else if (id == R.id.nav_task) {

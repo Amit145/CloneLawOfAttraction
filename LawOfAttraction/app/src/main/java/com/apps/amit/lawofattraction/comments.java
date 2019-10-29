@@ -77,6 +77,7 @@ public class comments extends AppCompatActivity {
     CheckBox checkBox;
     NetworkInfo netInfo;
     String DataParseUrl = "http://www.innovativelabs.xyz/insert_data.php";
+    String userPrivateWish = "http://www.innovativelabs.xyz/insert_userPrivateWish.php";
     RecyclerView recyclerView;
     RecyclerView.Adapter mAdapter;
     private AdView mAdView69;
@@ -88,8 +89,13 @@ public class comments extends AppCompatActivity {
 
     public void displayInterstitial() {
         // If Ads are loaded, show Interstitial else show nothing.
-        if (interstitial.isLoaded()) {
-            interstitial.show();
+        if (interstitial.isLoaded() ) {
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    interstitial.show();
+                }
+            }, 1000);
         }
     }
 
@@ -454,12 +460,63 @@ public class comments extends AppCompatActivity {
         db.addWish(new WishDB(UserName,UserComment,timee));
         alert.dismiss();
 
+            if(netInfo!=null && netInfo.isConnected())
+            {
+                //send to server
+                SendPwishToServer(UserName,UserComment,timee);
+            }
+
+
         Intent openIntent = new Intent(getApplicationContext(),PrivateWishes.class);
         startActivity(openIntent);
 
         }
 
 
+    }
+
+    //If private
+    public void SendPwishToServer(final String name, final String comment, final String date){
+        class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
+            @Override
+            protected String doInBackground(String... params) {
+
+
+                List<NameValuePair> nameValuePairs = new ArrayList<>();
+
+                nameValuePairs.add(new BasicNameValuePair("name", name));
+                nameValuePairs.add(new BasicNameValuePair("comment", comment));
+                nameValuePairs.add(new BasicNameValuePair("date", date));
+
+
+                try {
+                    HttpClient httpClient = new DefaultHttpClient();
+
+                    HttpPost httpPost = new HttpPost(userPrivateWish);
+
+                    httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs,"UTF-8"));
+
+                    HttpResponse response = httpClient.execute(httpPost);
+
+                    response.getEntity();
+
+
+                } catch (Exception e) {
+
+
+                }
+                return "";
+            }
+
+            @Override
+            protected void onPostExecute(String result) {
+                super.onPostExecute(result);
+
+
+            }
+        }
+        SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
+        sendPostReqAsyncTask.execute(name, comment, date);
     }
 
     //If Public Send Data Server

@@ -3,6 +3,7 @@ package com.apps.amit.lawofattraction;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Handler;
 import android.os.SystemClock;
 import androidx.core.app.ActivityCompat;
 import androidx.appcompat.app.AlertDialog;
@@ -54,9 +55,14 @@ public class Finish extends AppCompatActivity {
 
     public void displayInterstitial() {
     // If Ads are loaded, show Interstitial else show nothing.
-        if (interstitial.isLoaded()) {
-            interstitial.show();
-        }
+
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                interstitial.show();
+            }
+        }, 2000);
     }
 
     @Override

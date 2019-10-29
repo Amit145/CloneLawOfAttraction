@@ -8,6 +8,18 @@
     android:orientation="vertical"
     tools:context=".affirmationactivity">
 
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_height="wrap_content">
+
     <TextView
         android:id="@+id/affirmationCount"
         android:layout_width="wrap_content"
@@ -59,5 +71,7 @@
         android:text="AFFIRM"
         android:textSize="40sp"
         android:textColor="#ffffff" />
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

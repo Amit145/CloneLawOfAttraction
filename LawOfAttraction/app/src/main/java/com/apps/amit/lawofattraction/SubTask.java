@@ -11,6 +11,7 @@ import android.os.AsyncTask;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,6 +65,8 @@ public class SubTask extends AppCompatActivity {
     TextView usrName;
     Button taskLike;
     Button taskDone;
+    boolean flag = false;
+    int dummy = 99;
     Button expButton1;
     ImageView cover;
     ImageView taskShares;
@@ -120,8 +123,9 @@ public class SubTask extends AppCompatActivity {
 
 
     public void displayInterstitial() {
-// If Ads are loaded, show Interstitial else show nothing.
-        if (interstitial.isLoaded()) {
+
+        if (interstitial.isLoaded() ) {
+
             interstitial.show();
         }
     }
@@ -181,10 +185,12 @@ public class SubTask extends AppCompatActivity {
 
                     if(cal.getTime().after(c1.getTime()))
                     {
-                        //Toast.makeText(getApplicationContext(),cal.getTime()+" "+c1.getTime() , Toast.LENGTH_SHORT).show();
+                        //your code
+                        dummy = 0;
                     }
                     else {
-                        displayInterstitial();
+
+                        flag = true;
                     }
 
                 }
@@ -415,7 +421,7 @@ public class SubTask extends AppCompatActivity {
 
         } catch (android.content.ActivityNotFoundException ex) {
 
-            Toast.makeText(getApplicationContext(), resources.getString(R.string.nameError4), Toast.LENGTH_LONG).show();
+           Toast.makeText(getApplicationContext(), resources.getString(R.string.nameError4), Toast.LENGTH_LONG).show();
         }
 
 
@@ -424,6 +430,7 @@ public class SubTask extends AppCompatActivity {
 
 
     public void taskDone(View view) {
+
 
         view.startAnimation(buttonClick);
         doneTASK.setText(resources.getString(R.string.subTaskCongrats));
@@ -437,6 +444,20 @@ public class SubTask extends AppCompatActivity {
         taskLike.setVisibility(View.VISIBLE);
         expButton1.setVisibility(View.VISIBLE);
         taskShares.setVisibility(View.VISIBLE);
+
+        //call ad
+
+        if(flag) {
+            if (interstitial.isLoaded() ) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        interstitial.show();
+                    }
+                }, 1000);
+            }
+        }
+
         SendUserDoneToServer(naam,token,String.valueOf(taskID));
 
 
@@ -519,7 +540,7 @@ public class SubTask extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
                         if(error != null){
 
-                            Toast.makeText(getApplicationContext(), resources.getString(R.string.nameError4), Toast.LENGTH_LONG).show();
+                            //Toast.makeText(getApplicationContext(), resources.getString(R.string.nameError4), Toast.LENGTH_LONG).show();
                         }
                     }
                 }

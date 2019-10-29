@@ -50,6 +50,8 @@ public class Story extends AppCompatActivity {
 
     LinearLayout l1,inter;
     ImageView b1;
+    boolean flag = false;
+    int dummy = 99;
     WebView mywebview;
     //SwipeRefreshLayout mSwipeRefreshLayout;
     Resources resources = null;
@@ -65,8 +67,16 @@ public class Story extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
        // mywebview.destroy();
-        interstitial.setAdListener(null);
-        this.finish();
+        if(flag) {
+            if (interstitial.isLoaded() ) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        interstitial.show();
+                    }
+                }, 1000);
+            }
+        }
     }
 
 
@@ -96,8 +106,13 @@ public class Story extends AppCompatActivity {
 
     public void displayInterstitial() {
 // If Ads are loaded, show Interstitial else show nothing.
-        if (interstitial.isLoaded()) {
-            interstitial.show();
+        if (interstitial.isLoaded() ) {
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    interstitial.show();
+                }
+            }, 2000);
         }
     }
 
@@ -181,10 +196,12 @@ public class Story extends AppCompatActivity {
 
                         if(cal.getTime().after(c1.getTime()))
                         {
-                           // Toast.makeText(getApplicationContext(),cal.getTime()+" "+c1.getTime() , Toast.LENGTH_SHORT).show();
+                            //your code
+                            dummy = 0;
                         }
                         else {
-                            displayInterstitial();
+
+                            flag = true;
                         }
 
                     }

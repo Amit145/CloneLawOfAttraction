@@ -78,8 +78,15 @@ public class MusicList extends AppCompatActivity {
 
     public void displayInterstitial() {
 // If Ads are loaded, show Interstitial else show nothing.
-        if (interstitial.isLoaded()) {
-            interstitial.show();
+        int random = (int)(Math.random() * 2 + 1);
+
+        if (interstitial.isLoaded() ) {
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    interstitial.show();
+                }
+            }, 2000);
         }
     }
 

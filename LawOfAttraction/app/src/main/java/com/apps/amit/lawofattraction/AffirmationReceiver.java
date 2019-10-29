@@ -67,7 +67,7 @@ public class AffirmationReceiver extends BroadcastReceiver {
                     .setSmallIcon(R.drawable.status)
                     .addAction(R.drawable.ic_play_arrow_white_24dp, resources.getString(R.string.Home_clickToStart), p1)
                     .setContentTitle("Law Of Attraction Daily")
-                    .setContentText(resources.getString(R.string.Home_textBelowPager1)+""+name1[0]+" It's Time for your Affirmation")
+                    .setContentText(resources.getString(R.string.Home_textBelowPager1)+" "+name1[0]+" It's time for your Affirmation")
                     .setDefaults(Notification.DEFAULT_LIGHTS | Notification.DEFAULT_SOUND)
                     .setContentInfo("");
 
@@ -98,7 +98,7 @@ public class AffirmationReceiver extends BroadcastReceiver {
                     .setAutoCancel(true)
                     .addAction(R.drawable.ic_play_arrow_white_24dp, resources.getString(R.string.Home_clickToStart), p1)
                     .setContentTitle("Law Of Attraction Daily")
-                    .setContentText(resources.getString(R.string.Home_textBelowPager1)+""+name1[0]+" It's Time for your Affirmation")
+                    .setContentText(resources.getString(R.string.Home_textBelowPager1)+" "+name1[0]+" It's time for your Affirmation")
                     .setDefaults(Notification.DEFAULT_LIGHTS | Notification.DEFAULT_SOUND)
                     .setContentInfo("");
 

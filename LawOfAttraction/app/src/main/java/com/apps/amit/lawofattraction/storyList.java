@@ -92,8 +92,13 @@ public class storyList extends AppCompatActivity {
 
     public void displayInterstitial() {
 // If Ads are loaded, show Interstitial else show nothing.
-        if (interstitial.isLoaded()) {
-            interstitial.show();
+        if (interstitial.isLoaded() ) {
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    interstitial.show();
+                }
+            }, 2000);
         }
     }
 

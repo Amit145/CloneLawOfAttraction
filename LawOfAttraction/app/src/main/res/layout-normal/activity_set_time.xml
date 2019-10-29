@@ -145,7 +145,7 @@
         android:layout_marginBottom="2dp"
 
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
+        ads:adUnitId="@string/admob_banner_id" />
 
     </LinearLayout>
 </LinearLayout>

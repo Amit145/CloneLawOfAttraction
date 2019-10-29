@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="3"
-    android:background="@drawable/homeimage1"
+    android:background="@drawable/starshd"
     tools:context=".SubTask">
 
 
