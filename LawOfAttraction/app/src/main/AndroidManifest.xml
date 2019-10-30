@@ -29,8 +29,10 @@
         android:supportsRtl="true"
         android:taskAffinity=""
         android:theme="@style/AppTheme">
-        <activity android:name=".affirmationactivity"></activity>
-        <activity android:name=".Affirmations" />
+        <activity android:name=".affirmationactivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Affirmations"
+            android:screenOrientation="portrait" />
         <activity android:name=".ChallengeTask" />
         <activity android:name=".Challenge" />
         <activity

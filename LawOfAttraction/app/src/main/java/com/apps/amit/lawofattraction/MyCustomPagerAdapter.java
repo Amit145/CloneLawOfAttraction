@@ -54,21 +54,21 @@ public class MyCustomPagerAdapter extends PagerAdapter{
         public void onClick(View v) {
           if((position + 1) == 1)
           {
-            Intent art1 = new Intent(context, ThankYou.class);
+            Intent art1 = new Intent(context, Affirmations.class);
             context.startActivity(art1);
 
 
           }
           else if((position + 1) == 2)
           {
-            Intent art1 = new Intent(context,storyList.class);
+            Intent art1 = new Intent(context,ThankYou.class);
             context.startActivity(art1);
 
 
           }
           else if((position + 1) == 3)
           {
-            Intent art1 = new Intent(context,Task.class);
+            Intent art1 = new Intent(context,storyList.class);
             context.startActivity(art1);
 
 

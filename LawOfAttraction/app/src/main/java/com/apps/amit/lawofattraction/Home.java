@@ -111,9 +111,9 @@ public class Home extends AppCompatActivity {
         TextView nameText;
         ButterKnife.bind(this);
 
-        images[0] = R.drawable.p;
-        images[1] = R.drawable.p7;
-        images[2] = R.drawable.p6;
+        images[0] = R.drawable.affirmpager;
+        images[1] = R.drawable.p;
+        images[2] = R.drawable.p7;
         images[3] = R.drawable.p4;
         images[4] = R.drawable.p1;
         images[5] = R.drawable.p2;
@@ -384,7 +384,7 @@ public class Home extends AppCompatActivity {
             LayoutInflater inflater = Home.this.getLayoutInflater();
             final View dialogView = inflater.inflate(R.layout.whatsnew, null);
             builder.setCancelable(false);
-            builder.setMessage("What's New In v3.6");
+            builder.setMessage("What's New In v3.7");
 
             builder.setView(dialogView);
             alert = builder.create();
@@ -393,14 +393,14 @@ public class Home extends AppCompatActivity {
             Button cancel =  dialogView.findViewById(R.id.btncancel);
             ImageView img =  dialogView.findViewById(R.id.storyImage);
 
-            Glide.with(getApplicationContext()).load(R.drawable.sett2).thumbnail(0.1f).into(img);
+            Glide.with(getApplicationContext()).load(R.drawable.affirmpager).thumbnail(0.1f).into(img);
 
             submit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     v.startAnimation(buttonClick);
 
-                    Intent art1 = new Intent(getApplicationContext(),Settings.class);
+                    Intent art1 = new Intent(getApplicationContext(),Affirmations.class);
                     startActivity(art1);
 
                     alert.dismiss();
@@ -541,11 +541,11 @@ public class Home extends AppCompatActivity {
     private boolean isFirstTime()
     {
         SharedPreferences pref = getPreferences(MODE_PRIVATE);
-        boolean ranBefore = pref.getBoolean("whatsNewv3.5",false);
+        boolean ranBefore = pref.getBoolean("whatsNewv3.6",false);
         if(!ranBefore)
         {
             SharedPreferences.Editor editor = pref.edit();
-            editor.putBoolean("whatsNewv3.5",true);
+            editor.putBoolean("whatsNewv3.6",true);
             editor.apply();
         }
         return !ranBefore;
