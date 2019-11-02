@@ -177,7 +177,9 @@ public class ThankYou extends AppCompatActivity {
                 try {
                     imageUri = Uri.parse(MediaStore.Images.Media.insertImage(this.getContentResolver(),
                             BitmapFactory.decodeResource(getResources(), drawableList.get(answer)), null, null));
-                } catch (NullPointerException e) {
+                } catch (Exception e) {
+
+                    //Toast
                 }
                 String text = "Thank You So Much !";
                 // Launch the Google+ share dialog with attribution to your app.

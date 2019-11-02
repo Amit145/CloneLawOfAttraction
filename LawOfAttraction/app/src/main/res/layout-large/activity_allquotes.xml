@@ -11,14 +11,13 @@
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:weightSum="1"
-        android:background="@drawable/starshd"
+        android:id="@+id/mainlayout"
         android:layout_height="wrap_content"
         tools:context=".allquotes">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recylcerView2"
             android:layout_weight=".9"
-            android:background="@drawable/starshd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             >

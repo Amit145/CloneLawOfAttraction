@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/starshd"
+    android:id="@+id/mainlayout"
     android:weightSum="3"
     android:orientation="vertical"
     tools:context="com.apps.amit.lawofattraction.info">

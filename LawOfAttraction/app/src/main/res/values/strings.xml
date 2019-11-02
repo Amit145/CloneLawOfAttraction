@@ -1,8 +1,8 @@
 <resources>
 
     <string name="app_name">LawOfAttraction</string>
-    <string name="admob_interstitial_id">ca-app-pub-3940256099942544/1033173712</string>
-    <string name="admob_banner_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="admob_interstitial_id">ca-app-pub-2259921691483610/4649957962</string>
+    <string name="admob_banner_id">ca-app-pub-2259921691483610/8425551447</string>
     <string name="langEng">English</string>
     <string name="langFre">français (French) </string>
     <string name="langcSpa">español (Spanish) </string>
@@ -629,7 +629,7 @@
 
     <!--About App-->
 
-    <string name="aboutApp">LawOfAttraction v3.7</string>
+    <string name="aboutApp">LawOfAttraction v3.7.1</string>
     <string name="aboutApp1">Turn Your Dreams Into the Reality with power of positive thoughts</string>
     <string name="aboutApp2">Why ADS ?</string>
     <string name="aboutApp3">

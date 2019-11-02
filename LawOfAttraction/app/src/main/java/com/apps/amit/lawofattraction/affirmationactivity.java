@@ -7,16 +7,24 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
 import com.google.firebase.iid.FirebaseInstanceId;
 
 import org.apache.http.HttpResponse;
@@ -39,6 +47,7 @@ public class affirmationactivity extends AppCompatActivity {
     TextView count,affirmationTitle,affirmationSubTitle;
     Affirmations affirmations ;
     Button button;
+    LinearLayout mainlayout;
     int counter = 0 ;
     String s = null;
     String subTitle = null;
@@ -56,9 +65,23 @@ public class affirmationactivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_affirmationactivity);
 
+
+        mainlayout = findViewById(R.id.mainlayout);
+
+
+        Glide.with(this).load(R.drawable.starshd).asBitmap().into(new SimpleTarget<Bitmap>() {
+            @Override
+            public void onResourceReady(Bitmap bitmap, GlideAnimation<? super Bitmap> glideAnimation) {
+                Drawable drawable = new BitmapDrawable(getResources(), bitmap);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    mainlayout.setBackground(drawable);
+                }
+            }
+        });
+
         cal = Calendar.getInstance();
-        //cal.add(Calendar.DATE,1);
-        cal.add(Calendar.MINUTE,1);
+        cal.add(Calendar.DATE,1);
+        //cal.add(Calendar.MINUTE,1);
 
         affirmations = new Affirmations();
 

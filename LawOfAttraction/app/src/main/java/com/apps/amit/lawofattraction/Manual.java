@@ -5,14 +5,23 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.apps.amit.lawofattraction.helper.LocaleHelper;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
@@ -26,6 +35,7 @@ public class Manual extends AppCompatActivity {
     TextView txt1,txt2,txt3,txt4,txt5,txt6,txt7,txt8,txt9,txt10,txt11;
     private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
     ImageView img1;
+    LinearLayout mainlayout;
 
     @Override
     public void onBackPressed() {
@@ -42,6 +52,18 @@ public class Manual extends AppCompatActivity {
         try {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_manual);
+
+            mainlayout = findViewById(R.id.mainlayout);
+
+            Glide.with(this).load(R.drawable.starshd).asBitmap().into(new SimpleTarget<Bitmap>() {
+                @Override
+                public void onResourceReady(Bitmap bitmap, GlideAnimation<? super Bitmap> glideAnimation) {
+                    Drawable drawable = new BitmapDrawable(getResources(), bitmap);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                        mainlayout.setBackground(drawable);
+                    }
+                }
+            });
 
             infoButon1 =  findViewById(R.id.infoButtonn);
             txt1 =  findViewById(R.id.ihome);

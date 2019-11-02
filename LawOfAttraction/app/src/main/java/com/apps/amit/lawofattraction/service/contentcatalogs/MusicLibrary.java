@@ -123,7 +123,9 @@ public class MusicLibrary {
                         MediaMetadataCompat.METADATA_KEY_GENRE,
                         MediaMetadataCompat.METADATA_KEY_TITLE
                 }) {
-            builder.putString(key, metadataWithoutBitmap.getString(key));
+            if (metadataWithoutBitmap != null) {
+                builder.putString(key, metadataWithoutBitmap.getString(key));
+            }
         }
         builder.putLong(
                 MediaMetadataCompat.METADATA_KEY_DURATION,
