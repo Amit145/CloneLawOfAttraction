@@ -8,7 +8,7 @@
     android:background="#232635"
     android:orientation="vertical"
     android:weightSum="1"
-    tools:context=".Policy">
+    tools:context=".PrivacyPolicyActivity">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         xmlns:android="http://schemas.android.com/apk/res/android"

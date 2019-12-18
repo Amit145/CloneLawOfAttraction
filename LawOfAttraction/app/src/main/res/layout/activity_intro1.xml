@@ -7,7 +7,7 @@
     android:id="@+id/mainlayout"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".Intro1">
+    tools:context=".SelectManifestationTypeActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

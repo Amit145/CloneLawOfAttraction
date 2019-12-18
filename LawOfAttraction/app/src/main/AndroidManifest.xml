@@ -16,10 +16,12 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".MainApplication"
+        android:name=".helper.MainApplication"
         android:allowBackup="true"
         android:allowTaskReparenting="false"
         android:excludeFromRecents="true"
+        android:fullBackupContent="true"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:launchMode="singleTask"
@@ -29,41 +31,43 @@
         android:supportsRtl="true"
         android:taskAffinity=""
         android:theme="@style/AppTheme">
-        <activity android:name=".affirmationactivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".Affirmations"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ChallengeTask" />
-        <activity android:name=".Challenge" />
         <activity
-            android:name=".ThankYou"
+            android:name=".AffirmationActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Intro1"
+            android:name="com.facebook.ads.AudienceNetworkActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:hardwareAccelerated="true" />
+        <activity
+            android:name=".AffirmationHome"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MusicList"
+            android:name=".SayThankYouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SelectManifestationTypeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MusicListActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="MUSIC" />
+                <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".NewMusic"
+            android:name=".PrivateWishesActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PrivateWishes"
+            android:name=".MusicPlayActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MainActivity"
+            android:name=".DisableAdActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".NotificationActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Home"
+            android:name=".HomeActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -72,73 +76,73 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Exercise1"
+            android:name=".Exercise1Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Exercise2"
+            android:name=".Exercise2Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Exercise3"
+            android:name=".Exercise3Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Exercise4"
+            android:name=".Exercise4Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Exercise5"
+            android:name=".Exercise5Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Finish"
+            android:name=".ExerciseFinishActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Settings"
+            android:name=".SettingsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".calendar"
+            android:name=".ManifestationTrackerActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".timepicker"
+            android:name=".SetReminderActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Story"
+            android:name=".StoryActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".AboutApp"
+            android:name=".AboutAppActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".AllQuotes"
+            android:name=".AllQuotesActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".experiences"
+            android:name=".MyStoryActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".expStory"
+            android:name=".MyStoryReplyActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SetTime"
+            android:name=".SetTimeActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustNothing" />
         <activity
-            android:name=".info"
+            android:name=".InformationActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SetLanguage"
+            android:name=".SetLanguageActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".exer"
+            android:name=".ExerciseInformationActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Manual"
+            android:name=".UserManualActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".comments"
+            android:name=".CommentsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".feedback"
+            android:name=".UserFeedbackActivity"
             android:label="@string/title_activity_feedback"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".Quotes"
+            android:name=".DailyQuotesActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="DAILY" />
@@ -147,13 +151,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Lawtips"
+            android:name=".LawTipsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Policy"
+            android:name=".PrivacyPolicyActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Task"
+            android:name=".TaskActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="TASK" />
@@ -162,10 +166,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SubTask"
+            android:name=".SubTaskActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".storyList"
+            android:name=".StoryListActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="STORY" />
@@ -193,24 +197,21 @@
              Set color used with incoming notification messages. This is used when no color is set for the incoming
              notification message. See README(https://goo.gl/6BKBk7) for more.
         -->
-        <receiver android:name=".AlarmReceiver" />
-        <receiver android:name=".AffirmationReceiver" />
-        <receiver android:name=".Notify" />
-        <receiver android:name=".CommentsReminder" />
+        <receiver android:name=".notifications.DailyReminderReceiver" />
+        <receiver android:name=".notifications.AffirmationNotificationReceiver" />
+        <receiver android:name=".notifications.Notify" />
+        <receiver android:name=".notifications.CommentsReminder" />
         <receiver android:name="androidx.media.session.MediaButtonReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.MEDIA_BUTTON" />
             </intent-filter>
         </receiver>
 
-        <service android:name=".FirebaseMessagingService">
+        <service
+            android:name=".service.FirebaseMessagingService"
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service>
-        <service android:name=".FirebaseInstanceIDService">
-            <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
         <!--
@@ -224,7 +225,7 @@
         <service
             android:name=".service.MusicService"
             android:enabled="true"
-            android:exported="true">
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.media.browse.MediaBrowserService" />
             </intent-filter>

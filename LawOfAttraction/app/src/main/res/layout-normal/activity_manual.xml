@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/mainlayout"
     android:weightSum="3"
     android:orientation="vertical"
-    tools:context="com.apps.amit.lawofattraction.Manual">
+    tools:context="com.apps.amit.lawofattraction.UserManualActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,23 +42,21 @@
             android:padding="10dp"
             android:layout_height="wrap_content">
 
-
             <ImageView
                 android:id="@+id/igg"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
-                 />
+                android:contentDescription="@string/imageName" />
 
-            <com.google.android.gms.ads.AdView
-                android:id="@+id/adViewi11"
+            <LinearLayout
+                android:id="@+id/adView"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_gravity="bottom"
-                android:layout_marginBottom="10dp"
-                ads:adSize="BANNER"
-                ads:adUnitId="@string/admob_banner_id" />
+                android:layout_marginBottom="10dp" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -80,8 +76,8 @@
                 android:padding="10dp"
                 android:text="@string/activity_manual2"
                 android:textAlignment="viewStart"
-                android:textSize="15sp" />
-
+                android:textSize="15sp"
+                android:layout_gravity="start" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -101,8 +97,8 @@
                 android:padding="10dp"
                 android:text="@string/activity_manual4"
                 android:textAlignment="viewStart"
-                android:textSize="15sp" />
-
+                android:textSize="15sp"
+                android:layout_gravity="start" />
 
             <TextView
                 android:id="@+id/textView6"
@@ -122,9 +118,8 @@
                 android:padding="10dp"
                 android:text="@string/activity_manual6"
                 android:textAlignment="viewStart"
-                android:textSize="15sp" />
-
-
+                android:textSize="15sp"
+                android:layout_gravity="start" />
 
             <TextView
                 android:id="@+id/textView8"
@@ -145,10 +140,6 @@
                 android:text="@string/activity_manual8"
                 android:textSize="15sp" />
 
-
-
-
-
             <TextView
                 android:id="@+id/textView10"
                 android:layout_width="match_parent"
@@ -158,9 +149,7 @@
                 android:padding="10dp"
                 android:textSize="18sp"
                 android:fontFamily="@font/abeezee"
-                android:text="@string/activity_manual9"
-                />
-
+                android:text="@string/activity_manual9" />
 
             <Button
                 android:id="@+id/infoButtonn"
@@ -173,9 +162,7 @@
                 android:text="@string/activity_manual10"
                 android:textColor="#ffffff"
                 android:textSize="20sp"
-                android:textStyle="bold"
-
-                />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/ihome"
@@ -194,26 +181,11 @@
     </ScrollView>
 
     <LinearLayout
+        android:id="@+id/banner_container"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_weight=".5"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:orientation="vertical">
-
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/adViewi22"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:layout_gravity="bottom"
-
-            android:layout_marginTop="10dp"
-
-            ads:adSize="BANNER"
-            ads:adUnitId="@string/admob_banner_id" />
-
     </LinearLayout>
-
-
-
 
 </LinearLayout>

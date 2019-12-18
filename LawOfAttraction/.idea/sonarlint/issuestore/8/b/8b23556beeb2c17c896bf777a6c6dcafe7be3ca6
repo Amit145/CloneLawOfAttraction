@@ -1,0 +1,22 @@
+
+Jsquid:S1444R"3Make this "public static musicImageURL" field final(İùĞ˜
+Msquid:S2696"6Make the enclosing method "static" or remove this set.(‚İÅ€
+Lsquid:S1444P"0Make this "public static musicTitle" field final(’İú²üÿÿÿÿ
+Dsquid:S1444S".Make this "public static musicURL" field final(³ƒ‰6
+Ksquid:S1444Q"/Make this "public static musicBody" field final(ØÄŸ¸úÿÿÿÿ
+‰"squid:ClassVariableVisibilityCheckP"VMake musicTitle a static final constant or non-public and provide accessors if needed.(’İú²üÿÿÿÿ
+‡"squid:ClassVariableVisibilityCheckR"YMake musicImageURL a static final constant or non-public and provide accessors if needed.(İùĞ˜
+Rsquid:S2696}"6Make the enclosing method "static" or remove this set.(ô®å›øÿÿÿÿ
+Ssquid:S2696~"6Make the enclosing method "static" or remove this set.(ÜîºE8…¥ï-
+osquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(×“¾ñùÿÿÿÿ8º°ƒêê-
+ˆ"squid:ClassVariableVisibilityCheckQ"UMake musicBody a static final constant or non-public and provide accessors if needed.(ØÄŸ¸úÿÿÿÿ
+…"squid:ClassVariableVisibilityCheckU"WMake musicShares a static final constant or non-public and provide accessors if needed.(œŒÄÆ
+Ysquid:S1141£"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8º°ƒêê-
+‡"squid:ClassVariableVisibilityCheckV"YMake musicDuration a static final constant or non-public and provide accessors if needed.(ôÜÑë
+‰"squid:ClassVariableVisibilityCheckT"VMake musicViews a static final constant or non-public and provide accessors if needed.(„±¸‘øÿÿÿÿ
+Ssquid:S2696"6Make the enclosing method "static" or remove this set.(µÏÔÏûÿÿÿÿ
+Jsquid:S1444V"3Make this "public static musicDuration" field final(ôÜÑë
+Ssquid:S2696„"6Make the enclosing method "static" or remove this set.(š‘ƒÿÿÿÿÿ
+"squid:ClassVariableVisibilityCheckS"TMake musicURL a static final constant or non-public and provide accessors if needed.(³ƒ‰6
+]"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(×“¾ñùÿÿÿÿ8º°ƒêê-
+qsquid:MaximumInheritanceDepth6"<This class has 6 parents which is greater than 5 authorized.(Ò¬×îùÿÿÿÿ8³”„âë-

@@ -8,7 +8,7 @@
     android:background="#232635"
     android:orientation="vertical"
     android:weightSum="1"
-    tools:context=".Story">
+    tools:context=".StoryActivity">
 
     <LinearLayout
         android:layout_weight=".8"

@@ -1,0 +1,4 @@
+
+vsquid:S3776Β"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(πί¤ÿÿÿÿÿ8ξΘχν-
+lsquid:MaximumInheritanceDepth6"<This class has 6 parents which is greater than 5 authorized.(»±ΑΓ8ξΘχν-
+Ysquid:S1141ν"5Extract this nested try block into a separate method.(΅»Άόωÿÿÿÿ8ξΘχν-

@@ -81,7 +81,7 @@
                 android:textStyle="bold|italic"
                 tools:text="Song Artist" />
 
-            <com.apps.amit.lawofattraction.MediaSeekBar
+            <com.apps.amit.lawofattraction.helper.MediaSeekBar
                 android:id="@+id/seekbar_audio"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"

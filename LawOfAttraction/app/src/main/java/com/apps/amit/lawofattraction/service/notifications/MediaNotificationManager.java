@@ -36,7 +36,7 @@ import android.support.v4.media.session.MediaSessionCompat;
 import android.support.v4.media.session.PlaybackStateCompat;
 import android.util.Log;
 
-import com.apps.amit.lawofattraction.MusicList;
+import com.apps.amit.lawofattraction.MusicListActivity;
 import com.apps.amit.lawofattraction.R;
 import com.apps.amit.lawofattraction.service.MusicService;
 import com.apps.amit.lawofattraction.service.contentcatalogs.MusicLibrary;
@@ -58,8 +58,6 @@ public class MediaNotificationManager {
 
     private final NotificationCompat.Action mPlayAction;
     private final NotificationCompat.Action mPauseAction;
-    //private final NotificationCompat.Action mNextAction;
-   // private final NotificationCompat.Action mPrevAction;
     private final NotificationManager mNotificationManager;
 
     public MediaNotificationManager(MusicService service) {
@@ -82,24 +80,6 @@ public class MediaNotificationManager {
                         MediaButtonReceiver.buildMediaButtonPendingIntent(
                                 mService,
                                 PlaybackStateCompat.ACTION_PAUSE));
-
-        /*
-        mNextAction =
-                new NotificationCompat.Action(
-                        R.drawable.ic_skip_next_white_24dp,
-                        mService.getString(R.string.label_next),
-                        MediaButtonReceiver.buildMediaButtonPendingIntent(
-                                mService,
-                                PlaybackStateCompat.ACTION_SKIP_TO_NEXT));
-        mPrevAction =
-                new NotificationCompat.Action(
-                        R.drawable.ic_skip_previous_white_24dp,
-                        mService.getString(R.string.label_previous),
-                        MediaButtonReceiver.buildMediaButtonPendingIntent(
-                                mService,
-                                PlaybackStateCompat.ACTION_SKIP_TO_PREVIOUS));
-
-        */
 
         // Cancel all notifications to handle the case where the Service was killed and
         // restarted by the system.
@@ -161,17 +141,7 @@ public class MediaNotificationManager {
                 // Show controls on lock screen even when user hides sensitive content.
                 .setVisibility(NotificationCompat.VISIBILITY_PUBLIC);
 
-        // If skip to next action is enabled.
-       // if ((state.getActions() & PlaybackStateCompat.ACTION_SKIP_TO_PREVIOUS) != 0) {
-       //     builder.addAction(mPrevAction);
-       // }
-
         builder.addAction(isPlaying ? mPauseAction : mPlayAction);
-
-        // If skip to prev action is enabled.
-        //if ((state.getActions() & PlaybackStateCompat.ACTION_SKIP_TO_NEXT) != 0) {
-       //     builder.addAction(mNextAction);
-       // }
 
         return builder;
     }
@@ -207,7 +177,7 @@ public class MediaNotificationManager {
     }
 
     private PendingIntent createContentIntent() {
-        Intent openUI = new Intent(mService, MusicList.class);
+        Intent openUI = new Intent(mService, MusicListActivity.class);
         openUI.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         return PendingIntent.getActivity(
                 mService, REQUEST_CODE, openUI, PendingIntent.FLAG_CANCEL_CURRENT);

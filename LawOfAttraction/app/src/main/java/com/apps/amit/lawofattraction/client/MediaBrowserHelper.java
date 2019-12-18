@@ -102,6 +102,10 @@ public class MediaBrowserHelper {
      *                        MediaSession.
      */
     protected void onConnected(@NonNull MediaControllerCompat mediaController) {
+
+        /*
+            //Not Required
+         */
     }
 
     /**
@@ -112,12 +116,20 @@ public class MediaBrowserHelper {
      */
     protected void onChildrenLoaded(@NonNull String parentId,
                                     @NonNull List<MediaBrowserCompat.MediaItem> children) {
+
+        /*
+            //Not Required
+         */
     }
 
     /**
      * Called when the {@link MediaBrowserServiceCompat} connection is lost.
      */
     protected void onDisconnected() {
+
+        /*
+            //Not Required
+         */
     }
 
     @NonNull

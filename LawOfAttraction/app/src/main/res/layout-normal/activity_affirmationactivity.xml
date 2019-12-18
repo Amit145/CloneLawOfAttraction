@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:id="@+id/mainlayout"
     android:orientation="vertical"
-    tools:context=".affirmationactivity">
+    android:background="#232635"
+    tools:context=".AffirmationActivity">
 
     <ScrollView
 

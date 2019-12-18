@@ -7,7 +7,7 @@
     android:id="@+id/activityHead"
     android:orientation="vertical"
     android:background="#3498db"
-    tools:context=".NotificationActivity">
+    tools:context=".DisableAdActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

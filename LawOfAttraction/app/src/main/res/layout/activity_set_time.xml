@@ -8,7 +8,7 @@
     android:background="#232635"
     android:orientation="vertical"
     android:weightSum="5"
-    tools:context="com.apps.amit.lawofattraction.SetTime">
+    tools:context="com.apps.amit.lawofattraction.SetTimeActivity">
 
 
     <LinearLayout
@@ -23,7 +23,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/abeezee"
-            android:text="@string/activityTimer_text1"             android:layout_gravity="center"
+            android:text="@string/activityTimer_text1"
+            android:layout_gravity="center"
             android:gravity="center"
             android:textAlignment="center"
             android:textColor="#ffffff"
@@ -130,22 +131,10 @@
     </ScrollView>
 
     <LinearLayout
+        android:id="@+id/banner_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_weight="1">
-
-
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/adView9"
-            android:layout_marginTop="2dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginBottom="2dp"
-
-            ads:adSize="BANNER"
-            ads:adUnitId="@string/admob_banner_id" />
-
+        android:layout_weight="1"
+        android:orientation="vertical">
     </LinearLayout>
 </LinearLayout>

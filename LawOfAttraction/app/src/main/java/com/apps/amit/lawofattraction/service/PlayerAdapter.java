@@ -41,10 +41,8 @@ public abstract class PlayerAdapter {
             new BroadcastReceiver() {
                 @Override
                 public void onReceive(Context context, Intent intent) {
-                    if (AudioManager.ACTION_AUDIO_BECOMING_NOISY.equals(intent.getAction())) {
-                        if (isPlaying()) {
+                    if (AudioManager.ACTION_AUDIO_BECOMING_NOISY.equals(intent.getAction()) && isPlaying()) {
                             pause();
-                        }
                     }
                 }
             };
@@ -165,6 +163,9 @@ public abstract class PlayerAdapter {
                     mPlayOnAudioFocus = false;
                     stop();
                     break;
+                default:
+                    break;
+
             }
         }
     }

@@ -1,0 +1,14 @@
+
+hsquid:S1301Ü"KReplace this "switch" statement by "if" statements to increase readability.(×ö³–úÿÿÿÿ
+Bsquid:S00108š")Either remove or fill this block of code.(”ı¾
+qsquid:MaximumInheritanceDepth4"<This class has 6 parents which is greater than 5 authorized.(¸¼¸Îÿÿÿÿÿ8³”„âë-
+V"squid:SwitchLastCaseIsDefaultCheckë""Add a default case to this switch.(öÛ«°şÿÿÿÿ
+c
+squid:S128ì"LEnd this switch case with an unconditional break, return or throw statement.(„¸Ó›
+Rsquid:S1141«"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+^squid:S1126É"AReplace this if-then-else statement by a single return statement.(ı™úÿÿÿÿ
+vsquid:S3776Å"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(ïĞÓùÿÿÿÿ8û³¤âí-
+hsquid:S1301ë"KReplace this "switch" statement by "if" statements to increase readability.(öÛ«°şÿÿÿÿ
+V"squid:SwitchLastCaseIsDefaultCheckÜ""Add a default case to this switch.(×ö³–úÿÿÿÿ
+osquid:S3776Û"RRefactor this method to reduce its Cognitive Complexity from 34 to the 15 allowed.(Û›ë´øÿÿÿÿ
+Lsquid:S1066ä"/Merge this if statement with the enclosing one.(ı™úÿÿÿÿ

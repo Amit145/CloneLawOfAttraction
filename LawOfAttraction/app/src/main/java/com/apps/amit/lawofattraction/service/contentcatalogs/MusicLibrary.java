@@ -24,8 +24,8 @@ import android.support.v4.media.MediaBrowserCompat;
 import android.support.v4.media.MediaMetadataCompat;
 
 import com.apps.amit.lawofattraction.BuildConfig;
+import com.apps.amit.lawofattraction.MusicPlayActivity;
 import com.apps.amit.lawofattraction.R;
-import com.apps.amit.lawofattraction.MainActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -40,36 +40,16 @@ public class MusicLibrary {
     private static final HashMap<String, Integer> albumRes = new HashMap<>();
     private static final HashMap<String, String> musicFileName = new HashMap<>();
 
-
-    /*
-    static {
-
-
-            createMediaMetadataCompat(
-                    "Music",
-                    MainActivity.musicTitle,
-                    MainActivity.musicBody,
-                    "Calmness",
-                    "Calm",
-                    MainActivity.musicDuration,
-                    TimeUnit.SECONDS,
-                    MainActivity.musicURL,  ////http://innovativelabs.xyz/Mp3/1.mp3  //the_coldest_shoulder.mp3
-                    R.drawable.lawimg,
-                    "album_youtube_audio_library_rock_2");
-        }
-
-    */
-
     public static void addToList() {
         createMediaMetadataCompat(
                 "Music",
-                MainActivity.musicTitle,
-                MainActivity.musicBody,
+                MusicPlayActivity.musicTitle,
+                MusicPlayActivity.musicBody,
                 "Calmness",
                 "Calm",
-                MainActivity.musicDuration,
+                MusicPlayActivity.musicDuration,
                 TimeUnit.SECONDS,
-                MainActivity.musicURL,  ////http://innovativelabs.xyz/Mp3/1.mp3  //the_coldest_shoulder.mp3
+                MusicPlayActivity.musicURL,  ////http://innovativelabs.xyz/Mp3/1.mp3  //the_coldest_shoulder.mp3
                 R.drawable.lawimg,
                 "album_youtube_audio_library_rock_2");
     }

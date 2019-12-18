@@ -6,8 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.apps.amit.lawofattraction.Home"
+    tools:context="com.apps.amit.lawofattraction.HomeActivity"
     android:id="@+id/mainlayout"
+    android:background="#232635"
     android:weightSum="12"
     android:orientation="vertical"
     tools:showIn="@layout/app_bar_home">

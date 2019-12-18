@@ -35,8 +35,8 @@
 
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_assignment_turned_in_black_24dp"
-            android:title="@string/affirmationsDrawerTitle" />
+            android:icon="@drawable/ic_tag_faces_black_24dp"
+            android:title="@string/Home_sayThankYou" />
 
         <item
             android:id="@+id/nav_thanks"

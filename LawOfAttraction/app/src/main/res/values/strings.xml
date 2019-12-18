@@ -1,8 +1,8 @@
 <resources>
 
     <string name="app_name">LawOfAttraction</string>
-    <string name="admob_interstitial_id">ca-app-pub-2259921691483610/4649957962</string>
-    <string name="admob_banner_id">ca-app-pub-2259921691483610/8425551447</string>
+    <string name="facebook_interstitial_id">2444487242488757_2444492419154906</string>
+    <string name="facebook_banner_id">2444487242488757_2445382835732531</string>
     <string name="langEng">English</string>
     <string name="langFre">français (French) </string>
     <string name="langcSpa">español (Spanish) </string>
@@ -13,6 +13,8 @@
     <string name="langPort">português (Portuguese) </string>
     <string name="langItalian">italiano (Italian) </string>
     <string name="langHin">हिन्दी (Hindi)</string>
+
+    <string name="imageName">Image</string>
 
     <string name="taskTitle1">Day 1</string>
     <string name="taskInfo1">Info Day 1</string>
@@ -60,7 +62,7 @@
     <string name="thankYou"> Thank You For Your Feedback !</string>
 
 
-    <!--Home Activity Text-->
+    <!--HomeActivity Activity Text-->
 
     <string name="Home_title">HOME</string>
     <string name="Home_subTitle">LAW OF ATTRACTION \n DAILY</string>
@@ -71,7 +73,7 @@
     <string name="Home_myStories">My Stories</string>
     <string name="Home_sayToUniverse">Say to Universe</string>
     <string name="Home_sayThankYou">Say Thank You !</string>
-    <string name="Home_getProBannerText">CLICK HERE TO DISABLE ADS </string>
+    <string name="Home_getProBannerText">CLICK HERE TO GET PRO VERSION </string>
     <string name="Home_Notification">, It\'s Time To Manifest Your Dreams !!"</string>
     <string name="Home_clickToStart">CLICK TO START</string>
     <string name="Home_pray">You Prayed For \t </string>
@@ -144,7 +146,7 @@
     <string name="chooseToShare">"Choose Where to share"</string>
 
 
-    <!--Exercise1 Activity Text - Money-->
+    <!--Exercise1Activity Activity Text - Money-->
 
     <string name="activity1_text1_Money">RELAX YOUR MIND</string>
     <string name="activity1_text2_Money">Before proceeding make sure you relax your mind</string>
@@ -154,7 +156,7 @@
     <string name="activity1_text6_Money">After closing your eyes focus on your breathing until you feel calm and relaxed</string>
 
 
-    <!--Exercise2 Activity Text - Money-->
+    <!--Exercise2Activity Activity Text - Money-->
 
     <string name="activity2_text1_Money">THE MONEY</string>
     <string name="activity2_text2_Money">Decide Exactly How Much You Want</string>
@@ -164,7 +166,7 @@
     <string name="activity2_text6_Money">Write down all the physical things that money would get you</string>
 
 
-    <!--Exercise3 Activity Text - Money-->
+    <!--Exercise3Activity Activity Text - Money-->
 
     <string name="activity3_text1_Money">VISUALIZE YOUR WEALTH</string>
     <string name="activity3_text2_Money">Creative visualization is a real cornerstone of the process of manifestation</string>
@@ -174,7 +176,7 @@
     <string name="activity3_text6_Money">It is good to visualise your goal before going to bed </string>
 
 
-    <!--Exercise4 Activity Text - Money-->
+    <!--Exercise4Activity Activity Text - Money-->
 
     <string name="activity4_text1_Money">SHOW GRATITUDE</string>
     <string name="activity4_text2_Money">Be Grateful For The Money You’ve Had</string>
@@ -182,7 +184,7 @@
     <string name="activity4_text4_Money">Being grateful has power to block out negative emotions and to send positive energy in the universe</string>
     <string name="activity4_text5_Money">Make gratitude a daily habit and you will end up having more..</string>
 
-    <!--Exercise5 Activity Text - Money-->
+    <!--Exercise5Activity Activity Text - Money-->
 
     <string name="activity5_text1_Money">TRUST THE UNIVERSE</string>
     <string name="activity5_text2_Money">All you need is trust and patience</string>
@@ -191,7 +193,7 @@
     <string name="activity5_text5_Money">Don\'t get upset if these things don\'t happen immediately</string>
     <string name="activity5_text6_Money">Don\'t give up, practice all the steps everyday until you manifest your dream</string>
 
-    <!--Exercise1 Activity Text - Home-->
+    <!--Exercise1Activity Activity Text - HomeActivity-->
 
     <string name="activity1_text1_Home">RELAX YOUR MIND</string>
     <string name="activity1_text2_Home">Before proceeding make sure you relax your mind</string>
@@ -201,7 +203,7 @@
     <string name="activity1_text6_Home">After closing your eyes focus on your breathing until you feel calm and relaxed</string>
 
 
-    <!--Exercise2 Activity Text - Home-->
+    <!--Exercise2Activity Activity Text - HomeActivity-->
 
     <string name="activity2_text1_Home">MY DREAM HOME</string>
     <string name="activity2_text2_Home">Decide how your Dream Home should be</string>
@@ -211,7 +213,7 @@
     <string name="activity2_text6_Home">Write down all the things that you want to include in your Dream home</string>
 
 
-    <!--Exercise3 Activity Text - Home-->
+    <!--Exercise3Activity Activity Text - HomeActivity-->
 
     <string name="activity3_text1_Home">VISUALIZE YOUR DREAM HOME</string>
     <string name="activity3_text2_Home">Creative visualization is a real cornerstone of the process of manifestation</string>
@@ -221,7 +223,7 @@
     <string name="activity3_text6_Home">It\'s best to visualise your goal before going to bed </string>
 
 
-    <!--Exercise4 Activity Text - Home-->
+    <!--Exercise4Activity Activity Text - HomeActivity-->
 
     <string name="activity4_text1_Home">SHOW GRATITUDE</string>
     <string name="activity4_text2_Home">Be thankful for your current place where you are living</string>
@@ -229,7 +231,7 @@
     <string name="activity4_text4_Home">Being grateful has power to block out negative emotions and to send positive energy in the universe</string>
     <string name="activity4_text5_Home">Make gratitude a daily habit and you will always end up having more than you ever thought</string>
 
-    <!--Exercise5 Activity Text - Home-->
+    <!--Exercise5Activity Activity Text - HomeActivity-->
 
     <string name="activity5_text1_Home">TRUST THE UNIVERSE</string>
     <string name="activity5_text2_Home">All you need is trust and patience</string>
@@ -238,7 +240,7 @@
     <string name="activity5_text5_Home">Don\'t get upset if these things don\'t happen immediately</string>
     <string name="activity5_text6_Home">Don\'t give up, practice all the steps everyday until you manifest your dream</string>
 
-    <!--Exercise1 Activity Text - Love-->
+    <!--Exercise1Activity Activity Text - Love-->
 
     <string name="activity1_text1_Love">RELAX YOUR MIND</string>
     <string name="activity1_text2_Love">Before proceeding make sure you relax your mind</string>
@@ -248,7 +250,7 @@
     <string name="activity1_text6_Love">After closing your eyes focus on your breathing until you feel calm and relaxed</string>
 
 
-    <!--Exercise2 Activity Text - Love-->
+    <!--Exercise2Activity Activity Text - Love-->
 
     <string name="activity2_text1_Love">MANIFESTING LOVE</string>
     <string name="activity2_text2_Love">Start by loving yourself!</string>
@@ -258,7 +260,7 @@
     <string name="activity2_text6_Love">Write down all the things that you want to include in your relationship</string>
 
 
-    <!--Exercise3 Activity Text - Love-->
+    <!--Exercise3Activity Activity Text - Love-->
 
     <string name="activity3_text1_Love">VISUALIZE YOUR LOVE</string>
     <string name="activity3_text2_Love">Creative visualization is a real cornerstone of the process of manifestation</string>
@@ -268,7 +270,7 @@
     <string name="activity3_text6_Love">It\'s best to visualise your goal before going to bed </string>
 
 
-    <!--Exercise4 Activity Text - Love-->
+    <!--Exercise4Activity Activity Text - Love-->
 
     <string name="activity4_text1_Love">SHOW GRATITUDE</string>
     <string name="activity4_text2_Love">Be thankful for who you are</string>
@@ -276,7 +278,7 @@
     <string name="activity4_text4_Love">Being grateful has power to block out negative emotions and to send positive energy in the universe</string>
     <string name="activity4_text5_Love">Make gratitude a daily habit and you will always end up having more than you ever thought</string>
 
-    <!--Exercise5 Activity Text - Love-->
+    <!--Exercise5Activity Activity Text - Love-->
 
     <string name="activity5_text1_Love">TRUST THE UNIVERSE</string>
     <string name="activity5_text2_Love">All you need is trust and patience</string>
@@ -285,7 +287,7 @@
     <string name="activity5_text5_Love">Don\'t get upset if these things don\'t happen immediately</string>
     <string name="activity5_text6_Love">Don\'t give up, practice all the steps everyday until you manifest your dream</string>
 
-    <!--Exercise1 Activity Text - Car-->
+    <!--Exercise1Activity Activity Text - Car-->
 
     <string name="activity1_text1_Car">RELAX YOUR MIND</string>
     <string name="activity1_text2_Car">Before proceeding make sure you relax your mind</string>
@@ -295,7 +297,7 @@
     <string name="activity1_text6_Car">After closing your eyes focus on your breathing until you feel calm and relaxed</string>
 
 
-    <!--Exercise2 Activity Text - Car-->
+    <!--Exercise2Activity Activity Text - Car-->
 
     <string name="activity2_text1_Car">MANIFESTING MY CAR</string>
     <string name="activity2_text2_Car">Decide what type of car you want ?</string>
@@ -305,7 +307,7 @@
     <string name="activity2_text6_Car">Write down all the things that you wish your car would like to have</string>
 
 
-    <!--Exercise3 Activity Text - Car-->
+    <!--Exercise3Activity Activity Text - Car-->
 
     <string name="activity3_text1_Car">VISUALIZE YOUR CAR</string>
     <string name="activity3_text2_Car">Creative visualization is a real cornerstone of the process of manifestation</string>
@@ -315,7 +317,7 @@
     <string name="activity3_text6_Car">It\'s best to visualise your goal before going to bed</string>
 
 
-    <!--Exercise4 Activity Text - Car-->
+    <!--Exercise4Activity Activity Text - Car-->
 
     <string name="activity4_text1_Car">SHOW GRATITUDE</string>
     <string name="activity4_text2_Car">Be thankful for who you are and what you have</string>
@@ -323,7 +325,7 @@
     <string name="activity4_text4_Car">Being grateful has power to block out negative emotions and to send positive energy in the universe</string>
     <string name="activity4_text5_Car">Make gratitude a daily habit and you will always end up having more than you ever thought</string>
 
-    <!--Exercise5 Activity Text - Car-->
+    <!--Exercise5Activity Activity Text - Car-->
 
     <string name="activity5_text1_Car">TRUST THE UNIVERSE</string>
     <string name="activity5_text2_Car">All you need is trust and patience</string>
@@ -332,7 +334,7 @@
     <string name="activity5_text5_Car">Don\'t get upset if these things don\'t happen immediately</string>
     <string name="activity5_text6_Car">Don\'t give up, practice all the steps everyday until you manifest your dream</string>
 
-    <!--Exercise1 Activity Text - Happy-->
+    <!--Exercise1Activity Activity Text - Happy-->
 
     <string name="activity1_text1_Happy">RELAX YOUR MIND</string>
     <string name="activity1_text2_Happy">Before proceeding make sure you relax your mind</string>
@@ -342,7 +344,7 @@
     <string name="activity1_text6_Happy">After closing your eyes focus on your breathing until you feel calm and relaxed</string>
 
 
-    <!--Exercise2 Activity Text - Happy-->
+    <!--Exercise2Activity Activity Text - Happy-->
 
     <string name="activity2_text1_Happy">MANIFESTING HAPPINESS</string>
     <string name="activity2_text2_Happy">Decide what happiness mean to you</string>
@@ -352,7 +354,7 @@
     <string name="activity2_text6_Happy">Other way to be happy and optimistic is to find positive in every dicey situations of our life</string>
 
 
-    <!--Exercise3 Activity Text - Happy-->
+    <!--Exercise3Activity Activity Text - Happy-->
 
     <string name="activity3_text1_Happy">VISUALIZE YOURSELF BEING HAPPY</string>
     <string name="activity3_text2_Happy">Creative visualization is a real cornerstone of the process of manifestation</string>
@@ -362,7 +364,7 @@
     <string name="activity3_text6_Happy">It\'s best to visualise your goal before going to bed</string>
 
 
-    <!--Exercise4 Activity Text - Happy-->
+    <!--Exercise4Activity Activity Text - Happy-->
 
     <string name="activity4_text1_Happy">SHOW GRATITUDE</string>
     <string name="activity4_text2_Happy">Best way to be happy is by showing gratitude</string>
@@ -370,7 +372,7 @@
     <string name="activity4_text4_Happy">Being grateful has power to block out negative emotions and to send positive energy in the universe</string>
     <string name="activity4_text5_Happy">Make gratitude a daily habit and you will always end up having more than you ever thought</string>
 
-    <!--Exercise5 Activity Text - Happy-->
+    <!--Exercise5Activity Activity Text - Happy-->
 
     <string name="activity5_text1_Happy">TRUST THE UNIVERSE</string>
     <string name="activity5_text2_Happy">If your happiness depends on physical things then all you need is trust and patience</string>
@@ -380,7 +382,7 @@
     <string name="activity5_text6_Happy">Don\'t give up, practice all the steps everyday until you manifest your dream</string>
 
 
-    <!--Exercise1 Activity Text - Health-->
+    <!--Exercise1Activity Activity Text - Health-->
 
     <string name="activity1_text1_Health">RELAX YOUR MIND</string>
     <string name="activity1_text2_Health">Before proceeding make sure you relax your mind</string>
@@ -390,7 +392,7 @@
     <string name="activity1_text6_Health">After closing your eyes focus on your breathing until you feel calm and relaxed</string>
 
 
-    <!--Exercise2 Activity Text - Health-->
+    <!--Exercise2Activity Activity Text - Health-->
 
     <string name="activity2_text1_Health">HEALTH IS WEALTH !</string>
     <string name="activity2_text2_Health">You can live without good wealth but without good health its impossible to survive</string>
@@ -400,7 +402,7 @@
     <string name="activity2_text6_Health">Eat healthy foods, required for a healthy life, Consult a doctor if required</string>
 
 
-    <!--Exercise3 Activity Text - Health-->
+    <!--Exercise3Activity Activity Text - Health-->
 
     <string name="activity3_text1_Health">VISUALIZE YOUR IDEAL BODY</string>
     <string name="activity3_text2_Health">Creative visualization is a real cornerstone of the process of manifestation</string>
@@ -410,7 +412,7 @@
     <string name="activity3_text6_Health">It\'s best to visualise your goal before going to bed</string>
 
 
-    <!--Exercise4 Activity Text - Health-->
+    <!--Exercise4Activity Activity Text - Health-->
 
     <string name="activity4_text1_Health">SHOW GRATITUDE</string>
     <string name="activity4_text2_Health">Be grateful for the body you have</string>
@@ -418,7 +420,7 @@
     <string name="activity4_text4_Health">Being grateful has power to block out negative emotions and to send positive energy in the universe</string>
     <string name="activity4_text5_Health">Make gratitude a daily habit and you will always end up having more than you ever thought</string>
 
-    <!--Exercise5 Activity Text - Health-->
+    <!--Exercise5Activity Activity Text - Health-->
 
     <string name="activity5_text1_Health">TRUST THE UNIVERSE</string>
     <string name="activity5_text2_Health">All you need is trust and patience</string>
@@ -427,7 +429,7 @@
     <string name="activity5_text5_Health">Great things take time to grow</string>
     <string name="activity5_text6_Health">Don\'t give up, practice all the steps everyday until you manifest your dream</string>
 
-    <!--Exercise1 Activity Text - Job-->
+    <!--Exercise1Activity Activity Text - Job-->
 
     <string name="activity1_text1_Job">RELAX YOUR MIND</string>
     <string name="activity1_text2_Job">Before proceeding make sure you relax your mind</string>
@@ -437,7 +439,7 @@
     <string name="activity1_text6_Job">After closing your eyes focus on your breathing until you feel calm and relaxed</string>
 
 
-    <!--Exercise2 Activity Text - Job-->
+    <!--Exercise2Activity Activity Text - Job-->
 
     <string name="activity2_text1_Job">MY DREAM JOB</string>
     <string name="activity2_text2_Job">Discover What Job You Really Want</string>
@@ -447,7 +449,7 @@
     <string name="activity2_text6_Job">Eat healthy foods, required for a healthy life, Consult a doctor if required</string>
 
 
-    <!--Exercise3 Activity Text - Job-->
+    <!--Exercise3Activity Activity Text - Job-->
 
     <string name="activity3_text1_Job">VISUALIZE YOUR DREAM JOB</string>
     <string name="activity3_text2_Job">Creative visualization is a real cornerstone of the process of manifestation</string>
@@ -457,7 +459,7 @@
     <string name="activity3_text6_Job">Visualise as much as you can, It\'s best to visualise your goal before going to bed</string>
 
 
-    <!--Exercise4 Activity Text - Job-->
+    <!--Exercise4Activity Activity Text - Job-->
 
     <string name="activity4_text1_Job">SHOW GRATITUDE</string>
     <string name="activity4_text2_Job">Be grateful for all that you have and will have</string>
@@ -465,7 +467,7 @@
     <string name="activity4_text4_Job">Being grateful has power to block out negative emotions and to send positive energy in the universe</string>
     <string name="activity4_text5_Job">This will create new opportunities in your way, make gratitude a daily habit and you will always end up having more than you ever thought</string>
 
-    <!--Exercise5 Activity Text - Job-->
+    <!--Exercise5Activity Activity Text - Job-->
 
     <string name="activity5_text1_Job">TRUST THE UNIVERSE</string>
     <string name="activity5_text2_Job">All you need is trust and patience</string>
@@ -474,7 +476,7 @@
     <string name="activity5_text5_Job">Great things take time and this is how Universe works, Trust the process !</string>
     <string name="activity5_text6_Job">Don\'t give up, each day is a new day practice all the steps everyday until you manifest your dream</string>
 
-    <!--Exercise1 Activity Text - Default-->
+    <!--Exercise1Activity Activity Text - Default-->
 
     <string name="activity1_text1">RELAX YOUR MIND</string>
     <string name="activity1_text2">Before proceeding make sure you relax your mind</string>
@@ -484,7 +486,7 @@
     <string name="activity1_text6">After closing your eyes focus on your breathing for next 60 seconds</string>
 
 
-    <!--Exercise2 Activity Text - Default-->
+    <!--Exercise2Activity Activity Text - Default-->
 
     <string name="activity2_text1">WISH WHAT YOU NEED</string>
     <string name="activity2_text2">The Universe is abundant to serve everyone\'s need</string>
@@ -494,7 +496,7 @@
     <string name="activity2_text6">Write down your wish list if required</string>
 
 
-    <!--Exercise3 Activity Text - Default-->
+    <!--Exercise3Activity Activity Text - Default-->
 
     <string name="activity3_text1">VISUALIZE YOUR DREAMS</string>
     <string name="activity3_text2">Every invention was once a idea that was visualized</string>
@@ -504,7 +506,7 @@
     <string name="activity3_text6">Before going to bed, close your eyes and visualize that your dreams have come true</string>
 
 
-    <!--Exercise4 Activity Text - Default-->
+    <!--Exercise4Activity Activity Text - Default-->
 
     <string name="activity4_text1">SHOW GRATITUDE</string>
     <string name="activity4_text2">You won\'t be happy with more until you are happy with what you have got</string>
@@ -512,7 +514,7 @@
     <string name="activity4_text4">Being grateful has power to block out negative emotions and to send positive energy in the universe</string>
     <string name="activity4_text5">Make gratitude a daily habit and you will end up having more..</string>
 
-    <!--Exercise5 Activity Text - Default-->
+    <!--Exercise5Activity Activity Text - Default-->
 
     <string name="activity5_text1">TRUST THE UNIVERSE</string>
     <string name="activity5_text2">All you need is trust and patience</string>
@@ -522,7 +524,7 @@
     <string name="activity5_text6">Practice all the steps everyday ,until you manifest your dream</string>
 
 
-    <!--Finish Activity Text-->
+    <!--ExerciseFinishActivity Activity Text-->
 
     <string name="activity6_text1">CONGRATULATIONS !</string>
     <string name="activity6_text2">You have done Today\'s manifestation</string>
@@ -543,7 +545,7 @@
     <string name="activityTracker_text5">Manifestation done on </string>
     <string name="affirmationTracker_text5">Affirmation done on </string>
 
-    <!--Quotes Activity Text-->
+    <!--DailyQuotesActivity Activity Text-->
 
     <string name="activityQuote_text1">QUOTE OF THE DAY</string>
     <string name="activityQuote_text2">One small positive thought can change your whole day</string>
@@ -587,7 +589,7 @@
     <string name="noti_disabletext">Notifications are disabled</string>
     <string name="noti_enableText">Notifications are enabled</string>
 
-    <!--Info Activity Text-->
+    <!--InformationActivity Activity Text-->
 
     <string name="activity_info">WHAT IS LAW OF ATTRACTION</string>
     <string name="activity_info1">The law of attraction states that the world is full of vibrations. Vibrations also called as Vibes can be negative or positive. Positive vibes create positive energy around you and negative vibes create negative energy around you. So by using law of attraction you can create a positive energy around you. You are aware about the saying "What goes, comes back". As these world is full of energy vibrating positive energy in universe will return positive energy to you. Noting these fact we can achieve anything in life, all you have to do is radiate positive energy in universe by wishing what you need in life. To achieve these you have to follow some steps. It is mandatory for you to follow these steps everyday so that you can harness Universe\'s energy to achieve your Dreams</string>
@@ -629,7 +631,7 @@
 
     <!--About App-->
 
-    <string name="aboutApp">LawOfAttraction v3.7.1</string>
+    <string name="aboutApp">LawOfAttraction v3.9</string>
     <string name="aboutApp1">Turn Your Dreams Into the Reality with power of positive thoughts</string>
     <string name="aboutApp2">Why ADS ?</string>
     <string name="aboutApp3">

@@ -15,11 +15,19 @@
       },
       "oauth_client": [
         {
-          "client_id": "432028196782-mfvm3irim7lfk3ai99ab1hnjvgp934sk.apps.googleusercontent.com",
+          "client_id": "432028196782-8ikmoul04ijnmfrv864hvkb3ontgj1bl.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.apps.amit.lawofattraction",
-            "certificate_hash": "5f5e7905d2cd4d74ed4c7c3da759d3bf6d9a6fe8"
+            "certificate_hash": "3c658a8651b5848cb132243bef81db46d6933400"
+          }
+        },
+        {
+          "client_id": "432028196782-9ook3uhrg04m0kopho4tjo44i8vogoq0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.apps.amit.lawofattraction",
+            "certificate_hash": "1bbdcceb46d0066c76cfa3911b8a416299d744f6"
           }
         },
         {
@@ -31,11 +39,11 @@
           }
         },
         {
-          "client_id": "432028196782-9ook3uhrg04m0kopho4tjo44i8vogoq0.apps.googleusercontent.com",
+          "client_id": "432028196782-mfvm3irim7lfk3ai99ab1hnjvgp934sk.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.apps.amit.lawofattraction",
-            "certificate_hash": "1bbdcceb46d0066c76cfa3911b8a416299d744f6"
+            "certificate_hash": "5f5e7905d2cd4d74ed4c7c3da759d3bf6d9a6fe8"
           }
         },
         {
@@ -49,22 +57,16 @@
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "432028196782-fdnq30l26ghvj58nelkqfns7tm0mk963.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
-      }
+      },
+      "admob_app_id": "ca-app-pub-2259921691483610~8730116859"
     }
   ],
   "configuration_version": "1"

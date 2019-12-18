@@ -1,0 +1,6 @@
+
+V"squid:SwitchLastCaseIsDefaultCheckÊ""Add a default case to this switch.(ˆôü·üÿÿÿÿ
+Isquid:S1172ñ",Remove this unused method parameter "state".(öíÙéüÿÿÿÿ
+]squid:S2387+"A"mSession" is the name of a field in "MediaBrowserServiceCompat".(µ¦ßËÿÿÿÿÿ
+Bsquid:S00108€")Either remove or fill this block of code.(”ı¾
+tsquid:S1450."XRemove the "mCallback" field and declare it as a local variable in the relevant methods.(ÃšÍ¤üÿÿÿÿ

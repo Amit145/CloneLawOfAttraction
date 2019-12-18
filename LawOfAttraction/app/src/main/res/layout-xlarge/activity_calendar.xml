@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#232635 "
+    android:weightSum="3"
     android:orientation="vertical"
-    tools:context="com.apps.amit.lawofattraction.calendar">
+    tools:context="com.apps.amit.lawofattraction.ManifestationTrackerActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/title"
@@ -22,15 +20,15 @@
             android:text="@string/activityTracker_text1"
             android:textAlignment="center"
             android:textColor="#ffffff"
-            android:textSize="70sp"
+            android:textSize="60sp"
             android:textStyle="bold" />
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/subtitle"
@@ -39,7 +37,7 @@
             android:text="@string/activityTracker_text2"
             android:textAlignment="center"
             android:textColor="#f7dc6f"
-            android:textSize="70sp"
+            android:textSize="60sp"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -50,12 +48,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:background="#ffffff"
+        android:layout_weight="3"
         android:layout_marginTop="10dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="800dp">
+            android:layout_height="wrap_content">
         </androidx.recyclerview.widget.RecyclerView>
 
     </LinearLayout>
@@ -64,7 +63,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="40dp">
+        android:layout_weight=".5"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp">
 
         <Button
             android:id="@+id/caltrack"
@@ -76,10 +77,7 @@
             android:fontFamily="@font/abeezee"
             android:textColor="#ffffff"
             android:textSize="35sp"
-            android:textStyle="bold"
-            />
-
-
+            android:textStyle="bold" />
 
     </LinearLayout>
 

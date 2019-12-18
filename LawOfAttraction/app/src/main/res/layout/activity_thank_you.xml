@@ -9,7 +9,7 @@
     android:weightSum="1"
     android:orientation="vertical"
 
-    tools:context=".ThankYou">
+    tools:context=".SayThankYouActivity">
 
     <LinearLayout
         android:id="@+id/thankActivity"

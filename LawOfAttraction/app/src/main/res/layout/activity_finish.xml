@@ -8,7 +8,7 @@
     android:background="#44bb05"
     android:orientation="vertical"
     android:weightSum="7"
-    tools:context="com.apps.amit.lawofattraction.Finish">
+    tools:context="com.apps.amit.lawofattraction.ExerciseFinishActivity">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -179,19 +179,11 @@
 
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:background="#413E3F"
-        android:layout_height="wrap_content">
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adView7"
-        android:layout_marginTop="5dp"
-        android:background="#413E3F"
+        android:id="@+id/banner_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="5dp"
-        ads:adSize="BANNER"
-        ads:adUnitId="@string/admob_banner_id" />
+        android:layout_weight="1"
+        android:orientation="vertical">
     </LinearLayout>
 
 

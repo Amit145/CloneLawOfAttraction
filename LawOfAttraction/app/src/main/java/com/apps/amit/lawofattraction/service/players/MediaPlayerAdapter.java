@@ -18,22 +18,22 @@ package com.apps.amit.lawofattraction.service.players;
 
 import android.content.Context;
 import android.media.MediaPlayer;
-import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v4.media.MediaMetadataCompat;
 import android.support.v4.media.session.PlaybackStateCompat;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.apps.amit.lawofattraction.service.PlaybackInfoListener;
 import com.apps.amit.lawofattraction.service.PlayerAdapter;
 import com.apps.amit.lawofattraction.service.contentcatalogs.MusicLibrary;
-import com.apps.amit.lawofattraction.MainActivity;
+import com.apps.amit.lawofattraction.MusicPlayActivity;
 
 import java.io.IOException;
 
 /**
  * Exposes the functionality of the {@link MediaPlayer} and implements the {@link PlayerAdapter}
- * so that {@link MainActivity} can control music playback.
+ * so that {@link MusicPlayActivity} can control music playback.
  */
 public final class MediaPlayerAdapter extends PlayerAdapter {
 
@@ -58,8 +58,8 @@ public final class MediaPlayerAdapter extends PlayerAdapter {
 
     /**
      * Once the {@link MediaPlayer} is released, it can't be used again, and another one has to be
-     * created. In the onStop() method of the {@link MainActivity} the {@link MediaPlayer} is
-     * released. Then in the onStart() of the {@link MainActivity} a new {@link MediaPlayer}
+     * created. In the onStop() method of the {@link MusicPlayActivity} the {@link MediaPlayer} is
+     * released. Then in the onStart() of the {@link MusicPlayActivity} a new {@link MediaPlayer}
      * object has to be created. That's why this method is private, and called by load(int) and
      * not the constructor.
      */
@@ -124,14 +124,15 @@ public final class MediaPlayerAdapter extends PlayerAdapter {
         try {
             mMediaPlayer.setDataSource(mFilename);
         } catch (IOException e) {
-            e.printStackTrace();
+            Log.e(e.getMessage(),e.getMessage());
         }
 
         try {
             mMediaPlayer.prepareAsync();
             Toast.makeText(mContext, "Loading Media.. Please Wait", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
-           // throw new RuntimeException("Failed to open file: " + mFilename, e);
+
+            Log.e(e.getMessage(),e.getMessage());
         }
 
 
@@ -143,26 +144,6 @@ public final class MediaPlayerAdapter extends PlayerAdapter {
                 Toast.makeText(mContext, "Playing...", Toast.LENGTH_SHORT).show();
             }
         });
-        /*
-        try {
-            AssetFileDescriptor assetFileDescriptor = mContext.getAssets().openFd(mFilename);
-            mMediaPlayer.setDataSource(
-                    assetFileDescriptor.getFileDescriptor(),
-                    assetFileDescriptor.getStartOffset(),
-                    assetFileDescriptor.getLength());
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to open file: " + mFilename, e);
-        }
-
-        try {
-            mMediaPlayer.prepare();
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to open file: " + mFilename, e);
-        }
-
-        */
-
-
     }
 
     @Override
