@@ -1,3 +1,10 @@
 
-vsquid:S3776ƒ"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(¨Œşÿÿÿÿ8ü¶¥÷í-
-qsquid:MaximumInheritanceDepth4"<This class has 6 parents which is greater than 5 authorized.(°öóÍûÿÿÿÿ8¯”„âë-
+u
+java:S3776…"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(¨Œşÿÿÿÿ8è×ˆşš.
+k	java:S100ƒ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥Ö8¸Š‹şš.
+[
+java:S1854º"=Remove this useless assignment to local variable "!unknown!".(Å‰¢º8§¦äå­.
+Z
+java:S1854¾"=Remove this useless assignment to local variable "!unknown!".(ëç"8§¦äå­.
+[
+java:S1854Å"=Remove this useless assignment to local variable "!unknown!".(¡·şî8§¦äå­.

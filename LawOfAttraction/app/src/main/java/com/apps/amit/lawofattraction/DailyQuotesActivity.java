@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.graphics.drawable.AnimationDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -92,6 +93,7 @@ public class DailyQuotesActivity extends AppCompatActivity {
     private InterstitialAd interstitialAd;
     public static final String TAG = DailyQuotesActivity.class.getSimpleName();
     ProgressBar progressBar;
+    AnimationDrawable animationDrawable;
 
     @Override
     protected void onDestroy() {
@@ -145,6 +147,11 @@ public class DailyQuotesActivity extends AppCompatActivity {
         def = findViewById(R.id.def);
         allq = findViewById(R.id.allquo);
         progressBar = findViewById(R.id.progressBar2);
+
+        animationDrawable = (AnimationDrawable) activity.getBackground();
+        animationDrawable.setEnterFadeDuration(4500);
+        animationDrawable.setExitFadeDuration(4500);
+        animationDrawable.start();
 
         colorList.add("#262A36");
 

@@ -3,19 +3,22 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/swipe_container"
-    android:background="#3E7C95"
+    android:background="@drawable/transparentdrawable"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/transparentdrawable">
+        android:layout_height="wrap_content"
+
+        >
 
         <LinearLayout
             android:id="@+id/quoteLayout"
+            android:background="@drawable/animation"
             android:layout_width="match_parent"
             android:orientation="vertical"
+
             android:layout_height="wrap_content"
             tools:context=".DailyQuotesActivity">
 
@@ -235,7 +238,7 @@
                     android:background="@drawable/buttrack"
                     android:fontFamily="@font/abeezee"
                     android:text="@string/activityQuote_text4"
-                    android:textColor="#F3F1F1"
+                    android:textColor="#FFFFFF"
                     android:textStyle="bold" />
 
                 <TextView

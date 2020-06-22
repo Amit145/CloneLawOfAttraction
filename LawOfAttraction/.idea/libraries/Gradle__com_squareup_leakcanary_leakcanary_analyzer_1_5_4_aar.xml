@@ -1,14 +1,14 @@
 <component name="libraryTable">
   <library name="Gradle: com.squareup.leakcanary:leakcanary-analyzer:1.5.4@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/44182fc468d390053c043a8e71ab3d4b/leakcanary-analyzer-1.5.4/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/44182fc468d390053c043a8e71ab3d4b/leakcanary-analyzer-1.5.4/res" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-5.6.4-all/ankdp27end7byghfw1q2sw75f/gradle-5.6.4/caches/transforms-2/files-2.1/d42275b76dab08e8c90c40790140af58/jetified-leakcanary-analyzer-1.5.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-5.6.4-all/ankdp27end7byghfw1q2sw75f/gradle-5.6.4/caches/transforms-2/files-2.1/d42275b76dab08e8c90c40790140af58/jetified-leakcanary-analyzer-1.5.4/res" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-analyzer/1.5.4/80ca1321de60e9a28f3fb6762d05a8a1935257bf/leakcanary-analyzer-1.5.4-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-5.6.4-all/ankdp27end7byghfw1q2sw75f/gradle-5.6.4/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-analyzer/1.5.4/80ca1321de60e9a28f3fb6762d05a8a1935257bf/leakcanary-analyzer-1.5.4-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-analyzer/1.5.4/1dd98c60843daab9d2f9d43acb777aa9e9d8a186/leakcanary-analyzer-1.5.4-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-5.6.4-all/ankdp27end7byghfw1q2sw75f/gradle-5.6.4/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-analyzer/1.5.4/1dd98c60843daab9d2f9d43acb777aa9e9d8a186/leakcanary-analyzer-1.5.4-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

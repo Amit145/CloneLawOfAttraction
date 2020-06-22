@@ -97,7 +97,7 @@ public class CommentsActivity extends AppCompatActivity {
     protected void onDestroy() {
 
         if (interstitialAd != null) {
-            interstitialAd.destroy();
+            //interstitialAd.destroy();
         }
         super.onDestroy();
 
@@ -115,6 +115,23 @@ public class CommentsActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         this.finish();
+
+        if (interstitialAd == null || !interstitialAd.isAdLoaded()) {
+            return;
+        }
+        // Check if ad is already expired or invalidated, and do not show ad if that is the case. You will not get paid to show an invalidated ad.
+        if (interstitialAd.isAdInvalidated()) {
+            return;
+        }
+
+        if (Boolean.TRUE.equals(flag) && interstitialAd.isAdLoaded()) {
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    interstitialAd.show();
+                }
+            }, 1000);
+        }
     }
 
 
@@ -337,6 +354,7 @@ public class CommentsActivity extends AppCompatActivity {
 
             Log.d(TAG, "Interstitial ad Loaded!");
             flag = Boolean.TRUE;
+
         }
 
         @Override
@@ -484,6 +502,7 @@ public class CommentsActivity extends AppCompatActivity {
                         // response
                         Log.d("Response", response);
                         displayInterstitial();
+                        flag = false;
                     }
                 },
                 new Response.ErrorListener()
@@ -526,6 +545,7 @@ public class CommentsActivity extends AppCompatActivity {
 
                             alert.dismiss();
                             displayInterstitial();
+                            flag = false;
 
                             try {
                                 storyUtilsList.clear();

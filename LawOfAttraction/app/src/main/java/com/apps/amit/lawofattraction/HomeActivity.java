@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -149,7 +150,7 @@ public class HomeActivity extends AppCompatActivity {
         });
 
 
-        FirebaseMessaging.getInstance().subscribeToTopic("v3.9")
+        FirebaseMessaging.getInstance().subscribeToTopic("v3.9")   //v3.9
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

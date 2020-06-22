@@ -1,3 +1,5 @@
 
-lsquid:MaximumInheritanceDepth9"<This class has 6 parents which is greater than 5 authorized.(Æ¼¾Î8À´¹áë-
-usquid:S3776z"RRefactor this method to reduce its Cognitive Complexity from 45 to the 15 allowed.(ž¨Œþÿÿÿÿ8¥‚ªÖë-
+t
+java:S3776{"RRefactor this method to reduce its Cognitive Complexity from 45 to the 15 allowed.(ž¨Œþÿÿÿÿ8¸ß„þš.
+j
+java:S1128"HRemove this unused import 'android.graphics.drawable.AnimationDrawable'.(˜Ãìƒýÿÿÿÿ8é¹‡þš.
