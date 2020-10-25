@@ -723,8 +723,23 @@ Take another deep breath, allowing your body to absorb the positive feeling of t
     <string name="affirmCongrats">Congratulations ! You have completed your Challenge</string>
     <string name="affirmWannaTryAgain">Wanna Try Again ?</string>
     <string name="affirmationsDrawerTitle">Affirmations</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
 
-    <!--TP-->
+    <!--Login Activity-->
+
+    <string name="titleSignIn">Sign in using</string>
+    <string name="googleButton">Google</string>
+    <string name="fbButtonText">Facebook</string>
+    <string name="skipTextView">Skip Login</string>
+
 
 </resources>

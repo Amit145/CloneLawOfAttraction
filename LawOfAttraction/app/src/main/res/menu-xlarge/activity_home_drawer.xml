@@ -43,6 +43,10 @@
             android:icon="@drawable/ic_settings_black_24dp"
             android:title="@string/navigation_settings" />
 
+        <item
+            android:id="@+id/signIn"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="SignIn" />
 
         <!-- For version 3.3 -->
 

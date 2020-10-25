@@ -349,6 +349,13 @@ public class HomeActivity extends AppCompatActivity {
                             startActivity(intent);
                         }
 
+                        else if (id == R.id.signIn) {
+
+                            Intent art1 = new Intent(getApplicationContext(), LoginActivity.class);
+                            startActivity(art1);
+
+                        }
+
                         drawer = findViewById(R.id.drawer_layout);
                         drawer.closeDrawer(GravityCompat.START);
                         return true;

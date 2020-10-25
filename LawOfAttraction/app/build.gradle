@@ -6,9 +6,9 @@ android {
     defaultConfig {
         applicationId "com.apps.amit.lawofattraction"
         minSdkVersion 16
-        targetSdkVersion 29
-        versionCode 33
-        versionName "3.9"
+        targetSdkVersion 30
+        versionCode 34
+        versionName "4.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         useLibrary 'org.apache.http.legacy'
@@ -42,7 +42,7 @@ dependencies {
     implementation 'dyanamitechetan.vusikview:vusikview:1.1'
     implementation 'com.facebook.android:audience-network-sdk:5.6.0'
     implementation 'com.google.android.material:material:1.0.0'
-
+    implementation 'com.google.android.gms:play-services-auth:18.1.0'
     implementation 'com.google.firebase:firebase-messaging:20.0.1'
     implementation 'com.google.firebase:firebase-core:17.2.1'
 
@@ -53,6 +53,8 @@ dependencies {
 
 
     implementation 'com.squareup.picasso:picasso:2.5.0'
+    implementation 'androidx.navigation:navigation-fragment:2.1.0'
+    implementation 'androidx.navigation:navigation-ui:2.1.0'
 
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
