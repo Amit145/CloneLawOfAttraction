@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.apps.amit.lawofattraction.helper.SynchronizeData;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -65,7 +66,6 @@ public class LoginActivity extends AppCompatActivity {
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
 
                 Toast.makeText(getApplicationContext(),"Google",Toast.LENGTH_LONG).show();
                 Intent signInIntent = mGoogleSignInClient.getSignInIntent();
@@ -131,7 +131,15 @@ public class LoginActivity extends AppCompatActivity {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
 
             // Signed in successfully, show authenticated UI.
+            SynchronizeData synchronizeData = new SynchronizeData(this);
+
+            //Send Wishes to Server
+            synchronizeData.getAllPrivateWishes(account.getId());
+
+            //Load wishes from Server
+            synchronizeData.loadAllPrivateWishes(account.getId());
             updateUI(account);
+
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
@@ -153,9 +161,14 @@ public class LoginActivity extends AppCompatActivity {
                 String personId = account.getId();
                 Uri personPhoto = account.getPhotoUrl();
 
-            Toast.makeText(this,"U Signed In successfully "+personName,Toast.LENGTH_LONG).show();
             signInButton.setVisibility(View.INVISIBLE);
             googleSignOut.setVisibility(View.VISIBLE);
+
+            //Synchronize Data to server
+            //get all Private wish from Shared preferences
+
+            Toast.makeText(this,"U Signed In successfully "+personName,Toast.LENGTH_LONG).show();
+
 
         }else {
 
