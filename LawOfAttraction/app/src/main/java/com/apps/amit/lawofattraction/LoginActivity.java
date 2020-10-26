@@ -1,10 +1,10 @@
 package com.apps.amit.lawofattraction;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -16,27 +16,26 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.apps.amit.lawofattraction.helper.SynchronizeData;
 import com.bumptech.glide.Glide;
-import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
 public class LoginActivity extends AppCompatActivity {
 
     ImageView appLogo;
-     Button fbButtonSignIn;
+    Button fbButtonSignIn;
     Button googleSignOut;
-     TextView titleText;
-     TextView skipLoginText;
+    TextView titleText;
+    TextView skipLoginText;
     SignInButton signInButton;
     GoogleSignInClient mGoogleSignInClient;
     private static final int RC_SIGN_IN = 1;
+    SharedPreferences sharedpreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +48,7 @@ public class LoginActivity extends AppCompatActivity {
         fbButtonSignIn = findViewById(R.id.facebookSignInButton);
         titleText = findViewById(R.id.signInTextView);
         skipLoginText = findViewById(R.id.SkipTextView);
+        sharedpreferences = getSharedPreferences("SocialAccount", Context.MODE_PRIVATE);
 
         Glide.with(getApplicationContext()).load(R.drawable.lawimg).thumbnail(0.1f).fitCenter().into(appLogo);
 
@@ -81,6 +81,15 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
 
                         Toast.makeText(getApplicationContext(),"U signed out",Toast.LENGTH_LONG).show();
+
+                        SharedPreferences.Editor editor = sharedpreferences.edit();
+
+                        editor.putString("personName", "");
+                        editor.putString("personId", "");
+                        editor.putString("personEmail", "");
+                        editor.putString("personPhoto", "");
+                        editor.apply();
+
                         signInButton.setVisibility(View.VISIBLE);
                         googleSignOut.setVisibility(View.INVISIBLE);
                     }
@@ -130,15 +139,32 @@ public class LoginActivity extends AppCompatActivity {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
 
-            // Signed in successfully, show authenticated UI.
-            SynchronizeData synchronizeData = new SynchronizeData(this);
+            if(account != null){
 
-            //Send Wishes to Server
-            synchronizeData.getAllPrivateWishes(account.getId());
+                SharedPreferences.Editor editor = sharedpreferences.edit();
 
-            //Load wishes from Server
-            synchronizeData.loadAllPrivateWishes(account.getId());
-            updateUI(account);
+                String personName = account.getDisplayName();
+                String personEmail = account.getEmail();
+                String personId = account.getId();
+                String personPhoto = account.getPhotoUrl().toString();
+
+                editor.putString("personName", personName);
+                editor.putString("personId", personId);
+                editor.putString("personEmail", personEmail);
+                editor.putString("personPhoto", personPhoto);
+                editor.apply();
+
+                // Signed in successfully, show authenticated UI.
+                SynchronizeData synchronizeData = new SynchronizeData(this);
+
+                //Send Wishes to Server
+                synchronizeData.getAllPrivateWishes(account.getId());
+
+                //Load wishes from Server
+                synchronizeData.loadAllPrivateWishes(account.getId());
+                updateUI(account);
+            }
+
 
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
@@ -154,20 +180,10 @@ public class LoginActivity extends AppCompatActivity {
 
         if(account != null){
 
-                String personName = account.getDisplayName();
-                String personGivenName = account.getGivenName();
-                String personFamilyName = account.getFamilyName();
-                String personEmail = account.getEmail();
-                String personId = account.getId();
-                Uri personPhoto = account.getPhotoUrl();
-
             signInButton.setVisibility(View.INVISIBLE);
             googleSignOut.setVisibility(View.VISIBLE);
 
-            //Synchronize Data to server
-            //get all Private wish from Shared preferences
-
-            Toast.makeText(this,"U Signed In successfully "+personName,Toast.LENGTH_LONG).show();
+            //Toast.makeText(this,"U Signed In successfully "+personName,Toast.LENGTH_LONG).show();
 
 
         }else {

@@ -10,6 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -79,6 +80,7 @@ public class HomeActivity extends AppCompatActivity {
     String newToken;
     MyCustomPagerAdapter myCustomPagerAdapter;
     SharedPreferences sharedpreferences;
+    SharedPreferences sharedpreferences1;
 
     @Override
     protected void onDestroy() {
@@ -198,6 +200,37 @@ public class HomeActivity extends AppCompatActivity {
         homeGetProBannerText = findViewById(R.id.prover);
         button1 = findViewById(R.id.staButton);
         linearBanner = findViewById(R.id.linearBanner);
+        navigationView = findViewById(R.id.nav_view);
+        View header = navigationView.getHeaderView(0);
+
+        SharedPreferences socialDetails = getSharedPreferences("SocialAccount", LoginActivity.MODE_PRIVATE);
+
+        if(socialDetails.contains("personName")) {
+
+            String value = socialDetails.getString("personName", "");
+            TextView userName   = header.findViewById(R.id.appDrawerTextView);
+
+            if (value!=null && !value.isEmpty()) {
+                userName.setText(value);
+
+            } else {
+                userName.setText(getString(R.string.nav_header_title));
+            }
+        }
+
+        if(socialDetails.contains("personPhoto")) {
+
+            String value = socialDetails.getString("personPhoto", "");
+            Uri uri = Uri.parse(value);
+            ImageView imageView   = header.findViewById(R.id.appDrawerImageView);
+
+            if (value!=null && !value.isEmpty()) {
+                Glide.with(this).load(uri).asBitmap().override(200, 200).into(imageView);
+
+            }  else {
+                imageView.setImageResource(R.mipmap.ic_launcher_round);
+            }
+        }
 
         //if ads enabled
         SharedPreferences pref = getSharedPreferences("AdvsPref", MODE_PRIVATE);
@@ -234,7 +267,6 @@ public class HomeActivity extends AppCompatActivity {
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
                     @Override

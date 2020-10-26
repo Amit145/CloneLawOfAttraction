@@ -26,16 +26,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4a34cd3-0370-4e12-b0b5-94c93e1c7400" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/helper/SynchronizeData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_http_legacy_android_29.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_http_legacy_android_30.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/1/21beb82994acf4a3013745714e9f11d29dd2dd40" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/0/40c8356511f1af570d17da686e0ebdbb9693ed99" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/7/470387abeb8977416285533458d9e25741d101a6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/5/55270ac4ba237ddcd01015018dc58d5ccdc0c407" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/4/64ce6d3f6e973eea93cd854afeb6e93bd6c71fc5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/0/701e40bbbd10b2ab30d46034d6f682b8c5682843" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/4/84bbfd95b490b92591d2b037417f036942315d57" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/b/9b37fdff9618dde89e4cdd33f635fe19a679b07d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/HomeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/HomeActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/LoginActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-large/nav_header_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-large/nav_header_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-normal/nav_header_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-normal/nav_header_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-xlarge/nav_header_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-xlarge/nav_header_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_home.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,46 +249,54 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1367" height="204" key="GridCell.Tab.0.bottom" timestamp="1603688984225">
+    <state x="200" y="95" key="#PSD" timestamp="1603720193284">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1367" height="204" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1603688984225" />
-    <state width="1367" height="204" key="GridCell.Tab.0.center" timestamp="1603688984225">
+    <state x="200" y="95" key="#PSD/0.0.1366.728@0.0.1366.728" timestamp="1603720193284" />
+    <state width="1367" height="231" key="GridCell.Tab.0.bottom" timestamp="1603722291061">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1367" height="204" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1603688984225" />
-    <state width="1367" height="204" key="GridCell.Tab.0.left" timestamp="1603688984225">
+    <state width="1367" height="231" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1603722291061" />
+    <state width="1367" height="231" key="GridCell.Tab.0.center" timestamp="1603722291061">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1367" height="204" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1603688984225" />
-    <state width="1367" height="204" key="GridCell.Tab.0.right" timestamp="1603688984225">
+    <state width="1367" height="231" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1603722291061" />
+    <state width="1367" height="231" key="GridCell.Tab.0.left" timestamp="1603722291061">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1367" height="204" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1603688984225" />
-    <state width="1367" height="231" key="GridCell.Tab.1.bottom" timestamp="1603652559022">
+    <state width="1367" height="231" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1603722291061" />
+    <state width="1367" height="231" key="GridCell.Tab.0.right" timestamp="1603722291061">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1367" height="231" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1603652559022" />
-    <state width="1367" height="231" key="GridCell.Tab.1.center" timestamp="1603652559022">
+    <state width="1367" height="231" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1603722291061" />
+    <state width="1367" height="231" key="GridCell.Tab.1.bottom" timestamp="1603722291062">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1367" height="231" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1603652559022" />
-    <state width="1367" height="231" key="GridCell.Tab.1.left" timestamp="1603652559022">
+    <state width="1367" height="231" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1603722291062" />
+    <state width="1367" height="231" key="GridCell.Tab.1.center" timestamp="1603722291061">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1367" height="231" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1603652559022" />
-    <state width="1367" height="231" key="GridCell.Tab.1.right" timestamp="1603652559022">
+    <state width="1367" height="231" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1603722291061" />
+    <state width="1367" height="231" key="GridCell.Tab.1.left" timestamp="1603722291061">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1367" height="231" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1603652559022" />
+    <state width="1367" height="231" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1603722291061" />
+    <state width="1367" height="231" key="GridCell.Tab.1.right" timestamp="1603722291062">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1367" height="231" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1603722291062" />
     <state x="92" y="92" width="1182" height="544" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1603638724795">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1366.728@0.0.1366.728" timestamp="1603638724795" />
-    <state width="343" height="65" key="javadoc.popup.new" timestamp="1603688235971">
+    <state width="343" height="65" key="javadoc.popup.new" timestamp="1603723982687">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="343" height="65" key="javadoc.popup.new/0.0.1366.728@0.0.1366.728" timestamp="1603688235971" />
+    <state width="343" height="65" key="javadoc.popup.new/0.0.1366.728@0.0.1366.728" timestamp="1603723982687" />
+    <state x="207" y="106" key="psd.add.library.dependency.panel.dimension" timestamp="1603720185458">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="207" y="106" key="psd.add.library.dependency.panel.dimension/0.0.1366.728@0.0.1366.728" timestamp="1603720185458" />
     <state x="389" y="0" key="refactoring.ChangeSignatureDialog" timestamp="1603645430321">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -315,6 +344,14 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/DailyQuotesActivity.java</url>
           <line>316</line>
           <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-method">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/AffirmationActivity.java</url>
+          <line>76</line>
+          <properties class="com.apps.amit.lawofattraction.AffirmationActivity" method="onCreate">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="49" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

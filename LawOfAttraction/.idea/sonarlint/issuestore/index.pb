@@ -238,13 +238,9 @@ W
 X
 (app/src/main/res/layout/wish_options.xml,1\4\14711519573182210a98859a1c2b10e3ea0abf3b
 Y
-)app/src/main/res/layout/activity_home.xml,8\4\84bbfd95b490b92591d2b037417f036942315d57
-Y
 )app/src/main/res/layout/comments_list.xml,d\9\d984a1a0a70606c6737a7c38b6bd0a397259e848
 Z
 *app/src/main/res/layout/dialog_options.xml,c\b\cb25651a5fe28ed236408f10de0f1d09ead02d8c
-[
-+app/src/main/res/layout/nav_header_home.xml,4\7\470387abeb8977416285533458d9e25741d101a6
 \
 ,app/src/main/res/layout/single_list_item.xml,5\e\5e7bd496730c093b70d570dbd590dfb85e7ee64f
 ]
@@ -383,10 +379,6 @@ Z
 -app/src/main/res/layout-large/exp_options.xml,b\7\b76ecb7facd5e6bf361d5a4d2e98074c0288ac9b
 ^
 .app/src/main/res/layout-large/wish_options.xml,5\6\5615d5b4484eeea58c86089bebf45bd6c345b0d5
-_
-/app/src/main/res/layout-large/activity_home.xml,9\b\9b37fdff9618dde89e4cdd33f635fe19a679b07d
-_
-/app/src/main/res/layout-large/comments_list.xml,6\4\64ce6d3f6e973eea93cd854afeb6e93bd6c71fc5
 `
 0app/src/main/res/layout-large/dialog_options.xml,3\4\3446b9751526c4e260255d640473f4e54936a3a2
 b
@@ -439,8 +431,6 @@ _
 0app/src/main/res/layout-normal/comments_list.xml,7\d\7d9095c4e3b0476eec29fd57271aa47de7ab3a22
 a
 1app/src/main/res/layout-normal/dialog_options.xml,e\9\e91a50b21254cb16f0c57dd34319c887f41adfc2
-b
-2app/src/main/res/layout-normal/nav_header_home.xml,4\0\40c8356511f1af570d17da686e0ebdbb9693ed99
 c
 3app/src/main/res/layout-normal/single_list_item.xml,9\f\9f83deaa70f0d07b8044be0cdab18fbef5cfed8e
 d
@@ -488,13 +478,9 @@ W
 _
 /app/src/main/res/layout-xlarge/wish_options.xml,f\7\f79dc43b5e6fbe1f57eb8aaa5f61ad53d4f5d190
 `
-0app/src/main/res/layout-xlarge/activity_home.xml,7\0\701e40bbbd10b2ab30d46034d6f682b8c5682843
-`
 0app/src/main/res/layout-xlarge/comments_list.xml,9\c\9c050cb104b507f4d2c1d298e73befd91cc74bef
 a
 1app/src/main/res/layout-xlarge/dialog_options.xml,d\4\d4ed3b223d0572d11661564ce73844dd128fb31b
-b
-2app/src/main/res/layout-xlarge/nav_header_home.xml,5\5\55270ac4ba237ddcd01015018dc58d5ccdc0c407
 c
 3app/src/main/res/layout-xlarge/single_list_item.xml,0\0\00b11d1fb783d0957ccf4530347dce9ff4334b8c
 d
@@ -805,8 +791,6 @@ y
 I.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_2_1_0_jar.xml,c\1\c1a10f309128a70d2b303e4b9841039bc66afee9
 c
 3app/src/main/res/layout-large/activity_settings.xml,e\e\eec4b938fa06af2e43f66b6f0d95701d7d9391b3
-`
-0app/src/main/res/layout-normal/activity_main.xml,2\1\21beb82994acf4a3013745714e9f11d29dd2dd40
 c
 3app/src/main/res/layout-large/activity_sub_task.xml,c\4\c46a137375f0e4950d92700f941b4ede93793cc2
 ]
