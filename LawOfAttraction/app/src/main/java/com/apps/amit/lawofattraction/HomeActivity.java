@@ -3,14 +3,10 @@ package com.apps.amit.lawofattraction;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.drawable.AnimationDrawable;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,8 +32,8 @@ import androidx.viewpager.widget.ViewPager;
 import com.apps.amit.lawofattraction.adapters.MyCustomPagerAdapter;
 import com.apps.amit.lawofattraction.helper.LocaleHelper;
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.animation.GlideAnimation;
-import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.target.CustomTarget;
+import com.bumptech.glide.request.transition.Transition;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -141,13 +138,17 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         mainlayout = findViewById(R.id.mainlayout);
 
-        Glide.with(this).load(R.drawable.backgroundabstract).asBitmap().into(new SimpleTarget <Bitmap> () {
+        Glide.with(this).load(R.drawable.backgroundabstract).into(new CustomTarget<Drawable>() {
             @Override
-            public void onResourceReady(Bitmap bitmap, GlideAnimation < ? super Bitmap > glideAnimation) {
-                Drawable drawable = new BitmapDrawable(getResources(), bitmap);
+            public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                    mainlayout.setBackground(drawable);
+                    mainlayout.setBackground(resource);
                 }
+            }
+
+            @Override
+            public void onLoadCleared(@Nullable Drawable placeholder) {
+
             }
         });
 
@@ -179,6 +180,7 @@ public class HomeActivity extends AppCompatActivity {
 
         SharedPreferences nameSp1 = getSharedPreferences("timerEnable", MyStoryActivity.MODE_PRIVATE);
         String name = nameSp1.getString("userName", "");
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -225,7 +227,7 @@ public class HomeActivity extends AppCompatActivity {
             ImageView imageView   = header.findViewById(R.id.appDrawerImageView);
 
             if (value!=null && !value.isEmpty()) {
-                Glide.with(this).load(uri).asBitmap().override(200, 200).into(imageView);
+                Glide.with(this).load(uri).override(200, 200).into(imageView);
 
             }  else {
                 imageView.setImageResource(R.mipmap.ic_launcher_round);
@@ -388,6 +390,12 @@ public class HomeActivity extends AppCompatActivity {
 
                         }
 
+                        else if (id == R.id.audioManifest) {
+
+                            Intent art1 = new Intent(getApplicationContext(), AudioWishHome.class);
+                            startActivity(art1);
+
+                        }
                         drawer = findViewById(R.id.drawer_layout);
                         drawer.closeDrawer(GravityCompat.START);
                         return true;

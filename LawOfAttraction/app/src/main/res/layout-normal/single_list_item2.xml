@@ -70,11 +70,6 @@
             android:textSize="25sp"
             android:textStyle="bold" />
 
-
-
-
-
-
     </LinearLayout>
         <View
             android:layout_below="@+id/singleRow"

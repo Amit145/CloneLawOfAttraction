@@ -1,3 +1,5 @@
 
-qsquid:MaximumInheritanceDepth""<This class has 6 parents which is greater than 5 authorized.(åá©”ûÿÿÿÿ8Ýðµí-
-usquid:S3776h"RRefactor this method to reduce its Cognitive Complexity from 43 to the 15 allowed.(ž¨Œþÿÿÿÿ8Ýðµí-
+£
+java:S1186~"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Á…ÒÝÿÿÿÿÿ8†£ÕÃÖ.
+t
+java:S3776i"RRefactor this method to reduce its Cognitive Complexity from 43 to the 15 allowed.(ž¨Œþÿÿÿÿ8‰ÍÓÃÖ.

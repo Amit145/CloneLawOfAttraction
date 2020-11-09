@@ -94,6 +94,4 @@ public class WishDataBaseHandler extends SQLiteOpenHelper {
         return wishList;
 
     }
-
-
 }

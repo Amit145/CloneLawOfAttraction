@@ -1,4 +1,22 @@
 
-qsquid:MaximumInheritanceDepth="<This class has 6 parents which is greater than 5 authorized.(’ï×œÿÿÿÿÿ8¹”„âë-
-vsquid:S3776ë"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(Éá£òÿÿÿÿÿ8‚ˆÛÃð-
-usquid:S3776z"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ž¨Œþÿÿÿÿ8‚ˆÛÃð-
+L
+java:S3740Y"/Provide the parametrized type for this generic.(À“Äž8ÛÄ˜‡Ö.
+^	java:S125™"<This block of commented-out lines of code should be removed.(½â£½üÿÿÿÿ8±Œ´ÀÖ.
+u
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ž¨Œþÿÿÿÿ8ÛÄ˜‡Ö.
+u
+java:S3776“"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(Éá£òÿÿÿÿÿ8ÛÄ˜‡Ö.
+O
+java:S1172«",Remove this unused method parameter "value".(½Ï¨Õýÿÿÿÿ8ÛÄ˜‡Ö.
+k	java:S100‚"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ã³›ù8ÛÄ˜‡Ö.
+]	java:S125i"<This block of commented-out lines of code should be removed.(Þ†ÐÁüÿÿÿÿ8ÛÄ˜‡Ö.
+o
+java:S1128/"MRemove this unused import 'com.bumptech.glide.load.resource.gif.GifDrawable'.(þÓÂúüÿÿÿÿ8½›ÏÃÖ.
+O
+java:S1172Õ",Remove this unused method parameter "value".(ü¤˜ëøÿÿÿÿ8ÛÄ˜‡Ö.
+I
+java:S1172©"+Remove this unused method parameter "view".(ŒÿÕÇ8ÛÄ˜‡Ö.
+¤
+java:S1186­"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Á…ÒÝÿÿÿÿÿ8ÀÄÊÄÖ.
+k	java:S100¿"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥žÖ8ÛÄ˜‡Ö.
+p	java:S100«"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½Ï¨Õýÿÿÿÿ8ÛÄ˜‡Ö.

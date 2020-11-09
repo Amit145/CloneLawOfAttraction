@@ -740,6 +740,19 @@ Take another deep breath, allowing your body to absorb the positive feeling of t
     <string name="googleButton">Google</string>
     <string name="fbButtonText">Facebook</string>
     <string name="skipTextView">Skip Login</string>
+    <string name="audio_SubTitle">By simply speaking something you feel so passionately about into existence, you may be given opportunities that you’ve never thought possible\n
+        Be sure that you do so with confidence and passion\n
+        By saying these things out loud, not only are you making a mental note to do what you’ve said, but you are also informing the Universe of what you wish</string>
+    <string name="audio_Title">Speak It Into Existence</string>
+    <string name="audio_MainTitle">Speak It Into Existence, And You May Just Get What You Wished For</string>
+    <string name="audio_SubTitle1">Speaking something into existence is an easy task to fit into your daily routine</string>
+    <string name="myAudioSubtitle">Take a deep breath\n
+    Click on play button and say your wish\n
+    Be sure that you do so with confidence and passion\n
+        Say the wish slowly and clearly\n
+    Once done, click on Stop \n
+    Listen to your wish, really focusing on the meaning of each word \n
+    </string>
 
 
 </resources>

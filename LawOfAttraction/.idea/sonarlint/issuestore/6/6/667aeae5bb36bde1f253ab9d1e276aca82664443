@@ -1,5 +1,5 @@
 
 t
-java:S3776{"RRefactor this method to reduce its Cognitive Complexity from 45 to the 15 allowed.(¨Œşÿÿÿÿ8¸ß„şš.
-j
-java:S1128"HRemove this unused import 'android.graphics.drawable.AnimationDrawable'.(˜Ãìƒıÿÿÿÿ8é¹‡şš.
+java:S3776z"RRefactor this method to reduce its Cognitive Complexity from 56 to the 15 allowed.(¨Œşÿÿÿÿ8ê²€ªÖ.
+¤
+java:S1186–"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Á…Òİÿÿÿÿÿ8¿ÎÜÃÖ.

@@ -6,26 +6,79 @@
   <component name="AndroidLayouts">
     <shared>
       <config>
+        <device id="Nexus 6" />
+        <device id="pixel_2" />
+        <device id="pixel_3a_xl" />
         <device id="pixel" />
         <device id="pixel_3_xl" />
         <device id="pixel_xl" />
-        <device id="pixel_3a_xl" />
         <device id="Nexus 9" />
-        <device id="Nexus 6" />
         <device id="pixel_3a" />
         <device id="Nexus 6P" />
         <device id="pixel_2_xl" />
-        <device id="Nexus 7 2013" />
       </config>
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="Response" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="upload re" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
+    <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4a34cd3-0370-4e12-b0b5-94c93e1c7400" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____app_libs_apache_commons_net_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_exifinterface_exifinterface_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_annotations_4_11_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_disklrucache_4_11_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_gifdecoder_4_11_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_glide_4_11_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/5/25699bf56a5dce34ce834c05bd5645ec3e72d933" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/a/8ad6a8e01720f8be6fd6d36879b957e6eeb16268" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/AudioManifestation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/AudioWishHome.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/RecordingListActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/adapters/RecordingAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/utils/FTPUpload.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/utils/Recording.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/girlspeak.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_close_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_mic_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_stop_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/record.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_login.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_audio_manifestation.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_audio_wish_home.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_recording_list.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/raw/star1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/raw/star2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/raw/star3.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/raw/starsnight.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-w820dp/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileContent/fileContent.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileContent/fileContent.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -37,26 +90,111 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_http_legacy_android_29.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_http_legacy_android_30.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/1/21beb82994acf4a3013745714e9f11d29dd2dd40" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/0/40c8356511f1af570d17da686e0ebdbb9693ed99" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/7/470387abeb8977416285533458d9e25741d101a6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/5/55270ac4ba237ddcd01015018dc58d5ccdc0c407" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/4/64ce6d3f6e973eea93cd854afeb6e93bd6c71fc5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/0/701e40bbbd10b2ab30d46034d6f682b8c5682843" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/4/84bbfd95b490b92591d2b037417f036942315d57" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/b/9b37fdff9618dde89e4cdd33f635fe19a679b07d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle____app_libs_glide_3_6_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/5/0519cec16646d926e892945a5c2202f379b55991" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/b/0bc1518cc896e37fca7286f11fec8d2fbdf3ef76" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/e/1e67f91c0c6f3814ea5a11d9fcbef94fecd05085" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/e/1e67f91c0c6f3814ea5a11d9fcbef94fecd05085" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/4/2414d8e9e1e90b87f37074e343c43eaa9a1ccd18" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/a/2accc692d0aa2db97c23c510213b09dba92075b1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/c/3c80989bec8c2d4ba6bba06c25d21e6091c53e2d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/f/3f3fc6b5f2fb4a5f73d6fc9e608a8797a2909b7c" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/f/3f3fc6b5f2fb4a5f73d6fc9e608a8797a2909b7c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/f/3fb4466c859d41ea17dcf3a5932f281274eebc8e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/f/3fb4466c859d41ea17dcf3a5932f281274eebc8e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/0/40e35555ba2e6a8e5681f777724764a8c01e2c1b" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/0/40e35555ba2e6a8e5681f777724764a8c01e2c1b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/5/4588049210b16474b4b00f79be4a24d350f6eba6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/8/48248256c02e3f4043ddb6dc3792ee4c71c53260" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/b/4bce2368efe37d2060b8fbff66e3d363311e4028" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/0/50dd2ffdf00ac06fe3e50623f22b246e5f5625af" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/5/551856ae083c2988b178c8b7db77a9b439c2290d" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/5/551856ae083c2988b178c8b7db77a9b439c2290d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/1/61b1412640670dc45dbb24f3185e02d4a8d1b0ca" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/6/667aeae5bb36bde1f253ab9d1e276aca82664443" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/6/667aeae5bb36bde1f253ab9d1e276aca82664443" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/6/6680b0ed8674858259d7510d4bf731f0105a8329" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/d/6d2f0afd800d4d4355b0f5f81913bb65e4dae3e6" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/d/6d2f0afd800d4d4355b0f5f81913bb65e4dae3e6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/d/6dd4eb2cf531304c4cf844a868e1317d3b9c3e1f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/d/6dd4eb2cf531304c4cf844a868e1317d3b9c3e1f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/6/766c915fb16b2570d3b875476da204a78850adf1" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/6/766c915fb16b2570d3b875476da204a78850adf1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/a/7a8f376f987bb5c6874048e522c8be468ab571ba" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/a/7a8f376f987bb5c6874048e522c8be468ab571ba" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/b/7bf9b5354632f7a94005e6b9405c9b44fc7fe00b" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/b/7bf9b5354632f7a94005e6b9405c9b44fc7fe00b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/2/820cc03c5795badde8c03ad664a2de223e1290aa" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/2/820cc03c5795badde8c03ad664a2de223e1290aa" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/2/8211cd31eb28eca4ed6c1bd194662a74cac43fae" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/2/8211cd31eb28eca4ed6c1bd194662a74cac43fae" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/0/90610991350afbe021575bf883ed446d245f3281" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/0/90610991350afbe021575bf883ed446d245f3281" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/0/9088d8837f44378fc311e323e05dcf32455e3bf2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/8/98d78d4b8528f72dc9ab75f760e9897237b22002" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/8/98d78d4b8528f72dc9ab75f760e9897237b22002" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/d/9dd2d3e2ac5de15924f2219091836d4f3977f126" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/d/9dd2d3e2ac5de15924f2219091836d4f3977f126" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/e/9ed85fbd9af01b84070fbaef565da957c3d10c9e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9fc5c421e1fb507b6d7d8fb4f3e63bdd6b0a8b1a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/2/a20f1cb7ed7275fc17dd6144625df315d11c1383" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/6/a6dc76c8972b74568b533ccb342b84b4381408a5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/d/ad31f19c43d801ca16f2325b6f452756ea5dd7e6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/0/b0d3f24a09a50ed9772857bdcadda3214d1f6435" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/4/b4d3d4426d9d2842f8b0d3657a40773ebe80c2d0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/6/b66dec66cbf2990bee4a0488c39c36f23803a17e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/f/bfdc71e56581ee2a1d90f5f4172f49f0d1fabc4f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/e/ceafe963004b812ec4bd3f2e7c50c67da5a69c58" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d163ae798539887733eda437488b644b0c303a63" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/9/d9bc368ff1eee8e4fdfb0e359adeb064951a4098" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/9/d9bc368ff1eee8e4fdfb0e359adeb064951a4098" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/a/dab1d477d5c46b733a3756b55be0e30098bbe6d9" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/a/dab1d477d5c46b733a3756b55be0e30098bbe6d9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/c/dc5c55a589888dc4f041a4c0f8a2440bf94c2835" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/c/dc5c55a589888dc4f041a4c0f8a2440bf94c2835" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/2/e254de84dee82f0f52b625a0a7a292dd58ed019e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/2/e254de84dee82f0f52b625a0a7a292dd58ed019e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/2/e25d95dbbf6dbc09b54650e9c3806ec935d44ef7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/b/ebd17a3e9a5dcbd086a40b3daa6b797e3eb7fa2c" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/b/ebd17a3e9a5dcbd086a40b3daa6b797e3eb7fa2c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/f/ef0b703e9abb6b20b60683adf1a6e457fe256f3d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/7/f7f83111e7ec08fc557881e7ff21d730f2fe1d1c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/8/f8eeb0327a9c310bb02c1e08b38efdf2a3c4cf66" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/9/f9267cd4e1022c60968eb6299d8aba9181009dcc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/a/fa3690c72ba938aad7368e80acd849ab4d775668" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/b/fb1e8c485d7d8a45e2ffa93f1eced35e262b30ca" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/b/fb1e8c485d7d8a45e2ffa93f1eced35e262b30ca" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/d/fdd1b51c16b0e7cc6e974010f1bf5116be5d9e3c" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/d/fdd1b51c16b0e7cc6e974010f1bf5116be5d9e3c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/glide-3.6.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/AffirmationActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/AffirmationActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/AllQuotesActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/AllQuotesActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/CommentsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/CommentsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/Exercise1Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/Exercise1Activity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/ExerciseInformationActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/ExerciseInformationActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/HomeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/HomeActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/InformationActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/InformationActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/LoginActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-large/nav_header_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-large/nav_header_home.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-normal/nav_header_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-normal/nav_header_home.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-xlarge/nav_header_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-xlarge/nav_header_home.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/MusicListActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/MusicListActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/MyStoryActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/MyStoryActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/MyStoryReplyActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/MyStoryReplyActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/PrivateWishesActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/PrivateWishesActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/SayThankYouActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/SayThankYouActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/SelectManifestationTypeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/SelectManifestationTypeActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/StoryListActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/StoryListActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/SubTaskActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/SubTaskActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/TaskActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/TaskActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/UserManualActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/UserManualActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/helper/SynchronizeData.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/helper/SynchronizeData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/service/FirebaseTokenGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/service/FirebaseTokenGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/sqlitedatabase/WishDataBaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/sqlitedatabase/WishDataBaseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_affirmations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_affirmations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_exercise1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-normal/activity_exercise1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-normal/single_list_item2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-normal/single_list_item2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu-xlarge/activity_home_drawer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu-xlarge/activity_home_drawer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/activity_home_drawer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/activity_home_drawer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/androidx/appcompat/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/androidx/browser/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/androidx/cardview/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/androidx/constraintlayout/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/androidx/legacy/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/androidx/multidex/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/androidx/recyclerview/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/androidx/test/espresso/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/androidx/test/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/com/google/android/gms/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/com/google/android/material/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/com/google/firebase/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/master-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/sdk-registry.xml/sdk-registry.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +228,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="resourceFile" />
+        <option value="valueResourceFile" />
         <option value="Class" />
       </list>
     </option>
@@ -116,8 +255,8 @@
     <property name="DEBUGGABLE_DEVICE" value="xiaomi-redmi_note_5_pro-60322e89" />
     <property name="DEBUGGABLE_PROCESS" value="com.apps.amit.lawofattraction" />
     <property name="DEBUGGER_ID" value="Auto" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_2_XL_API_29" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-10-25T16:38:07.342Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="60322e89" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-11-09T19:10:21.346Z" />
     <property name="ExportApk.ApkPath" value="D:\v3.4\LawOfAttraction\apk" />
     <property name="ExportApk.BuildVariants" value="release" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -128,35 +267,41 @@
     <property name="device.picker.selection" value="Pixel_2_XL_API_29" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="project.structure.last.edited" value="Dependencies" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="gradle.compiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="sync.plugin.last.upgrade.timestamp" value="1559747795372" />
   </component>
   <component name="RecentsManager">
-    <key name="android.template.1099256498">
-      <recent name="com.apps.amit.lawofattraction" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\v3.4\LawOfAttraction\app\src\main\res\drawable" />
-      <recent name="D:\v3.4\LawOfAttraction\app\src\main\res\layout-xlarge" />
-      <recent name="D:\v3.4\LawOfAttraction\app\src\main\res\values-w820dp" />
-      <recent name="D:\v3.4\LawOfAttraction\app\src\main\java\com\apps\amit\lawofattraction" />
     </key>
     <key name="android.template.packageName">
       <recent name="com.apps.amit.lawofattraction" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\v3.4\LawOfAttraction\app\src\main\res\drawable" />
+    <key name="android.template.187767978">
+      <recent name="com.apps.amit.lawofattraction" />
+    </key>
+    <key name="android.template.1099256498">
+      <recent name="com.apps.amit.lawofattraction" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.apps.amit.lawofattraction" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.apps.amit.lawofattraction.adapters" />
+      <recent name="com.apps.amit.lawofattraction.utils" />
       <recent name="com.apps.amit.lawofattraction.service" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Android\LOA\LawOfAttraction_v3.3\LawOfAttraction\app\src\main\res\drawable" />
+      <recent name="D:\Android\LOA\LawOfAttraction_v3.3\LawOfAttraction\app\src\main\res\layout-normal" />
+      <recent name="D:\Android\LOA\LawOfAttraction_v3.3\LawOfAttraction\app\src\main\res\raw" />
+      <recent name="D:\v3.4\LawOfAttraction\app\src\main\res\drawable" />
+      <recent name="D:\v3.4\LawOfAttraction\app\src\main\res\layout-xlarge" />
     </key>
     <key name="android.template.parentActivityClass">
       <recent name="" />
@@ -249,58 +394,98 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="200" y="95" key="#PSD" timestamp="1603720193284">
+    <state x="91" y="12" width="966" height="709" key="#PSD" timestamp="1603774393092">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="200" y="95" key="#PSD/0.0.1366.728@0.0.1366.728" timestamp="1603720193284" />
-    <state width="1367" height="231" key="GridCell.Tab.0.bottom" timestamp="1603722291061">
+    <state x="91" y="12" width="966" height="709" key="#PSD/0.0.1366.728@0.0.1366.728" timestamp="1603774393092" />
+    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser" timestamp="1604927509914">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1367" height="231" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1603722291061" />
-    <state width="1367" height="231" key="GridCell.Tab.0.center" timestamp="1603722291061">
+    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1604927509914" />
+    <state x="263" y="118" key="AndroidCreateResourceDirectoryDialog" timestamp="1603773050595">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1367" height="231" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1603722291061" />
-    <state width="1367" height="231" key="GridCell.Tab.0.left" timestamp="1603722291061">
+    <state x="263" y="118" key="AndroidCreateResourceDirectoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1603773050595" />
+    <state x="526" y="89" key="AndroidCreateResourceFileDialog" timestamp="1604768226864">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1367" height="231" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1603722291061" />
-    <state width="1367" height="231" key="GridCell.Tab.0.right" timestamp="1603722291061">
+    <state x="526" y="89" key="AndroidCreateResourceFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1604768226864" />
+    <state x="540" y="194" key="AndroidCreateXmlResourceDialog" timestamp="1604851078992">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1367" height="231" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1603722291061" />
-    <state width="1367" height="231" key="GridCell.Tab.1.bottom" timestamp="1603722291062">
+    <state x="540" y="194" key="AndroidCreateXmlResourceDialog/0.0.1366.728@0.0.1366.728" timestamp="1604851078992" />
+    <state x="538" y="128" key="AndroidProcessChooserDialog" timestamp="1604948738134">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1367" height="231" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1603722291062" />
-    <state width="1367" height="231" key="GridCell.Tab.1.center" timestamp="1603722291061">
+    <state x="538" y="128" key="AndroidProcessChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1604948738134" />
+    <state width="1367" height="263" key="GridCell.Tab.0.bottom" timestamp="1604948940543">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1367" height="231" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1603722291061" />
-    <state width="1367" height="231" key="GridCell.Tab.1.left" timestamp="1603722291061">
+    <state width="1367" height="263" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1604948940543" />
+    <state width="1367" height="263" key="GridCell.Tab.0.center" timestamp="1604948940543">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1367" height="231" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1603722291061" />
-    <state width="1367" height="231" key="GridCell.Tab.1.right" timestamp="1603722291062">
+    <state width="1367" height="263" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1604948940543" />
+    <state width="1367" height="263" key="GridCell.Tab.0.left" timestamp="1604948940542">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1367" height="231" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1603722291062" />
-    <state x="92" y="92" width="1182" height="544" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1603638724795">
+    <state width="1367" height="263" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1604948940542" />
+    <state width="1367" height="263" key="GridCell.Tab.0.right" timestamp="1604948940543">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="92" y="92" width="1182" height="544" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1366.728@0.0.1366.728" timestamp="1603638724795" />
-    <state width="343" height="65" key="javadoc.popup.new" timestamp="1603723982687">
+    <state width="1367" height="263" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1604948940543" />
+    <state width="1367" height="263" key="GridCell.Tab.1.bottom" timestamp="1604948940543">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="343" height="65" key="javadoc.popup.new/0.0.1366.728@0.0.1366.728" timestamp="1603723982687" />
-    <state x="207" y="106" key="psd.add.library.dependency.panel.dimension" timestamp="1603720185458">
+    <state width="1367" height="263" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1604948940543" />
+    <state width="1367" height="263" key="GridCell.Tab.1.center" timestamp="1604948940543">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="207" y="106" key="psd.add.library.dependency.panel.dimension/0.0.1366.728@0.0.1366.728" timestamp="1603720185458" />
-    <state x="389" y="0" key="refactoring.ChangeSignatureDialog" timestamp="1603645430321">
+    <state width="1367" height="263" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1604948940543" />
+    <state width="1367" height="263" key="GridCell.Tab.1.left" timestamp="1604948940543">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="389" y="0" key="refactoring.ChangeSignatureDialog/0.0.1366.728@0.0.1366.728" timestamp="1603645430321" />
+    <state width="1367" height="263" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1604948940543" />
+    <state width="1367" height="263" key="GridCell.Tab.1.right" timestamp="1604948940543">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1367" height="263" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1604948940543" />
+    <state x="184" y="6" key="SettingsEditor" timestamp="1604917700990">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1604917700990" />
+    <state x="499" y="141" key="chooseDestDirectoryDialog" timestamp="1604770507328">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="499" y="141" key="chooseDestDirectoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1604770507328" />
+    <state x="92" y="92" width="1182" height="544" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1604847690306">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="92" y="92" width="1182" height="544" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1366.728@0.0.1366.728" timestamp="1604847690306" />
+    <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1603769508845">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1603769508845" />
+    <state x="162" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1604948788407">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="162" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1604948788407" />
+    <state x="315" y="63" width="736" height="602" key="find.popup" timestamp="1604935084748">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="315" y="63" width="736" height="602" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1604935084748" />
+    <state width="428" height="127" key="javadoc.popup.new" timestamp="1604948285686">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="428" height="127" key="javadoc.popup.new/0.0.1366.728@0.0.1366.728" timestamp="1604948285686" />
+    <state x="207" y="106" key="psd.add.library.dependency.panel.dimension" timestamp="1603773899690">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="207" y="106" key="psd.add.library.dependency.panel.dimension/0.0.1366.728@0.0.1366.728" timestamp="1603773899690" />
+    <state x="389" y="0" key="refactoring.ChangeSignatureDialog" timestamp="1604758775092">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="389" y="0" key="refactoring.ChangeSignatureDialog/0.0.1366.728@0.0.1366.728" timestamp="1604758775092" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -317,7 +502,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/service/FirebaseTokenGenerator.java</url>
-          <line>30</line>
+          <line>31</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -327,17 +512,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/CommentsActivity.java</url>
-          <line>391</line>
+          <line>411</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/CommentsActivity.java</url>
-          <line>354</line>
+          <line>374</line>
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/SubTaskActivity.java</url>
-          <line>474</line>
+          <line>479</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -345,9 +530,19 @@
           <line>316</line>
           <option name="timeStamp" value="44" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/helper/SynchronizeData.java</url>
+          <line>90</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/utils/FTPUpload.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-method">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/AffirmationActivity.java</url>
-          <line>76</line>
+          <line>79</line>
           <properties class="com.apps.amit.lawofattraction.AffirmationActivity" method="onCreate">
             <option name="EMULATED" value="true" />
           </properties>

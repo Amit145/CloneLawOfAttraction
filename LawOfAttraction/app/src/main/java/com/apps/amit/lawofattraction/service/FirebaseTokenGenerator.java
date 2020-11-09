@@ -11,7 +11,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
 
-import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
+import static com.android.volley.VolleyLog.TAG;
+
 
 public class FirebaseTokenGenerator {
 

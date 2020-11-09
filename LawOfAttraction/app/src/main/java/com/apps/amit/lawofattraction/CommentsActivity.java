@@ -23,6 +23,9 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -41,8 +44,10 @@ import com.apps.amit.lawofattraction.sqlitedatabase.WishDataBaseHandler;
 import com.apps.amit.lawofattraction.utils.PrivateWishesUtils;
 import com.apps.amit.lawofattraction.utils.StoryUtils;
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.load.resource.gif.GifDrawable;
+import com.bumptech.glide.request.target.CustomTarget;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
 import com.facebook.ads.Ad;
 import com.facebook.ads.AdError;
 import com.facebook.ads.InterstitialAd;
@@ -144,6 +149,7 @@ public class CommentsActivity extends AppCompatActivity {
 
             mainlayout = findViewById(R.id.mainlayout);
 
+            /*
             Glide.with(this).load(R.drawable.starshd).asBitmap().into(new SimpleTarget<Bitmap>() {
                 @Override
                 public void onResourceReady(Bitmap bitmap, GlideAnimation<? super Bitmap> glideAnimation) {
@@ -153,7 +159,21 @@ public class CommentsActivity extends AppCompatActivity {
                     }
                 }
             });
+            */
 
+            Glide.with(getApplicationContext()).load(R.raw.star2).centerCrop().into(new CustomTarget<Drawable>() {
+                @Override
+                public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                        mainlayout.setBackground(resource);
+                    }
+                }
+
+                @Override
+                public void onLoadCleared(@Nullable Drawable placeholder) {
+
+                }
+            });
 
             requestQueue = Volley.newRequestQueue(getApplicationContext());
 

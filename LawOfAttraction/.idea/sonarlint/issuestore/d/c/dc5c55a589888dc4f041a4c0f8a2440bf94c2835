@@ -1,4 +1,15 @@
 
-vsquid:S3776Â"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ğß¤ÿÿÿÿÿ8îÈ÷í-
-lsquid:MaximumInheritanceDepth6"<This class has 6 parents which is greater than 5 authorized.(»±ÁÃ8îÈ÷í-
-Ysquid:S1141í"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8îÈ÷í-
+u
+java:S3776Ç"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ğß¤ÿÿÿÿÿ8ÕşñÃÖ.
+¤
+java:S1186’"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Á…Òİÿÿÿÿÿ8®óÃÖ.
+p	java:S100‡"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·ï°ÿÿÿÿÿ8ÕşñÃÖ.
+k	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹Õ›Š8ÕşñÃÖ.
+k	java:S100Á"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ù×ÃÌ8ÕşñÃÖ.
+p	java:S100…"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ª»ûÿÿÿÿ8ÕşñÃÖ.
+k	java:S100¨"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûËÊ8ÕşñÃÖ.
+X
+java:S1141ò"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ÕşñÃÖ.
+p	java:S100Ì"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»£¡‚úÿÿÿÿ8ÕşñÃÖ.
+k	java:S100ã"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™ìÇ¼8ÕşñÃÖ.
+k	java:S100¾"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•ğ…¥8ÕşñÃÖ.

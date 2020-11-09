@@ -48,6 +48,11 @@
             android:icon="@drawable/ic_settings_black_24dp"
             android:title="SignIn" />
 
+        <item
+            android:id="@+id/audioManifest"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="Audio Manifestation" />
+
         <!-- For version 3.3 -->
 
        <!-- <item

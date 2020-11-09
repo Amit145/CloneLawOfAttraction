@@ -4,10 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -19,10 +15,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.apps.amit.lawofattraction.helper.LocaleHelper;
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.animation.GlideAnimation;
-import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.target.CustomTarget;
+import com.bumptech.glide.request.transition.Transition;
 import com.facebook.ads.AdSize;
 import com.facebook.ads.AdView;
 
@@ -61,13 +61,17 @@ public class InformationActivity extends AppCompatActivity {
           setContentView(R.layout.activity_info);
 
           mainlayout = findViewById(R.id.mainlayout);
-          Glide.with(this).load(R.drawable.starshd).asBitmap().into(new SimpleTarget<Bitmap>() {
+          Glide.with(this).load(R.drawable.starshd).into(new CustomTarget<Drawable>() {
               @Override
-              public void onResourceReady(Bitmap bitmap, GlideAnimation<? super Bitmap> glideAnimation) {
-                  Drawable drawable = new BitmapDrawable(getResources(), bitmap);
+              public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
                   if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                      mainlayout.setBackground(drawable);
+                      mainlayout.setBackground(resource);
                   }
+              }
+
+              @Override
+              public void onLoadCleared(@Nullable Drawable placeholder) {
+
               }
           });
 

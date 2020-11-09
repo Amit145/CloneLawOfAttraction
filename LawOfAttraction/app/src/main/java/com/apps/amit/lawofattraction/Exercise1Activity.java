@@ -4,17 +4,13 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
@@ -22,12 +18,17 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.animation.GlideAnimation;
-import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.target.CustomTarget;
+import com.bumptech.glide.request.transition.Transition;
 import com.facebook.ads.AdSize;
 import com.facebook.ads.AdView;
-
 
 import butterknife.ButterKnife;
 
@@ -113,13 +114,17 @@ public class Exercise1Activity extends AppCompatActivity {
             setContentView(R.layout.activity_intro1);
             mainlayout = findViewById(R.id.mainlayout);
 
-            Glide.with(this).load(R.drawable.starshd).asBitmap().into(new SimpleTarget < Bitmap > () {
+            Glide.with(this).load(R.drawable.starshd).into(new CustomTarget<Drawable>() {
                 @Override
-                public void onResourceReady(Bitmap bitmap, GlideAnimation < ? super Bitmap > glideAnimation) {
-                    Drawable drawable = new BitmapDrawable(getResources(), bitmap);
+                public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                        mainlayout.setBackground(drawable);
+                        mainlayout.setBackground(resource);
                     }
+                }
+
+                @Override
+                public void onLoadCleared(@Nullable Drawable placeholder) {
+
                 }
             });
 

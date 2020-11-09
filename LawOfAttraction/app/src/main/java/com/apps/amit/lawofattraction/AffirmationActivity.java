@@ -20,6 +20,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
@@ -33,8 +35,9 @@ import com.apps.amit.lawofattraction.service.FirebaseTokenGenerator;
 import com.apps.amit.lawofattraction.sqlitedatabase.ActivityTrackerDatabaseHandler;
 import com.apps.amit.lawofattraction.utils.ManifestationTrackerUtils;
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.CustomTarget;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
 import com.facebook.ads.Ad;
 import com.facebook.ads.AdError;
 import com.facebook.ads.InterstitialAd;
@@ -81,6 +84,7 @@ public class AffirmationActivity extends AppCompatActivity {
         mainlayout = findViewById(R.id.mainlayout);
 
 
+        /*
         Glide.with(this).load(R.drawable.starshd).asBitmap().into(new SimpleTarget<Bitmap>() {
             @Override
             public void onResourceReady(Bitmap bitmap, GlideAnimation<? super Bitmap> glideAnimation) {
@@ -88,6 +92,21 @@ public class AffirmationActivity extends AppCompatActivity {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     mainlayout.setBackground(drawable);
                 }
+            }
+        });
+
+        */
+        Glide.with(this).load(R.drawable.starshd).into(new CustomTarget<Drawable>() {
+            @Override
+            public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    mainlayout.setBackground(resource);
+                }
+            }
+
+            @Override
+            public void onLoadCleared(@Nullable Drawable placeholder) {
+
             }
         });
 

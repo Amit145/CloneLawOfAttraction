@@ -1,3 +1,5 @@
 
-asquid:UselessImportCheck"1Remove this unused import 'android.widget.Toast'.(©›ïÍúÿÿÿÿ8ÙŸÚë-
-lsquid:UselessImportCheck"<Remove this unused import 'com.apps.amit.lawofattraction.R'.(ÒŒ‘Éúÿÿÿÿ8ÙŸÚë-
+^
+java:S1128"<Remove this unused import 'com.apps.amit.lawofattraction.R'.(ÒŒ‘Éúÿÿÿÿ8¼ôûÃÖ.
+S
+java:S1128"1Remove this unused import 'android.widget.Toast'.(©›ïÍúÿÿÿÿ8¼ôûÃÖ.

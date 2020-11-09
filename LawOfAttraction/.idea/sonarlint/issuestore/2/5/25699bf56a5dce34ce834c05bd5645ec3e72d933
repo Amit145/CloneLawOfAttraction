@@ -1,0 +1,16 @@
+
+}
+java:S3923["[Remove this conditional structure or edit its code blocks so that they're not all the same.(Œ³œîüÿÿÿÿ8ÄÎíÖ.
+m
+java:S1192]"PDefine a constant instead of duplicating this literal "affirmationDate" 3 times.(ŒâÌĞ8ÄÎíÖ.
+s
+java:S1192\"QDefine a constant instead of duplicating this literal "affirmationCount" 3 times.(Œª‚úÿÿÿÿ8ÄÎíÖ.
+w
+java:S1128"ZRemove this unused import 'com.apps.amit.lawofattraction.SelectManifestationTypeActivity'.(ŞëÉ¤8ˆÜìÖ.
+v
+java:S11929"YDefine a constant instead of duplicating this literal "MANIFESTATION_TYPE_VALUE" 5 times.(û³õ¤8µå”íÖ.
+Y	java:S107ˆ"<Method has 9 parameters, which is greater than 7 authorized.(«£ğ 8ó»úëÖ.
+p
+java:S1192k"NDefine a constant instead of duplicating this literal "manifestValue" 3 times.(‡Íìşşÿÿÿÿ8ö›ÏíÖ.
+x
+java:S3923j"[Remove this conditional structure or edit its code blocks so that they're not all the same.(û³õ¤8ö›ÏíÖ.

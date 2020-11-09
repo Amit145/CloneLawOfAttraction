@@ -3,7 +3,6 @@ package com.apps.amit.lawofattraction;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,6 +32,13 @@ public class LoginActivity extends AppCompatActivity {
     TextView titleText;
     TextView skipLoginText;
     SignInButton signInButton;
+
+    @Override
+    public void onBackPressed() {
+        Intent art1 = new Intent(getApplicationContext(), HomeActivity.class);
+        startActivity(art1);
+    }
+
     GoogleSignInClient mGoogleSignInClient;
     private static final int RC_SIGN_IN = 1;
     SharedPreferences sharedpreferences;
@@ -146,7 +152,7 @@ public class LoginActivity extends AppCompatActivity {
                 String personName = account.getDisplayName();
                 String personEmail = account.getEmail();
                 String personId = account.getId();
-                String personPhoto = account.getPhotoUrl().toString();
+                String personPhoto = String.valueOf(account.getPhotoUrl());
 
                 editor.putString("personName", personName);
                 editor.putString("personId", personId);
@@ -158,10 +164,13 @@ public class LoginActivity extends AppCompatActivity {
                 SynchronizeData synchronizeData = new SynchronizeData(this);
 
                 //Send Wishes to Server
-                synchronizeData.getAllPrivateWishes(account.getId());
+                synchronizeData.getAllPrivateWishes(account.getId(), personName, personEmail);
+                //String returnValue = synchronizeData.getAffirmationStatus();
+
 
                 //Load wishes from Server
                 synchronizeData.loadAllPrivateWishes(account.getId());
+
                 updateUI(account);
             }
 

@@ -210,9 +210,6 @@ public class SayThankYouActivity extends AppCompatActivity {
         ActivityCompat.requestPermissions(this,
                 new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
                 PERMISSION_REQUEST_CODE);
-
-
-
     }
 
     @Override
