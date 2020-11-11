@@ -272,13 +272,7 @@ V
 V
 &app/src/main/res/drawable/ic_pause.xml,2\9\296804a72f773b2017ed51e51777cfc6bf99ebff
 X
-(app/src/main/res/drawable/homebutton.xml,c\e\ced1ad96455864451ae77fb4274217fd7155c721
-X
 (app/src/main/res/drawable/normal_day.xml,0\a\0ac808229de445a3e1713b9da690370e77f01e31
-X
-(app/src/main/res/drawable/ratebutton.xml,6\7\67324e5c500dd9fb36344958c3505181d46bb66a
-Y
-)app/src/main/res/drawable/sharebutton.xml,c\3\c390c85ecdaf09efc54524a4f0ce6c7614cd2b9e
 Z
 *app/src/main/res/drawable/day_selected.xml,8\6\86e2fcb1d3304c75ef4bfa2654121a14f591472b
 Z

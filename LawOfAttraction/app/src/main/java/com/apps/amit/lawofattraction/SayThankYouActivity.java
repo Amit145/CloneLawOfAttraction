@@ -197,7 +197,7 @@ public class SayThankYouActivity extends AppCompatActivity {
 
     }
 
-    private boolean checkPermission() {
+    public boolean checkPermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
             // Permission is not granted
@@ -205,7 +205,7 @@ public class SayThankYouActivity extends AppCompatActivity {
         }
         return true;
     }
-    private void requestPermission() {
+    public void requestPermission() {
 
         ActivityCompat.requestPermissions(this,
                 new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},

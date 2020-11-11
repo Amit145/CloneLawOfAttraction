@@ -27,23 +27,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4a34cd3-0370-4e12-b0b5-94c93e1c7400" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_installreferrer_installreferrer_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_android_facebook_common_8_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_android_facebook_core_8_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_android_facebook_login_8_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_zxing_core_3_3_3_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_parse_bolts_bolts_android_1_4_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_parse_bolts_bolts_applinks_1_4_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_parse_bolts_bolts_tasks_1_4_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/roundedbackground1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__commons_io_commons_io_1_3_2_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
@@ -52,24 +41,15 @@
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9f83deaa70f0d07b8044be0cdab18fbef5cfed8e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/7/67324e5c500dd9fb36344958c3505181d46bb66a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/3/c390c85ecdaf09efc54524a4f0ce6c7614cd2b9e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/e/ced1ad96455864451ae77fb4274217fd7155c721" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/google-services.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/google-services.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/AudioManifestation.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/AudioManifestation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/HomeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/HomeActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/LoginActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/utils/FTPUpload.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-normal/single_list_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-normal/single_list_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_my_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_my_profile.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_login.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu-xlarge/activity_home_drawer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu-xlarge/activity_home_drawer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/activity_home_drawer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/activity_home_drawer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/SayThankYouActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/SayThankYouActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,14 +249,14 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="91" y="12" width="966" height="709" key="#PSD" timestamp="1605058821812">
+    <state x="91" y="12" width="966" height="709" key="#PSD" timestamp="1605100472082">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="91" y="12" width="966" height="709" key="#PSD/0.0.1366.728@0.0.1366.728" timestamp="1605058821812" />
-    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser" timestamp="1605077450731">
+    <state x="91" y="12" width="966" height="709" key="#PSD/0.0.1366.728@0.0.1366.728" timestamp="1605100472082" />
+    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser" timestamp="1605116556579">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1605077450731" />
+    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1605116556579" />
     <state x="263" y="118" key="AndroidCreateResourceDirectoryDialog" timestamp="1603773050595">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -289,50 +269,50 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="540" y="194" key="AndroidCreateXmlResourceDialog/0.0.1366.728@0.0.1366.728" timestamp="1604851078992" />
-    <state x="538" y="128" key="AndroidProcessChooserDialog" timestamp="1605064640802">
+    <state x="538" y="128" key="AndroidProcessChooserDialog" timestamp="1605120500282">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="538" y="128" key="AndroidProcessChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1605064640802" />
-    <state width="385" height="438" key="DebuggerActiveHint" timestamp="1605006190608">
+    <state x="538" y="128" key="AndroidProcessChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1605120500282" />
+    <state width="385" height="438" key="DebuggerActiveHint" timestamp="1605120635406">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="385" height="438" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1605006190608" />
-    <state width="1367" height="263" key="GridCell.Tab.0.bottom" timestamp="1605064754370">
+    <state width="385" height="438" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1605120635406" />
+    <state width="1367" height="263" key="GridCell.Tab.0.bottom" timestamp="1605120877517">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1367" height="263" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1605064754370" />
-    <state width="1367" height="263" key="GridCell.Tab.0.center" timestamp="1605064754369">
+    <state width="1367" height="263" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1605120877517" />
+    <state width="1367" height="263" key="GridCell.Tab.0.center" timestamp="1605120877517">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1367" height="263" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1605064754369" />
-    <state width="1367" height="263" key="GridCell.Tab.0.left" timestamp="1605064754369">
+    <state width="1367" height="263" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1605120877517" />
+    <state width="1367" height="263" key="GridCell.Tab.0.left" timestamp="1605120877517">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1367" height="263" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1605064754369" />
-    <state width="1367" height="263" key="GridCell.Tab.0.right" timestamp="1605064754370">
+    <state width="1367" height="263" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1605120877517" />
+    <state width="1367" height="263" key="GridCell.Tab.0.right" timestamp="1605120877517">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1367" height="263" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1605064754370" />
-    <state width="1367" height="263" key="GridCell.Tab.1.bottom" timestamp="1605064754370">
+    <state width="1367" height="263" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1605120877517" />
+    <state width="1367" height="263" key="GridCell.Tab.1.bottom" timestamp="1605120877518">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1367" height="263" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1605064754370" />
-    <state width="1367" height="263" key="GridCell.Tab.1.center" timestamp="1605064754370">
+    <state width="1367" height="263" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1605120877518" />
+    <state width="1367" height="263" key="GridCell.Tab.1.center" timestamp="1605120877518">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1367" height="263" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1605064754370" />
-    <state width="1367" height="263" key="GridCell.Tab.1.left" timestamp="1605064754370">
+    <state width="1367" height="263" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1605120877518" />
+    <state width="1367" height="263" key="GridCell.Tab.1.left" timestamp="1605120877517">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1367" height="263" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1605064754370" />
-    <state width="1367" height="263" key="GridCell.Tab.1.right" timestamp="1605064754370">
+    <state width="1367" height="263" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1605120877517" />
+    <state width="1367" height="263" key="GridCell.Tab.1.right" timestamp="1605120877518">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1367" height="263" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1605064754370" />
-    <state x="184" y="6" key="SettingsEditor" timestamp="1604917700990">
+    <state width="1367" height="263" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1605120877518" />
+    <state x="184" y="6" key="SettingsEditor" timestamp="1605093280369">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1604917700990" />
+    <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1605093280369" />
     <state x="499" y="141" key="chooseDestDirectoryDialog" timestamp="1604770507328">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -345,22 +325,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1603769508845" />
-    <state x="162" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1605029637547">
+    <state x="294" y="120" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1605120527250">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="162" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1605029637547" />
+    <state x="294" y="120" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1605120527250" />
     <state x="315" y="63" width="736" height="602" key="find.popup" timestamp="1605069112592">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="315" y="63" width="736" height="602" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1605069112592" />
-    <state width="428" height="65" key="javadoc.popup.new" timestamp="1605082333832">
+    <state width="428" height="65" key="javadoc.popup.new" timestamp="1605121298567">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="428" height="65" key="javadoc.popup.new/0.0.1366.728@0.0.1366.728" timestamp="1605082333832" />
-    <state x="207" y="106" key="psd.add.library.dependency.panel.dimension" timestamp="1605058820588">
+    <state width="428" height="65" key="javadoc.popup.new/0.0.1366.728@0.0.1366.728" timestamp="1605121298567" />
+    <state x="207" y="106" key="psd.add.library.dependency.panel.dimension" timestamp="1605100466769">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="207" y="106" key="psd.add.library.dependency.panel.dimension/0.0.1366.728@0.0.1366.728" timestamp="1605058820588" />
+    <state x="207" y="106" key="psd.add.library.dependency.panel.dimension/0.0.1366.728@0.0.1366.728" timestamp="1605100466769" />
     <state x="389" y="0" key="refactoring.ChangeSignatureDialog" timestamp="1604758775092">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -373,57 +353,62 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/adapters/MusicAdapter.java</url>
           <line>99</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/Exercise3Activity.java</url>
           <line>305</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/service/FirebaseTokenGenerator.java</url>
           <line>31</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/service/FirebaseInstanceIDService.java</url>
           <line>21</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/CommentsActivity.java</url>
           <line>411</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/CommentsActivity.java</url>
           <line>374</line>
           <option name="timeStamp" value="39" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/SubTaskActivity.java</url>
           <line>479</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/DailyQuotesActivity.java</url>
           <line>316</line>
           <option name="timeStamp" value="44" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+        <line-breakpoint suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/helper/SynchronizeData.java</url>
           <line>90</line>
           <option name="timeStamp" value="55" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+        <line-breakpoint suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/LoginActivity.java</url>
-          <line>467</line>
+          <line>475</line>
           <option name="timeStamp" value="84" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-method">
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/LoginActivity.java</url>
+          <line>668</line>
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="java-method">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/AffirmationActivity.java</url>
           <line>79</line>
           <properties class="com.apps.amit.lawofattraction.AffirmationActivity" method="onCreate">

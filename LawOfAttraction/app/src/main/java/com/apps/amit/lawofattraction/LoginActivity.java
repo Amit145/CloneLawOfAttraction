@@ -1,11 +1,16 @@
 package com.apps.amit.lawofattraction;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -13,8 +18,13 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 import com.apps.amit.lawofattraction.sqlitedatabase.ActivityTrackerDatabaseHandler;
 import com.apps.amit.lawofattraction.sqlitedatabase.WishDataBaseHandler;
 import com.apps.amit.lawofattraction.utils.ManifestationTrackerUtils;
@@ -35,24 +45,32 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
+
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
+import static com.apps.amit.lawofattraction.SayThankYouActivity.PERMISSION_REQUEST_CODE;
 import static com.apps.amit.lawofattraction.SetReminderActivity.NOTIFICATION_ENABLE;
 
 public class LoginActivity extends AppCompatActivity {
@@ -233,6 +251,7 @@ public class LoginActivity extends AppCompatActivity {
             titleText = findViewById(R.id.signInTextView);
             skipLoginText = findViewById(R.id.SkipTextView);
 
+
             Glide.with(getApplicationContext()).load(R.drawable.lawimg).thumbnail(0.1f).fitCenter().into(appLogo);
 
             // Configure sign-in to request the user's ID, email address, and basic profile. ID and basic profile are included in DEFAULT_SIGN_IN.
@@ -248,8 +267,10 @@ public class LoginActivity extends AppCompatActivity {
             signInButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-                    startActivityForResult(signInIntent, RC_SIGN_IN);
+
+                        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+                        startActivityForResult(signInIntent, RC_SIGN_IN);
+
                 }
             });
 
@@ -267,6 +288,8 @@ public class LoginActivity extends AppCompatActivity {
                     finish();
                 }
             });
+
+
         }
     }
 
@@ -412,21 +435,6 @@ public class LoginActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        /*
-        try {
-            ///LawOfAttraction/Audios
-            File temp = new File(root.getAbsolutePath() + "/LawOfAttraction/JSON");
-            if (!temp.exists()) {
-                temp.mkdirs();
-            }
-            FileWriter file = new FileWriter(root.getAbsolutePath() + "/LawOfAttraction/JSON/"+sharedpreferences.getString("personId", "")+".json");
-            file.write(jsonObject.toString());
-            file.close();
-
-        } catch (IOException e) {
-            Log.d("ERROR", e.getMessage());
-        }
-        */
         return jsonObject;
     }
 
@@ -478,6 +486,11 @@ public class LoginActivity extends AppCompatActivity {
                 editor.putString("personEmail", personEmail);
                 editor.putString("personPhoto", personPhoto);
                 editor.apply();
+
+                //Check if user exist
+                FTPDownload uploadFTP = new FTPDownload(personId);
+                uploadFTP.execute();
+
                 Intent art = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(art);
             }
@@ -511,9 +524,6 @@ public class LoginActivity extends AppCompatActivity {
 
                         String str = jsonObject.toString();
                         InputStream is = new ByteArrayInputStream(str.getBytes());
-
-                        //File tempFile = new File(temp);
-                        //FileInputStream in = new FileInputStream(tempFile);
                         con.storeFile(sharedpreferences.getString("personId", "")+".json", is);
                         is.close();
                     }
@@ -536,5 +546,254 @@ public class LoginActivity extends AppCompatActivity {
             syncButton.setVisibility(View.VISIBLE);
             syncStatusText.setText("Last Sync at: "+sharedpreferences.getString("syncDate", ""));
         }
+    }
+
+    public class FTPDownload extends AsyncTask<String, Void, Void>{
+
+        public String personId;
+
+        public FTPDownload(String personId) {
+            this.personId = personId;
+        }
+
+        @Override
+        protected Void doInBackground(String... strings) {
+
+            final String jsonFilePath = personId+"/JSON";
+            final String jsonFileName = personId+".json";
+            FTPClient con = new FTPClient();
+
+            //File root = android.os.Environment.getExternalStorageDirectory();
+            //final File file = new File(root.getAbsolutePath() + "/.LawOfAttraction/JSON");
+            //if (!file.exists()) {
+            //    file.mkdirs();
+           // }
+
+            Handler handler =  new Handler(getApplicationContext().getMainLooper());
+            handler.post( new Runnable(){
+                public void run(){
+
+                    Toast.makeText(getApplicationContext()," checking ", Toast.LENGTH_LONG).show();
+                }
+            });
+
+
+            try {
+                con.connect("ftp.innovativelabs.xyz");
+
+                if (con.login("u941116359.amitg145", "4aR|i3I4N")) {
+
+                    con.enterLocalPassiveMode();
+                    con.setFileType(FTP.BINARY_FILE_TYPE);
+                    boolean ok = checkDirectoryExists(jsonFilePath, con );
+
+                    if(ok) {
+
+                        handler.post( new Runnable(){
+                            public void run(){
+
+                                Toast.makeText(getApplicationContext()," Directory exist "+jsonFilePath, Toast.LENGTH_LONG).show();
+                            }
+                        });
+
+                        final InputStream ok1 = checkFileExists(jsonFileName, con);
+                        boolean success = false;
+                        if(ok1!=null) {
+
+                            try {
+
+                                //creating an InputStreamReader object
+                                InputStreamReader isReader = new InputStreamReader(ok1);
+                                //Creating a BufferedReader object
+                                BufferedReader reader = new BufferedReader(isReader);
+                                StringBuffer sb = new StringBuffer();
+                                String str;
+                                while((str = reader.readLine())!= null){
+                                    sb.append(str);
+                                }
+                                System.out.println(sb.toString());
+
+                                jsonObject = new JSONObject(sb.toString());
+
+                                //File downloadFile1 = new File( file+"/"+jsonFileName);
+                                //OutputStream outputStream1 = new FileOutputStream(downloadFile1);
+                                //success = con.retrieveFile(jsonFileName, outputStream1);
+                               // outputStream1.close();
+
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        } else {
+
+                            handler.post( new Runnable(){
+                                public void run(){
+
+                                    Toast.makeText(getApplicationContext()," Both file & directory doesn't exist "+jsonFileName, Toast.LENGTH_LONG).show();
+                                }
+                            });
+                        }
+
+
+                    } else {
+
+                        handler.post( new Runnable(){
+                            public void run(){
+
+                                Toast.makeText(getApplicationContext()," Diirectory not exist "+jsonFilePath, Toast.LENGTH_LONG).show();
+                            }
+                        });
+
+
+                    }
+                }
+
+                con.logout();
+                con.disconnect();
+
+            } catch (Exception e) {
+                //Toast.makeText(getApplicationContext(), String.valueOf(e), Toast.LENGTH_LONG).show();
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+
+            Handler handler =  new Handler(getApplicationContext().getMainLooper());
+            if (jsonObject!=null) {
+                handler.post( new Runnable(){
+                    public void run(){
+
+                        SharedPreferences sharedpreferences = getSharedPreferences("SocialAccount", Context.MODE_PRIVATE);
+                        SharedPreferences sp = getSharedPreferences("Affirmation_Counter", Context.MODE_PRIVATE);
+                        SharedPreferences sharedPreferencesManifestationType = getSharedPreferences("MANIFESTATION_TYPE", Exercise1Activity.MODE_PRIVATE);
+                        SharedPreferences timerValue = getSharedPreferences("your_prefs", Exercise2Activity.MODE_PRIVATE);
+                        SharedPreferences timerEnable = getSharedPreferences(NOTIFICATION_ENABLE, Exercise1Activity.MODE_PRIVATE);
+
+                        try {
+
+                            if(sharedpreferences.contains("personId")
+                                    || sharedpreferences.contains("personEmail")
+                                    || sharedpreferences.contains("personName")
+                                    || sharedpreferences.contains("personPhoto")) {
+
+                                SharedPreferences.Editor ed = sharedpreferences.edit();
+                                ed.putString("personId", jsonObject.getString("personId"));
+                                ed.putString("personEmail", jsonObject.getString("personEmail"));
+                                ed.putString("personName", jsonObject.getString("personName"));
+                                ed.putString("personPhoto", jsonObject.getString("personPhoto"));
+                                ed.apply();
+
+                            } else {
+                                SharedPreferences.Editor ed = sharedpreferences.edit();
+                                ed.putString("personId", jsonObject.getString("personId"));
+                                ed.putString("personEmail", jsonObject.getString("personEmail"));
+                                ed.putString("personName", jsonObject.getString("personName"));
+                                ed.putString("personPhoto", jsonObject.getString("personPhoto"));
+                                ed.apply();
+                            }
+
+                            if(sp.contains("Time")
+                                    || sp.contains("counter")) {
+                                SharedPreferences.Editor ed = sp.edit();
+                                ed.putString("Time", jsonObject.getString("affirmationDate"));
+                                ed.putInt("counter", jsonObject.getInt("affirmationCount"));
+                                ed.apply();
+
+                            } else {
+                                SharedPreferences.Editor ed = sp.edit();
+                                ed.putString("Time", jsonObject.getString("affirmationDate"));
+                                ed.putInt("counter", jsonObject.getInt("affirmationCount"));
+                                ed.apply();
+                            }
+
+                            if(sharedPreferencesManifestationType.contains("MANIFESTATION_TYPE_VALUE")) {
+                                SharedPreferences.Editor ed = sharedPreferencesManifestationType.edit();
+                                ed.putString("MANIFESTATION_TYPE_VALUE", jsonObject.getString("manifestType"));
+                                ed.apply();
+
+                            } else {
+                                SharedPreferences.Editor ed = sharedPreferencesManifestationType.edit();
+                                ed.putString("MANIFESTATION_TYPE_VALUE", jsonObject.getString("manifestType"));
+                                ed.apply();
+                            }
+
+                            if(timerEnable.contains("timerEnable")) {
+                                SharedPreferences.Editor ed = timerEnable.edit();
+                                ed.putString("timerEnable", jsonObject.getString("timerEnable"));
+                                ed.apply();
+
+                            } else {
+                                SharedPreferences.Editor ed = timerEnable.edit();
+                                ed.putString("timerEnable", jsonObject.getString("timerEnable"));
+                                ed.apply();
+                            }
+
+                            if(timerValue.contains("your_int_key")) {
+                                SharedPreferences.Editor ed = timerValue.edit();
+                                ed.putInt("your_int_key", Integer.parseInt(jsonObject.getString("timerCount")));
+                                ed.apply();
+
+                            } else {
+                                SharedPreferences.Editor ed = timerValue.edit();
+                                ed.putInt("your_int_key", Integer.parseInt(jsonObject.getString("timerCount")));
+                                ed.apply();
+                            }
+
+                            JSONArray logs = jsonObject.getJSONArray("logList");
+                            JSONArray pWishes = jsonObject.getJSONArray("pWishList");
+
+                            for (int i = 0; i < logs.length(); i++) {
+                                JSONObject jsonObject1 = logs.getJSONObject(i);
+
+                                ActivityTrackerDatabaseHandler db = new ActivityTrackerDatabaseHandler(getApplicationContext());
+                                db.addContact(new ManifestationTrackerUtils(jsonObject1.getString("logTitle"), jsonObject1.getString("logSubtitle")));
+                            }
+
+                            for (int i = 0; i < pWishes.length(); i++) {
+                                JSONObject jsonObject1 = pWishes.getJSONObject(i);
+                                WishDataBaseHandler db = new WishDataBaseHandler(getApplicationContext());
+
+                                db.addWish(new PrivateWishesUtils(jsonObject1.getString("userName"),jsonObject1.getString("userWish"),jsonObject1.getString("wishDate")));
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                        Toast.makeText(getApplicationContext(),"Done", Toast.LENGTH_LONG).show();
+                    }
+                });
+            } else {
+                handler.post( new Runnable(){
+                    public void run(){
+
+                        Toast.makeText(getApplicationContext(),"no Json", Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+        }
+    }
+
+    boolean checkDirectoryExists(String dirPath, FTPClient con) throws IOException {
+        con.changeWorkingDirectory(dirPath);
+        int returnCode = con.getReplyCode();
+        if (returnCode == 550) {
+            return false;
+        }
+        return true;
+    }
+
+    InputStream checkFileExists(String filePath, FTPClient con) throws IOException {
+        InputStream inputStream = con.retrieveFileStream(filePath);
+        int returnCode = con.getReplyCode();
+        //if (inputStream == null || returnCode == 550) {
+         //return false;
+        //}
+        con.completePendingCommand();
+
+        return inputStream;
     }
 }
