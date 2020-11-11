@@ -1,5 +1,6 @@
 <resources>
-
+    <string name="facebook_app_id">2444487242488757</string>
+    <string name="fb_login_protocol_scheme">fb2444487242488757</string>
     <string name="app_name">LawOfAttraction</string>
     <string name="facebook_interstitial_id">CAROUSEL_IMG_SQUARE_APP_INSTALL#2444487242488757_2444492419154906</string>
     <string name="facebook_banner_id">IMG_16_9_APP_INSTALL#2444487242488757_2445382835732531</string>

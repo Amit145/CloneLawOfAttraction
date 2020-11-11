@@ -5,6 +5,11 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/signIn"
+            android:icon="@drawable/ic_baseline_account_circle_24"
+            android:title="My Profile" />
+
+        <item
             android:id="@+id/nav_camera"
             android:icon="@drawable/ic_info_black_24dp"
             android:title="@string/navigation_drawer_info" />
@@ -43,15 +48,14 @@
             android:icon="@drawable/ic_settings_black_24dp"
             android:title="@string/navigation_settings" />
 
-        <item
-            android:id="@+id/signIn"
-            android:icon="@drawable/ic_settings_black_24dp"
-            android:title="SignIn" />
 
+        <!--
         <item
             android:id="@+id/audioManifest"
             android:icon="@drawable/ic_settings_black_24dp"
             android:title="Audio Manifestation" />
+
+         -->
 
         <!-- For version 3.3 -->
 

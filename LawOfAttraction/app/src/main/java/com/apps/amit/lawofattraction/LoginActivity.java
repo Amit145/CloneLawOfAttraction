@@ -4,23 +4,29 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.apps.amit.lawofattraction.sqlitedatabase.ActivityTrackerDatabaseHandler;
 import com.apps.amit.lawofattraction.sqlitedatabase.WishDataBaseHandler;
-import com.apps.amit.lawofattraction.utils.FTPUpload;
 import com.apps.amit.lawofattraction.utils.ManifestationTrackerUtils;
 import com.apps.amit.lawofattraction.utils.PrivateWishesUtils;
 import com.bumptech.glide.Glide;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -29,18 +35,22 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-
+import org.apache.commons.net.ftp.FTP;
+import org.apache.commons.net.ftp.FTPClient;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.FileWriter;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
-
 import de.hdodenhof.circleimageview.CircleImageView;
 
 import static com.apps.amit.lawofattraction.SetReminderActivity.NOTIFICATION_ENABLE;
@@ -48,11 +58,16 @@ import static com.apps.amit.lawofattraction.SetReminderActivity.NOTIFICATION_ENA
 public class LoginActivity extends AppCompatActivity {
 
     ImageView appLogo;
-    Button fbButtonSignIn;
-    Button googleSignOut;
+    LoginButton fbButtonSignIn;
     TextView titleText;
     TextView skipLoginText;
     SignInButton signInButton;
+    CallbackManager callbackManager;
+    TextView syncStatusText;
+    String temp ;
+    ProgressBar syncBar;
+    Button syncButton;
+    JSONObject jsonObject;
 
     @Override
     public void onBackPressed() {
@@ -71,10 +86,9 @@ public class LoginActivity extends AppCompatActivity {
         sharedpreferences = getSharedPreferences("SocialAccount", Context.MODE_PRIVATE);
 
         if (sharedpreferences.contains("personId")) {
-
             setContentView(R.layout.activity_my_profile);
 
-
+            syncBar = findViewById(R.id.syncBar);
             CircleImageView userProfilePic = findViewById(R.id.userProfilePic);
             TextView userProfileName = findViewById(R.id.userProfileName);
             TextView userProfileEmail = findViewById(R.id.userProfileEmail);
@@ -92,8 +106,10 @@ public class LoginActivity extends AppCompatActivity {
             TextView notificationReminderName = findViewById(R.id.notificationReminderName);
             TextView loggedInAccountText = findViewById(R.id.loggedInAccountText);
             Button logoutButton = findViewById(R.id.logoutButton);
-            final TextView syncStatusText = findViewById(R.id.syncStatusText);
-            Button syncButton = findViewById(R.id.syncButton);
+            syncStatusText = findViewById(R.id.syncStatusText);
+            syncButton = findViewById(R.id.syncButton);
+
+            syncBar.setVisibility(View.INVISIBLE);
 
             WishDataBaseHandler db = new WishDataBaseHandler(getApplicationContext());
             ActivityTrackerDatabaseHandler adb = new ActivityTrackerDatabaseHandler(getApplicationContext());
@@ -108,7 +124,6 @@ public class LoginActivity extends AppCompatActivity {
 
             File root = android.os.Environment.getExternalStorageDirectory();
             String path = root.getAbsolutePath() + "/LawOfAttraction/Audios";
-            Log.d("Files", "Path: " + path);
             File directory = new File(path);
             final File[] files = directory.listFiles();
 
@@ -118,17 +133,33 @@ public class LoginActivity extends AppCompatActivity {
             Glide.with(getApplicationContext()).load(uri).into(userProfilePic);
             userProfileName.setText(sharedpreferences.getString("personName", ""));
             userProfileEmail.setText(sharedpreferences.getString("personEmail", ""));
-            audioWishCount.setText(String.valueOf(files.length));
+
+            if(files!=null){
+                audioWishCount.setText(String.valueOf(files.length));
+            }
+
             audioWishName.setText("Audio Wishes");
             privateWishCount.setText(String.valueOf(getAllWishes.size()));
             privateWishName.setText("Private Wishes");
             affirmationCount.setText(String.valueOf(sp.getInt("counter", 0)));
-            affirmationName.setText("Affirmations");
-            manifestType.setText(sharedPreferencesManifestationType.getString("MANIFESTATION_TYPE_VALUE", ""));
-            manifestTypeName.setText("Manifestation");
+            affirmationName.setText("Affirmation Day");
+
+            if(sharedPreferencesManifestationType.getString("MANIFESTATION_TYPE_VALUE", "").isEmpty()) {
+                manifestType.setText("NA");
+            } else {
+                manifestType.setText(sharedPreferencesManifestationType.getString("MANIFESTATION_TYPE_VALUE", ""));
+            }
+
+            manifestTypeName.setText("Manifesting");
             setTimeCount.setText(String.valueOf(timerValue.getInt("your_int_key", 60)));
-            setTimeName.setText("Count Time");
-            notificationReminderStatus.setText(String.valueOf(timerEnable.getInt(NOTIFICATION_ENABLE,1)));
+            setTimeName.setText("Timer count");
+
+            if(timerEnable.getInt(NOTIFICATION_ENABLE,1)==1) {
+                notificationReminderStatus.setText("ON");
+            } else {
+                notificationReminderStatus.setText("OFF");
+            }
+
             notificationReminderName.setText("Daily Notifications");
             loggedInAccountText.setText("Logged in using as: "+sharedpreferences.getString("personName", ""));
 
@@ -138,51 +169,77 @@ public class LoginActivity extends AppCompatActivity {
                 syncStatusText.setText("");
             }
 
+            logoutButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                            .requestEmail()
+                            .build();
+
+                    mGoogleSignInClient = GoogleSignIn.getClient(LoginActivity.this, gso);
+                    mGoogleSignInClient.signOut().addOnCompleteListener(LoginActivity.this, new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+
+                            Toast.makeText(getApplicationContext(),"U signed out",Toast.LENGTH_LONG).show();
+
+                            SharedPreferences.Editor editor = sharedpreferences.edit();
+                            editor.remove("personId");
+                            editor.remove("syncDate");
+                            editor.putString("personName", "");
+                            editor.putString("personEmail", "");
+                            editor.putString("personPhoto", "");
+                            editor.apply();
+
+                            //load activity
+                            Intent art = new Intent(getApplicationContext(), LoginActivity.class);
+                            startActivity(art);
+                        }
+                    });
+                }
+            });
+
             syncButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
-                    String temp = null;
+                    syncStatusText.setText("Synchronizing....!");
                     Toast.makeText(getApplicationContext(),"Synchronizing Data",Toast.LENGTH_LONG).show();
 
                     try {
-                        temp = createJsonFile();
+                        jsonObject = createJsonFile();
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-                    FTPUpload uploadFTP = new FTPUpload(files, sharedpreferences.getString("personId", ""), temp, getApplicationContext());
-                    uploadFTP.execute();
 
+                    syncBar.setVisibility(View.VISIBLE);
+                    syncButton.setVisibility(View.INVISIBLE);
+                    FTPUpload uploadFTP = new FTPUpload();
+                    uploadFTP.execute();
 
                     SharedPreferences.Editor editor = sharedpreferences.edit();
                     editor.putString("syncDate", DateFormat.getDateTimeInstance().format(new Date()));
                     editor.apply();
-
-                    syncStatusText.setText("Last Sync at: "+sharedpreferences.getString("syncDate", ""));
                 }
             });
-
-
         } else {
 
             setContentView(R.layout.activity_login);
 
             appLogo = findViewById(R.id.appLogo);
-            googleSignOut = findViewById(R.id.googleSignOut);
             signInButton = findViewById(R.id.googleSignInButton);
-            fbButtonSignIn = findViewById(R.id.facebookSignInButton);
+            fbButtonSignIn = findViewById(R.id.login_button);
             titleText = findViewById(R.id.signInTextView);
             skipLoginText = findViewById(R.id.SkipTextView);
 
-
             Glide.with(getApplicationContext()).load(R.drawable.lawimg).thumbnail(0.1f).fitCenter().into(appLogo);
 
-            // Configure sign-in to request the user's ID, email address, and basic
-            // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
-
+            // Configure sign-in to request the user's ID, email address, and basic profile. ID and basic profile are included in DEFAULT_SIGN_IN.
             GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                     .requestEmail()
                     .build();
+
             // Build a GoogleSignInClient with the options specified by gso.
             mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
@@ -191,58 +248,113 @@ public class LoginActivity extends AppCompatActivity {
             signInButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
-                    Toast.makeText(getApplicationContext(),"Google",Toast.LENGTH_LONG).show();
                     Intent signInIntent = mGoogleSignInClient.getSignInIntent();
                     startActivityForResult(signInIntent, RC_SIGN_IN);
-                }
-            });
-
-            googleSignOut.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    mGoogleSignInClient.signOut().addOnCompleteListener(LoginActivity.this, new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-
-                            Toast.makeText(getApplicationContext(),"U signed out",Toast.LENGTH_LONG).show();
-
-                            SharedPreferences.Editor editor = sharedpreferences.edit();
-
-                            editor.putString("personName", "");
-                            editor.putString("personId", "");
-                            editor.putString("personEmail", "");
-                            editor.putString("personPhoto", "");
-                            editor.apply();
-
-                            signInButton.setVisibility(View.VISIBLE);
-                            googleSignOut.setVisibility(View.INVISIBLE);
-                        }
-                    });
                 }
             });
 
             fbButtonSignIn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
                     Toast.makeText(getApplicationContext(),"Facebook",Toast.LENGTH_LONG).show();
+                    //loginUsingFB();
                 }
             });
 
             skipLoginText.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
-                    Toast.makeText(getApplicationContext(),"Skipped",Toast.LENGTH_LONG).show();
+                    finish();
                 }
             });
         }
     }
 
-    private String createJsonFile() throws JSONException {
+    private void loginUsingFB() {
 
-        File root = android.os.Environment.getExternalStorageDirectory();
+        //keytool -exportcert -alias androiddebugkey -keystore "C:\Users\amitg13\.android\debug.keystore" | "openssl" sha1 -binary | "openssl" base64
+        //Bmce+9aHdOoVtE7fS3B07tfj7Bc=
+
+        callbackManager = CallbackManager.Factory.create();
+
+        fbButtonSignIn.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+
+                loginResult.getAccessToken().getUserId();
+                String userProfile = "https://graph.facebook.com/"+loginResult.getAccessToken().getUserId()+"picture?return_ssl_resources=1";
+
+                GraphRequest request = GraphRequest.newMeRequest(loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
+
+                    @Override
+                    public void onCompleted(JSONObject object, GraphResponse response) {
+                        Log.i("LoginActivity", response.toString());
+                        // Get facebook data from login
+                        Bundle bFacebookData = getFacebookData(object);
+
+                        Toast.makeText(getApplicationContext(),bFacebookData.toString(),Toast.LENGTH_LONG).show();
+                    }
+                });
+                Bundle parameters = new Bundle();
+                parameters.putString("fields", "id, first_name, last_name, email,gender, birthday, location"); // Parámetros que pedimos a facebook
+                request.setParameters(parameters);
+                request.executeAsync();
+            }
+
+            @Override
+            public void onCancel() {
+
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+
+            }
+        });
+
+
+    }
+
+    private Bundle getFacebookData(JSONObject object) {
+
+        try {
+            Bundle bundle = new Bundle();
+            String id = object.getString("id");
+
+            try {
+                URL profile_pic = new URL("https://graph.facebook.com/" + id + "/picture?width=200&height=150");
+                Log.i("profile_pic", profile_pic + "");
+                bundle.putString("profile_pic", profile_pic.toString());
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+                return null;
+            }
+
+            bundle.putString("idFacebook", id);
+            if (object.has("first_name"))
+                bundle.putString("first_name", object.getString("first_name"));
+            if (object.has("last_name"))
+                bundle.putString("last_name", object.getString("last_name"));
+            if (object.has("email"))
+                bundle.putString("email", object.getString("email"));
+            if (object.has("gender"))
+                bundle.putString("gender", object.getString("gender"));
+            if (object.has("birthday"))
+                bundle.putString("birthday", object.getString("birthday"));
+            if (object.has("location"))
+                bundle.putString("location", object.getJSONObject("location").getString("name"));
+
+            return bundle;
+        }
+        catch(JSONException e) {
+           // Log.d(TAG,"Error parsing JSON");
+        }
+        return null;
+    }
+
+    private JSONObject createJsonFile() throws JSONException {
+
         SharedPreferences sharedpreferences = getSharedPreferences("SocialAccount", Context.MODE_PRIVATE);
         SharedPreferences sp = getSharedPreferences("Affirmation_Counter", AffirmationActivity.MODE_PRIVATE);
         SharedPreferences sharedPreferencesManifestationType = getSharedPreferences("MANIFESTATION_TYPE", Exercise1Activity.MODE_PRIVATE);
@@ -252,7 +364,6 @@ public class LoginActivity extends AppCompatActivity {
         JSONObject jsonObject = new JSONObject();
 
         try {
-
 
             jsonObject.put("personId", sharedpreferences.getString("personId", ""));
             jsonObject.put("personEmail", sharedpreferences.getString("personEmail", ""));
@@ -293,7 +404,6 @@ public class LoginActivity extends AppCompatActivity {
                 arrayElementOneArrayElementOne.put("wishDate", ws.getUserDate());
 
                 arrayElementTwoArray.put(arrayElementOneArrayElementOne);
-
             }
 
             jsonObject.put("logList", arrayElementOneArray);
@@ -302,6 +412,7 @@ public class LoginActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+        /*
         try {
             ///LawOfAttraction/Audios
             File temp = new File(root.getAbsolutePath() + "/LawOfAttraction/JSON");
@@ -311,97 +422,119 @@ public class LoginActivity extends AppCompatActivity {
             FileWriter file = new FileWriter(root.getAbsolutePath() + "/LawOfAttraction/JSON/"+sharedpreferences.getString("personId", "")+".json");
             file.write(jsonObject.toString());
             file.close();
+
         } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            Log.d("ERROR", e.getMessage());
         }
-        
-        return root.getAbsolutePath() + "/LawOfAttraction/JSON/"+sharedpreferences.getString("personId", "")+".json";
+        */
+        return jsonObject;
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-        updateUI(account);
+    public static boolean makeDirectories(FTPClient ftpClient, String dirPath)
+            throws IOException {
+        String[] pathElements = dirPath.split("/");
+        if (pathElements != null && pathElements.length > 0) {
+            for (String singleDir : pathElements) {
+                boolean existed = ftpClient.changeWorkingDirectory(singleDir);
+                if (!existed) {
+                    boolean created = ftpClient.makeDirectory(singleDir);
+                    if (created) {
+                        System.out.println("CREATED directory: " + singleDir);
+                        ftpClient.changeWorkingDirectory(singleDir);
+                    } else {
+                        System.out.println("COULD NOT create directory: " + singleDir);
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
-            // The Task returned from this call is always completed, no need to attach
-            // a listener.
+            // The Task returned from this call is always completed, no need to attach a listener.
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             handleSignInResult(task);
+        } else {
+            callbackManager.onActivityResult(requestCode, resultCode, data);
         }
     }
 
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-
             if(account != null){
-
                 SharedPreferences.Editor editor = sharedpreferences.edit();
-
                 String personName = account.getDisplayName();
                 String personEmail = account.getEmail();
                 String personId = account.getId();
                 String personPhoto = String.valueOf(account.getPhotoUrl());
-
                 editor.putString("personName", personName);
                 editor.putString("personId", personId);
                 editor.putString("personEmail", personEmail);
                 editor.putString("personPhoto", personPhoto);
                 editor.apply();
-
-                // Signed in successfully, show authenticated UI.
-               // SynchronizeData synchronizeData = new SynchronizeData(this);
-
-                //Send Wishes to Server
-                //synchronizeData.getAllPrivateWishes(account.getId(), personName, personEmail);
-                //String returnValue = synchronizeData.getAffirmationStatus();
-
-
-                //Load wishes from Server
-                //synchronizeData.loadAllPrivateWishes(account.getId());
-
-                updateUI(account);
+                Intent art = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(art);
             }
-
-
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
-
             Toast.makeText(getApplicationContext(),"signInResult:failed code=" + e.getStatusCode(),Toast.LENGTH_LONG).show();
-            updateUI(null);
         }
     }
 
-    //Change UI according to user data.
-    public void updateUI(GoogleSignInAccount account){
+    public class FTPUpload extends AsyncTask<String, Void, Void> {
 
-        /*
-        if(account != null){
+        @Override
+        protected Void doInBackground(String... strings) {
 
-            signInButton.setVisibility(View.INVISIBLE);
-            googleSignOut.setVisibility(View.VISIBLE);
+            FTPClient con = null;
+            try {
+                con = new FTPClient();
+                con.connect("ftp.innovativelabs.xyz");
 
-            //Toast.makeText(this,"U Signed In successfully "+personName,Toast.LENGTH_LONG).show();
+                if (con.login("u941116359.amitg145", "4aR|i3I4N"))
+                {
+                    con.enterLocalPassiveMode(); // important!
 
+                    String jsonFilePath = sharedpreferences.getString("personId", "")+"/JSON";
 
-        }else {
+                    boolean result1 = LoginActivity.makeDirectories(con, jsonFilePath);
+                    if(result1) {
+                        con.changeWorkingDirectory(jsonFilePath);
+                        con.setFileType(FTP.BINARY_FILE_TYPE);
 
-            Toast.makeText(this,"U Didnt signed in",Toast.LENGTH_LONG).show();
-            signInButton.setVisibility(View.VISIBLE);
-            googleSignOut.setVisibility(View.INVISIBLE);
+                        String str = jsonObject.toString();
+                        InputStream is = new ByteArrayInputStream(str.getBytes());
+
+                        //File tempFile = new File(temp);
+                        //FileInputStream in = new FileInputStream(tempFile);
+                        con.storeFile(sharedpreferences.getString("personId", "")+".json", is);
+                        is.close();
+                    }
+
+                    con.logout();
+                    con.disconnect();
+                }
+            } catch (Exception e) {
+                Log.d("ERROR", e.getMessage());
+            }
+            return null;
         }
 
-        */
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+
+            Toast.makeText(getApplicationContext(),"Completed ! ... Synchronizing Data",Toast.LENGTH_LONG).show();
+            syncBar.setVisibility(View.INVISIBLE);
+            syncButton.setVisibility(View.VISIBLE);
+            syncStatusText.setText("Last Sync at: "+sharedpreferences.getString("syncDate", ""));
+        }
     }
 }

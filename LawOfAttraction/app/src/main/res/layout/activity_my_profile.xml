@@ -15,12 +15,13 @@
         <LinearLayout
             android:id="@+id/linearLayoutRecorder"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#A7FFEB"
+            android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
+            android:background="@drawable/roundedbackground"
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
+            android:layout_marginBottom="30dp"
             android:orientation="vertical"
             android:layout_marginTop="5dp">
 
@@ -30,30 +31,29 @@
 
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/userProfilePic"
                     android:layout_width="150dp"
-                    android:layout_marginTop="4dp"
                     android:layout_height="150dp"
+
+                    android:layout_marginTop="16dp"
                     android:src="@drawable/lawimg"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.043"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:civ_border_color="#E3DBDB"
                     app:civ_border_width="2dp"
-                    app:civ_border_color="#E3DBDB"/>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/userProfileName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:layout_marginStart="10dp"
                     android:textStyle="bold"
-                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
                     android:text="Amit Ghatge"
                     android:textColor="#909090"
-                    android:textSize="20sp"
+                    android:textSize="30sp"
                     app:layout_constraintTop_toBottomOf="@+id/userProfilePic"
                     tools:layout_editor_absoluteX="5dp">
                 </TextView>
@@ -62,9 +62,9 @@
                     android:id="@+id/userProfileEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
                     android:textStyle="italic"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
                     android:text="amitg13@gmail.com"
                     android:textColor="#909090"
                     android:textSize="15sp"
@@ -74,15 +74,19 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="20dp"
+                android:background="#d3d3d3" />
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginLeft="5dp"
-                android:background="@drawable/roundedbackground"
                 android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="20dp">
+                android:layout_marginRight="5dp">
 
                 <TextView
                     android:id="@+id/textView14"
@@ -99,6 +103,7 @@
                 </TextView>
 
                 <LinearLayout
+                    android:id="@+id/dashLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -123,9 +128,10 @@
                             android:layout_weight="1"
                             android:layout_gravity="center"
                             android:gravity="center"
+                            android:textStyle="bold"
                             android:layout_marginTop="10dp"
                             android:textSize="20sp"
-                            android:textColor="#047CF4"
+                            android:textColor="#3096FB"
                             android:text="Happiness">
                         </TextView>
 
@@ -157,9 +163,10 @@
                             android:layout_weight="1"
                             android:layout_gravity="center"
                             android:gravity="center"
+                            android:textStyle="bold"
                             android:layout_marginTop="10dp"
                             android:textSize="20sp"
-                            android:textColor="#047CF4"
+                            android:textColor="#3096FB"
                             android:text="Happiness">
                         </TextView>
 
@@ -190,10 +197,11 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:textSize="20sp"
+                            android:textStyle="bold"
                             android:layout_gravity="center"
                             android:gravity="center"
                             android:layout_marginTop="10dp"
-                            android:textColor="#047CF4"
+                            android:textColor="#3096FB"
                             android:text="Happiness">
                         </TextView>
 
@@ -214,17 +222,21 @@
 
                 </LinearLayout>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+               </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="#d3d3d3" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/settLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:background="@drawable/roundedbackground"
                 android:layout_marginLeft="5dp"
                 android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="20dp">
+                android:layout_marginRight="5dp">
 
                 <TextView
                     android:id="@+id/profileSettings"
@@ -264,9 +276,10 @@
                             android:layout_weight="1"
                             android:layout_gravity="center"
                             android:gravity="center"
+                            android:textStyle="bold"
                             android:textSize="20sp"
                             android:layout_marginTop="10dp"
-                            android:textColor="#047CF4"                            android:text="Happiness">
+                            android:textColor="#3096FB"                            android:text="Happiness">
                         </TextView>
 
                         <TextView
@@ -295,11 +308,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:textStyle="bold"
                             android:layout_gravity="center"
                             android:gravity="center"
                             android:textSize="20sp"
                             android:layout_marginTop="10dp"
-                            android:textColor="#047CF4"
+                            android:textColor="#3096FB"
                             android:text="Happiness">
                         </TextView>
 
@@ -329,11 +343,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:textStyle="bold"
                             android:layout_gravity="center"
                             android:gravity="center"
                             android:textSize="20sp"
                             android:layout_marginTop="10dp"
-                            android:textColor="#047CF4"
+                            android:textColor="#3096FB"
                             android:text="Happiness">
                         </TextView>
 
@@ -358,15 +373,18 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="#d3d3d3" />
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:background="@drawable/roundedbackground"
                 android:layout_marginLeft="5dp"
                 android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="20dp">
+                android:layout_marginRight="5dp">
 
                 <TextView
                     android:id="@+id/profileAccount"
@@ -387,9 +405,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:gravity="center"
-                    android:text="Signed in using Google"
+                    android:text="Signed in as"
                     android:textColor="#909090"
-                    android:textSize="15sp"
+                    android:textSize="12sp"
                     android:textStyle="italic"
                     app:layout_constraintTop_toBottomOf="@+id/profileAccount"
                     tools:layout_editor_absoluteX="0dp">
@@ -400,6 +418,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:layout_marginBottom="20dp"
                     android:gravity="center"
                     android:text="SignOut"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -412,16 +431,18 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="#d3d3d3" />
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginLeft="5dp"
-                android:background="@drawable/roundedbackground"
-                android:layout_marginTop="20dp"
                 android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="50dp">
+                android:layout_marginRight="5dp">
 
                 <TextView
                     android:id="@+id/profileSync"
@@ -436,33 +457,47 @@
                     app:layout_constraintTop_toTopOf="parent">
                 </TextView>
 
+                <ProgressBar
+                    android:id="@+id/syncBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toTopOf="@+id/syncButton"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/profileSync"
+                    app:layout_constraintVertical_bias="0.0"></ProgressBar>
+
                 <TextView
                     android:id="@+id/syncStatusText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="20dp"
                     android:gravity="center"
                     android:text="Account Last Sync at"
                     android:textColor="#909090"
-                    android:textSize="15sp"
+                    android:textSize="12sp"
                     android:textStyle="italic"
-                    app:layout_constraintTop_toBottomOf="@+id/profileSync"
-                    tools:layout_editor_absoluteX="0dp">
+                    app:layout_constraintTop_toBottomOf="@+id/syncButton"
+                    tools:layout_editor_absoluteX="-16dp">
                 </TextView>
 
                 <Button
                     android:id="@+id/syncButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="44dp"
                     android:gravity="center"
                     android:text="syncNow"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/profileSync"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/syncStatusText">
-                </Button>
+                    app:layout_constraintTop_toBottomOf="@+id/profileSync"></Button>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_marginTop="50dp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" />
 
         </LinearLayout>
     </ScrollView>

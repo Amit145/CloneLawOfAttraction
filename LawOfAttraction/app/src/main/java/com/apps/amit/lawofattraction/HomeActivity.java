@@ -390,12 +390,15 @@ public class HomeActivity extends AppCompatActivity {
 
                         }
 
+                        /*
                         else if (id == R.id.audioManifest) {
 
                             Intent art1 = new Intent(getApplicationContext(), AudioWishHome.class);
                             startActivity(art1);
 
                         }
+                        */
+
                         drawer = findViewById(R.id.drawer_layout);
                         drawer.closeDrawer(GravityCompat.START);
                         return true;

@@ -28,22 +28,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import com.apps.amit.lawofattraction.sqlitedatabase.ActivityTrackerDatabaseHandler;
-import com.apps.amit.lawofattraction.sqlitedatabase.WishDataBaseHandler;
-import com.apps.amit.lawofattraction.utils.FTPUpload;
-import com.apps.amit.lawofattraction.utils.ManifestationTrackerUtils;
-import com.apps.amit.lawofattraction.utils.PrivateWishesUtils;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.List;
-
-import static com.apps.amit.lawofattraction.SetReminderActivity.NOTIFICATION_ENABLE;
 
 public class AudioManifestation extends AppCompatActivity implements View.OnClickListener {
 
