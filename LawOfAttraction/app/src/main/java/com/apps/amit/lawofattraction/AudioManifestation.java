@@ -304,94 +304,12 @@ public class AudioManifestation extends AppCompatActivity implements View.OnClic
         //showing the play button
         Toast.makeText(this, "Wish saved successfully.", Toast.LENGTH_SHORT).show();
 
-        //createJsonFile
-        try {
-            createJsonFile();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
         SharedPreferences sharedpreferences = getSharedPreferences("SocialAccount", Context.MODE_PRIVATE);
         String valueId = sharedpreferences.getString("personId", "");
 
-        FTPUpload uploadFTP = new FTPUpload(fileName, valueId);
-        uploadFTP.execute();
-
-
-
     }
 
-    private void createJsonFile() throws JSONException {
-        File root = android.os.Environment.getExternalStorageDirectory();
-        SharedPreferences sharedpreferences = getSharedPreferences("SocialAccount", Context.MODE_PRIVATE);
-        SharedPreferences sp = getSharedPreferences("Affirmation_Counter", AffirmationActivity.MODE_PRIVATE);
-        SharedPreferences sharedPreferencesManifestationType = getSharedPreferences("MANIFESTATION_TYPE", Exercise1Activity.MODE_PRIVATE);
-        SharedPreferences timerValue = getSharedPreferences("your_prefs", Exercise2Activity.MODE_PRIVATE);
-        SharedPreferences timerEnable = getSharedPreferences(NOTIFICATION_ENABLE, Exercise1Activity.MODE_PRIVATE);
 
-        JSONObject jsonObject = new JSONObject();
-
-        try {
-
-
-            jsonObject.put("personId", sharedpreferences.getString("personId", ""));
-        jsonObject.put("personEmail", sharedpreferences.getString("personEmail", ""));
-        jsonObject.put("personName", sharedpreferences.getString("personName", ""));
-        jsonObject.put("personPhoto", sharedpreferences.getString("personPhoto", ""));
-        jsonObject.put("affirmationDate",sp.getString("Time", "NA"));
-        jsonObject.put("affirmationCount", sp.getInt("counter", 0));
-        jsonObject.put("manifestType", sharedPreferencesManifestationType.getString("MANIFESTATION_TYPE_VALUE", ""));
-        jsonObject.put("timerEnable", timerEnable.getInt(NOTIFICATION_ENABLE,1));
-        jsonObject.put("timerCount", timerValue.getInt("your_int_key", 60));
-        //jsonObject.put("notificationDate", notificationDate);
-
-        WishDataBaseHandler db = new WishDataBaseHandler(getApplicationContext());
-        ActivityTrackerDatabaseHandler adb = new ActivityTrackerDatabaseHandler(getApplicationContext());
-
-        List<PrivateWishesUtils> getAllWishes = db.getAllWishes();
-        List<ManifestationTrackerUtils> getAllLogs = adb.getAllContacts();
-
-        JSONArray arrayElementOneArray = new JSONArray();
-        JSONArray arrayElementTwoArray = new JSONArray();
-
-        for (ManifestationTrackerUtils ws: getAllLogs) {
-
-            JSONObject arrayElementOneArrayElementOne = new JSONObject();
-
-            arrayElementOneArrayElementOne.put("logTitle", ws.getName());
-            arrayElementOneArrayElementOne.put("logSubtitle", ws.getPhoneNumber());
-
-            arrayElementOneArray.put(arrayElementOneArrayElementOne);
-        }
-
-        for (PrivateWishesUtils ws: getAllWishes) {
-
-            JSONObject arrayElementOneArrayElementOne = new JSONObject();
-
-            arrayElementOneArrayElementOne.put("userName", ws.getUserName());
-            arrayElementOneArrayElementOne.put("userWish", ws.getUserWish());
-            arrayElementOneArrayElementOne.put("wishDate", ws.getUserDate());
-
-            arrayElementTwoArray.put(arrayElementOneArrayElementOne);
-
-        }
-
-        jsonObject.put("logList", arrayElementOneArray);
-        jsonObject.put("pWishList", arrayElementTwoArray);
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        try {
-            FileWriter file = new FileWriter(root.getAbsolutePath() + "/LawOfAttraction/"+sharedpreferences.getString("personId", "")+".json");
-            file.write(jsonObject.toString());
-            file.close();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        System.out.println("JSON file created: "+jsonObject);
-    }
 
     private void startPlaying() {
         mPlayer = new MediaPlayer();
