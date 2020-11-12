@@ -67,7 +67,8 @@
         android:textColor="#ffffff"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:visibility="visible" />
+        android:visibility="visible"
+        android:gravity="center_horizontal" />
 
     </LinearLayout>
 
@@ -95,7 +96,8 @@
         android:textAlignment="center"
         android:textColor="#eaeded"
         android:textSize="14sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:id="@+id/textView5"
@@ -105,7 +107,8 @@
         android:text="@string/activity1_text4"
         android:textAlignment="center"
         android:textColor="#eaeded"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:id="@+id/textView6"
@@ -115,7 +118,8 @@
         android:text="@string/activity1_text5"
         android:textAlignment="center"
         android:textColor="#eaeded"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:id="@+id/textView7"
@@ -125,7 +129,8 @@
         android:text="@string/activity1_text6"
         android:textAlignment="center"
         android:textColor="#eaeded"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:gravity="center_horizontal" />
 
 </LinearLayout>
 
@@ -161,7 +166,8 @@
             android:textAllCaps="true"
             android:textColor="#ffffff"
             android:textSize="18sp"
-            android:textStyle="bold|italic" />
+            android:textStyle="bold|italic"
+            android:gravity="center_horizontal" />
 
     </LinearLayout>
 
@@ -171,5 +177,14 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical">
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/TestAdsBannerGoogle">
+        </com.google.android.gms.ads.AdView>
     </LinearLayout>
 </LinearLayout>

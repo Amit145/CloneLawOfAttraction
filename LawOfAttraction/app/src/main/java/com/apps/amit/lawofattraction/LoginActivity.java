@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -21,6 +23,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.apps.amit.lawofattraction.helper.CheckInternetService;
 import com.apps.amit.lawofattraction.sqlitedatabase.ActivityTrackerDatabaseHandler;
 import com.apps.amit.lawofattraction.sqlitedatabase.WishDataBaseHandler;
 import com.apps.amit.lawofattraction.utils.ManifestationTrackerUtils;
@@ -95,33 +99,39 @@ public class LoginActivity extends AppCompatActivity {
 
         sharedpreferences = getSharedPreferences("SocialAccount", Context.MODE_PRIVATE);
 
-        profileLinearLayout = findViewById(R.id.mainlayout);
+        if (sharedpreferences.contains("personId")) {
+            setContentView(R.layout.activity_my_profile);
 
-        Glide.with(this).load(R.drawable.starshd).into(new CustomTarget<Drawable>() {
-            @Override
-            public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                    profileLinearLayout.setBackground(resource);
+            profileLinearLayout = findViewById(R.id.profileLinearLayout);
+
+            Glide.with(this).load(R.drawable.starshd).into(new CustomTarget<Drawable>() {
+                @Override
+                public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                        profileLinearLayout.setBackground(resource);
+                    }
                 }
-            }
 
-            @Override
-            public void onLoadCleared(@Nullable Drawable placeholder) {
+                @Override
+                public void onLoadCleared(@Nullable Drawable placeholder) {
                 /*
                 Not Required
                  */
-            }
-        });
+                }
+            });
 
-        if (sharedpreferences.contains("personId")) {
-            setContentView(R.layout.activity_my_profile);
+            LinearLayout dashboardLay1 = findViewById(R.id.dashboardLay1);
+            LinearLayout dashboardLay2 = findViewById(R.id.dashboardLay2);
+            LinearLayout settLinear1 = findViewById(R.id.settLinear1);
+            LinearLayout settLinear2 = findViewById(R.id.settLinear2);
+            LinearLayout settLinear3 = findViewById(R.id.settLinear3);
 
             syncBar = findViewById(R.id.syncBar);
             CircleImageView userProfilePic = findViewById(R.id.userProfilePic);
             TextView userProfileName = findViewById(R.id.userProfileName);
             TextView userProfileEmail = findViewById(R.id.userProfileEmail);
-            TextView audioWishCount = findViewById(R.id.audioWishCount);
-            TextView audioWishName = findViewById(R.id.audioWishName);
+            //TextView audioWishCount = findViewById(R.id.audioWishCount);
+            //TextView audioWishName = findViewById(R.id.audioWishName);
             TextView privateWishCount = findViewById(R.id.privateWishCount);
             TextView privateWishName = findViewById(R.id.privateWishName);
             TextView affirmationCount = findViewById(R.id.affirmationCount);
@@ -150,10 +160,10 @@ public class LoginActivity extends AppCompatActivity {
             SharedPreferences timerValue = getSharedPreferences("your_prefs", Exercise2Activity.MODE_PRIVATE);
             SharedPreferences timerEnable = getSharedPreferences(NOTIFICATION_ENABLE, Exercise1Activity.MODE_PRIVATE);
 
-            File root = android.os.Environment.getExternalStorageDirectory();
-            String path = root.getAbsolutePath() + "/LawOfAttraction/Audios";
-            File directory = new File(path);
-            final File[] files = directory.listFiles();
+            //File root = android.os.Environment.getExternalStorageDirectory();
+            //String path = root.getAbsolutePath() + "/LawOfAttraction/Audios";
+            //File directory = new File(path);
+            //final File[] files = directory.listFiles();
 
             String value = sharedpreferences.getString("personPhoto", "");
             if (value.equals("null")) {
@@ -167,11 +177,11 @@ public class LoginActivity extends AppCompatActivity {
             userProfileName.setText(sharedpreferences.getString("personName", ""));
             userProfileEmail.setText(sharedpreferences.getString("personEmail", ""));
 
-            if (files != null) {
-                audioWishCount.setText(String.valueOf(files.length));
-            }
+            //if (files != null) {
+            //    audioWishCount.setText(String.valueOf(files.length));
+            //}
 
-            audioWishName.setText("Audio Wishes");
+            //audioWishName.setText("Audio Wishes");
             privateWishCount.setText(String.valueOf(getAllWishes.size()));
             privateWishName.setText("Private Wishes");
             affirmationCount.setText(String.valueOf(sp.getInt("counter", 0)));
@@ -194,7 +204,7 @@ public class LoginActivity extends AppCompatActivity {
             }
 
             notificationReminderName.setText("Daily Notifications");
-            loggedInAccountText.setText("Logged in using as: " + sharedpreferences.getString("personName", ""));
+            loggedInAccountText.setText("Logged in as: " + sharedpreferences.getString("personName", ""));
 
             if (sharedpreferences.contains("syncDate")) {
                 syncStatusText.setText("Last Sync at: " + sharedpreferences.getString("syncDate", ""));
@@ -202,57 +212,129 @@ public class LoginActivity extends AppCompatActivity {
                 syncStatusText.setText("");
             }
 
+            dashboardLay1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent art = new Intent(getApplicationContext(), PrivateWishesActivity.class);
+                    startActivity(art);
+                }
+            });
+
+            dashboardLay2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent art = new Intent(getApplicationContext(), AffirmationHome.class);
+                    startActivity(art);
+                }
+            });
+
+            settLinear1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent art = new Intent(getApplicationContext(), SelectManifestationTypeActivity.class);
+                    startActivity(art);
+                }
+            });
+
+            settLinear2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent art = new Intent(getApplicationContext(), SetTimeActivity.class);
+                    startActivity(art);
+                }
+            });
+
+            settLinear3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent art = new Intent(getApplicationContext(), SetReminderActivity.class);
+                    startActivity(art);
+                }
+            });
+
             logoutButton.setOnClickListener(new View.OnClickListener() {@Override
             public void onClick(View v) {
 
-                GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
+                ConnectivityManager connectivityManager = null;
+                CheckInternetService checkInternetService = new CheckInternetService();
+                NetworkInfo netInfo = checkInternetService.checkInternetConnection(connectivityManager, getApplicationContext());
 
-                mGoogleSignInClient = GoogleSignIn.getClient(LoginActivity.this, gso);
-                mGoogleSignInClient.signOut().addOnCompleteListener(LoginActivity.this, new OnCompleteListener < Void > () {@Override
-                public void onComplete(@NonNull Task < Void > task) {
+                if(netInfo!=null && netInfo.isConnected()) {
+                    GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
+                    mGoogleSignInClient = GoogleSignIn.getClient(LoginActivity.this, gso);
+                    mGoogleSignInClient.signOut().addOnCompleteListener(LoginActivity.this, new OnCompleteListener < Void > () {@Override
+                    public void onComplete(@NonNull Task < Void > task) {
 
-                    Toast.makeText(getApplicationContext(), "U signed out", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Logged out", Toast.LENGTH_LONG).show();
 
-                    SharedPreferences.Editor editor = sharedpreferences.edit();
-                    editor.remove("personId");
-                    editor.remove("syncDate");
-                    editor.putString("personName", "");
-                    editor.putString("personEmail", "");
-                    editor.putString("personPhoto", "");
-                    editor.apply();
+                        SharedPreferences.Editor editor = sharedpreferences.edit();
+                        editor.remove("personId");
+                        editor.remove("syncDate");
+                        editor.putString("personName", "");
+                        editor.putString("personEmail", "");
+                        editor.putString("personPhoto", "");
+                        editor.apply();
 
-                    Intent art = new Intent(getApplicationContext(), LoginActivity.class);
-                    startActivity(art);
+                        Intent art = new Intent(getApplicationContext(), LoginActivity.class);
+                        startActivity(art);
+                    }
+                    });
+                } else {
+                    Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.noInternet_txt), Toast.LENGTH_LONG).show();
                 }
-                });
             }
             });
 
             syncButton.setOnClickListener(new View.OnClickListener() {@Override
             public void onClick(View v) {
+                ConnectivityManager connectivityManager = null;
+                CheckInternetService checkInternetService = new CheckInternetService();
+                NetworkInfo netInfo = checkInternetService.checkInternetConnection(connectivityManager, getApplicationContext());
 
-                syncStatusText.setText("Synchronizing....!");
-                Toast.makeText(getApplicationContext(), "Synchronizing Data", Toast.LENGTH_LONG).show();
+                if(netInfo!=null && netInfo.isConnected()) {
+                    syncStatusText.setText("Syncing....!");
+                    Toast.makeText(getApplicationContext(), "Syncing Data", Toast.LENGTH_LONG).show();
 
-                try {
-                    jsonObject = createJsonFile();
-                } catch(JSONException e) {
-                    e.printStackTrace();
+                    try {
+                        jsonObject = createJsonFile();
+                    } catch(JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    syncBar.setVisibility(View.VISIBLE);
+                    syncButton.setVisibility(View.INVISIBLE);
+                    FTPUpload uploadFTP = new FTPUpload();
+                    uploadFTP.execute();
+
+                    SharedPreferences.Editor editor = sharedpreferences.edit();
+                    editor.putString("syncDate", DateFormat.getDateTimeInstance().format(new Date()));
+                    editor.apply();
+
+                } else {
+                    Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.noInternet_txt), Toast.LENGTH_LONG).show();
                 }
-
-                syncBar.setVisibility(View.VISIBLE);
-                syncButton.setVisibility(View.INVISIBLE);
-                FTPUpload uploadFTP = new FTPUpload();
-                uploadFTP.execute();
-
-                SharedPreferences.Editor editor = sharedpreferences.edit();
-                editor.putString("syncDate", DateFormat.getDateTimeInstance().format(new Date()));
-                editor.apply();
             }
             });
         } else {
 
             setContentView(R.layout.activity_login);
+            profileLinearLayout = findViewById(R.id.profileLinearLayout);
+
+            Glide.with(this).load(R.drawable.starshd).into(new CustomTarget<Drawable>() {
+                @Override
+                public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                        profileLinearLayout.setBackground(resource);
+                    }
+                }
+
+                @Override
+                public void onLoadCleared(@Nullable Drawable placeholder) {
+                /*
+                Not Required
+                 */
+                }
+            });
 
             appLogo = findViewById(R.id.appLogo);
             signInButton = findViewById(R.id.googleSignInButton);
@@ -269,11 +351,19 @@ public class LoginActivity extends AppCompatActivity {
             mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
             signInButton.setSize(SignInButton.SIZE_STANDARD);
-
             signInButton.setOnClickListener(new View.OnClickListener() {@Override
             public void onClick(View view) {
-                Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-                startActivityForResult(signInIntent, RC_SIGN_IN);
+
+                ConnectivityManager connectivityManager = null;
+                CheckInternetService checkInternetService = new CheckInternetService();
+                NetworkInfo netInfo = checkInternetService.checkInternetConnection(connectivityManager, getApplicationContext());
+
+                if(netInfo!=null && netInfo.isConnected()) {
+                    Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+                    startActivityForResult(signInIntent, RC_SIGN_IN);
+                } else {
+                    Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.noInternet_txt), Toast.LENGTH_LONG).show();
+                }
             }
             });
 
@@ -690,6 +780,7 @@ public class LoginActivity extends AppCompatActivity {
 
                             for (int i = 0; i < pWishes.length(); i++) {
                                 JSONObject jsonObject1 = pWishes.getJSONObject(i);
+                                //Remove Json Duplicates
                                 WishDataBaseHandler db = new WishDataBaseHandler(getApplicationContext());
 
                                 db.addWish(new PrivateWishesUtils(jsonObject1.getString("userName"), jsonObject1.getString("userWish"), jsonObject1.getString("wishDate")));

@@ -19,8 +19,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.apps.amit.lawofattraction.helper.LocaleHelper;
 import com.bumptech.glide.Glide;
-import com.facebook.ads.AdSize;
-import com.facebook.ads.AdView;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import butterknife.ButterKnife;
 
@@ -43,6 +43,22 @@ public class Exercise3Activity extends AppCompatActivity {
     int value;
     private AdView adView;
 
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (adView != null) {
+            adView.resume();
+        }
+    }
+
+    @Override
+    public void onPause() {
+        if (adView != null) {
+            adView.pause();
+        }
+        super.onPause();
+    }
 
     @Override
     protected void onDestroy() {
@@ -96,16 +112,9 @@ public class Exercise3Activity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_exercise3);
 
-            adView = new AdView(this, getString(R.string.facebook_banner_id), AdSize.BANNER_HEIGHT_50);
-
-            // Find the Ad Container
-            LinearLayout adContainer = (LinearLayout) findViewById(R.id.banner_container);
-
-            // Add the ad view to your activity layout
-            adContainer.addView(adView);
-
-            // Request an ad
-            adView.loadAd();
+            adView = findViewById(R.id.adView);
+            AdRequest adRequest = new AdRequest.Builder().build();
+            adView.loadAd(adRequest);
 
             buttonStart =  findViewById(R.id.startButton);
             txt =  findViewById(R.id.skip);

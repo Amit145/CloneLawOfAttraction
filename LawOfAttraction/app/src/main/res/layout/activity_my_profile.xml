@@ -109,48 +109,14 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp"
                     android:orientation="horizontal"
-                    android:weightSum="3"
+                    android:weightSum="2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView14">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/audioWishCount"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:textStyle="bold"
-                            android:layout_marginTop="10dp"
-                            android:textSize="20sp"
-                            android:textColor="#3096FB"
-                            android:text="Happiness">
-                        </TextView>
-
-                        <TextView
-                            android:id="@+id/audioWishName"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginBottom="30dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_weight="1"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:textColor="#909090"
-                            android:text="60">
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
+                        android:id="@+id/dashboardLay1"
                         android:layout_width="match_parent"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
@@ -165,7 +131,7 @@
                             android:gravity="center"
                             android:textStyle="bold"
                             android:layout_marginTop="10dp"
-                            android:textSize="20sp"
+                            android:textSize="25sp"
                             android:textColor="#3096FB"
                             android:text="Happiness">
                         </TextView>
@@ -186,6 +152,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/dashboardLay2"
                         android:layout_width="match_parent"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
@@ -196,7 +163,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:textSize="20sp"
+                            android:textSize="25sp"
                             android:textStyle="bold"
                             android:layout_gravity="center"
                             android:gravity="center"
@@ -264,6 +231,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/profileSettings">
 
                     <LinearLayout
+                        android:id="@+id/settLinear1"
                         android:layout_width="match_parent"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
@@ -298,6 +266,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/settLinear2"
                         android:layout_width="match_parent"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
@@ -333,6 +302,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/settLinear3"
                         android:layout_width="match_parent"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
@@ -420,6 +390,8 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="20dp"
                     android:gravity="center"
+                    android:textColor="#ffffff"
+                    android:background="#FF8A80"
                     android:text="SignOut"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -487,7 +459,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="44dp"
                     android:gravity="center"
-                    android:text="syncNow"
+                    android:textColor="#ffffff"
+                    android:background="#CCFF90"
+                    android:text="sync Now"
                     app:layout_constraintEnd_toEndOf="@+id/profileSync"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/profileSync"></Button>

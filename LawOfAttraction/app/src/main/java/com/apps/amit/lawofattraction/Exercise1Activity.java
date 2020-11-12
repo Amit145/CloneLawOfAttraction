@@ -27,8 +27,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.CustomTarget;
 import com.bumptech.glide.request.transition.Transition;
-import com.facebook.ads.AdSize;
-import com.facebook.ads.AdView;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 
 import butterknife.ButterKnife;
 
@@ -58,6 +59,22 @@ public class Exercise1Activity extends AppCompatActivity {
     LinearLayout mainlayout;
     private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
     private AdView adView;
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (adView != null) {
+            adView.resume();
+        }
+    }
+
+    @Override
+    public void onPause() {
+        if (adView != null) {
+            adView.pause();
+        }
+        super.onPause();
+    }
 
     @Override
     public void onBackPressed() {
@@ -422,16 +439,15 @@ public class Exercise1Activity extends AppCompatActivity {
 
             setContentView(R.layout.activity_exercise1);
 
-            adView = new AdView(this, getString(R.string.facebook_banner_id), AdSize.BANNER_HEIGHT_50);
+            // Gets the ad view defined in layout/ad_fragment.xml with ad unit ID set in
+            // values/strings.xml.
+            adView = findViewById(R.id.adView);
 
-            // Find the Ad Container
-            LinearLayout adContainer = (LinearLayout) findViewById(R.id.banner_container);
+            // Create an ad request.
+            AdRequest adRequest = new AdRequest.Builder().build();
 
-            // Add the ad view to your activity layout
-            adContainer.addView(adView);
-
-            // Request an ad
-            adView.loadAd();
+            // Start loading the ad in the background.
+            adView.loadAd(adRequest);
 
             final Vibrator vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 

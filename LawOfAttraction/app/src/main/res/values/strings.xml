@@ -755,5 +755,9 @@ Take another deep breath, allowing your body to absorb the positive feeling of t
     Listen to your wish, really focusing on the meaning of each word \n
     </string>
 
+    <!--Google Ads-->
+    <string name="GoogleAdsAPPLICATION_ID">ca-app-pub-2311629608790692~8141003886</string>
+    <string name="TestAdsBannerGoogle">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="TestInterstitialAdsBannerGoogle">ca-app-pub-3940256099942544/1033173712</string>
 
 </resources>

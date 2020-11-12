@@ -32,10 +32,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.apps.amit.lawofattraction.helper.LocaleHelper;
-import com.facebook.ads.Ad;
-import com.facebook.ads.AdError;
-import com.facebook.ads.InterstitialAd;
-import com.facebook.ads.InterstitialAdExtendedListener;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -97,7 +96,6 @@ public class DailyQuotesActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-
         super.onDestroy();
         this.finish();
     }
@@ -106,15 +104,12 @@ public class DailyQuotesActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
 
-        if (interstitialAd == null || !interstitialAd.isAdLoaded()) {
-            return;
-        }
-        // Check if ad is already expired or invalidated, and do not show ad if that is the case. You will not get paid to show an invalidated ad.
-        if (interstitialAd.isAdInvalidated()) {
+        if (interstitialAd == null || !interstitialAd.isLoaded()) {
             return;
         }
 
-        if (Boolean.TRUE.equals(flag) && interstitialAd.isAdLoaded()) {
+
+        if (Boolean.TRUE.equals(flag) && interstitialAd.isLoaded()) {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -314,75 +309,22 @@ public class DailyQuotesActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), resources.getString(R.string.noInternet_txt), Toast.LENGTH_LONG).show();
         }
 
-        interstitialAd = new com.facebook.ads.InterstitialAd(getApplicationContext(), getString(R.string.facebook_interstitial_id));
-        interstitialAd.loadAd(interstitialAd.buildLoadAdConfig().withAdListener((new DailyQuotesActivity.InterstitialListener())).build());
+        // Create the InterstitialAd and set the adUnitId.
+        interstitialAd = new InterstitialAd(this);
+        // Defined in res/values/strings.xml
+        interstitialAd.setAdUnitId(getString(R.string.TestInterstitialAdsBannerGoogle));
+        interstitialAd.loadAd(new AdRequest.Builder().build());
+        interstitialAd.setAdListener(new AdListener()
+        {
+            @Override
+            public void onAdLoaded() {
+                Log.d(TAG, "Interstitial ad Loaded!");
+                flag=Boolean.TRUE;
+            }
+        });
 
 
     }
-
-    private class InterstitialListener implements InterstitialAdExtendedListener {
-
-        @Override
-        public void onInterstitialActivityDestroyed() {
-
-            Log.d(TAG, "Interstitial ad onInterstitialActivityDestroyed!");
-        }
-
-        @Override
-        public void onInterstitialDisplayed(Ad ad) {
-
-            Log.d(TAG, "Interstitial ad InterstitialDisplayed!");
-        }
-
-        @Override
-        public void onInterstitialDismissed(Ad ad) {
-
-            Log.d(TAG, "Interstitial ad InterstitialDismissed!");
-        }
-
-        @Override
-        public void onError(Ad ad, AdError adError) {
-
-            Log.d(TAG, "Interstitial ad onError! "+adError.getErrorMessage());
-        }
-
-        @Override
-        public void onAdLoaded(Ad ad) {
-
-            Log.d(TAG, "Interstitial ad Loaded!");
-            flag=Boolean.TRUE;
-        }
-
-        @Override
-        public void onAdClicked(Ad ad) {
-
-            Log.d(TAG, "Interstitial ad AdClicked!");
-        }
-
-        @Override
-        public void onLoggingImpression(Ad ad) {
-
-            Log.d(TAG, "Interstitial ad LoggingImpression!");
-        }
-
-        @Override
-        public void onRewardedAdCompleted() {
-            Log.d(TAG, "Interstitial ad RewardedAdCompleted!");
-        }
-
-        @Override
-        public void onRewardedAdServerSucceeded() {
-
-            Log.d(TAG, "Interstitial ad RewardedAdServerSucceeded!");
-        }
-
-        @Override
-        public void onRewardedAdServerFailed() {
-
-            Log.d(TAG, "Interstitial ad RewardedAdServerFailed!");
-        }
-    }
-
 
     public void GetDataFromEditText(String value) {
 

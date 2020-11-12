@@ -148,7 +148,7 @@ public class ActivityTrackerDatabaseHandler extends SQLiteOpenHelper {
     public void removeDuplicates() {
         SQLiteDatabase db = this.getWritableDatabase();
         String selectQuery = "DELETE FROM "+TABLE_CONTACTS+" WHERE "
-                +KEY_ID+" NOT IN ( SELECT MIN("+KEY_ID+") FROM "+TABLE_CONTACTS+" GROUP BY "+KEY_NAME+")";
+                +KEY_ID+" NOT IN ( SELECT MIN("+KEY_ID+") FROM "+TABLE_CONTACTS+" GROUP BY "+KEY_NAME+", "+KEY_PH_NO+")";
 
         db.execSQL(selectQuery);
 

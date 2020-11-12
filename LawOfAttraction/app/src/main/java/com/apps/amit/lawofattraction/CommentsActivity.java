@@ -48,10 +48,10 @@ import com.bumptech.glide.load.resource.gif.GifDrawable;
 import com.bumptech.glide.request.target.CustomTarget;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
-import com.facebook.ads.Ad;
-import com.facebook.ads.AdError;
-import com.facebook.ads.InterstitialAd;
-import com.facebook.ads.InterstitialAdExtendedListener;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -100,12 +100,7 @@ public class CommentsActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-
-        if (interstitialAd != null) {
-            //interstitialAd.destroy();
-        }
         super.onDestroy();
-
 
         requestQueue=null;
         story=null;
@@ -121,15 +116,7 @@ public class CommentsActivity extends AppCompatActivity {
         super.onBackPressed();
         this.finish();
 
-        if (interstitialAd == null || !interstitialAd.isAdLoaded()) {
-            return;
-        }
-        // Check if ad is already expired or invalidated, and do not show ad if that is the case. You will not get paid to show an invalidated ad.
-        if (interstitialAd.isAdInvalidated()) {
-            return;
-        }
-
-        if (Boolean.TRUE.equals(flag) && interstitialAd.isAdLoaded()) {
+        if (Boolean.TRUE.equals(flag) && interstitialAd.isLoaded()) {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -161,7 +148,7 @@ public class CommentsActivity extends AppCompatActivity {
             });
             */
 
-            Glide.with(getApplicationContext()).load(R.raw.star2).centerCrop().into(new CustomTarget<Drawable>() {
+            Glide.with(getApplicationContext()).load(R.drawable.starshd).centerCrop().into(new CustomTarget<Drawable>() {
                 @Override
                 public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
@@ -315,8 +302,19 @@ public class CommentsActivity extends AppCompatActivity {
                 }
             });
 
-            interstitialAd = new com.facebook.ads.InterstitialAd(getApplicationContext(), getString(R.string.facebook_interstitial_id));
-            interstitialAd.loadAd(interstitialAd.buildLoadAdConfig().withAdListener((new CommentsActivity.InterstitialListener())).build());
+            // Create the InterstitialAd and set the adUnitId.
+            interstitialAd = new InterstitialAd(this);
+            // Defined in res/values/strings.xml
+            interstitialAd.setAdUnitId(getString(R.string.TestInterstitialAdsBannerGoogle));
+            interstitialAd.loadAd(new AdRequest.Builder().build());
+            interstitialAd.setAdListener(new AdListener()
+            {
+                @Override
+                public void onAdLoaded() {
+                    Log.d(TAG, "Interstitial ad Loaded!");
+                    flag=Boolean.TRUE;
+                }
+            });
 
         }
         else
@@ -343,81 +341,14 @@ public class CommentsActivity extends AppCompatActivity {
 
     }
 
-    private class InterstitialListener implements InterstitialAdExtendedListener {
-
-        @Override
-        public void onInterstitialActivityDestroyed() {
-
-            Log.d(TAG, "Interstitial ad onInterstitialActivityDestroyed!");
-        }
-
-        @Override
-        public void onInterstitialDisplayed(Ad ad) {
-
-            Log.d(TAG, "Interstitial ad InterstitialDisplayed!");
-        }
-
-        @Override
-        public void onInterstitialDismissed(Ad ad) {
-
-            Log.d(TAG, "Interstitial ad InterstitialDismissed!");
-        }
-
-        @Override
-        public void onError(Ad ad, AdError adError) {
-
-            Log.d(TAG, "Interstitial ad onError!");
-        }
-
-        @Override
-        public void onAdLoaded(Ad ad) {
-
-            Log.d(TAG, "Interstitial ad Loaded!");
-            flag = Boolean.TRUE;
-
-        }
-
-        @Override
-        public void onAdClicked(Ad ad) {
-
-            Log.d(TAG, "Interstitial ad AdClicked!");
-        }
-
-        @Override
-        public void onLoggingImpression(Ad ad) {
-
-            Log.d(TAG, "Interstitial ad LoggingImpression!");
-        }
-
-        @Override
-        public void onRewardedAdCompleted() {
-            Log.d(TAG, "Interstitial ad RewardedAdCompleted!");
-        }
-
-        @Override
-        public void onRewardedAdServerSucceeded() {
-
-            Log.d(TAG, "Interstitial ad RewardedAdServerSucceeded!");
-        }
-
-        @Override
-        public void onRewardedAdServerFailed() {
-
-            Log.d(TAG, "Interstitial ad RewardedAdServerFailed!");
-        }
-    }
 
     public void displayInterstitial() {
 
-        if (interstitialAd == null || !interstitialAd.isAdLoaded()) {
-            return;
-        }
-        // Check if ad is already expired or invalidated, and do not show ad if that is the case. You will not get paid to show an invalidated ad.
-        if (interstitialAd.isAdInvalidated()) {
+        if (interstitialAd == null || !interstitialAd.isLoaded()) {
             return;
         }
 
-        if (Boolean.TRUE.equals(flag) && interstitialAd.isAdLoaded()) {
+        if (Boolean.TRUE.equals(flag) && interstitialAd.isLoaded()) {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {

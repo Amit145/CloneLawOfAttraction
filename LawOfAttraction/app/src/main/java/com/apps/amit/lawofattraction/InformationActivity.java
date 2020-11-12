@@ -23,8 +23,9 @@ import com.apps.amit.lawofattraction.helper.LocaleHelper;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.CustomTarget;
 import com.bumptech.glide.request.transition.Transition;
-import com.facebook.ads.AdSize;
-import com.facebook.ads.AdView;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 
 import butterknife.ButterKnife;
 
@@ -42,6 +43,28 @@ public class InformationActivity extends AppCompatActivity {
     LinearLayout mainlayout;
     private AdView adView;
     private AdView adView1;
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (adView != null) {
+            adView.resume();
+        }
+        if (adView1 != null) {
+            adView1.resume();
+        }
+    }
+
+    @Override
+    public void onPause() {
+        if (adView != null) {
+            adView.pause();
+        }
+        if (adView1 != null) {
+            adView1.pause();
+        }
+        super.onPause();
+    }
 
     @Override
     protected void onDestroy() {
@@ -90,20 +113,13 @@ public class InformationActivity extends AppCompatActivity {
           final String value1 = pref.getString("language","en");
           updateViews(value1);
 
-          adView = new com.facebook.ads.AdView(this, getString(R.string.facebook_banner_id), AdSize.BANNER_HEIGHT_50);
-          adView1 = new com.facebook.ads.AdView(this, getString(R.string.facebook_banner_id), AdSize.BANNER_HEIGHT_50);
+          adView = findViewById(R.id.adView);
+          AdRequest adRequest = new AdRequest.Builder().build();
+          adView.loadAd(adRequest);
 
-          // Find the Ad Container
-          LinearLayout adContainer = (LinearLayout) findViewById(R.id.banner_container);
-          LinearLayout adContainer1 = (LinearLayout) findViewById(R.id.adView);
-
-          // Add the ad view to your activity layout
-          adContainer.addView(adView);
-          adContainer1.addView(adView1);
-
-          // Request an ad
-          adView.loadAd();
-          adView1.loadAd();
+          adView1 = findViewById(R.id.adView1);
+          AdRequest adRequest1 = new AdRequest.Builder().build();
+          adView1.loadAd(adRequest1);
 
           img1.setImageBitmap(
                   decodeSampledBitmapFromResource(getResources(), R.drawable.lae, 200, 200));
