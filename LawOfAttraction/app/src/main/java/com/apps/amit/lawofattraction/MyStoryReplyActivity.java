@@ -335,8 +335,6 @@ public class MyStoryReplyActivity extends AppCompatActivity {
 
     public void GetDataFromEditText(){
 
-
-
         String userName = edt.getText().toString();
         String userComment = edt1.getText().toString();
         String date =  DateFormat.getDateTimeInstance().format(new Date());
@@ -352,8 +350,6 @@ public class MyStoryReplyActivity extends AppCompatActivity {
     }
 
     public void  checkEditText(String userName,String userComment,String date, String id) {
-
-
 
         if (TextUtils.isEmpty(userName)) {
 

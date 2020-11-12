@@ -19,6 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
@@ -33,12 +34,9 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.CustomTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.facebook.CallbackManager;
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
-import com.facebook.GraphRequest;
-import com.facebook.GraphResponse;
-import com.facebook.login.LoginResult;
-import com.facebook.login.widget.LoginButton;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -47,19 +45,18 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
@@ -71,7 +68,6 @@ import static com.apps.amit.lawofattraction.SetReminderActivity.NOTIFICATION_ENA
 public class LoginActivity extends AppCompatActivity {
 
     ImageView appLogo;
-    LoginButton fbButtonSignIn;
     TextView titleText;
     LinearLayout profileLinearLayout;
     TextView skipLoginText;
@@ -82,6 +78,8 @@ public class LoginActivity extends AppCompatActivity {
     ProgressBar syncBar;
     Button syncButton;
     JSONObject jsonObject;
+    boolean flag = false;
+    private InterstitialAd interstitialAd;
 
     @Override
     public void onBackPressed() {
@@ -209,7 +207,7 @@ public class LoginActivity extends AppCompatActivity {
             if (sharedpreferences.contains("syncDate")) {
                 syncStatusText.setText("Last Sync at: " + sharedpreferences.getString("syncDate", ""));
             } else {
-                syncStatusText.setText("");
+                syncStatusText.setText("No Sync performed");
             }
 
             dashboardLay1.setOnClickListener(new View.OnClickListener() {
@@ -292,6 +290,20 @@ public class LoginActivity extends AppCompatActivity {
                 NetworkInfo netInfo = checkInternetService.checkInternetConnection(connectivityManager, getApplicationContext());
 
                 if(netInfo!=null && netInfo.isConnected()) {
+
+                    // Create the InterstitialAd and set the adUnitId.
+                    interstitialAd = new InterstitialAd(LoginActivity.this);
+                    // Defined in res/values/strings.xml
+                    interstitialAd.setAdUnitId(getString(R.string.TestInterstitialAdsBannerGoogle));
+                    interstitialAd.loadAd(new AdRequest.Builder().build());
+                    interstitialAd.setAdListener(new AdListener()
+                    {
+                        @Override
+                        public void onAdLoaded() {
+                            flag=Boolean.TRUE;
+                        }
+                    });
+
                     syncStatusText.setText("Syncing....!");
                     Toast.makeText(getApplicationContext(), "Syncing Data", Toast.LENGTH_LONG).show();
 
@@ -338,7 +350,6 @@ public class LoginActivity extends AppCompatActivity {
 
             appLogo = findViewById(R.id.appLogo);
             signInButton = findViewById(R.id.googleSignInButton);
-            fbButtonSignIn = findViewById(R.id.login_button);
             titleText = findViewById(R.id.signInTextView);
             skipLoginText = findViewById(R.id.SkipTextView);
 
@@ -359,18 +370,25 @@ public class LoginActivity extends AppCompatActivity {
                 NetworkInfo netInfo = checkInternetService.checkInternetConnection(connectivityManager, getApplicationContext());
 
                 if(netInfo!=null && netInfo.isConnected()) {
+
+                    // Create the InterstitialAd and set the adUnitId.
+                    interstitialAd = new InterstitialAd(LoginActivity.this);
+                    // Defined in res/values/strings.xml
+                    interstitialAd.setAdUnitId(getString(R.string.TestInterstitialAdsBannerGoogle));
+                    interstitialAd.loadAd(new AdRequest.Builder().build());
+                    interstitialAd.setAdListener(new AdListener()
+                    {
+                        @Override
+                        public void onAdLoaded() {
+                            flag=Boolean.TRUE;
+                        }
+                    });
+
                     Intent signInIntent = mGoogleSignInClient.getSignInIntent();
                     startActivityForResult(signInIntent, RC_SIGN_IN);
                 } else {
                     Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.noInternet_txt), Toast.LENGTH_LONG).show();
                 }
-            }
-            });
-
-            fbButtonSignIn.setOnClickListener(new View.OnClickListener() {@Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Facebook", Toast.LENGTH_LONG).show();
-                //loginUsingFB();
             }
             });
 
@@ -380,78 +398,6 @@ public class LoginActivity extends AppCompatActivity {
             }
             });
         }
-    }
-
-    private void loginUsingFB() {
-
-        callbackManager = CallbackManager.Factory.create();
-
-        fbButtonSignIn.registerCallback(callbackManager, new FacebookCallback < LoginResult > () {@Override
-        public void onSuccess(LoginResult loginResult) {
-
-            loginResult.getAccessToken().getUserId();
-            String userProfile = "https://graph.facebook.com/" + loginResult.getAccessToken().getUserId() + "picture?return_ssl_resources=1";
-
-            GraphRequest request = GraphRequest.newMeRequest(loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
-
-                @Override
-                public void onCompleted(JSONObject object, GraphResponse response) {
-                    Log.i("LoginActivity", response.toString());
-                    // Get facebook data from login
-                    Bundle bFacebookData = getFacebookData(object);
-
-                    Toast.makeText(getApplicationContext(), bFacebookData.toString(), Toast.LENGTH_LONG).show();
-                }
-            });
-            Bundle parameters = new Bundle();
-            parameters.putString("fields", "id, first_name, last_name, email,gender, birthday, location"); // Parámetros que pedimos a facebook
-            request.setParameters(parameters);
-            request.executeAsync();
-        }
-
-            @Override
-            public void onCancel() {
-
-            }
-
-            @Override
-            public void onError(FacebookException error) {
-
-            }
-        });
-
-    }
-
-    private Bundle getFacebookData(JSONObject object) {
-
-        try {
-            Bundle bundle = new Bundle();
-            String id = object.getString("id");
-
-            try {
-                URL profile_pic = new URL("https://graph.facebook.com/" + id + "/picture?width=200&height=150");
-                Log.i("profile_pic", profile_pic + "");
-                bundle.putString("profile_pic", profile_pic.toString());
-
-            } catch(MalformedURLException e) {
-                e.printStackTrace();
-                return null;
-            }
-
-            bundle.putString("idFacebook", id);
-            if (object.has("first_name")) bundle.putString("first_name", object.getString("first_name"));
-            if (object.has("last_name")) bundle.putString("last_name", object.getString("last_name"));
-            if (object.has("email")) bundle.putString("email", object.getString("email"));
-            if (object.has("gender")) bundle.putString("gender", object.getString("gender"));
-            if (object.has("birthday")) bundle.putString("birthday", object.getString("birthday"));
-            if (object.has("location")) bundle.putString("location", object.getJSONObject("location").getString("name"));
-
-            return bundle;
-        }
-        catch(JSONException e) {
-            Log.d("ERROR","Error parsing JSON");
-        }
-        return null;
     }
 
     private JSONObject createJsonFile() throws JSONException {
@@ -619,6 +565,15 @@ public class LoginActivity extends AppCompatActivity {
             syncBar.setVisibility(View.INVISIBLE);
             syncButton.setVisibility(View.VISIBLE);
             syncStatusText.setText("Last Sync at: " + sharedpreferences.getString("syncDate", ""));
+
+            if (Boolean.TRUE.equals(flag) && interstitialAd.isLoaded()) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        interstitialAd.show();
+                    }
+                }, 2000);
+            }
         }
     }
 
@@ -798,6 +753,17 @@ public class LoginActivity extends AppCompatActivity {
 
                         alert.dismiss();
                         Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
+
+                        //load Ad
+                        if (Boolean.TRUE.equals(flag) && interstitialAd.isLoaded()) {
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    interstitialAd.show();
+                                }
+                            }, 2000);
+                        }
+
                         Intent art = new Intent(getApplicationContext(), LoginActivity.class);
                         startActivity(art);
                     }
