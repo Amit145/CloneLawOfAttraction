@@ -94,4 +94,22 @@ public class WishDataBaseHandler extends SQLiteOpenHelper {
         return wishList;
 
     }
+
+    public void removeDuplicates() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String selectQuery = "DELETE FROM "+TABLE_WISH+" WHERE "
+                +KEY_ID+" NOT IN ( SELECT MIN("+KEY_ID+") FROM "+TABLE_WISH+" GROUP BY "+KEY_DATE+")";
+
+        db.execSQL(selectQuery);
+
+        /*
+       DELETE FROM myPrivateWish
+WHERE id NOT IN (
+  SELECT MIN(id)
+  FROM myPrivateWish
+  GROUP BY name
+)
+
+        */
+    }
 }

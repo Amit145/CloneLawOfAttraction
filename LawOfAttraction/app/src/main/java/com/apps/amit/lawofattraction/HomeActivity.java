@@ -72,12 +72,10 @@ public class HomeActivity extends AppCompatActivity {
     DrawerLayout drawer;
     NavigationView navigationView;
     Timer timer;
-    String usertoken = null;
     int[] images = new int[6];
     String newToken;
     MyCustomPagerAdapter myCustomPagerAdapter;
     SharedPreferences sharedpreferences;
-    SharedPreferences sharedpreferences1;
 
     @Override
     protected void onDestroy() {
@@ -134,7 +132,6 @@ public class HomeActivity extends AppCompatActivity {
 
         setTitle(getString(R.string.Home_title));
 
-
         setContentView(R.layout.activity_home);
         mainlayout = findViewById(R.id.mainlayout);
 
@@ -148,12 +145,14 @@ public class HomeActivity extends AppCompatActivity {
 
             @Override
             public void onLoadCleared(@Nullable Drawable placeholder) {
-
+                /*
+                Not Required
+                 */
             }
         });
 
 
-        FirebaseMessaging.getInstance().subscribeToTopic("v3.9")   //v3.9
+        FirebaseMessaging.getInstance().subscribeToTopic("v4.0")   //v3.9
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
@@ -180,7 +179,6 @@ public class HomeActivity extends AppCompatActivity {
 
         SharedPreferences nameSp1 = getSharedPreferences("timerEnable", MyStoryActivity.MODE_PRIVATE);
         String name = nameSp1.getString("userName", "");
-
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -226,7 +224,7 @@ public class HomeActivity extends AppCompatActivity {
             Uri uri = Uri.parse(value);
             ImageView imageView   = header.findViewById(R.id.appDrawerImageView);
 
-            if (value!=null && !value.isEmpty()) {
+            if (value!=null && !value.isEmpty() && !value.equals("null")) {
                 Glide.with(this).load(uri).override(200, 200).into(imageView);
 
             }  else {
@@ -250,11 +248,9 @@ public class HomeActivity extends AppCompatActivity {
             try {
                 cal.setTime(sdf.parse(value)); // all done
             } catch (ParseException e) {
-                Log.e("ERROR", e.getLocalizedMessage());
+                Log.e("ERROR", String.valueOf(e));
             }
-
             homeGetProBannerText.setText(getString(R.string.Home_getProBannerText));
-
         }
 
         homeSubTitle.setText(getString(R.string.Home_subTitle));
@@ -387,7 +383,6 @@ public class HomeActivity extends AppCompatActivity {
 
                             Intent art1 = new Intent(getApplicationContext(), LoginActivity.class);
                             startActivity(art1);
-
                         }
 
                         /*
@@ -406,13 +401,11 @@ public class HomeActivity extends AppCompatActivity {
                 });
 
         if (name!=null && !(name.equalsIgnoreCase(""))) {
-
             String[] nameArray = name.split(" ");
             String welcomeUserTxt = getString(R.string.Home_textBelowPager1) + " " + nameArray[0] + getString(R.string.Home_textBelowPager2);
             nameText.setText(welcomeUserTxt);
         } else {
             nameText.setText(getString(R.string.Home_textBelowPager));
-
         }
 
         viewPager = findViewById(R.id.pager1);
@@ -439,7 +432,7 @@ public class HomeActivity extends AppCompatActivity {
             AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
             final View dialogView = View.inflate(getApplicationContext(),R.layout.whatsnew, null);
             builder.setCancelable(false);
-            builder.setMessage("What's New In v3.9");
+            builder.setMessage("What's New In v4.0");
 
             builder.setView(dialogView);
             alert = builder.create();
@@ -454,10 +447,8 @@ public class HomeActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     v.startAnimation(buttonClick);
-
-                    Intent art1 = new Intent(getApplicationContext(), AffirmationHome.class);
+                    Intent art1 = new Intent(getApplicationContext(), LoginActivity.class);
                     startActivity(art1);
-
                     alert.dismiss();
                 }
             });
@@ -465,7 +456,6 @@ public class HomeActivity extends AppCompatActivity {
             cancel.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
                     v.startAnimation(buttonClick);
                     alert.dismiss();
                 }
@@ -476,44 +466,36 @@ public class HomeActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 v.startAnimation(buttonClick);
                 Intent art1 = new Intent(getApplicationContext(), Exercise1Activity.class);
                 startActivity(art1);
-
             }
         });
 
         img1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 v.startAnimation(buttonClick);
                 Intent art1 = new Intent(getApplicationContext(), MyStoryActivity.class);
                 startActivity(art1);
-
             }
         });
 
         img2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 v.startAnimation(buttonClick);
                 Intent art1 = new Intent(getApplicationContext(), CommentsActivity.class);
                 startActivity(art1);
-
             }
         });
 
         img3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 v.startAnimation(buttonClick);
                 Intent art1 = new Intent(getApplicationContext(), AffirmationHome.class);
                 startActivity(art1);
-
             }
         });
 
@@ -521,23 +503,18 @@ public class HomeActivity extends AppCompatActivity {
             homeGetProBannerText.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
                     v.startAnimation(buttonClick);
-
                     Uri uri = Uri.parse("market://details?id=com.apps.amit.lawofattractionpro");
                     Intent rate = new Intent(Intent.ACTION_VIEW, uri);
                     try {
                         startActivity(rate);
-
                     } catch (android.content.ActivityNotFoundException ex) {
-
                         Toast.makeText(getApplicationContext(), R.string.nameError4, Toast.LENGTH_LONG).show();
                     }
                 }
             });
         } catch (NullPointerException e) {
-
-            Log.e("ERROR", e.getMessage());
+            Log.e("ERROR", String.valueOf(e));
         }
     }
 
@@ -549,28 +526,21 @@ public class HomeActivity extends AppCompatActivity {
     public class MyTimerTask extends TimerTask {
         @Override
         public void run() {
-
             HomeActivity.this.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                     if (viewPager.getCurrentItem() == 0) {
                         viewPager.setCurrentItem(1);
-
                     } else if (viewPager.getCurrentItem() == 1) {
                         viewPager.setCurrentItem(2);
-
                     } else if (viewPager.getCurrentItem() == 2) {
                         viewPager.setCurrentItem(3);
-
                     } else if (viewPager.getCurrentItem() == 3) {
                         viewPager.setCurrentItem(4);
-
                     } else if (viewPager.getCurrentItem() == 4) {
                         viewPager.setCurrentItem(5);
-
                     } else if (viewPager.getCurrentItem() == 5) {
                         viewPager.setCurrentItem(0);
-
                     } else {
                         viewPager.setCurrentItem(0);
                     }
@@ -581,7 +551,6 @@ public class HomeActivity extends AppCompatActivity {
 
     //Function to Check If User Installed app for firs time
     private boolean isFirstTime() {
-
         SharedPreferences pref = getPreferences(MODE_PRIVATE);
         boolean ranBefore = pref.getBoolean("whatsNewv3.6", false);
         if (!ranBefore) {

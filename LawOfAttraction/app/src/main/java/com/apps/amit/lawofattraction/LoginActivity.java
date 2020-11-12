@@ -1,11 +1,9 @@
 package com.apps.amit.lawofattraction;
 
-import android.Manifest;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -15,21 +13,21 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import com.apps.amit.lawofattraction.sqlitedatabase.ActivityTrackerDatabaseHandler;
 import com.apps.amit.lawofattraction.sqlitedatabase.WishDataBaseHandler;
 import com.apps.amit.lawofattraction.utils.ManifestationTrackerUtils;
 import com.apps.amit.lawofattraction.utils.PrivateWishesUtils;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.CustomTarget;
+import com.bumptech.glide.request.transition.Transition;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -45,32 +43,25 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.snackbar.Snackbar;
-
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.DateFormat;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-import static com.apps.amit.lawofattraction.SayThankYouActivity.PERMISSION_REQUEST_CODE;
 import static com.apps.amit.lawofattraction.SetReminderActivity.NOTIFICATION_ENABLE;
 
 public class LoginActivity extends AppCompatActivity {
@@ -78,11 +69,12 @@ public class LoginActivity extends AppCompatActivity {
     ImageView appLogo;
     LoginButton fbButtonSignIn;
     TextView titleText;
+    LinearLayout profileLinearLayout;
     TextView skipLoginText;
     SignInButton signInButton;
     CallbackManager callbackManager;
     TextView syncStatusText;
-    String temp ;
+    String temp;
     ProgressBar syncBar;
     Button syncButton;
     JSONObject jsonObject;
@@ -102,6 +94,24 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         sharedpreferences = getSharedPreferences("SocialAccount", Context.MODE_PRIVATE);
+
+        profileLinearLayout = findViewById(R.id.mainlayout);
+
+        Glide.with(this).load(R.drawable.starshd).into(new CustomTarget<Drawable>() {
+            @Override
+            public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    profileLinearLayout.setBackground(resource);
+                }
+            }
+
+            @Override
+            public void onLoadCleared(@Nullable Drawable placeholder) {
+                /*
+                Not Required
+                 */
+            }
+        });
 
         if (sharedpreferences.contains("personId")) {
             setContentView(R.layout.activity_my_profile);
@@ -132,8 +142,8 @@ public class LoginActivity extends AppCompatActivity {
             WishDataBaseHandler db = new WishDataBaseHandler(getApplicationContext());
             ActivityTrackerDatabaseHandler adb = new ActivityTrackerDatabaseHandler(getApplicationContext());
 
-            List<PrivateWishesUtils> getAllWishes = db.getAllWishes();
-            List<ManifestationTrackerUtils> getAllLogs = adb.getAllContacts();
+            List < PrivateWishesUtils > getAllWishes = db.getAllWishes();
+            List < ManifestationTrackerUtils > getAllLogs = adb.getAllContacts();
 
             SharedPreferences sp = getSharedPreferences("Affirmation_Counter", AffirmationActivity.MODE_PRIVATE);
             SharedPreferences sharedPreferencesManifestationType = getSharedPreferences("MANIFESTATION_TYPE", Exercise1Activity.MODE_PRIVATE);
@@ -146,13 +156,18 @@ public class LoginActivity extends AppCompatActivity {
             final File[] files = directory.listFiles();
 
             String value = sharedpreferences.getString("personPhoto", "");
-            Uri uri = Uri.parse(value);
+            if (value.equals("null")) {
+                Glide.with(getApplicationContext()).load(R.drawable.lawimg).into(userProfilePic);
+                userProfilePic.setBorderWidth(0);
+            } else {
+                Uri uri = Uri.parse(value);
+                Glide.with(getApplicationContext()).load(uri).into(userProfilePic);
+            }
 
-            Glide.with(getApplicationContext()).load(uri).into(userProfilePic);
             userProfileName.setText(sharedpreferences.getString("personName", ""));
             userProfileEmail.setText(sharedpreferences.getString("personEmail", ""));
 
-            if(files!=null){
+            if (files != null) {
                 audioWishCount.setText(String.valueOf(files.length));
             }
 
@@ -162,7 +177,7 @@ public class LoginActivity extends AppCompatActivity {
             affirmationCount.setText(String.valueOf(sp.getInt("counter", 0)));
             affirmationName.setText("Affirmation Day");
 
-            if(sharedPreferencesManifestationType.getString("MANIFESTATION_TYPE_VALUE", "").isEmpty()) {
+            if (sharedPreferencesManifestationType.getString("MANIFESTATION_TYPE_VALUE", "").isEmpty()) {
                 manifestType.setText("NA");
             } else {
                 manifestType.setText(sharedPreferencesManifestationType.getString("MANIFESTATION_TYPE_VALUE", ""));
@@ -172,74 +187,68 @@ public class LoginActivity extends AppCompatActivity {
             setTimeCount.setText(String.valueOf(timerValue.getInt("your_int_key", 60)));
             setTimeName.setText("Timer count");
 
-            if(timerEnable.getInt(NOTIFICATION_ENABLE,1)==1) {
+            if (timerEnable.getInt(NOTIFICATION_ENABLE, 1) == 1) {
                 notificationReminderStatus.setText("ON");
             } else {
                 notificationReminderStatus.setText("OFF");
             }
 
             notificationReminderName.setText("Daily Notifications");
-            loggedInAccountText.setText("Logged in using as: "+sharedpreferences.getString("personName", ""));
+            loggedInAccountText.setText("Logged in using as: " + sharedpreferences.getString("personName", ""));
 
-            if(sharedpreferences.contains("syncDate")) {
-                syncStatusText.setText("Last Sync at: "+sharedpreferences.getString("syncDate", ""));
+            if (sharedpreferences.contains("syncDate")) {
+                syncStatusText.setText("Last Sync at: " + sharedpreferences.getString("syncDate", ""));
             } else {
                 syncStatusText.setText("");
             }
 
-            logoutButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+            logoutButton.setOnClickListener(new View.OnClickListener() {@Override
+            public void onClick(View v) {
 
-                    GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                            .requestEmail()
-                            .build();
+                GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
 
-                    mGoogleSignInClient = GoogleSignIn.getClient(LoginActivity.this, gso);
-                    mGoogleSignInClient.signOut().addOnCompleteListener(LoginActivity.this, new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
+                mGoogleSignInClient = GoogleSignIn.getClient(LoginActivity.this, gso);
+                mGoogleSignInClient.signOut().addOnCompleteListener(LoginActivity.this, new OnCompleteListener < Void > () {@Override
+                public void onComplete(@NonNull Task < Void > task) {
 
-                            Toast.makeText(getApplicationContext(),"U signed out",Toast.LENGTH_LONG).show();
-
-                            SharedPreferences.Editor editor = sharedpreferences.edit();
-                            editor.remove("personId");
-                            editor.remove("syncDate");
-                            editor.putString("personName", "");
-                            editor.putString("personEmail", "");
-                            editor.putString("personPhoto", "");
-                            editor.apply();
-
-                            //load activity
-                            Intent art = new Intent(getApplicationContext(), LoginActivity.class);
-                            startActivity(art);
-                        }
-                    });
-                }
-            });
-
-            syncButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                    syncStatusText.setText("Synchronizing....!");
-                    Toast.makeText(getApplicationContext(),"Synchronizing Data",Toast.LENGTH_LONG).show();
-
-                    try {
-                        jsonObject = createJsonFile();
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-
-                    syncBar.setVisibility(View.VISIBLE);
-                    syncButton.setVisibility(View.INVISIBLE);
-                    FTPUpload uploadFTP = new FTPUpload();
-                    uploadFTP.execute();
+                    Toast.makeText(getApplicationContext(), "U signed out", Toast.LENGTH_LONG).show();
 
                     SharedPreferences.Editor editor = sharedpreferences.edit();
-                    editor.putString("syncDate", DateFormat.getDateTimeInstance().format(new Date()));
+                    editor.remove("personId");
+                    editor.remove("syncDate");
+                    editor.putString("personName", "");
+                    editor.putString("personEmail", "");
+                    editor.putString("personPhoto", "");
                     editor.apply();
+
+                    Intent art = new Intent(getApplicationContext(), LoginActivity.class);
+                    startActivity(art);
                 }
+                });
+            }
+            });
+
+            syncButton.setOnClickListener(new View.OnClickListener() {@Override
+            public void onClick(View v) {
+
+                syncStatusText.setText("Synchronizing....!");
+                Toast.makeText(getApplicationContext(), "Synchronizing Data", Toast.LENGTH_LONG).show();
+
+                try {
+                    jsonObject = createJsonFile();
+                } catch(JSONException e) {
+                    e.printStackTrace();
+                }
+
+                syncBar.setVisibility(View.VISIBLE);
+                syncButton.setVisibility(View.INVISIBLE);
+                FTPUpload uploadFTP = new FTPUpload();
+                uploadFTP.execute();
+
+                SharedPreferences.Editor editor = sharedpreferences.edit();
+                editor.putString("syncDate", DateFormat.getDateTimeInstance().format(new Date()));
+                editor.apply();
+            }
             });
         } else {
 
@@ -251,78 +260,64 @@ public class LoginActivity extends AppCompatActivity {
             titleText = findViewById(R.id.signInTextView);
             skipLoginText = findViewById(R.id.SkipTextView);
 
-
             Glide.with(getApplicationContext()).load(R.drawable.lawimg).thumbnail(0.1f).fitCenter().into(appLogo);
 
             // Configure sign-in to request the user's ID, email address, and basic profile. ID and basic profile are included in DEFAULT_SIGN_IN.
-            GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                    .requestEmail()
-                    .build();
+            GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
 
             // Build a GoogleSignInClient with the options specified by gso.
             mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
             signInButton.setSize(SignInButton.SIZE_STANDARD);
 
-            signInButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-                        startActivityForResult(signInIntent, RC_SIGN_IN);
-
-                }
+            signInButton.setOnClickListener(new View.OnClickListener() {@Override
+            public void onClick(View view) {
+                Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+                startActivityForResult(signInIntent, RC_SIGN_IN);
+            }
             });
 
-            fbButtonSignIn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Toast.makeText(getApplicationContext(),"Facebook",Toast.LENGTH_LONG).show();
-                    //loginUsingFB();
-                }
+            fbButtonSignIn.setOnClickListener(new View.OnClickListener() {@Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "Facebook", Toast.LENGTH_LONG).show();
+                //loginUsingFB();
+            }
             });
 
-            skipLoginText.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    finish();
-                }
+            skipLoginText.setOnClickListener(new View.OnClickListener() {@Override
+            public void onClick(View view) {
+                finish();
+            }
             });
-
-
         }
     }
 
     private void loginUsingFB() {
 
-        //keytool -exportcert -alias androiddebugkey -keystore "C:\Users\amitg13\.android\debug.keystore" | "openssl" sha1 -binary | "openssl" base64
-        //Bmce+9aHdOoVtE7fS3B07tfj7Bc=
-
         callbackManager = CallbackManager.Factory.create();
 
-        fbButtonSignIn.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
-            @Override
-            public void onSuccess(LoginResult loginResult) {
+        fbButtonSignIn.registerCallback(callbackManager, new FacebookCallback < LoginResult > () {@Override
+        public void onSuccess(LoginResult loginResult) {
 
-                loginResult.getAccessToken().getUserId();
-                String userProfile = "https://graph.facebook.com/"+loginResult.getAccessToken().getUserId()+"picture?return_ssl_resources=1";
+            loginResult.getAccessToken().getUserId();
+            String userProfile = "https://graph.facebook.com/" + loginResult.getAccessToken().getUserId() + "picture?return_ssl_resources=1";
 
-                GraphRequest request = GraphRequest.newMeRequest(loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
+            GraphRequest request = GraphRequest.newMeRequest(loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
 
-                    @Override
-                    public void onCompleted(JSONObject object, GraphResponse response) {
-                        Log.i("LoginActivity", response.toString());
-                        // Get facebook data from login
-                        Bundle bFacebookData = getFacebookData(object);
+                @Override
+                public void onCompleted(JSONObject object, GraphResponse response) {
+                    Log.i("LoginActivity", response.toString());
+                    // Get facebook data from login
+                    Bundle bFacebookData = getFacebookData(object);
 
-                        Toast.makeText(getApplicationContext(),bFacebookData.toString(),Toast.LENGTH_LONG).show();
-                    }
-                });
-                Bundle parameters = new Bundle();
-                parameters.putString("fields", "id, first_name, last_name, email,gender, birthday, location"); // Parámetros que pedimos a facebook
-                request.setParameters(parameters);
-                request.executeAsync();
-            }
+                    Toast.makeText(getApplicationContext(), bFacebookData.toString(), Toast.LENGTH_LONG).show();
+                }
+            });
+            Bundle parameters = new Bundle();
+            parameters.putString("fields", "id, first_name, last_name, email,gender, birthday, location"); // Parámetros que pedimos a facebook
+            request.setParameters(parameters);
+            request.executeAsync();
+        }
 
             @Override
             public void onCancel() {
@@ -334,7 +329,6 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-
 
     }
 
@@ -349,29 +343,23 @@ public class LoginActivity extends AppCompatActivity {
                 Log.i("profile_pic", profile_pic + "");
                 bundle.putString("profile_pic", profile_pic.toString());
 
-            } catch (MalformedURLException e) {
+            } catch(MalformedURLException e) {
                 e.printStackTrace();
                 return null;
             }
 
             bundle.putString("idFacebook", id);
-            if (object.has("first_name"))
-                bundle.putString("first_name", object.getString("first_name"));
-            if (object.has("last_name"))
-                bundle.putString("last_name", object.getString("last_name"));
-            if (object.has("email"))
-                bundle.putString("email", object.getString("email"));
-            if (object.has("gender"))
-                bundle.putString("gender", object.getString("gender"));
-            if (object.has("birthday"))
-                bundle.putString("birthday", object.getString("birthday"));
-            if (object.has("location"))
-                bundle.putString("location", object.getJSONObject("location").getString("name"));
+            if (object.has("first_name")) bundle.putString("first_name", object.getString("first_name"));
+            if (object.has("last_name")) bundle.putString("last_name", object.getString("last_name"));
+            if (object.has("email")) bundle.putString("email", object.getString("email"));
+            if (object.has("gender")) bundle.putString("gender", object.getString("gender"));
+            if (object.has("birthday")) bundle.putString("birthday", object.getString("birthday"));
+            if (object.has("location")) bundle.putString("location", object.getJSONObject("location").getString("name"));
 
             return bundle;
         }
         catch(JSONException e) {
-           // Log.d(TAG,"Error parsing JSON");
+            Log.d("ERROR","Error parsing JSON");
         }
         return null;
     }
@@ -387,23 +375,22 @@ public class LoginActivity extends AppCompatActivity {
         JSONObject jsonObject = new JSONObject();
 
         try {
-
             jsonObject.put("personId", sharedpreferences.getString("personId", ""));
             jsonObject.put("personEmail", sharedpreferences.getString("personEmail", ""));
             jsonObject.put("personName", sharedpreferences.getString("personName", ""));
             jsonObject.put("personPhoto", sharedpreferences.getString("personPhoto", ""));
-            jsonObject.put("affirmationDate",sp.getString("Time", "NA"));
+            jsonObject.put("affirmationDate", sp.getString("Time", "NA"));
             jsonObject.put("affirmationCount", sp.getInt("counter", 0));
             jsonObject.put("manifestType", sharedPreferencesManifestationType.getString("MANIFESTATION_TYPE_VALUE", ""));
-            jsonObject.put("timerEnable", timerEnable.getInt(NOTIFICATION_ENABLE,1));
+            jsonObject.put("timerEnable", timerEnable.getInt(NOTIFICATION_ENABLE, 1));
             jsonObject.put("timerCount", timerValue.getInt("your_int_key", 60));
             //jsonObject.put("notificationDate", notificationDate);
 
             WishDataBaseHandler db = new WishDataBaseHandler(getApplicationContext());
             ActivityTrackerDatabaseHandler adb = new ActivityTrackerDatabaseHandler(getApplicationContext());
 
-            List<PrivateWishesUtils> getAllWishes = db.getAllWishes();
-            List<ManifestationTrackerUtils> getAllLogs = adb.getAllContacts();
+            List < PrivateWishesUtils > getAllWishes = db.getAllWishes();
+            List < ManifestationTrackerUtils > getAllLogs = adb.getAllContacts();
 
             JSONArray arrayElementOneArray = new JSONArray();
             JSONArray arrayElementTwoArray = new JSONArray();
@@ -432,7 +419,7 @@ public class LoginActivity extends AppCompatActivity {
             jsonObject.put("logList", arrayElementOneArray);
             jsonObject.put("pWishList", arrayElementTwoArray);
 
-        } catch (JSONException e) {
+        } catch(JSONException e) {
             e.printStackTrace();
         }
         return jsonObject;
@@ -440,17 +427,16 @@ public class LoginActivity extends AppCompatActivity {
 
     public static boolean makeDirectories(FTPClient ftpClient, String dirPath)
             throws IOException {
+
         String[] pathElements = dirPath.split("/");
         if (pathElements != null && pathElements.length > 0) {
-            for (String singleDir : pathElements) {
+            for (String singleDir: pathElements) {
                 boolean existed = ftpClient.changeWorkingDirectory(singleDir);
                 if (!existed) {
                     boolean created = ftpClient.makeDirectory(singleDir);
                     if (created) {
-                        System.out.println("CREATED directory: " + singleDir);
                         ftpClient.changeWorkingDirectory(singleDir);
                     } else {
-                        System.out.println("COULD NOT create directory: " + singleDir);
                         return false;
                     }
                 }
@@ -465,17 +451,17 @@ public class LoginActivity extends AppCompatActivity {
 
         if (requestCode == RC_SIGN_IN) {
             // The Task returned from this call is always completed, no need to attach a listener.
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            Task < GoogleSignInAccount > task = GoogleSignIn.getSignedInAccountFromIntent(data);
             handleSignInResult(task);
         } else {
             callbackManager.onActivityResult(requestCode, resultCode, data);
         }
     }
 
-    private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
+    private void handleSignInResult(Task < GoogleSignInAccount > completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-            if(account != null){
+            if (account != null) {
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 String personName = account.getDisplayName();
                 String personEmail = account.getEmail();
@@ -488,51 +474,49 @@ public class LoginActivity extends AppCompatActivity {
                 editor.apply();
 
                 //Check if user exist
-                FTPDownload uploadFTP = new FTPDownload(personId);
-                uploadFTP.execute();
-
-                Intent art = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(art);
+                FTPDownload ftpDownload = new FTPDownload(personId);
+                ftpDownload.execute();
             }
-        } catch (ApiException e) {
-            // The ApiException status code indicates the detailed failure reason.
-            // Please refer to the GoogleSignInStatusCodes class reference for more information.
-            Toast.makeText(getApplicationContext(),"signInResult:failed code=" + e.getStatusCode(),Toast.LENGTH_LONG).show();
+        } catch(ApiException e) {
+
+            Toast.makeText(getApplicationContext(), "signInResult:failed code=" + e.getStatusCode(), Toast.LENGTH_LONG).show();
         }
     }
 
-    public class FTPUpload extends AsyncTask<String, Void, Void> {
+    public class FTPUpload extends AsyncTask < String,
+            Void,
+            Void > {
 
         @Override
-        protected Void doInBackground(String... strings) {
+        protected Void doInBackground(String...strings) {
 
-            FTPClient con = null;
+            FTPClient con;
+
             try {
                 con = new FTPClient();
                 con.connect("ftp.innovativelabs.xyz");
 
-                if (con.login("u941116359.amitg145", "4aR|i3I4N"))
-                {
-                    con.enterLocalPassiveMode(); // important!
+                if (con.login("u941116359.amitg145", "4aR|i3I4N")) {
 
-                    String jsonFilePath = sharedpreferences.getString("personId", "")+"/JSON";
+                    con.enterLocalPassiveMode(); // important!
+                    String jsonFilePath = sharedpreferences.getString("personId", "") + "/JSON";
 
                     boolean result1 = LoginActivity.makeDirectories(con, jsonFilePath);
-                    if(result1) {
+                    if (result1) {
                         con.changeWorkingDirectory(jsonFilePath);
                         con.setFileType(FTP.BINARY_FILE_TYPE);
 
                         String str = jsonObject.toString();
                         InputStream is = new ByteArrayInputStream(str.getBytes());
-                        con.storeFile(sharedpreferences.getString("personId", "")+".json", is);
+                        con.storeFile(sharedpreferences.getString("personId", "") + ".json", is);
                         is.close();
                     }
 
                     con.logout();
                     con.disconnect();
                 }
-            } catch (Exception e) {
-                Log.d("ERROR", e.getMessage());
+            } catch(Exception e) {
+                Log.d("ERROR", String.valueOf(e));
             }
             return null;
         }
@@ -541,15 +525,18 @@ public class LoginActivity extends AppCompatActivity {
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
 
-            Toast.makeText(getApplicationContext(),"Completed ! ... Synchronizing Data",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Completed ! ... Synchronizing Data", Toast.LENGTH_LONG).show();
             syncBar.setVisibility(View.INVISIBLE);
             syncButton.setVisibility(View.VISIBLE);
-            syncStatusText.setText("Last Sync at: "+sharedpreferences.getString("syncDate", ""));
+            syncStatusText.setText("Last Sync at: " + sharedpreferences.getString("syncDate", ""));
         }
     }
 
-    public class FTPDownload extends AsyncTask<String, Void, Void>{
+    public class FTPDownload extends AsyncTask < String,
+            Void,
+            Void > {
 
+        AlertDialog alert;
         public String personId;
 
         public FTPDownload(String personId) {
@@ -557,26 +544,24 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         @Override
-        protected Void doInBackground(String... strings) {
+        protected Void doInBackground(String...strings) {
 
-            final String jsonFilePath = personId+"/JSON";
-            final String jsonFileName = personId+".json";
+            final String jsonFilePath = personId + "/JSON";
+            final String jsonFileName = personId + ".json";
             FTPClient con = new FTPClient();
 
-            //File root = android.os.Environment.getExternalStorageDirectory();
-            //final File file = new File(root.getAbsolutePath() + "/.LawOfAttraction/JSON");
-            //if (!file.exists()) {
-            //    file.mkdirs();
-           // }
+            Handler handler = new Handler(getApplicationContext().getMainLooper());
+            handler.post(new Runnable() {
+                public void run() {
 
-            Handler handler =  new Handler(getApplicationContext().getMainLooper());
-            handler.post( new Runnable(){
-                public void run(){
-
-                    Toast.makeText(getApplicationContext()," checking ", Toast.LENGTH_LONG).show();
+                    AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+                    builder.setCancelable(false);
+                    builder.setTitle("Please Wait");
+                    builder.setMessage("Loading....");
+                    alert = builder.create();
+                    alert.show();
                 }
             });
-
 
             try {
                 con.connect("ftp.innovativelabs.xyz");
@@ -585,73 +570,52 @@ public class LoginActivity extends AppCompatActivity {
 
                     con.enterLocalPassiveMode();
                     con.setFileType(FTP.BINARY_FILE_TYPE);
-                    boolean ok = checkDirectoryExists(jsonFilePath, con );
+                    boolean ok = checkDirectoryExists(jsonFilePath, con);
 
-                    if(ok) {
+                    if (ok) {
 
-                        handler.post( new Runnable(){
-                            public void run(){
+                        handler.post(new Runnable() {
+                            public void run() {
 
-                                Toast.makeText(getApplicationContext()," Directory exist "+jsonFilePath, Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), " Directory exist " + jsonFilePath, Toast.LENGTH_LONG).show();
                             }
                         });
 
                         final InputStream ok1 = checkFileExists(jsonFileName, con);
-                        boolean success = false;
-                        if(ok1!=null) {
 
-                            try {
+                        if (ok1 != null) {
 
-                                //creating an InputStreamReader object
-                                InputStreamReader isReader = new InputStreamReader(ok1);
-                                //Creating a BufferedReader object
-                                BufferedReader reader = new BufferedReader(isReader);
-                                StringBuffer sb = new StringBuffer();
-                                String str;
-                                while((str = reader.readLine())!= null){
-                                    sb.append(str);
-                                }
-                                System.out.println(sb.toString());
-
-                                jsonObject = new JSONObject(sb.toString());
-
-                                //File downloadFile1 = new File( file+"/"+jsonFileName);
-                                //OutputStream outputStream1 = new FileOutputStream(downloadFile1);
-                                //success = con.retrieveFile(jsonFileName, outputStream1);
-                               // outputStream1.close();
-
-                            } catch (IOException e) {
-                                e.printStackTrace();
+                            InputStreamReader isReader = new InputStreamReader(ok1);
+                            BufferedReader reader = new BufferedReader(isReader);
+                            StringBuffer sb = new StringBuffer();
+                            String str;
+                            while ((str = reader.readLine()) != null) {
+                                sb.append(str);
                             }
+                            jsonObject = new JSONObject(sb.toString());
+
                         } else {
+                            handler.post(new Runnable() {
+                                public void run() {
 
-                            handler.post( new Runnable(){
-                                public void run(){
-
-                                    Toast.makeText(getApplicationContext()," Both file & directory doesn't exist "+jsonFileName, Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getApplicationContext(), " Both file & directory doesn't exist " + jsonFileName, Toast.LENGTH_LONG).show();
                                 }
                             });
                         }
-
-
                     } else {
-
-                        handler.post( new Runnable(){
-                            public void run(){
-
-                                Toast.makeText(getApplicationContext()," Diirectory not exist "+jsonFilePath, Toast.LENGTH_LONG).show();
+                        handler.post(new Runnable() {
+                            public void run() {
+                                Toast.makeText(getApplicationContext(), " Diirectory not exist " + jsonFilePath, Toast.LENGTH_LONG).show();
                             }
                         });
-
-
                     }
                 }
 
                 con.logout();
                 con.disconnect();
 
-            } catch (Exception e) {
-                //Toast.makeText(getApplicationContext(), String.valueOf(e), Toast.LENGTH_LONG).show();
+            } catch(Exception e) {
+                Log.d("ERROR", String.valueOf(e));
             }
 
             return null;
@@ -661,10 +625,10 @@ public class LoginActivity extends AppCompatActivity {
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
 
-            Handler handler =  new Handler(getApplicationContext().getMainLooper());
-            if (jsonObject!=null) {
-                handler.post( new Runnable(){
-                    public void run(){
+            Handler handler = new Handler(getApplicationContext().getMainLooper());
+            if (jsonObject != null) {
+                handler.post(new Runnable() {
+                    public void run() {
 
                         SharedPreferences sharedpreferences = getSharedPreferences("SocialAccount", Context.MODE_PRIVATE);
                         SharedPreferences sp = getSharedPreferences("Affirmation_Counter", Context.MODE_PRIVATE);
@@ -673,74 +637,46 @@ public class LoginActivity extends AppCompatActivity {
                         SharedPreferences timerEnable = getSharedPreferences(NOTIFICATION_ENABLE, Exercise1Activity.MODE_PRIVATE);
 
                         try {
+                            SharedPreferences.Editor ed = sharedpreferences.edit();
+                            ed.putString("personId", jsonObject.getString("personId"));
+                            ed.putString("personEmail", jsonObject.getString("personEmail"));
+                            ed.putString("personName", jsonObject.getString("personName"));
+                            ed.putString("personPhoto", jsonObject.getString("personPhoto"));
+                            ed.apply();
 
-                            if(sharedpreferences.contains("personId")
-                                    || sharedpreferences.contains("personEmail")
-                                    || sharedpreferences.contains("personName")
-                                    || sharedpreferences.contains("personPhoto")) {
+                            ed = sp.edit();
+                            ed.putString("Time", jsonObject.getString("affirmationDate"));
+                            ed.putInt("counter", jsonObject.getInt("affirmationCount"));
+                            ed.apply();
 
-                                SharedPreferences.Editor ed = sharedpreferences.edit();
-                                ed.putString("personId", jsonObject.getString("personId"));
-                                ed.putString("personEmail", jsonObject.getString("personEmail"));
-                                ed.putString("personName", jsonObject.getString("personName"));
-                                ed.putString("personPhoto", jsonObject.getString("personPhoto"));
-                                ed.apply();
+                            ed = sp.edit();
+                            ed.putString("Time", jsonObject.getString("affirmationDate"));
+                            ed.putInt("counter", jsonObject.getInt("affirmationCount"));
+                            ed.apply();
 
-                            } else {
-                                SharedPreferences.Editor ed = sharedpreferences.edit();
-                                ed.putString("personId", jsonObject.getString("personId"));
-                                ed.putString("personEmail", jsonObject.getString("personEmail"));
-                                ed.putString("personName", jsonObject.getString("personName"));
-                                ed.putString("personPhoto", jsonObject.getString("personPhoto"));
-                                ed.apply();
-                            }
+                            ed = sharedPreferencesManifestationType.edit();
+                            ed.putString("MANIFESTATION_TYPE_VALUE", jsonObject.getString("manifestType"));
+                            ed.apply();
 
-                            if(sp.contains("Time")
-                                    || sp.contains("counter")) {
-                                SharedPreferences.Editor ed = sp.edit();
-                                ed.putString("Time", jsonObject.getString("affirmationDate"));
-                                ed.putInt("counter", jsonObject.getInt("affirmationCount"));
-                                ed.apply();
+                            ed = sharedPreferencesManifestationType.edit();
+                            ed.putString("MANIFESTATION_TYPE_VALUE", jsonObject.getString("manifestType"));
+                            ed.apply();
 
-                            } else {
-                                SharedPreferences.Editor ed = sp.edit();
-                                ed.putString("Time", jsonObject.getString("affirmationDate"));
-                                ed.putInt("counter", jsonObject.getInt("affirmationCount"));
-                                ed.apply();
-                            }
+                            ed = timerEnable.edit();
+                            ed.putString("timerEnable", jsonObject.getString("timerEnable"));
+                            ed.apply();
 
-                            if(sharedPreferencesManifestationType.contains("MANIFESTATION_TYPE_VALUE")) {
-                                SharedPreferences.Editor ed = sharedPreferencesManifestationType.edit();
-                                ed.putString("MANIFESTATION_TYPE_VALUE", jsonObject.getString("manifestType"));
-                                ed.apply();
+                            ed = timerEnable.edit();
+                            ed.putString("timerEnable", jsonObject.getString("timerEnable"));
+                            ed.apply();
 
-                            } else {
-                                SharedPreferences.Editor ed = sharedPreferencesManifestationType.edit();
-                                ed.putString("MANIFESTATION_TYPE_VALUE", jsonObject.getString("manifestType"));
-                                ed.apply();
-                            }
+                            ed = timerValue.edit();
+                            ed.putInt("your_int_key", Integer.parseInt(jsonObject.getString("timerCount")));
+                            ed.apply();
 
-                            if(timerEnable.contains("timerEnable")) {
-                                SharedPreferences.Editor ed = timerEnable.edit();
-                                ed.putString("timerEnable", jsonObject.getString("timerEnable"));
-                                ed.apply();
-
-                            } else {
-                                SharedPreferences.Editor ed = timerEnable.edit();
-                                ed.putString("timerEnable", jsonObject.getString("timerEnable"));
-                                ed.apply();
-                            }
-
-                            if(timerValue.contains("your_int_key")) {
-                                SharedPreferences.Editor ed = timerValue.edit();
-                                ed.putInt("your_int_key", Integer.parseInt(jsonObject.getString("timerCount")));
-                                ed.apply();
-
-                            } else {
-                                SharedPreferences.Editor ed = timerValue.edit();
-                                ed.putInt("your_int_key", Integer.parseInt(jsonObject.getString("timerCount")));
-                                ed.apply();
-                            }
+                            ed = timerValue.edit();
+                            ed.putInt("your_int_key", Integer.parseInt(jsonObject.getString("timerCount")));
+                            ed.apply();
 
                             JSONArray logs = jsonObject.getJSONArray("logList");
                             JSONArray pWishes = jsonObject.getJSONArray("pWishList");
@@ -756,21 +692,33 @@ public class LoginActivity extends AppCompatActivity {
                                 JSONObject jsonObject1 = pWishes.getJSONObject(i);
                                 WishDataBaseHandler db = new WishDataBaseHandler(getApplicationContext());
 
-                                db.addWish(new PrivateWishesUtils(jsonObject1.getString("userName"),jsonObject1.getString("userWish"),jsonObject1.getString("wishDate")));
+                                db.addWish(new PrivateWishesUtils(jsonObject1.getString("userName"), jsonObject1.getString("userWish"), jsonObject1.getString("wishDate")));
                             }
 
-                        } catch (JSONException e) {
-                            e.printStackTrace();
+                            WishDataBaseHandler db = new WishDataBaseHandler(getApplicationContext());
+                            db.removeDuplicates();
+
+                            ActivityTrackerDatabaseHandler db1 = new ActivityTrackerDatabaseHandler(getApplicationContext());
+                            db1.removeDuplicates();
+
+                        } catch(Exception e) {
+                            Log.d("ERROR", String.valueOf(e));
                         }
 
-                        Toast.makeText(getApplicationContext(),"Done", Toast.LENGTH_LONG).show();
+                        alert.dismiss();
+                        Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
+                        Intent art = new Intent(getApplicationContext(), LoginActivity.class);
+                        startActivity(art);
                     }
                 });
             } else {
-                handler.post( new Runnable(){
-                    public void run(){
+                handler.post(new Runnable() {
+                    public void run() {
 
-                        Toast.makeText(getApplicationContext(),"no Json", Toast.LENGTH_LONG).show();
+                        alert.dismiss();
+                        Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
+                        Intent art = new Intent(getApplicationContext(), LoginActivity.class);
+                        startActivity(art);
                     }
                 });
             }
@@ -780,20 +728,12 @@ public class LoginActivity extends AppCompatActivity {
     boolean checkDirectoryExists(String dirPath, FTPClient con) throws IOException {
         con.changeWorkingDirectory(dirPath);
         int returnCode = con.getReplyCode();
-        if (returnCode == 550) {
-            return false;
-        }
-        return true;
+        return returnCode != 550;
     }
 
     InputStream checkFileExists(String filePath, FTPClient con) throws IOException {
         InputStream inputStream = con.retrieveFileStream(filePath);
-        int returnCode = con.getReplyCode();
-        //if (inputStream == null || returnCode == 550) {
-         //return false;
-        //}
         con.completePendingCommand();
-
         return inputStream;
     }
 }

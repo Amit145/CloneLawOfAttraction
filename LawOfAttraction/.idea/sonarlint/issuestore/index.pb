@@ -577,8 +577,6 @@ e
 5app/src/main/res/layout-normal/activity_thank_you.xml,b\7\b71117c3328a398ce8dc928cc46111cd7024d547
 †
 V.idea/libraries/Gradle__androidx_asynclayoutinflater_asynclayoutinflater_1_0_0_aar.xml,5\9\597a9a17eb93adb9cfff3bfab0bb1ca9e5ecc9ae
-a
-1app/src/main/res/layout/activity_affirmations.xml,4\7\479b4754b9c94241123ca2d6ff3cd11801349de1
 d
 4app/src/main/res/layout-large/activity_exercise5.xml,0\8\08e101f34a500188813ce8e1f72ddbea589d967a
 c

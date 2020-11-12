@@ -109,7 +109,7 @@ public class Exercise1Activity extends AppCompatActivity {
         String manifestationTypeValue = sharedPreferencesManifestationType.getString("MANIFESTATION_TYPE_VALUE", "");
         bool = sharedPreferencesManifestationType.getBoolean("RAN_BEFORE", false);
 
-        if (!Boolean.TRUE.equals(bool)) {
+        if (!sharedPreferencesManifestationType.contains("MANIFESTATION_TYPE_VALUE")) {
 
             setContentView(R.layout.activity_intro1);
             mainlayout = findViewById(R.id.mainlayout);
