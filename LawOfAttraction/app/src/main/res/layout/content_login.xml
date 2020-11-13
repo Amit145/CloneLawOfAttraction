@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/profileLinearLayout"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:background="#232635"
+    android:background="#FDFDFD"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
 
     <ScrollView
         android:layout_width="match_parent"
@@ -20,8 +18,8 @@
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
             android:layout_gravity="center"
-            android:gravity="center"
             android:background="@drawable/roundedbackground"
+            android:gravity="center"
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginTop="20dp"
@@ -30,7 +28,7 @@
             
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <ImageView
@@ -38,16 +36,14 @@
                     android:layout_width="wrap_content"
                     android:layout_marginTop="4dp"
                     android:layout_height="300dp"
-                    android:src="@drawable/lawimg"
-                    android:layout_gravity="center" />
-
-
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/logoname" />
 
                 <TextView
                     android:id="@+id/signInTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#767272"
+                    android:textColor="#3C3B3B"
                     android:textStyle="bold"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp"
@@ -56,52 +52,39 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text="@string/aboutApp"/>
+
+                <TextView
+                    android:id="@+id/signInTextView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#767272"
+                    android:textStyle="italic"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/abeezee"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/nav_header_subtitle"/>
+
                 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="20dp"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/subTtitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="#767272"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/abeezee"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text="Sign in using"/>
 
                 <com.google.android.gms.common.SignInButton
                     android:id="@+id/googleSignInButton"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="50dp"
                     android:layout_gravity="center"
                     android:layout_height="wrap_content" />
 
-
-
-                <TextView
-                    android:id="@+id/SkipTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="SKIP NOW"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:fontFamily="@font/abeezee">
-
-                </TextView>
             </LinearLayout>
-            
         </LinearLayout>
-        
+
         
     </ScrollView>
 </LinearLayout>

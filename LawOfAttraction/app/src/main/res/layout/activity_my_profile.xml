@@ -51,9 +51,10 @@
                     android:layout_marginTop="12dp"
                     android:textStyle="bold"
                     android:gravity="center"
-                    android:text="Amit Ghatge"
+                    android:text="userName"
+                    android:fontFamily="@font/nunito_extrabold"
                     android:textColor="#909090"
-                    android:textSize="30sp"
+                    android:textSize="25sp"
                     app:layout_constraintTop_toBottomOf="@+id/userProfilePic"
                     tools:layout_editor_absoluteX="5dp">
                 </TextView>
@@ -65,7 +66,7 @@
                     android:textStyle="italic"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
-                    android:text="amitg13@gmail.com"
+                    android:text="text"
                     android:textColor="#909090"
                     android:textSize="15sp"
                     app:layout_constraintTop_toBottomOf="@+id/userProfileName"
@@ -127,6 +128,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:fontFamily="@font/nunito_extrabold"
                             android:layout_gravity="center"
                             android:gravity="center"
                             android:textStyle="bold"
@@ -164,6 +166,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:textSize="25sp"
+                            android:fontFamily="@font/nunito_extrabold"
                             android:textStyle="bold"
                             android:layout_gravity="center"
                             android:gravity="center"
@@ -245,6 +248,7 @@
                             android:layout_gravity="center"
                             android:gravity="center"
                             android:textStyle="bold"
+                            android:fontFamily="@font/nunito_extrabold"
                             android:textSize="20sp"
                             android:layout_marginTop="10dp"
                             android:textColor="#3096FB"                            android:text="Happiness">
@@ -280,6 +284,7 @@
                             android:textStyle="bold"
                             android:layout_gravity="center"
                             android:gravity="center"
+                            android:fontFamily="@font/nunito_extrabold"
                             android:textSize="20sp"
                             android:layout_marginTop="10dp"
                             android:textColor="#3096FB"
@@ -316,6 +321,7 @@
                             android:textStyle="bold"
                             android:layout_gravity="center"
                             android:gravity="center"
+                            android:fontFamily="@font/nunito_extrabold"
                             android:textSize="20sp"
                             android:layout_marginTop="10dp"
                             android:textColor="#3096FB"
@@ -361,6 +367,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Account"
+
                     android:layout_marginTop="10dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginLeft="10dp"
@@ -385,14 +392,15 @@
 
                 <Button
                     android:id="@+id/logoutButton"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="20dp"
                     android:gravity="center"
                     android:textColor="#ffffff"
-                    android:background="#FF8A80"
+                    android:background="@drawable/buton"
                     android:text="SignOut"
+                    android:fontFamily="@font/nunito_extrabold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.498"
@@ -455,16 +463,18 @@
 
                 <Button
                     android:id="@+id/syncButton"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="44dp"
                     android:gravity="center"
                     android:textColor="#ffffff"
-                    android:background="#CCFF90"
+                    android:background="@drawable/butonsync"
+                    android:fontFamily="@font/nunito_extrabold"
                     android:text="sync Now"
                     app:layout_constraintEnd_toEndOf="@+id/profileSync"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/profileSync"></Button>
+                    app:layout_constraintTop_toBottomOf="@+id/profileSync">
+                </Button>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

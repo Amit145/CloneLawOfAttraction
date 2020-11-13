@@ -83,19 +83,6 @@ public class AffirmationActivity extends AppCompatActivity {
 
         mainlayout = findViewById(R.id.mainlayout);
 
-
-        /*
-        Glide.with(this).load(R.drawable.starshd).asBitmap().into(new SimpleTarget<Bitmap>() {
-            @Override
-            public void onResourceReady(Bitmap bitmap, GlideAnimation<? super Bitmap> glideAnimation) {
-                Drawable drawable = new BitmapDrawable(getResources(), bitmap);
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                    mainlayout.setBackground(drawable);
-                }
-            }
-        });
-
-        */
         Glide.with(this).load(R.drawable.starshd).into(new CustomTarget<Drawable>() {
             @Override
             public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
@@ -107,6 +94,9 @@ public class AffirmationActivity extends AppCompatActivity {
             @Override
             public void onLoadCleared(@Nullable Drawable placeholder) {
 
+                /*
+                Not required
+                 */
             }
         });
 

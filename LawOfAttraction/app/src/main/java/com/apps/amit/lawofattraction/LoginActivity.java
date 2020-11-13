@@ -64,7 +64,6 @@ public class LoginActivity extends AppCompatActivity {
     ImageView appLogo;
     TextView titleText;
     LinearLayout profileLinearLayout;
-    TextView skipLoginText;
     SignInButton signInButton;
     CallbackManager callbackManager;
     TextView syncStatusText;
@@ -73,6 +72,7 @@ public class LoginActivity extends AppCompatActivity {
     Button syncButton;
     JSONObject jsonObject;
     boolean flag = false;
+    public static final String DAY_COUNTER = "counter";
     private InterstitialAd interstitialAd;
 
     @Override
@@ -179,11 +179,12 @@ public class LoginActivity extends AppCompatActivity {
             }
 
             userProfileName.setText(sharedpreferences.getString("personName", ""));
-            userProfileEmail.setText(sharedpreferences.getString("personEmail", ""));
+            //userProfileName.setText(getString(R.string.nav_header_subtitle));
+            userProfileEmail.setText(getString(R.string.nav_header_subtitle));
 
             privateWishCount.setText(String.valueOf(getAllWishes.size()));
             privateWishName.setText("Private Wishes");
-            affirmationCount.setText(String.valueOf(sp.getInt("counter", 0)));
+            affirmationCount.setText(String.valueOf(sp.getInt(DAY_COUNTER, 0)));
             affirmationName.setText("Affirmation Day");
 
             if (sharedPreferencesManifestationType.getString("MANIFESTATION_TYPE_VALUE", "").isEmpty()) {
@@ -356,7 +357,6 @@ public class LoginActivity extends AppCompatActivity {
             appLogo = findViewById(R.id.appLogo);
             signInButton = findViewById(R.id.googleSignInButton);
             titleText = findViewById(R.id.signInTextView);
-            skipLoginText = findViewById(R.id.SkipTextView);
 
             Glide.with(getApplicationContext()).load(R.drawable.lawimg).thumbnail(0.1f).fitCenter().into(appLogo);
 
@@ -366,7 +366,6 @@ public class LoginActivity extends AppCompatActivity {
             // Build a GoogleSignInClient with the options specified by gso.
             mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
-            signInButton.setSize(SignInButton.SIZE_STANDARD);
             signInButton.setOnClickListener(new View.OnClickListener() {@Override
             public void onClick(View view) {
 
@@ -396,12 +395,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
             });
-
-            skipLoginText.setOnClickListener(new View.OnClickListener() {@Override
-            public void onClick(View view) {
-                finish();
-            }
-            });
         }
     }
 
@@ -421,7 +414,7 @@ public class LoginActivity extends AppCompatActivity {
             jsonObject.put("personName", sharedpreferences.getString("personName", ""));
             jsonObject.put("personPhoto", sharedpreferences.getString("personPhoto", ""));
             jsonObject.put("affirmationDate", sp.getString("Time", "NA"));
-            jsonObject.put("affirmationCount", sp.getInt("counter", 0));
+            jsonObject.put("affirmationCount", sp.getInt(DAY_COUNTER, 0));
             jsonObject.put("manifestType", sharedPreferencesManifestationType.getString("MANIFESTATION_TYPE_VALUE", ""));
             jsonObject.put("timerEnable", timerEnable.getInt(NOTIFICATION_ENABLE, 1));
             jsonObject.put("timerCount", timerValue.getInt("your_int_key", 60));
@@ -643,13 +636,6 @@ public class LoginActivity extends AppCompatActivity {
 
                     if (ok) {
 
-                        handler.post(new Runnable() {
-                            public void run() {
-
-                                Toast.makeText(getApplicationContext(), " Directory exist " + jsonFilePath, Toast.LENGTH_LONG).show();
-                            }
-                        });
-
                         final InputStream ok1 = checkFileExists(jsonFileName, con);
 
                         if (ok1 != null) {
@@ -663,20 +649,7 @@ public class LoginActivity extends AppCompatActivity {
                             }
                             jsonObject = new JSONObject(sb.toString());
 
-                        } else {
-                            handler.post(new Runnable() {
-                                public void run() {
-
-                                    Toast.makeText(getApplicationContext(), " Both file & directory doesn't exist " + jsonFileName, Toast.LENGTH_LONG).show();
-                                }
-                            });
                         }
-                    } else {
-                        handler.post(new Runnable() {
-                            public void run() {
-                                Toast.makeText(getApplicationContext(), " Diirectory not exist " + jsonFilePath, Toast.LENGTH_LONG).show();
-                            }
-                        });
                     }
                 }
 
@@ -715,12 +688,12 @@ public class LoginActivity extends AppCompatActivity {
 
                             ed = sp.edit();
                             ed.putString("Time", jsonObject.getString("affirmationDate"));
-                            ed.putInt("counter", jsonObject.getInt("affirmationCount"));
+                            ed.putInt(DAY_COUNTER, jsonObject.getInt("affirmationCount"));
                             ed.apply();
 
                             ed = sp.edit();
                             ed.putString("Time", jsonObject.getString("affirmationDate"));
-                            ed.putInt("counter", jsonObject.getInt("affirmationCount"));
+                            ed.putInt(DAY_COUNTER, jsonObject.getInt("affirmationCount"));
                             ed.apply();
 
                             ed = sharedPreferencesManifestationType.edit();

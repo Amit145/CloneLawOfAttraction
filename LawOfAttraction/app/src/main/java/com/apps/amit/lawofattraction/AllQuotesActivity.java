@@ -80,6 +80,9 @@ public class AllQuotesActivity extends AppCompatActivity {
             @Override
             public void onLoadCleared(@Nullable Drawable placeholder) {
 
+                /*
+                Not required
+                 */
             }
         });
 
