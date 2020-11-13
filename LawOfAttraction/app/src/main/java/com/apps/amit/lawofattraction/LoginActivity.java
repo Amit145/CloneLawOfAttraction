@@ -19,12 +19,10 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.apps.amit.lawofattraction.helper.CheckInternetService;
 import com.apps.amit.lawofattraction.sqlitedatabase.ActivityTrackerDatabaseHandler;
 import com.apps.amit.lawofattraction.sqlitedatabase.WishDataBaseHandler;
@@ -45,13 +43,11 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -60,9 +56,7 @@ import java.io.InputStreamReader;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
-
 import de.hdodenhof.circleimageview.CircleImageView;
-
 import static com.apps.amit.lawofattraction.SetReminderActivity.NOTIFICATION_ENABLE;
 
 public class LoginActivity extends AppCompatActivity {
@@ -90,16 +84,17 @@ public class LoginActivity extends AppCompatActivity {
     GoogleSignInClient mGoogleSignInClient;
     private static final int RC_SIGN_IN = 1;
     SharedPreferences sharedpreferences;
+    SharedPreferences ftpSp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         sharedpreferences = getSharedPreferences("SocialAccount", Context.MODE_PRIVATE);
+        ftpSp = getSharedPreferences("FtpLogin", Context.MODE_PRIVATE);
 
         if (sharedpreferences.contains("personId")) {
             setContentView(R.layout.activity_my_profile);
-
             profileLinearLayout = findViewById(R.id.profileLinearLayout);
 
             Glide.with(this).load(R.drawable.starshd).into(new CustomTarget<Drawable>() {
@@ -128,8 +123,12 @@ public class LoginActivity extends AppCompatActivity {
             CircleImageView userProfilePic = findViewById(R.id.userProfilePic);
             TextView userProfileName = findViewById(R.id.userProfileName);
             TextView userProfileEmail = findViewById(R.id.userProfileEmail);
-            //TextView audioWishCount = findViewById(R.id.audioWishCount);
-            //TextView audioWishName = findViewById(R.id.audioWishName);
+
+            /*
+                TextView audioWishCount = findViewById(R.id.audioWishCount);
+                TextView audioWishName = findViewById(R.id.audioWishName);
+            */
+
             TextView privateWishCount = findViewById(R.id.privateWishCount);
             TextView privateWishName = findViewById(R.id.privateWishName);
             TextView affirmationCount = findViewById(R.id.affirmationCount);
@@ -149,19 +148,26 @@ public class LoginActivity extends AppCompatActivity {
 
             WishDataBaseHandler db = new WishDataBaseHandler(getApplicationContext());
             ActivityTrackerDatabaseHandler adb = new ActivityTrackerDatabaseHandler(getApplicationContext());
-
             List < PrivateWishesUtils > getAllWishes = db.getAllWishes();
-            List < ManifestationTrackerUtils > getAllLogs = adb.getAllContacts();
 
             SharedPreferences sp = getSharedPreferences("Affirmation_Counter", AffirmationActivity.MODE_PRIVATE);
             SharedPreferences sharedPreferencesManifestationType = getSharedPreferences("MANIFESTATION_TYPE", Exercise1Activity.MODE_PRIVATE);
             SharedPreferences timerValue = getSharedPreferences("your_prefs", Exercise2Activity.MODE_PRIVATE);
             SharedPreferences timerEnable = getSharedPreferences(NOTIFICATION_ENABLE, Exercise1Activity.MODE_PRIVATE);
 
-            //File root = android.os.Environment.getExternalStorageDirectory();
-            //String path = root.getAbsolutePath() + "/LawOfAttraction/Audios";
-            //File directory = new File(path);
-            //final File[] files = directory.listFiles();
+            /*
+                List < ManifestationTrackerUtils > getAllLogs = adb.getAllContacts();
+                File root = android.os.Environment.getExternalStorageDirectory();
+                String path = root.getAbsolutePath() + "/LawOfAttraction/Audios";
+                File directory = new File(path);
+                final File[] files = directory.listFiles();
+
+                if (files != null) {
+                audioWishCount.setText(String.valueOf(files.length));
+                }
+
+                audioWishName.setText("Audio Wishes");
+             */
 
             String value = sharedpreferences.getString("personPhoto", "");
             if (value.equals("null")) {
@@ -175,11 +181,6 @@ public class LoginActivity extends AppCompatActivity {
             userProfileName.setText(sharedpreferences.getString("personName", ""));
             userProfileEmail.setText(sharedpreferences.getString("personEmail", ""));
 
-            //if (files != null) {
-            //    audioWishCount.setText(String.valueOf(files.length));
-            //}
-
-            //audioWishName.setText("Audio Wishes");
             privateWishCount.setText(String.valueOf(getAllWishes.size()));
             privateWishName.setText("Private Wishes");
             affirmationCount.setText(String.valueOf(sp.getInt("counter", 0)));
@@ -285,6 +286,11 @@ public class LoginActivity extends AppCompatActivity {
 
             syncButton.setOnClickListener(new View.OnClickListener() {@Override
             public void onClick(View v) {
+
+                String val = ftpSp.getString("ftphost","");
+                String val1 = ftpSp.getString("ftpuser","");
+                String val2 = ftpSp.getString("ftppass","");
+
                 ConnectivityManager connectivityManager = null;
                 CheckInternetService checkInternetService = new CheckInternetService();
                 NetworkInfo netInfo = checkInternetService.checkInternetConnection(connectivityManager, getApplicationContext());
@@ -296,8 +302,7 @@ public class LoginActivity extends AppCompatActivity {
                     // Defined in res/values/strings.xml
                     interstitialAd.setAdUnitId(getString(R.string.TestInterstitialAdsBannerGoogle));
                     interstitialAd.loadAd(new AdRequest.Builder().build());
-                    interstitialAd.setAdListener(new AdListener()
-                    {
+                    interstitialAd.setAdListener(new AdListener() {
                         @Override
                         public void onAdLoaded() {
                             flag=Boolean.TRUE;
@@ -315,7 +320,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     syncBar.setVisibility(View.VISIBLE);
                     syncButton.setVisibility(View.INVISIBLE);
-                    FTPUpload uploadFTP = new FTPUpload();
+                    FTPUpload uploadFTP = new FTPUpload(val, val1, val2);
                     uploadFTP.execute();
 
                     SharedPreferences.Editor editor = sharedpreferences.edit();
@@ -498,6 +503,10 @@ public class LoginActivity extends AppCompatActivity {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
             if (account != null) {
+                String val = ftpSp.getString("ftphost","");
+                String val1 = ftpSp.getString("ftpuser","");
+                String val2 = ftpSp.getString("ftppass","");
+
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 String personName = account.getDisplayName();
                 String personEmail = account.getEmail();
@@ -510,7 +519,7 @@ public class LoginActivity extends AppCompatActivity {
                 editor.apply();
 
                 //Check if user exist
-                FTPDownload ftpDownload = new FTPDownload(personId);
+                FTPDownload ftpDownload = new FTPDownload(personId, val, val1, val2);
                 ftpDownload.execute();
             }
         } catch(ApiException e) {
@@ -523,16 +532,25 @@ public class LoginActivity extends AppCompatActivity {
             Void,
             Void > {
 
+        String ftpHostName ;
+        String ftpUser ;
+        String ftpPass;
+
+        public FTPUpload(String val, String val1, String val2) {
+            this.ftpHostName = val;
+            this.ftpUser = val1;
+            this.ftpPass = val2;
+        }
+
         @Override
         protected Void doInBackground(String...strings) {
 
             FTPClient con;
-
             try {
                 con = new FTPClient();
-                con.connect("ftp.innovativelabs.xyz");
+                con.connect(ftpHostName);
 
-                if (con.login("u941116359.amitg145", "4aR|i3I4N")) {
+                if (con.login(ftpUser, ftpPass)) {
 
                     con.enterLocalPassiveMode(); // important!
                     String jsonFilePath = sharedpreferences.getString("personId", "") + "/JSON";
@@ -583,9 +601,15 @@ public class LoginActivity extends AppCompatActivity {
 
         AlertDialog alert;
         public String personId;
+        String ftpHostName ;
+        String ftpUser ;
+        String ftpPass;
 
-        public FTPDownload(String personId) {
+        public FTPDownload( String personId, String val, String val1, String val2) {
             this.personId = personId;
+            this.ftpHostName = val;
+            this.ftpUser = val1;
+            this.ftpPass = val2;
         }
 
         @Override
@@ -609,9 +633,9 @@ public class LoginActivity extends AppCompatActivity {
             });
 
             try {
-                con.connect("ftp.innovativelabs.xyz");
+                con.connect(ftpHostName);
 
-                if (con.login("u941116359.amitg145", "4aR|i3I4N")) {
+                if (con.login(ftpUser, ftpPass)) {
 
                     con.enterLocalPassiveMode();
                     con.setFileType(FTP.BINARY_FILE_TYPE);

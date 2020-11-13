@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -30,7 +32,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import com.apps.amit.lawofattraction.adapters.MyCustomPagerAdapter;
+import com.apps.amit.lawofattraction.helper.CheckInternetService;
 import com.apps.amit.lawofattraction.helper.LocaleHelper;
+import com.apps.amit.lawofattraction.utils.JSONURLParser;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.CustomTarget;
 import com.bumptech.glide.request.transition.Transition;
@@ -129,6 +133,16 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        ConnectivityManager connectivityManager = null;
+        CheckInternetService checkInternetService = new CheckInternetService();
+        NetworkInfo netInfo = checkInternetService.checkInternetConnection(connectivityManager, getApplicationContext());
+
+        if(netInfo!=null && netInfo.isConnected()) {
+            JSONURLParser jsonurlParser = new JSONURLParser(getApplicationContext());
+            jsonurlParser.execute();
+        }
+
+        //internet
         TextView nameText;
         ButterKnife.bind(this);
 

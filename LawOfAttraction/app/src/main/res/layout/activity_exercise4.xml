@@ -27,7 +27,8 @@
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:gravity="center_horizontal" />
     </LinearLayout>
 
     <LinearLayout
@@ -63,7 +64,8 @@
             android:textColor="#ffffff"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:visibility="visible" />
+            android:visibility="visible"
+            android:gravity="center_horizontal" />
 
     </LinearLayout>
 
@@ -89,7 +91,8 @@
             android:textAlignment="center"
             android:textColor="#eaeded"
             android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:gravity="center_horizontal" />
 
         <TextView
             android:id="@+id/textView5"
@@ -99,7 +102,8 @@
             android:text="@string/activity4_text4"
             android:textAlignment="center"
             android:textColor="#eaeded"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:gravity="center_horizontal" />
 
         <TextView
             android:id="@+id/textView6"
@@ -109,7 +113,8 @@
             android:text="@string/activity4_text5"
             android:textAlignment="center"
             android:textColor="#eaeded"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:gravity="center_horizontal" />
 
 
 
@@ -147,7 +152,8 @@
             android:textAllCaps="true"
             android:textColor="#ffffff"
             android:textSize="18sp"
-            android:textStyle="bold|italic" />
+            android:textStyle="bold|italic"
+            android:gravity="center_horizontal" />
 
     </LinearLayout>
 
