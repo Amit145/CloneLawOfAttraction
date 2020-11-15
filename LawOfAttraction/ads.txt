@@ -8,9 +8,7 @@ Native Advanced	ca-app-pub-3940256099942544/2247696110
 Native Advanced Video	ca-app-pub-3940256099942544/1044960115
 
 -----------------------------------------
+<string name="GoogleAdsAPPLICATION_ID">ca-app-pub-2311629608790692~8141003886</string>
+<string name="TestAdsBannerGoogle">ca-app-pub-2311629608790692/9350143777</string>
+<string name="TestInterstitialAdsBannerGoogle">ca-app-pub-2311629608790692/7964592683</string>
 
-banner 		- ca-app-pub-2259921691483610/8425551447
-interstitial 	- ca-app-pub-2259921691483610/4649957962
-reward - ca-app-pub-2259921691483610/1702099684
-
-AD UNIT - ca-app-pub-3940256099942544~3347511713
