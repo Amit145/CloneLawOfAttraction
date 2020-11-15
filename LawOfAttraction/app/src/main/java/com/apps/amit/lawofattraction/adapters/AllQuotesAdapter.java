@@ -25,7 +25,7 @@ public class AllQuotesAdapter extends RecyclerView.Adapter<AllQuotesAdapter.View
   private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
   private List<ViewAllQuotesUtils> personUtils;
 
-  public AllQuotesAdapter(Context context, List personUtils) {
+  public AllQuotesAdapter(Context context, List<ViewAllQuotesUtils> personUtils) {
     this.context = context;
     this.personUtils = personUtils;
   }

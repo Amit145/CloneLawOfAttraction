@@ -48,7 +48,7 @@ public class TaskActivity extends AppCompatActivity {
 
     TextView intText;
     RecyclerView recyclerView;
-    RecyclerView.Adapter mAdapter;
+    RecyclerView.Adapter<TaskAdapter.ViewHolder> mAdapter;
     RecyclerView.LayoutManager layoutManager;
     ConnectivityManager connMngr;
     NetworkInfo netInfo;
@@ -93,6 +93,9 @@ public class TaskActivity extends AppCompatActivity {
             @Override
             public void onLoadCleared(@Nullable Drawable placeholder) {
 
+                    /*
+                    Not required
+                     */
             }
         });
 

@@ -27,7 +27,7 @@ public class CommentsRecyclerAdapter extends RecyclerView.Adapter<CommentsRecycl
     private Context context;
     private List<StoryUtils> storyUtils;
 
-    public CommentsRecyclerAdapter(Context context, List personUtils) {
+    public CommentsRecyclerAdapter(Context context, List<StoryUtils> personUtils) {
         this.context = context;
         this.storyUtils = personUtils;
     }

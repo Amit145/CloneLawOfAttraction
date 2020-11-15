@@ -156,7 +156,7 @@ public class StoryActivity extends AppCompatActivity {
                 }
                 views = String.valueOf(viewcount);
 
-                SendViewsToServer(views,String.valueOf(storyid));
+                sendViewsToServer(views,String.valueOf(storyid));
 
                 // Create the InterstitialAd and set the adUnitId.
                 interstitialAd = new InterstitialAd(this);
@@ -182,11 +182,12 @@ public class StoryActivity extends AppCompatActivity {
             }
 
 
-        }catch (OutOfMemoryError e)
+        }catch (Exception e)
         {
+           Log.e(e.getMessage(),String.valueOf(e));
 
-           Log.e(e.getMessage(),e.getMessage());
         }
+
     }
 
     class MyAppWebViewClient extends WebViewClient{
@@ -241,18 +242,15 @@ public class StoryActivity extends AppCompatActivity {
                     try {
                         startActivity(Intent.createChooser(share,resources.getString(R.string.chooseToShare)));
 
-                        try {
                             shareInt = Integer.parseInt(shares) + 1;
-                        } catch (NumberFormatException e) {
-                            Toast.makeText(getApplicationContext(), resources.getString(R.string.nwError) , Toast.LENGTH_LONG).show();
-                        }
+
                         shares = String.valueOf(shareInt);
 
-                        SendSharesToServer(shares,String.valueOf(storyid));
+                        sendSharesToServer(shares,String.valueOf(storyid));
 
 
-                    } catch (android.content.ActivityNotFoundException ex) {
-                        Log.e(ex.getMessage(),ex.getMessage());
+                    } catch (Exception e) {
+                        Toast.makeText(getApplicationContext(), resources.getString(R.string.nwError) , Toast.LENGTH_LONG).show();
                     }
                 }
             });
@@ -295,7 +293,7 @@ public class StoryActivity extends AppCompatActivity {
     }
 
 
-    public void SendViewsToServer(final String Views,final String id){
+    public void sendViewsToServer(final String Views,final String id){
 
         String url = "http://www.innovativelabs.xyz/insertStoryViews.php";
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
@@ -330,7 +328,7 @@ public class StoryActivity extends AppCompatActivity {
         requestQueue.add(postRequest);
     }
 
-    public void SendSharesToServer(final String Shares,final String id){
+    public void sendSharesToServer(final String Shares,final String id){
 
         String url = "http://www.innovativelabs.xyz/insertStorySharesViews.php";
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,

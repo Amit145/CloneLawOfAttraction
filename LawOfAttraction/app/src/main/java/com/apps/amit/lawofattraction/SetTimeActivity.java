@@ -3,22 +3,24 @@ package com.apps.amit.lawofattraction;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputFilter;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.apps.amit.lawofattraction.helper.InputFilterMinMax;
 import com.apps.amit.lawofattraction.helper.LocaleHelper;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
 import butterknife.ButterKnife;
+
 import static java.lang.Integer.parseInt;
 
 public class SetTimeActivity extends AppCompatActivity {

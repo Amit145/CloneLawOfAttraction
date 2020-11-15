@@ -74,7 +74,6 @@ public class Notify extends BroadcastReceiver {
 
     else {
 
-
       Intent i = new Intent(context, HomeActivity.class);
       PendingIntent p1 = PendingIntent.getActivity(context, 0, i, 0);
       NotificationCompat.Builder builder1 = new NotificationCompat.Builder(context);

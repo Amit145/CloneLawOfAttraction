@@ -15,14 +15,12 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -34,21 +32,17 @@ import com.apps.amit.lawofattraction.utils.MusicUtils;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.CustomTarget;
 import com.bumptech.glide.request.transition.Transition;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class MusicListActivity extends AppCompatActivity {
-
 
     TextView intText;
     RecyclerView recyclerView;
-    RecyclerView.Adapter mAdapter;
+    RecyclerView.Adapter<MusicAdapter.ViewHolder> mAdapter;
     RecyclerView.LayoutManager layoutManager;
     ConnectivityManager connMngr;
     NetworkInfo netInfo;
@@ -58,7 +52,6 @@ public class MusicListActivity extends AppCompatActivity {
     String taskURL = "";
     LinearLayout parent;
     ProgressBar progressBar;
-
 
     @Override
     protected void onDestroy() {
@@ -74,12 +67,10 @@ public class MusicListActivity extends AppCompatActivity {
 
     RequestQueue rq;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task);
-
 
         parent = findViewById(R.id.taskParent);
 
@@ -94,24 +85,20 @@ public class MusicListActivity extends AppCompatActivity {
             @Override
             public void onLoadCleared(@Nullable Drawable placeholder) {
 
+                /*
+                Not required
+                 */
             }
         });
 
-
         progressBar = findViewById(R.id.progressBar2);
-
-
         SharedPreferences pref = getSharedPreferences("UserLang",MODE_PRIVATE);
 
         //Store selected language in a Variable called value
         final String value1 = pref.getString("language","en");
-
-
         taskURL = "http://www.innovativelabs.xyz/Scripts/"+value1+"_MusicData.php";    //music database
-
         Context context = LocaleHelper.setLocale(getApplicationContext(), value1);
         resources = context.getResources();
-
         intText = findViewById(R.id.internetText);
 
         connMngr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -148,8 +135,6 @@ public class MusicListActivity extends AppCompatActivity {
 
         if(netInfo!=null && netInfo.isConnected()) {
             rq = Volley.newRequestQueue(getApplicationContext());
-
-
             recyclerView =  findViewById(R.id.recyclerView1);
             recyclerView.setHasFixedSize(true);
 
@@ -162,24 +147,16 @@ public class MusicListActivity extends AppCompatActivity {
             } catch (Exception e) {
 
                 Toast.makeText(this,  resources.getString(R.string.nameError4), Toast.LENGTH_SHORT).show();
-
             }
 
             personUtilsList = new ArrayList<>();
             sendRequest(taskURL);
 
-        } else
-
-        {
-
+        } else {
             intText.setVisibility(View.VISIBLE);
-
             Toast.makeText(this,  resources.getString(R.string.noInternet_txt), Toast.LENGTH_SHORT).show();
-
         }
-
     }
-
 
     public void sendRequest(String taskURL){
 

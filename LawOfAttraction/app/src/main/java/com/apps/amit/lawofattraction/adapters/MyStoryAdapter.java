@@ -19,7 +19,7 @@ public class MyStoryAdapter extends RecyclerView.Adapter<MyStoryAdapter.ViewHold
     Context context;
     private List<MyStoryUtils> personUtils;
 
-    public MyStoryAdapter(Context context, List personUtils) {
+    public MyStoryAdapter(Context context, List<MyStoryUtils> personUtils) {
         this.context = context;
         this.personUtils = personUtils;
     }

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -50,7 +48,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/langEng"
                     android:textSize="20sp"
-                    android:onClick="SelLanEng"
+                    android:onClick="selLanEng"
                     android:layout_marginBottom="15sp"
                     android:checked="true" />
 
@@ -59,7 +57,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
-                    android:onClick="SelLanFre"
+                    android:onClick="selLanFre"
                     android:layout_marginBottom="15sp"
                     android:text="@string/langFre" />
 
@@ -69,7 +67,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/langcSpa"
                     android:textSize="20sp"
-                    android:onClick="SelLanSpa"
+                    android:onClick="selLanSpa"
                     android:layout_marginBottom="15sp"
                     />
 
@@ -78,7 +76,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
-                    android:onClick="SelLanJap"
+                    android:onClick="selLanJap"
                     android:layout_marginBottom="15sp"
                     android:text="@string/langJap" />
 
@@ -88,7 +86,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/langDut"
                     android:textSize="20sp"
-                    android:onClick="SelLanDut"
+                    android:onClick="selLanDut"
                     android:layout_marginBottom="15sp"
                     />
 
@@ -98,7 +96,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:layout_marginBottom="15sp"
-                    android:onClick="SelLanTha"
+                    android:onClick="selLanTha"
                     android:text="@string/langTha" />
 
                 <RadioButton
@@ -107,7 +105,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:layout_marginBottom="15sp"
-                    android:onClick="SelLanGerman"
+                    android:onClick="selLanGerman"
                     android:text="@string/langGer" />
 
                 <RadioButton
@@ -116,7 +114,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:layout_marginBottom="15sp"
-                    android:onClick="SelLanPortuguese"
+                    android:onClick="selLanPortuguese"
                     android:text="@string/langPort" />
 
                 <RadioButton
@@ -125,7 +123,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:layout_marginBottom="15sp"
-                    android:onClick="SelLanItalian"
+                    android:onClick="selLanItalian"
                     android:text="@string/langItalian" />
 
                 <RadioButton
@@ -133,7 +131,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
-                    android:onClick="SelLanHindi"
+                    android:onClick="selLanHindi"
                     android:text="@string/langHin" />
 
             </RadioGroup>
@@ -157,7 +155,7 @@
             android:gravity="center"
             android:textSize="25sp"
             android:textStyle="bold"
-            android:onClick="SetLang"
+            android:onClick="setLang"
             android:textColor="#ffffff"
             />
 

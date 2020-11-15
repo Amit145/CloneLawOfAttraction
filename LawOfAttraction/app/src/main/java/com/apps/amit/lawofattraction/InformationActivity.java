@@ -95,6 +95,9 @@ public class InformationActivity extends AppCompatActivity {
               @Override
               public void onLoadCleared(@Nullable Drawable placeholder) {
 
+                    /*
+                    Not required
+                     */
               }
           });
 

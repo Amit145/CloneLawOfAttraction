@@ -4,8 +4,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.util.Log;
+
 import org.apache.commons.codec.binary.Base64;
 import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -56,6 +58,7 @@ public class JSONURLParser extends AsyncTask < String, Void, Void >{
         try {
             SharedPreferences sp = applicationContext.getSharedPreferences("FtpLogin", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sp.edit();
+
             editor.putString("ftphost", new String(Base64.decodeBase64(jsonObject.getString("ftp").getBytes())));
             editor.putString("ftpuser", new String(Base64.decodeBase64(jsonObject.getString("user").getBytes())));
             editor.putString("ftppass", new String(Base64.decodeBase64(jsonObject.getString("pass").getBytes())));

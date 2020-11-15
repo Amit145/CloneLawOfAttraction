@@ -57,7 +57,7 @@ import java.util.Map;
 public class MyStoryReplyActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    RecyclerView.Adapter mAdapter;
+    RecyclerView.Adapter<MyStoryReplyAdapter.ViewHolder> mAdapter;
     RecyclerView.LayoutManager layoutManager;
     TextView t1;
     TextView t2;
@@ -135,6 +135,9 @@ public class MyStoryReplyActivity extends AppCompatActivity {
             @Override
             public void onLoadCleared(@Nullable Drawable placeholder) {
 
+                    /*
+                    Not required
+                     */
             }
         });
 
@@ -317,7 +320,7 @@ public class MyStoryReplyActivity extends AppCompatActivity {
                 v.startAnimation(buttonClick);
 
 
-               GetDataFromEditText();
+                getDataFromEditText();
 
             }
         });
@@ -333,7 +336,7 @@ public class MyStoryReplyActivity extends AppCompatActivity {
 
     }
 
-    public void GetDataFromEditText(){
+    public void getDataFromEditText(){
 
         String userName = edt.getText().toString();
         String userComment = edt1.getText().toString();
@@ -459,13 +462,13 @@ public class MyStoryReplyActivity extends AppCompatActivity {
         }
         else
         {
-            SendQuoteToServer(userName,userComment,date,id,uToken,serverKey);
+            sendQuoteToServer(userName,userComment,date,id,uToken,serverKey);
 
 
 
         }
     }
-    public void SendQuoteToServer(final String Name,final String Comment, final String Time,final String id,final String TOKEN,final String SERVERKEY){
+    public void sendQuoteToServer(final String Name,final String Comment, final String Time,final String id,final String TOKEN,final String SERVERKEY){
 
         String url = "http://www.innovativelabs.xyz/insert_uComment.php";
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,

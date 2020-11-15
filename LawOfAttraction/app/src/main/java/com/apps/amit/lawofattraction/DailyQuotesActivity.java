@@ -273,7 +273,7 @@ public class DailyQuotesActivity extends AppCompatActivity {
                             v.startAnimation(buttonClick);
 
                             if (netInfo != null && netInfo.isConnected()) {
-                                GetDataFromEditText(value);
+                                getDataFromEditText(value);
                             } else {
                                 Toast.makeText(getApplicationContext(), resources.getString(R.string.noInternet_txt), Toast.LENGTH_LONG).show();
                             }
@@ -326,7 +326,7 @@ public class DailyQuotesActivity extends AppCompatActivity {
 
     }
 
-    public void GetDataFromEditText(String value) {
+    public void getDataFromEditText(String value) {
 
         userName = edt.getText().toString();
         userComment = edt1.getText().toString();

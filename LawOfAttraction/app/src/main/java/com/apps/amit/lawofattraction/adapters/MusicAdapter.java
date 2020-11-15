@@ -29,7 +29,7 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.ViewHolder> 
     private List<MusicUtils> personUtils;
 
 
-   public MusicAdapter(Context context, List personUtils) {
+   public MusicAdapter(Context context, List<MusicUtils> personUtils) {
         this.context = context;
         this.personUtils = personUtils;
     }
@@ -61,7 +61,7 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.ViewHolder> 
         }
         catch (Exception e) {
 
-            Log.e(e.getMessage(),e.getMessage());
+            Log.e(e.getMessage(),String.valueOf(e));
         }
 
     }

@@ -241,8 +241,6 @@ Z
 0app/src/main/res/layout/activity_experiences.xml,c\8\c8c9055d2edb8a9f799e8e79c4d75e72c4d23c48
 a
 1app/src/main/res/layout/affirm_dialog_options.xml,4\d\4d9cc2e2a7a2fc9a0d3260e5eeec2540712bfb09
-d
-4app/src/main/res/layout/activity_select_language.xml,5\b\5be5a7d6357066caae6446757897f96dc3bb33c4
 R
 "app/src/main/res/values/colors.xml,9\6\969faa2a5d9f5e8390e958d2c07f2cfd54676e6b
 R
@@ -330,8 +328,6 @@ Z
 b
 2app/src/main/res/layout-large/single_list_item.xml,9\9\9939a44544dd1713d419b56723dfb868027360b1
 c
-3app/src/main/res/layout-large/activity_feedback.xml,3\7\3797e8c48bfb082bd8257a7a558dcc773f46ddd6
-c
 3app/src/main/res/layout-large/private_wish_list.xml,b\2\b207f3c55900a5e8c40394aebf94c9cb6ed6c40f
 c
 3app/src/main/res/layout-large/single_list_item2.xml,f\f\ff31b815d06fe3b45acf066e71bf546b7bf048b5
@@ -357,8 +353,6 @@ f
 6app/src/main/res/layout-large/activity_experiences.xml,0\a\0a94eb5cd3321052e3ba21695a981deae3dec2c8
 g
 7app/src/main/res/layout-large/affirm_dialog_options.xml,4\d\4d45fa821052ff0cbb3e52ed57bbe9bd1469992e
-j
-:app/src/main/res/layout-large/activity_select_language.xml,3\5\35fce229dc94b49a0aec5717947977e0bcb5f97c
 W
 'app/src/main/res/layout-normal/item.xml,0\a\0a2c8eaf6db1d296b239f573ede33181164b4081
 [
@@ -377,8 +371,6 @@ _
 0app/src/main/res/layout-normal/comments_list.xml,7\d\7d9095c4e3b0476eec29fd57271aa47de7ab3a22
 a
 1app/src/main/res/layout-normal/dialog_options.xml,e\9\e91a50b21254cb16f0c57dd34319c887f41adfc2
-d
-4app/src/main/res/layout-normal/activity_feedback.xml,8\0\80e20ffaec05db406bcdf759482e0cb2cc5a72a4
 e
 5app/src/main/res/layout-normal/activity_allquotes.xml,4\1\411eb90d8cf9195ce0cb00197b3bcc0a0e176b2a
 e
@@ -389,8 +381,6 @@ g
 7app/src/main/res/layout-normal/activity_experiences.xml,6\a\6a7efa7ec9ec7a9dfc6701df32660ec0a25f2abe
 h
 8app/src/main/res/layout-normal/affirm_dialog_options.xml,4\6\461b16d4900d9c95388d0dbfb127989e85714c36
-k
-;app/src/main/res/layout-normal/activity_select_language.xml,6\9\69a4ff5d618eaf40f6dbd316ebc3093f3675fceb
 W
 'app/src/main/res/layout-xlarge/item.xml,a\4\a4992d2a69370ec2a59a13fc8cbfcd25ccadc34b
 [
@@ -437,8 +427,6 @@ g
 7app/src/main/res/layout-xlarge/activity_experiences.xml,4\1\4182a99474e3ca25755fdd0b6aaf156b3c057dd9
 h
 8app/src/main/res/layout-xlarge/affirm_dialog_options.xml,d\e\de9062c14d78844e2e731448768b7d278dc1d066
-k
-;app/src/main/res/layout-xlarge/activity_select_language.xml,5\9\5940d2bd441b75c4778a9a232dd9e6fec37a1c19
 Y
 )app/src/main/res/values-w820dp/dimens.xml,4\6\467054222a8c785d9f601de4a89582d93facd302
 b
@@ -459,14 +447,10 @@ p
 +app/src/main/res/layout/activity_finish.xml,2\6\269d2300c493b625021b4fb3a131b7391f541330
 d
 4app/src/main/res/layout-xlarge/activity_comments.xml,8\2\82d28d0cd6073989864284f4e9304c8a3170d09f
-a
-1app/src/main/res/layout-large/activity_intro1.xml,0\c\0c3f8358786a6559cf9fc11e597f1509ba978ae8
 †
 V.idea/libraries/Gradle__com_squareup_leakcanary_leakcanary_android_no_op_1_5_4_aar.xml,a\1\a1c8db8494f096513753a82c326f447f28261472
 €
 P.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_0_0_aar.xml,3\1\312d6d0be330ea403c78b42c81585ed77c8e5933
-d
-4app/src/main/res/layout-xlarge/activity_sub_task.xml,c\f\cff36633e38461ad2b538ed0196922881a1eae8b
 b
 2app/src/main/res/layout-xlarge/activity_finish.xml,c\8\c8ba905660a6364d89b0c1587c939dc66b2ca597
 \
@@ -491,8 +475,6 @@ e
 Q.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_17_0_0_aar.xml,f\0\f0b5e931be4f4c40bbb1db4ea6443fa7975e18ce
 |
 L.idea/libraries/Gradle__androidx_appcompat_appcompat_resources_1_1_0_aar.xml,d\c\dc4ef057d6731cb4d2d5e201720fcd970e414a49
-]
--app/src/main/res/layout/activity_sub_task.xml,c\2\c2b9d1d13cfb61467c7153787b8620cb72341c50
 |
 L.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_1_0_aar.xml,1\7\17365ac04f9c31ff23ee1e13d68947c7eafa141b
 €
@@ -527,8 +509,6 @@ n
 >.idea/libraries/Gradle__androidx_browser_browser_1_0_0_aar.xml,0\f\0f0cbc606a8d0b498b646b552759853e5422f0d7
 ^
 .app/src/main/res/layout/activity_thank_you.xml,3\f\3f1d7896184aaed7760866702367b3b4860c6e0d
-b
-2app/src/main/res/layout-xlarge/activity_intro1.xml,a\3\a3e05d7ef6195958fd5ddff35721248f35b57b39
 p
 @.idea/libraries/Gradle__androidx_multidex_multidex_2_0_1_aar.xml,5\a\5a6bbfe88147366fd5b11b62ccf093293ef0b835
 e
@@ -557,16 +537,12 @@ J.idea/libraries/Gradle__com_google_android_material_material_1_0_0_aar.xml,c\1
 Y.idea/libraries/Gradle__com_google_firebase_firebase_measurement_connector_18_0_0_aar.xml,5\8\581f3e36492a5c426daddc5a1610f17f30840850
 
 O.idea/libraries/Gradle__com_facebook_android_audience_network_sdk_5_6_0_aar.xml,a\7\a78c4a42bb85d6aa811af99f5b0545081ac2295b
-b
-2app/src/main/res/layout-normal/activity_intro1.xml,e\1\e120d6fb9ed87f3948e4ade73725df3df5d800c0
 \
 ,app/src/main/res/layout/activity_lawtips.xml,3\6\36cc4384a0c813648fa45b19d248837c992fef75
 r
 B.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml,a\2\a28634a71726aab3250ee4866169f5d3ceb01b6b
 _
 /app/src/main/res/layout-xlarge/app_bar_home.xml,1\2\12cb641ebbfd1c706517b2f058ed144af494d1d8
-e
-5app/src/main/res/layout-normal/activity_thank_you.xml,b\7\b71117c3328a398ce8dc928cc46111cd7024d547
 †
 V.idea/libraries/Gradle__androidx_asynclayoutinflater_asynclayoutinflater_1_0_0_aar.xml,5\9\597a9a17eb93adb9cfff3bfab0bb1ca9e5ecc9ae
 c
@@ -609,8 +585,6 @@ c
 3app/src/main/res/layout-normal/content_feedback.xml,d\6\d61b44b0894dbb85ba52e7f2d19c6f51541b2519
 e
 5app/src/main/res/layout-normal/activity_exercise2.xml,b\f\bf314052b3a0160c907b12b6086a08201a9d51ee
-d
-4app/src/main/res/layout-large/activity_exercise1.xml,d\2\d27fb89b2f96dca039ce0d040af6c3c5047baba9
 ‚
 R.idea/libraries/Gradle__androidx_slidingpanelayout_slidingpanelayout_1_0_0_aar.xml,7\2\721113f97eea9beb1457776fc8c4801f3d80314f
 Œ
@@ -629,8 +603,6 @@ W.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_17_2_1
 Q.idea/libraries/Gradle__com_squareup_leakcanary_leakcanary_analyzer_1_5_4_aar.xml,c\5\c5d9a0804e3e7fdbc5f58f86310c7a23c705b31a
 e
 5app/src/main/res/layout-xlarge/activity_exercise5.xml,b\5\b573b5d6dcf59a51889d5577c315ebcdfaf4ade3
-e
-5app/src/main/res/layout-xlarge/activity_exercise2.xml,1\0\1015a9a70892848e3fbab0e3f688c25b666b8029
 g
 7app/src/main/res/layout-large/activity_notification.xml,2\a\2a3b1b101115678fea9b6646d793c3fa8b3a4fdf
 o
@@ -683,8 +655,6 @@ d
 4app/src/main/res/layout-normal/activity_settings.xml,6\c\6cfea21473598b7e0d82c84c526628f682455718
 
 O.idea/libraries/Gradle__com_google_android_gms_play_services_ads_18_3_0_aar.xml,6\1\614d9dc36a2ffccb07c0a693bbfea81db642d622
-[
-+app/src/main/res/layout/activity_intro1.xml,4\6\46dc639cca1387ca189124ca24da2c644088b9f1
 Z
 *app/src/main/res/layout/activity_story.xml,e\e\ee3ace1900b802ed6527d024b3ca63eef23c4796
 z
@@ -695,10 +665,6 @@ y
 I.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_2_1_0_jar.xml,c\1\c1a10f309128a70d2b303e4b9841039bc66afee9
 c
 3app/src/main/res/layout-large/activity_settings.xml,e\e\eec4b938fa06af2e43f66b6f0d95701d7d9391b3
-c
-3app/src/main/res/layout-large/activity_sub_task.xml,c\4\c46a137375f0e4950d92700f941b4ede93793cc2
-]
--app/src/main/res/layout/activity_aboutapp.xml,c\9\c9c03b6d18b9cf709e9c1f3a07defacebc3546a7
 X
 (app/src/main/res/layout/content_home.xml,c\0\c02509f567f18b6502496693733c1b5cf2dbd84a
 p
@@ -751,8 +717,6 @@ c
 3app/src/main/res/layout-xlarge/content_feedback.xml,1\d\1d66dcd601a31709d0b17ed064f8184ec144da27
 Š
 Z.idea/libraries/Gradle__com_google_android_gms_play_services_ads_identifier_17_0_0_aar.xml,4\a\4ab045e525bd63b1741894d2f2f504691bce0f3c
-e
-5app/src/main/res/layout-xlarge/activity_exercise1.xml,d\1\d16a4562b0bf009b9dcec3150f2d765abf7fae3f
 _
 /app/src/main/res/layout/activity_story_list.xml,f\d\fdfc49fa291b9683b52684cf6b72602a9d1cbccd
 t

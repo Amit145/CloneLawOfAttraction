@@ -339,11 +339,17 @@ public class AudioManifestation extends AppCompatActivity implements View.OnClic
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-            }
+
+                    /*
+                    Not required
+                     */}
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-            }
+
+                    /*
+                    Not required
+                     */}
         });
     }
 

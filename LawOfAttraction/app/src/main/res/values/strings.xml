@@ -759,6 +759,12 @@ Take another deep breath, allowing your body to absorb the positive feeling of t
     <string name="GoogleAdsAPPLICATION_ID">ca-app-pub-2311629608790692~8141003886</string>
     <string name="TestAdsBannerGoogle">ca-app-pub-3940256099942544/6300978111</string>
     <string name="TestInterstitialAdsBannerGoogle">ca-app-pub-3940256099942544/1033173712</string>
+
+    <!--testAds
+    <string name="TestAdsBannerGoogle">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="TestInterstitialAdsBannerGoogle">ca-app-pub-3940256099942544/1033173712</string>
+    -->
     <string name="logoname">LOGO</string>
+    <string name="manifestationvalue">MANIFESTATION_TYPE_VALUE</string>
 
 </resources>

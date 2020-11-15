@@ -52,7 +52,8 @@
         android:textColor="#ffffff"
         android:textSize="35sp"
         android:textStyle="bold"
-        android:visibility="visible" />
+        android:visibility="visible"
+        android:gravity="center_horizontal" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -75,7 +76,8 @@
         android:textAlignment="center"
         android:textColor="#eaeded"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:id="@+id/affirmTryAgain"
@@ -88,7 +90,8 @@
         android:textAlignment="center"
         android:textColor="#eaeded"
         android:textSize="25sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:id="@+id/setText"
@@ -124,7 +127,8 @@
         android:textAlignment="center"
         android:textColor="#eaeded"
         android:textSize="40sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:gravity="center_horizontal" />
 
         </LinearLayout>
     </ScrollView>

@@ -384,7 +384,7 @@
                     android:gravity="center"
                     android:text="Signed in as"
                     android:textColor="#909090"
-                    android:textSize="12sp"
+                    android:textSize="15sp"
                     android:textStyle="italic"
                     app:layout_constraintTop_toBottomOf="@+id/profileAccount"
                     tools:layout_editor_absoluteX="0dp">
@@ -445,7 +445,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/profileSync"
-                    app:layout_constraintVertical_bias="0.0"></ProgressBar>
+                    app:layout_constraintVertical_bias="0.0">
+                </ProgressBar>
 
                 <TextView
                     android:id="@+id/syncStatusText"
@@ -455,7 +456,7 @@
                     android:gravity="center"
                     android:text="Account Last Sync at"
                     android:textColor="#909090"
-                    android:textSize="12sp"
+                    android:textSize="15sp"
                     android:textStyle="italic"
                     app:layout_constraintTop_toBottomOf="@+id/syncButton"
                     tools:layout_editor_absoluteX="-16dp">

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
-import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -13,17 +12,21 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.apps.amit.lawofattraction.helper.CheckInternetService;
+import com.apps.amit.lawofattraction.helper.Constants;
 import com.apps.amit.lawofattraction.sqlitedatabase.ActivityTrackerDatabaseHandler;
 import com.apps.amit.lawofattraction.sqlitedatabase.WishDataBaseHandler;
 import com.apps.amit.lawofattraction.utils.ManifestationTrackerUtils;
@@ -43,11 +46,13 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -56,8 +61,26 @@ import java.io.InputStreamReader;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
+
 import de.hdodenhof.circleimageview.CircleImageView;
+
 import static com.apps.amit.lawofattraction.SetReminderActivity.NOTIFICATION_ENABLE;
+import static com.apps.amit.lawofattraction.helper.Constants.AFFIRMATION_COUNT;
+import static com.apps.amit.lawofattraction.helper.Constants.AFFIRMATION_COUNTER;
+import static com.apps.amit.lawofattraction.helper.Constants.AFFIRMATION_DATE;
+import static com.apps.amit.lawofattraction.helper.Constants.MANIFESTATION_TYPE;
+import static com.apps.amit.lawofattraction.helper.Constants.MANIFESTATION_TYPE_VALUE;
+import static com.apps.amit.lawofattraction.helper.Constants.MANIFEST_TYPE;
+import static com.apps.amit.lawofattraction.helper.Constants.PERSON_EMAIL;
+import static com.apps.amit.lawofattraction.helper.Constants.PERSON_ID;
+import static com.apps.amit.lawofattraction.helper.Constants.PERSON_NAME;
+import static com.apps.amit.lawofattraction.helper.Constants.PERSON_PHOTO;
+import static com.apps.amit.lawofattraction.helper.Constants.REMINDER_STATUS;
+import static com.apps.amit.lawofattraction.helper.Constants.SOCIAL_ID;
+import static com.apps.amit.lawofattraction.helper.Constants.SYNC_DATE;
+import static com.apps.amit.lawofattraction.helper.Constants.TIMER_COUNT;
+import static com.apps.amit.lawofattraction.helper.Constants.TIMER_ENABLE;
+import static com.apps.amit.lawofattraction.helper.Constants.TIMER_VALUE;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -74,6 +97,7 @@ public class LoginActivity extends AppCompatActivity {
     boolean flag = false;
     public static final String DAY_COUNTER = "counter";
     private InterstitialAd interstitialAd;
+    private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
 
     @Override
     public void onBackPressed() {
@@ -90,10 +114,10 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        sharedpreferences = getSharedPreferences("SocialAccount", Context.MODE_PRIVATE);
+        sharedpreferences = getSharedPreferences(SOCIAL_ID, Context.MODE_PRIVATE);
         ftpSp = getSharedPreferences("FtpLogin", Context.MODE_PRIVATE);
 
-        if (sharedpreferences.contains("personId")) {
+        if (sharedpreferences.contains(PERSON_ID)) {
             setContentView(R.layout.activity_my_profile);
             profileLinearLayout = findViewById(R.id.profileLinearLayout);
 
@@ -150,9 +174,9 @@ public class LoginActivity extends AppCompatActivity {
             ActivityTrackerDatabaseHandler adb = new ActivityTrackerDatabaseHandler(getApplicationContext());
             List < PrivateWishesUtils > getAllWishes = db.getAllWishes();
 
-            SharedPreferences sp = getSharedPreferences("Affirmation_Counter", AffirmationActivity.MODE_PRIVATE);
-            SharedPreferences sharedPreferencesManifestationType = getSharedPreferences("MANIFESTATION_TYPE", Exercise1Activity.MODE_PRIVATE);
-            SharedPreferences timerValue = getSharedPreferences("your_prefs", Exercise2Activity.MODE_PRIVATE);
+            SharedPreferences sp = getSharedPreferences(AFFIRMATION_COUNTER, AffirmationActivity.MODE_PRIVATE);
+            SharedPreferences sharedPreferencesManifestationType = getSharedPreferences(MANIFESTATION_TYPE, Exercise1Activity.MODE_PRIVATE);
+            SharedPreferences timerValue = getSharedPreferences(REMINDER_STATUS, Exercise2Activity.MODE_PRIVATE);
             SharedPreferences timerEnable = getSharedPreferences(NOTIFICATION_ENABLE, Exercise1Activity.MODE_PRIVATE);
 
             /*
@@ -169,7 +193,7 @@ public class LoginActivity extends AppCompatActivity {
                 audioWishName.setText("Audio Wishes");
              */
 
-            String value = sharedpreferences.getString("personPhoto", "");
+            String value = sharedpreferences.getString(PERSON_PHOTO, "");
             if (value.equals("null")) {
                 Glide.with(getApplicationContext()).load(R.drawable.lawimg).into(userProfilePic);
                 userProfilePic.setBorderWidth(0);
@@ -178,8 +202,7 @@ public class LoginActivity extends AppCompatActivity {
                 Glide.with(getApplicationContext()).load(uri).into(userProfilePic);
             }
 
-            userProfileName.setText(sharedpreferences.getString("personName", ""));
-            //userProfileName.setText(getString(R.string.nav_header_subtitle));
+            userProfileName.setText(sharedpreferences.getString(PERSON_NAME, ""));
             userProfileEmail.setText(getString(R.string.nav_header_subtitle));
 
             privateWishCount.setText(String.valueOf(getAllWishes.size()));
@@ -187,14 +210,14 @@ public class LoginActivity extends AppCompatActivity {
             affirmationCount.setText(String.valueOf(sp.getInt(DAY_COUNTER, 0)));
             affirmationName.setText("Affirmation Day");
 
-            if (sharedPreferencesManifestationType.getString("MANIFESTATION_TYPE_VALUE", "").isEmpty()) {
+            if (sharedPreferencesManifestationType.getString(MANIFESTATION_TYPE_VALUE, "").isEmpty()) {
                 manifestType.setText("NA");
             } else {
-                manifestType.setText(sharedPreferencesManifestationType.getString("MANIFESTATION_TYPE_VALUE", ""));
+                manifestType.setText(sharedPreferencesManifestationType.getString(MANIFESTATION_TYPE_VALUE, ""));
             }
 
             manifestTypeName.setText("Manifesting");
-            setTimeCount.setText(String.valueOf(timerValue.getInt("your_int_key", 60)));
+            setTimeCount.setText(String.valueOf(timerValue.getInt(TIMER_VALUE, 60)));
             setTimeName.setText("Timer count");
 
             if (timerEnable.getInt(NOTIFICATION_ENABLE, 1) == 1) {
@@ -203,11 +226,11 @@ public class LoginActivity extends AppCompatActivity {
                 notificationReminderStatus.setText("OFF");
             }
 
-            notificationReminderName.setText("Daily Notifications");
-            loggedInAccountText.setText("Logged in as: " + sharedpreferences.getString("personName", ""));
+            notificationReminderName.setText("Reminder");
+            loggedInAccountText.setText("Logged in using: \n\n" + sharedpreferences.getString(PERSON_EMAIL, ""));
 
-            if (sharedpreferences.contains("syncDate")) {
-                syncStatusText.setText("Last Sync at: " + sharedpreferences.getString("syncDate", ""));
+            if (sharedpreferences.contains(SYNC_DATE)) {
+                syncStatusText.setText("Last Sync at: " + sharedpreferences.getString(SYNC_DATE, ""));
             } else {
                 syncStatusText.setText("No Sync performed");
             }
@@ -215,6 +238,7 @@ public class LoginActivity extends AppCompatActivity {
             dashboardLay1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    v.startAnimation(buttonClick);
                     Intent art = new Intent(getApplicationContext(), PrivateWishesActivity.class);
                     startActivity(art);
                 }
@@ -223,6 +247,7 @@ public class LoginActivity extends AppCompatActivity {
             dashboardLay2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    v.startAnimation(buttonClick);
                     Intent art = new Intent(getApplicationContext(), AffirmationHome.class);
                     startActivity(art);
                 }
@@ -231,6 +256,7 @@ public class LoginActivity extends AppCompatActivity {
             settLinear1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    v.startAnimation(buttonClick);
                     Intent art = new Intent(getApplicationContext(), SelectManifestationTypeActivity.class);
                     startActivity(art);
                 }
@@ -239,6 +265,7 @@ public class LoginActivity extends AppCompatActivity {
             settLinear2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    v.startAnimation(buttonClick);
                     Intent art = new Intent(getApplicationContext(), SetTimeActivity.class);
                     startActivity(art);
                 }
@@ -247,6 +274,7 @@ public class LoginActivity extends AppCompatActivity {
             settLinear3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    v.startAnimation(buttonClick);
                     Intent art = new Intent(getApplicationContext(), SetReminderActivity.class);
                     startActivity(art);
                 }
@@ -255,9 +283,8 @@ public class LoginActivity extends AppCompatActivity {
             logoutButton.setOnClickListener(new View.OnClickListener() {@Override
             public void onClick(View v) {
 
-                ConnectivityManager connectivityManager = null;
                 CheckInternetService checkInternetService = new CheckInternetService();
-                NetworkInfo netInfo = checkInternetService.checkInternetConnection(connectivityManager, getApplicationContext());
+                NetworkInfo netInfo = checkInternetService.checkInternetConnection(getApplicationContext());
 
                 if(netInfo!=null && netInfo.isConnected()) {
                     GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
@@ -268,11 +295,11 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Logged out", Toast.LENGTH_LONG).show();
 
                         SharedPreferences.Editor editor = sharedpreferences.edit();
-                        editor.remove("personId");
-                        editor.remove("syncDate");
-                        editor.putString("personName", "");
-                        editor.putString("personEmail", "");
-                        editor.putString("personPhoto", "");
+                        editor.remove(PERSON_ID);
+                        editor.remove(SYNC_DATE);
+                        editor.putString(PERSON_NAME, "");
+                        editor.putString(PERSON_EMAIL, "");
+                        editor.putString(PERSON_PHOTO, "");
                         editor.apply();
 
                         Intent art = new Intent(getApplicationContext(), LoginActivity.class);
@@ -292,9 +319,8 @@ public class LoginActivity extends AppCompatActivity {
                 String val1 = ftpSp.getString("ftpuser","");
                 String val2 = ftpSp.getString("ftppass","");
 
-                ConnectivityManager connectivityManager = null;
                 CheckInternetService checkInternetService = new CheckInternetService();
-                NetworkInfo netInfo = checkInternetService.checkInternetConnection(connectivityManager, getApplicationContext());
+                NetworkInfo netInfo = checkInternetService.checkInternetConnection(getApplicationContext());
 
                 if(netInfo!=null && netInfo.isConnected()) {
 
@@ -325,7 +351,7 @@ public class LoginActivity extends AppCompatActivity {
                     uploadFTP.execute();
 
                     SharedPreferences.Editor editor = sharedpreferences.edit();
-                    editor.putString("syncDate", DateFormat.getDateTimeInstance().format(new Date()));
+                    editor.putString(SYNC_DATE, DateFormat.getDateTimeInstance().format(new Date()));
                     editor.apply();
 
                 } else {
@@ -369,9 +395,8 @@ public class LoginActivity extends AppCompatActivity {
             signInButton.setOnClickListener(new View.OnClickListener() {@Override
             public void onClick(View view) {
 
-                ConnectivityManager connectivityManager = null;
                 CheckInternetService checkInternetService = new CheckInternetService();
-                NetworkInfo netInfo = checkInternetService.checkInternetConnection(connectivityManager, getApplicationContext());
+                NetworkInfo netInfo = checkInternetService.checkInternetConnection(getApplicationContext());
 
                 if(netInfo!=null && netInfo.isConnected()) {
 
@@ -400,24 +425,24 @@ public class LoginActivity extends AppCompatActivity {
 
     private JSONObject createJsonFile() throws JSONException {
 
-        SharedPreferences sharedpreferences = getSharedPreferences("SocialAccount", Context.MODE_PRIVATE);
-        SharedPreferences sp = getSharedPreferences("Affirmation_Counter", AffirmationActivity.MODE_PRIVATE);
-        SharedPreferences sharedPreferencesManifestationType = getSharedPreferences("MANIFESTATION_TYPE", Exercise1Activity.MODE_PRIVATE);
-        SharedPreferences timerValue = getSharedPreferences("your_prefs", Exercise2Activity.MODE_PRIVATE);
+        SharedPreferences sharedpreferencesTemp = getSharedPreferences(SOCIAL_ID, Context.MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences(AFFIRMATION_COUNTER, AffirmationActivity.MODE_PRIVATE);
+        SharedPreferences sharedPreferencesManifestationType = getSharedPreferences(MANIFESTATION_TYPE, Exercise1Activity.MODE_PRIVATE);
+        SharedPreferences timerValue = getSharedPreferences(REMINDER_STATUS, Exercise2Activity.MODE_PRIVATE);
         SharedPreferences timerEnable = getSharedPreferences(NOTIFICATION_ENABLE, Exercise1Activity.MODE_PRIVATE);
 
         JSONObject jsonObject = new JSONObject();
 
         try {
-            jsonObject.put("personId", sharedpreferences.getString("personId", ""));
-            jsonObject.put("personEmail", sharedpreferences.getString("personEmail", ""));
-            jsonObject.put("personName", sharedpreferences.getString("personName", ""));
-            jsonObject.put("personPhoto", sharedpreferences.getString("personPhoto", ""));
-            jsonObject.put("affirmationDate", sp.getString("Time", "NA"));
-            jsonObject.put("affirmationCount", sp.getInt(DAY_COUNTER, 0));
-            jsonObject.put("manifestType", sharedPreferencesManifestationType.getString("MANIFESTATION_TYPE_VALUE", ""));
-            jsonObject.put("timerEnable", timerEnable.getInt(NOTIFICATION_ENABLE, 1));
-            jsonObject.put("timerCount", timerValue.getInt("your_int_key", 60));
+            jsonObject.put(PERSON_ID, sharedpreferencesTemp.getString(PERSON_ID, ""));
+            jsonObject.put(PERSON_EMAIL, sharedpreferencesTemp.getString(PERSON_EMAIL, ""));
+            jsonObject.put(PERSON_NAME, sharedpreferencesTemp.getString(PERSON_NAME, ""));
+            jsonObject.put(PERSON_PHOTO, sharedpreferencesTemp.getString(PERSON_PHOTO, ""));
+            jsonObject.put(AFFIRMATION_DATE, sp.getString("Time", "NA"));
+            jsonObject.put(AFFIRMATION_COUNT, sp.getInt(DAY_COUNTER, 0));
+            jsonObject.put(MANIFEST_TYPE, sharedPreferencesManifestationType.getString(MANIFESTATION_TYPE_VALUE, ""));
+            jsonObject.put(TIMER_ENABLE, timerEnable.getInt(NOTIFICATION_ENABLE, 1));
+            jsonObject.put(TIMER_COUNT, timerValue.getInt(TIMER_VALUE, 60));
             //jsonObject.put("notificationDate", notificationDate);
 
             WishDataBaseHandler db = new WishDataBaseHandler(getApplicationContext());
@@ -505,10 +530,10 @@ public class LoginActivity extends AppCompatActivity {
                 String personEmail = account.getEmail();
                 String personId = account.getId();
                 String personPhoto = String.valueOf(account.getPhotoUrl());
-                editor.putString("personName", personName);
-                editor.putString("personId", personId);
-                editor.putString("personEmail", personEmail);
-                editor.putString("personPhoto", personPhoto);
+                editor.putString(PERSON_NAME, personName);
+                editor.putString(PERSON_ID, personId);
+                editor.putString(PERSON_EMAIL, personEmail);
+                editor.putString(PERSON_PHOTO, personPhoto);
                 editor.apply();
 
                 //Check if user exist
@@ -563,7 +588,7 @@ public class LoginActivity extends AppCompatActivity {
                     con.disconnect();
                 }
             } catch(Exception e) {
-                Log.d("ERROR", String.valueOf(e));
+                Log.d(Constants.ERROR_TEXT, String.valueOf(e));
             }
             return null;
         }
@@ -575,7 +600,7 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Completed ! ... Synchronizing Data", Toast.LENGTH_LONG).show();
             syncBar.setVisibility(View.INVISIBLE);
             syncButton.setVisibility(View.VISIBLE);
-            syncStatusText.setText("Last Sync at: " + sharedpreferences.getString("syncDate", ""));
+            syncStatusText.setText("Last Sync at: " + sharedpreferences.getString(SYNC_DATE, ""));
 
             if (Boolean.TRUE.equals(flag) && interstitialAd.isLoaded()) {
                 new Handler().postDelayed(new Runnable() {
@@ -620,6 +645,12 @@ public class LoginActivity extends AppCompatActivity {
                     builder.setCancelable(false);
                     builder.setTitle("Please Wait");
                     builder.setMessage("Loading....");
+                    final ProgressBar progressBar = new ProgressBar(LoginActivity.this);
+                    LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.WRAP_CONTENT,
+                            LinearLayout.LayoutParams.WRAP_CONTENT);
+                    progressBar.setLayoutParams(lp);
+                    builder.setView(progressBar);
                     alert = builder.create();
                     alert.show();
                 }
@@ -642,7 +673,7 @@ public class LoginActivity extends AppCompatActivity {
 
                             InputStreamReader isReader = new InputStreamReader(ok1);
                             BufferedReader reader = new BufferedReader(isReader);
-                            StringBuffer sb = new StringBuffer();
+                            StringBuilder sb = new StringBuilder();
                             String str;
                             while ((str = reader.readLine()) != null) {
                                 sb.append(str);
@@ -657,7 +688,7 @@ public class LoginActivity extends AppCompatActivity {
                 con.disconnect();
 
             } catch(Exception e) {
-                Log.d("ERROR", String.valueOf(e));
+                Log.d(Constants.ERROR_TEXT, String.valueOf(e));
             }
 
             return null;
@@ -672,52 +703,52 @@ public class LoginActivity extends AppCompatActivity {
                 handler.post(new Runnable() {
                     public void run() {
 
-                        SharedPreferences sharedpreferences = getSharedPreferences("SocialAccount", Context.MODE_PRIVATE);
-                        SharedPreferences sp = getSharedPreferences("Affirmation_Counter", Context.MODE_PRIVATE);
-                        SharedPreferences sharedPreferencesManifestationType = getSharedPreferences("MANIFESTATION_TYPE", Exercise1Activity.MODE_PRIVATE);
-                        SharedPreferences timerValue = getSharedPreferences("your_prefs", Exercise2Activity.MODE_PRIVATE);
+                        SharedPreferences sharedpreferences = getSharedPreferences(SOCIAL_ID, Context.MODE_PRIVATE);
+                        SharedPreferences sp = getSharedPreferences(AFFIRMATION_COUNTER, Context.MODE_PRIVATE);
+                        SharedPreferences sharedPreferencesManifestationType = getSharedPreferences(MANIFESTATION_TYPE, Exercise1Activity.MODE_PRIVATE);
+                        SharedPreferences timerValue = getSharedPreferences(REMINDER_STATUS, Exercise2Activity.MODE_PRIVATE);
                         SharedPreferences timerEnable = getSharedPreferences(NOTIFICATION_ENABLE, Exercise1Activity.MODE_PRIVATE);
 
                         try {
                             SharedPreferences.Editor ed = sharedpreferences.edit();
-                            ed.putString("personId", jsonObject.getString("personId"));
-                            ed.putString("personEmail", jsonObject.getString("personEmail"));
-                            ed.putString("personName", jsonObject.getString("personName"));
-                            ed.putString("personPhoto", jsonObject.getString("personPhoto"));
+                            ed.putString(PERSON_ID, jsonObject.getString(PERSON_ID));
+                            ed.putString(PERSON_EMAIL, jsonObject.getString(PERSON_EMAIL));
+                            ed.putString(PERSON_NAME, jsonObject.getString(PERSON_NAME));
+                            ed.putString(PERSON_PHOTO, jsonObject.getString(PERSON_PHOTO));
                             ed.apply();
 
                             ed = sp.edit();
-                            ed.putString("Time", jsonObject.getString("affirmationDate"));
-                            ed.putInt(DAY_COUNTER, jsonObject.getInt("affirmationCount"));
+                            ed.putString("Time", jsonObject.getString(AFFIRMATION_DATE));
+                            ed.putInt(DAY_COUNTER, jsonObject.getInt(AFFIRMATION_COUNT));
                             ed.apply();
 
                             ed = sp.edit();
-                            ed.putString("Time", jsonObject.getString("affirmationDate"));
-                            ed.putInt(DAY_COUNTER, jsonObject.getInt("affirmationCount"));
+                            ed.putString("Time", jsonObject.getString(AFFIRMATION_DATE));
+                            ed.putInt(DAY_COUNTER, jsonObject.getInt(AFFIRMATION_COUNT));
                             ed.apply();
 
                             ed = sharedPreferencesManifestationType.edit();
-                            ed.putString("MANIFESTATION_TYPE_VALUE", jsonObject.getString("manifestType"));
+                            ed.putString(MANIFESTATION_TYPE_VALUE, jsonObject.getString(MANIFEST_TYPE));
                             ed.apply();
 
                             ed = sharedPreferencesManifestationType.edit();
-                            ed.putString("MANIFESTATION_TYPE_VALUE", jsonObject.getString("manifestType"));
+                            ed.putString(MANIFESTATION_TYPE_VALUE, jsonObject.getString(MANIFEST_TYPE));
                             ed.apply();
 
                             ed = timerEnable.edit();
-                            ed.putString("timerEnable", jsonObject.getString("timerEnable"));
+                            ed.putString(TIMER_ENABLE, jsonObject.getString(TIMER_ENABLE));
                             ed.apply();
 
                             ed = timerEnable.edit();
-                            ed.putString("timerEnable", jsonObject.getString("timerEnable"));
+                            ed.putString(TIMER_ENABLE, jsonObject.getString(TIMER_ENABLE));
                             ed.apply();
 
                             ed = timerValue.edit();
-                            ed.putInt("your_int_key", Integer.parseInt(jsonObject.getString("timerCount")));
+                            ed.putInt(TIMER_VALUE, Integer.parseInt(jsonObject.getString(TIMER_COUNT)));
                             ed.apply();
 
                             ed = timerValue.edit();
-                            ed.putInt("your_int_key", Integer.parseInt(jsonObject.getString("timerCount")));
+                            ed.putInt(TIMER_VALUE, Integer.parseInt(jsonObject.getString(TIMER_COUNT)));
                             ed.apply();
 
                             JSONArray logs = jsonObject.getJSONArray("logList");
@@ -745,7 +776,7 @@ public class LoginActivity extends AppCompatActivity {
                             db1.removeDuplicates();
 
                         } catch(Exception e) {
-                            Log.d("ERROR", String.valueOf(e));
+                            Log.d(Constants.ERROR_TEXT, String.valueOf(e));
                         }
 
                         alert.dismiss();

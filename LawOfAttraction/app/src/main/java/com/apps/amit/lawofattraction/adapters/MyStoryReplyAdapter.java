@@ -21,7 +21,7 @@ public class MyStoryReplyAdapter extends RecyclerView.Adapter<MyStoryReplyAdapte
     private List<MyStoryReplyUtils> personUtils;
 
 
-    public MyStoryReplyAdapter(Context context, List personUtils) {
+    public MyStoryReplyAdapter(Context context, List<MyStoryReplyUtils> personUtils) {
         this.context = context;
         this.personUtils = personUtils;
     }

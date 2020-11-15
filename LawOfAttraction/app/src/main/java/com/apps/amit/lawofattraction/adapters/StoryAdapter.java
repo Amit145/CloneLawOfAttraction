@@ -28,7 +28,7 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.ViewHolder> 
     private Context context;
     private List<StoryUtils> personUtils;
 
-    public StoryAdapter(Context context, List personUtils) {
+    public StoryAdapter(Context context, List<StoryUtils> personUtils) {
         this.context = context;
         this.personUtils = personUtils;
     }

@@ -30,7 +30,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
     public static final String TAB_SPACING = " :\t ";
 
 
-     public TaskAdapter(Context context, List personUtils) {
+     public TaskAdapter(Context context, List<TaskUtils> personUtils) {
         this.context = context;
         this.personUtils = personUtils;
     }

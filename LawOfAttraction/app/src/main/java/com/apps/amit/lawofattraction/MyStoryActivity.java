@@ -62,7 +62,7 @@ import butterknife.ButterKnife;
 public class MyStoryActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    RecyclerView.Adapter mAdapter;
+    RecyclerView.Adapter<MyStoryAdapter.ViewHolder> mAdapter;
     EditText edt, edt1;
     TextView nameText,usrExp;
     AlertDialog alert;
@@ -138,6 +138,9 @@ public class MyStoryActivity extends AppCompatActivity {
             @Override
             public void onLoadCleared(@Nullable Drawable placeholder) {
 
+                    /*
+                    Not required
+                     */
             }
         });
 
@@ -336,7 +339,7 @@ public class MyStoryActivity extends AppCompatActivity {
             public void onClick(View v) {
                 v.startAnimation(buttonClick);
 
-                GetDataFromEditText(value);
+                getDataFromEditText(value);
 
             }
         });
@@ -353,7 +356,7 @@ public class MyStoryActivity extends AppCompatActivity {
 
     }
 
-    public void GetDataFromEditText(String value){
+    public void getDataFromEditText(String value){
 
         String userName = edt.getText().toString();
         String userStory = edt1.getText().toString();
@@ -480,12 +483,12 @@ public class MyStoryActivity extends AppCompatActivity {
 
         }
         else {
-            SendQuoteToServer(userName, userStory, date,token);
+            sendQuoteToServer(userName, userStory, date,token);
         }
 
     }
 
-    public void SendQuoteToServer(final String Name,final String Story, final String Time,final String Token){
+    public void sendQuoteToServer(final String Name,final String Story, final String Time,final String Token){
 
         String url = "http://www.innovativelabs.xyz/insert_story.php";
         final StringRequest postRequest = new StringRequest(Request.Method.POST, url,

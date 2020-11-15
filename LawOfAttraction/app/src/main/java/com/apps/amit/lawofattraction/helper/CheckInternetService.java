@@ -6,11 +6,11 @@ import android.net.NetworkInfo;
 
 public class CheckInternetService {
 
-    public NetworkInfo checkInternetConnection(ConnectivityManager connectivityManager, Context applicationContext) {
+    public NetworkInfo checkInternetConnection(Context applicationContext) {
 
         NetworkInfo netInfo = null;
-        connectivityManager = (ConnectivityManager) applicationContext.getSystemService(Context.CONNECTIVITY_SERVICE);
-        if(connectivityManager!=null && connectivityManager.getActiveNetworkInfo() != null){
+        ConnectivityManager connectivityManager = (ConnectivityManager) applicationContext.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if(connectivityManager !=null && connectivityManager.getActiveNetworkInfo() != null){
 
             netInfo = connectivityManager.getActiveNetworkInfo();
         }

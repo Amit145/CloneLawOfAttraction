@@ -48,7 +48,7 @@ public class StoryListActivity extends AppCompatActivity {
 
     TextView intText;
     RecyclerView recyclerView;
-    RecyclerView.Adapter mAdapter;
+    RecyclerView.Adapter<StoryAdapter.ViewHolder> mAdapter;
     ProgressBar progressBar;
     RecyclerView.LayoutManager layoutManager;
 
@@ -95,6 +95,9 @@ public class StoryListActivity extends AppCompatActivity {
             @Override
             public void onLoadCleared(@Nullable Drawable placeholder) {
 
+                    /*
+                    Not required
+                     */
             }
         });
 

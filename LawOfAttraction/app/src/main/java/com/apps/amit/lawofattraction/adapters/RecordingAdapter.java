@@ -224,11 +224,17 @@ public class RecordingAdapter extends RecyclerView.Adapter<RecordingAdapter.View
                 @Override
                 public void onStartTrackingTouch(SeekBar seekBar) {
 
+                    /*
+                    Not required
+                     */
                 }
 
                 @Override
                 public void onStopTrackingTouch(SeekBar seekBar) {
 
+                    /*
+                    Not required
+                     */
                 }
             });
         }

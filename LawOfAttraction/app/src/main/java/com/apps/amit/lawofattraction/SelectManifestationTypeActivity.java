@@ -55,6 +55,9 @@ public class SelectManifestationTypeActivity extends AppCompatActivity {
             @Override
             public void onLoadCleared(@Nullable Drawable placeholder) {
 
+                    /*
+                    Not required
+                     */
             }
         });
 

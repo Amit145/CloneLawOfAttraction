@@ -42,7 +42,7 @@ import java.util.List;
 public class AllQuotesActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    RecyclerView.Adapter mAdapter;
+    RecyclerView.Adapter<AllQuotesAdapter.ViewHolder> mAdapter;
     RecyclerView.LayoutManager layoutManager;
     SwipeRefreshLayout mSwipeRefreshLayout;
     List<ViewAllQuotesUtils> personUtilsList;

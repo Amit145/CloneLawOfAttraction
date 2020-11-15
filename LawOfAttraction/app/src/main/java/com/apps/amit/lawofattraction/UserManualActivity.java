@@ -102,6 +102,9 @@ public class UserManualActivity extends AppCompatActivity {
                 @Override
                 public void onLoadCleared(@Nullable Drawable placeholder) {
 
+                    /*
+                    Not required
+                     */
                 }
             });
 

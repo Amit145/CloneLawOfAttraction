@@ -123,10 +123,10 @@ public class Exercise1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         SharedPreferences sharedPreferencesManifestationType = getSharedPreferences("MANIFESTATION_TYPE", Exercise1Activity.MODE_PRIVATE);
-        String manifestationTypeValue = sharedPreferencesManifestationType.getString("MANIFESTATION_TYPE_VALUE", "");
+        String manifestationTypeValue = sharedPreferencesManifestationType.getString(getString(R.string.manifestationvalue), "");
         bool = sharedPreferencesManifestationType.getBoolean("RAN_BEFORE", false);
 
-        if (!sharedPreferencesManifestationType.contains("MANIFESTATION_TYPE_VALUE")) {
+        if (!sharedPreferencesManifestationType.contains(getString(R.string.manifestationvalue))) {
 
             setContentView(R.layout.activity_intro1);
             mainlayout = findViewById(R.id.mainlayout);
@@ -142,6 +142,9 @@ public class Exercise1Activity extends AppCompatActivity {
                 @Override
                 public void onLoadCleared(@Nullable Drawable placeholder) {
 
+                    /*
+                    Not required
+                     */
                 }
             });
 
@@ -424,7 +427,7 @@ public class Exercise1Activity extends AppCompatActivity {
 
                         SharedPreferences sp = getSharedPreferences("MANIFESTATION_TYPE", SelectManifestationTypeActivity.MODE_PRIVATE);
                         SharedPreferences.Editor editor = sp.edit();
-                        editor.putString("MANIFESTATION_TYPE_VALUE", value1);
+                        editor.putString(getString(R.string.manifestationvalue), value1);
                         editor.putBoolean("RAN_BEFORE", true);
                         editor.apply();
 

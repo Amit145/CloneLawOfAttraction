@@ -43,9 +43,7 @@ public class SetLanguageActivity extends AppCompatActivity {
         hindi =  findViewById(R.id.Hindi);
     }
 
-    public void SelLanEng(View view){
-
-
+    public void selLanEng(View view){
         eng.setChecked(true);
         fre.setChecked(false);
         spa.setChecked(false);
@@ -55,7 +53,7 @@ public class SetLanguageActivity extends AppCompatActivity {
 
     }
 
-    public void SelLanFre(View view){
+    public void selLanFre(View view){
 
         userLanguage = "fr";
         eng.setChecked(false);
@@ -67,7 +65,7 @@ public class SetLanguageActivity extends AppCompatActivity {
 
     }
 
-    public void SelLanSpa(View view){
+    public void selLanSpa(View view){
 
         userLanguage = "es";
         eng.setChecked(false);
@@ -79,7 +77,7 @@ public class SetLanguageActivity extends AppCompatActivity {
 
     }
 
-    public void SelLanJap(View view){
+    public void selLanJap(View view){
 
         userLanguage = "ja";
         eng.setChecked(false);
@@ -91,7 +89,7 @@ public class SetLanguageActivity extends AppCompatActivity {
 
     }
 
-    public void SelLanDut(View view){
+    public void selLanDut(View view){
 
         userLanguage = "nl";
         eng.setChecked(false);
@@ -103,7 +101,7 @@ public class SetLanguageActivity extends AppCompatActivity {
 
     }
 
-    public void SelLanTha(View view){
+    public void selLanTha(View view){
 
         userLanguage = "th";
         eng.setChecked(false);
@@ -115,7 +113,7 @@ public class SetLanguageActivity extends AppCompatActivity {
 
     }
 
-    public void SelLanGerman(View view) {
+    public void selLanGerman(View view) {
 
         userLanguage = "de";
         eng.setChecked(false);
@@ -130,7 +128,7 @@ public class SetLanguageActivity extends AppCompatActivity {
         hindi.setChecked(false);
     }
 
-    public void SelLanPortuguese(View view) {
+    public void selLanPortuguese(View view) {
 
         userLanguage = "pt";
         eng.setChecked(false);
@@ -145,7 +143,7 @@ public class SetLanguageActivity extends AppCompatActivity {
         hindi.setChecked(false);
     }
 
-    public void SelLanItalian(View view) {
+    public void selLanItalian(View view) {
 
         userLanguage = "it";
         eng.setChecked(false);
@@ -160,7 +158,7 @@ public class SetLanguageActivity extends AppCompatActivity {
         hindi.setChecked(false);
     }
 
-    public void SelLanHindi(View view) {
+    public void selLanHindi(View view) {
 
         userLanguage = "hi";
         eng.setChecked(false);
@@ -175,7 +173,7 @@ public class SetLanguageActivity extends AppCompatActivity {
         hindi.setChecked(true);
     }
 
-    public void SetLang(View view) {
+    public void setLang(View view) {
 
         //When user Sets New language PrevIOus stored language is removed
         SharedPreferences pref1 = getSharedPreferences("UserLang", Context.MODE_PRIVATE);

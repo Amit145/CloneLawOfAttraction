@@ -54,7 +54,7 @@ public class PrivateWishesActivity extends AppCompatActivity {
     Resources resources;
     TextView nameText;
     TextView wishText;
-    RecyclerView.Adapter adapter;
+    RecyclerView.Adapter<PrivateWishRecyclerAdapter.ViewHolder> adapter;
     LinearLayout mainlayout;
     private InterstitialAd interstitialAd;
     public static final String TAG = PrivateWishesActivity.class.getSimpleName();
@@ -112,6 +112,9 @@ public class PrivateWishesActivity extends AppCompatActivity {
             @Override
             public void onLoadCleared(@Nullable Drawable placeholder) {
 
+                    /*
+                    Not required
+                     */
             }
         });
 

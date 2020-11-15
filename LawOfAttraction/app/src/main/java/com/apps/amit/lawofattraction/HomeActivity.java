@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
-import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
@@ -130,12 +129,14 @@ public class HomeActivity extends AppCompatActivity {
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
+                /*
+                Not Required
+                */
             }
         });
 
-        ConnectivityManager connectivityManager = null;
         CheckInternetService checkInternetService = new CheckInternetService();
-        NetworkInfo netInfo = checkInternetService.checkInternetConnection(connectivityManager, getApplicationContext());
+        NetworkInfo netInfo = checkInternetService.checkInternetConnection(getApplicationContext());
 
         if(netInfo!=null && netInfo.isConnected()) {
             JSONURLParser jsonurlParser = new JSONURLParser(getApplicationContext());
@@ -575,10 +576,10 @@ public class HomeActivity extends AppCompatActivity {
     //Function to Check If User Installed app for firs time
     private boolean isFirstTime() {
         SharedPreferences pref = getPreferences(MODE_PRIVATE);
-        boolean ranBefore = pref.getBoolean("whatsNewv3.6", false);
+        boolean ranBefore = pref.getBoolean("whatsNewv4.0", false);
         if (!ranBefore) {
             SharedPreferences.Editor editor = pref.edit();
-            editor.putBoolean("whatsNewv3.6", true);
+            editor.putBoolean("whatsNewv4.0", true);
             editor.apply();
         }
         return !ranBefore;

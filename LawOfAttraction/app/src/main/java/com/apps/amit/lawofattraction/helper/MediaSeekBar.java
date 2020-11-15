@@ -40,6 +40,10 @@ public class MediaSeekBar extends AppCompatSeekBar {
     private OnSeekBarChangeListener mOnSeekBarChangeListener = new OnSeekBarChangeListener() {
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+                    /*
+                    Not required
+                     */
         }
 
         @Override

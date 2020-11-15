@@ -38,7 +38,7 @@ public class ManifestationTrackerActivity extends AppCompatActivity {
     TextView title;
     TextView subtitle;
     private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
+    private RecyclerView.Adapter<RecyclerAdapter.ViewHolder> adapter;
     private List<ManifestationTrackerUtils> lsItem;
     int year;
     int month;

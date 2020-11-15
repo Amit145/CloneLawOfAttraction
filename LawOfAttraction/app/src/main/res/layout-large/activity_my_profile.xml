@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profileLinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#232635">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutRecorder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/roundedbackground"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="30dp"
+            android:orientation="vertical"
+            android:layout_marginTop="5dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/userProfilePic"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/lawimg"
+                    app:civ_border_color="#E3DBDB"
+                    app:civ_border_width="2dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/userProfileName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:text="userName"
+                    android:fontFamily="@font/nunito_extrabold"
+                    android:textColor="#909090"
+                    android:textSize="25sp"
+                    app:layout_constraintTop_toBottomOf="@+id/userProfilePic"
+                    tools:layout_editor_absoluteX="5dp">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/userProfileEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="italic"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="text"
+                    android:textColor="#909090"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@+id/userProfileName"
+                    tools:layout_editor_absoluteX="-6dp">
+                </TextView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="20dp"
+                android:background="#d3d3d3" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp">
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="My Dashboard"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </TextView>
+
+                <LinearLayout
+                    android:id="@+id/dashLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView14">
+
+                    <LinearLayout
+                        android:id="@+id/dashboardLay1"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/privateWishCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/nunito_extrabold"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:layout_marginTop="10dp"
+                            android:textSize="25sp"
+                            android:textColor="#3096FB"
+                            android:text="Happiness">
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/privateWishName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="30dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="#909090"
+                            android:text="60">
+                        </TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/dashboardLay2"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/affirmationCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textSize="25sp"
+                            android:fontFamily="@font/nunito_extrabold"
+                            android:textStyle="bold"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:textColor="#3096FB"
+                            android:text="Happiness">
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/affirmationName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="30dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="#909090"
+                            android:text="60">
+                        </TextView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+               </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="#d3d3d3" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/settLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp">
+
+                <TextView
+                    android:id="@+id/profileSettings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Settings"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </TextView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/profileSettings">
+
+                    <LinearLayout
+                        android:id="@+id/settLinear1"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/manifestType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/nunito_extrabold"
+                            android:textSize="20sp"
+                            android:layout_marginTop="10dp"
+                            android:textColor="#3096FB"                            android:text="Happiness">
+                        </TextView>
+
+                        <TextView
+                           android:id="@+id/manifestTypeName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="30dp"
+                            android:gravity="center"
+                            android:textColor="#909090"
+                            android:text="60">
+                        </TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/settLinear2"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/setTimeCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textStyle="bold"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:fontFamily="@font/nunito_extrabold"
+                            android:textSize="20sp"
+                            android:layout_marginTop="10dp"
+                            android:textColor="#3096FB"
+                            android:text="Happiness">
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/setTimeName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="30dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="#909090"
+                            android:text="60">
+                        </TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/settLinear3"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/notificationReminderStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textStyle="bold"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:fontFamily="@font/nunito_extrabold"
+                            android:textSize="20sp"
+                            android:layout_marginTop="10dp"
+                            android:textColor="#3096FB"
+                            android:text="Happiness">
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/notificationReminderName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginTop="10dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_marginBottom="30dp"
+                            android:textColor="#909090"
+                            android:text="60">
+                        </TextView>
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="#d3d3d3" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp">
+
+                <TextView
+                    android:id="@+id/profileAccount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Account"
+
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toTopOf="parent">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/loggedInAccountText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:text="Signed in as"
+                    android:textColor="#909090"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintTop_toBottomOf="@+id/profileAccount"
+                    tools:layout_editor_absoluteX="0dp">
+                </TextView>
+
+                <Button
+                    android:id="@+id/logoutButton"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center"
+                    android:textColor="#ffffff"
+                    android:background="@drawable/buton"
+                    android:text="SignOut"
+                    android:fontFamily="@font/nunito_extrabold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/loggedInAccountText"
+                    app:layout_constraintVertical_bias="0.0">
+                </Button>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="#d3d3d3" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp">
+
+                <TextView
+                    android:id="@+id/profileSync"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="Synchronize"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toTopOf="parent">
+                </TextView>
+
+                <ProgressBar
+                    android:id="@+id/syncBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toTopOf="@+id/syncButton"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/profileSync"
+                    app:layout_constraintVertical_bias="0.0">
+                </ProgressBar>
+
+                <TextView
+                    android:id="@+id/syncStatusText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:text="Account Last Sync at"
+                    android:textColor="#909090"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintTop_toBottomOf="@+id/syncButton"
+                    tools:layout_editor_absoluteX="-16dp">
+                </TextView>
+
+                <Button
+                    android:id="@+id/syncButton"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="44dp"
+                    android:gravity="center"
+                    android:textColor="#ffffff"
+                    android:background="@drawable/butonsync"
+                    android:fontFamily="@font/nunito_extrabold"
+                    android:text="sync Now"
+                    app:layout_constraintEnd_toEndOf="@+id/profileSync"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/profileSync">
+                </Button>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_marginTop="50dp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

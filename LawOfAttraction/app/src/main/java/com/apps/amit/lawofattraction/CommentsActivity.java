@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -31,6 +29,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -44,9 +43,7 @@ import com.apps.amit.lawofattraction.sqlitedatabase.WishDataBaseHandler;
 import com.apps.amit.lawofattraction.utils.PrivateWishesUtils;
 import com.apps.amit.lawofattraction.utils.StoryUtils;
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.gif.GifDrawable;
 import com.bumptech.glide.request.target.CustomTarget;
-import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -55,12 +52,14 @@ import com.google.android.gms.ads.InterstitialAd;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import butterknife.ButterKnife;
 
 public class CommentsActivity extends AppCompatActivity {
@@ -86,7 +85,7 @@ public class CommentsActivity extends AppCompatActivity {
     String dataParseUrl = "http://www.innovativelabs.xyz/insert_data.php";
     String userPrivateWish = "http://www.innovativelabs.xyz/insert_userPrivateWish.php";
     RecyclerView recyclerView;
-    RecyclerView.Adapter mAdapter;
+    RecyclerView.Adapter<CommentsRecyclerAdapter.ViewHolder> mAdapter;
     RecyclerView.LayoutManager layoutManager;
     List<StoryUtils> storyUtilsList;
     RequestQueue rq;
@@ -136,17 +135,6 @@ public class CommentsActivity extends AppCompatActivity {
 
             mainlayout = findViewById(R.id.mainlayout);
 
-            /*
-            Glide.with(this).load(R.drawable.starshd).asBitmap().into(new SimpleTarget<Bitmap>() {
-                @Override
-                public void onResourceReady(Bitmap bitmap, GlideAnimation<? super Bitmap> glideAnimation) {
-                    Drawable drawable = new BitmapDrawable(getResources(), bitmap);
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                        mainlayout.setBackground(drawable);
-                    }
-                }
-            });
-            */
 
             Glide.with(getApplicationContext()).load(R.drawable.starshd).centerCrop().into(new CustomTarget<Drawable>() {
                 @Override
@@ -158,7 +146,9 @@ public class CommentsActivity extends AppCompatActivity {
 
                 @Override
                 public void onLoadCleared(@Nullable Drawable placeholder) {
-
+                    /*
+                    not required
+                     */
                 }
             });
 
@@ -286,7 +276,7 @@ public class CommentsActivity extends AppCompatActivity {
 
                             } else {
 
-                                GetDataFromEditText("en");
+                                getDataFromEditText("en");
                             }
                         }
                     });
@@ -335,7 +325,7 @@ public class CommentsActivity extends AppCompatActivity {
 
     } catch(Exception e)
         {
-            Log.e(e.getMessage(),e.getMessage());
+            Log.e(e.getMessage(),String.valueOf(e));
         }
 
 
@@ -355,7 +345,7 @@ public class CommentsActivity extends AppCompatActivity {
                    try{
                        interstitialAd.show();
                    } catch(Exception e) {
-                       Log.e(e.getMessage(),e.getMessage());
+                       Log.e(e.getMessage(),String.valueOf(e));
                     }
                 }
             }, 1000);
@@ -375,7 +365,7 @@ public class CommentsActivity extends AppCompatActivity {
     }
 
     //Function called for Public Wishes
-    public void GetDataFromEditText(String value){
+    public void getDataFromEditText(String value){
 
         userName = edt.getText().toString();
         userComment = edt1.getText().toString();
@@ -432,7 +422,7 @@ public class CommentsActivity extends AppCompatActivity {
             if(netInfo!=null && netInfo.isConnected())
             {
                 //send to server
-                SendPrivateWishToServer(userName,userComment,timee);
+                sendPrivateWishToServer(userName,userComment,timee);
             }
 
         Intent openIntent = new Intent(getApplicationContext(), PrivateWishesActivity.class);
@@ -442,7 +432,7 @@ public class CommentsActivity extends AppCompatActivity {
     }
 
     //If private
-    public void SendPrivateWishToServer(final String name, final String comment, final String date){
+    public void sendPrivateWishToServer(final String name, final String comment, final String date){
 
         String url = userPrivateWish;
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
@@ -483,7 +473,7 @@ public class CommentsActivity extends AppCompatActivity {
     }
 
     //If Public Send Data Server
-    public void SendDataToServer(final String name, final String email, final String website, final String value){
+    public void sendDataToServer(final String name, final String email, final String website, final String value){
 
             String url = dataParseUrl;
             StringRequest postRequest = new StringRequest(Request.Method.POST, url,
@@ -603,7 +593,7 @@ public class CommentsActivity extends AppCompatActivity {
 
             }
             catch(Exception e) {
-                Log.e(e.getMessage(),e.getMessage());
+                Log.e(e.getMessage(),String.valueOf(e));
             }
 
 
@@ -714,7 +704,7 @@ public class CommentsActivity extends AppCompatActivity {
 
             } else {
 
-                SendDataToServer(userName, userComment, timee, value);
+                sendDataToServer(userName, userComment, timee, value);
 
             }
         }

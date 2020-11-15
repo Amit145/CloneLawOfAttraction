@@ -43,7 +43,6 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.DateFormat;
@@ -141,6 +140,9 @@ public class SubTaskActivity extends AppCompatActivity {
             @Override
             public void onLoadCleared(@Nullable Drawable placeholder) {
 
+                    /*
+                    Not required
+                     */
             }
         });
 
@@ -237,7 +239,7 @@ public class SubTaskActivity extends AppCompatActivity {
         }
         views = String.valueOf(viewcount);
 
-        SendViewsToServer(views,String.valueOf(taskID));
+            sendViewsToServer(views,String.valueOf(taskID));
 
             // Create the InterstitialAd and set the adUnitId.
             interstitialAd = new InterstitialAd(this);
@@ -256,7 +258,7 @@ public class SubTaskActivity extends AppCompatActivity {
     }
 
 
-    public void ShareExperience(View view)
+    public void shareExperience(View view)
     {
         view.startAnimation(buttonClick);
 
@@ -304,7 +306,7 @@ public class SubTaskActivity extends AppCompatActivity {
                 v.startAnimation(buttonClick);
 
 
-                GetDataFromEditText();
+                getDataFromEditText();
 
 
             }
@@ -342,7 +344,7 @@ public class SubTaskActivity extends AppCompatActivity {
         taskLike.setTextColor(Color.parseColor("#ffffff"));
 
 
-        SendLikesToServer(likes, String.valueOf(taskID));
+        sendLikesToServer(likes, String.valueOf(taskID));
 
 
     }
@@ -358,7 +360,7 @@ public class SubTaskActivity extends AppCompatActivity {
         share.putExtra(Intent.EXTRA_TEXT, " \n ---------------------------\n "+resources.getString(R.string.subTaskShare)+"  https://play.google.com/store/apps/details?id=com.apps.amit.lawofattraction");
         try {
             startActivity(Intent.createChooser(share,resources.getString(R.string.chooseToShare)));
-            SendSharesToServer(shares, String.valueOf(taskID));
+            sendSharesToServer(shares, String.valueOf(taskID));
 
         } catch (android.content.ActivityNotFoundException ex) {
 
@@ -388,7 +390,7 @@ public class SubTaskActivity extends AppCompatActivity {
 
 
 
-        SendUserDoneToServer(naam,token,String.valueOf(taskID));
+        sendUserDoneToServer(naam,token,String.valueOf(taskID));
 
 
     }
@@ -454,8 +456,8 @@ public class SubTaskActivity extends AppCompatActivity {
                                     taskLike.setTextColor(Color.parseColor("#ffffff"));
                                 }
                             }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
+                        } catch (Exception e) {
+                            Log.d("ERROR", String.valueOf(e));
 
 
                         }
@@ -480,7 +482,7 @@ public class SubTaskActivity extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
-    public void SendLikesToServer(final String Likes,final String id){
+    public void sendLikesToServer(final String Likes,final String id){
 
         String url = "http://www.innovativelabs.xyz/insertTaskLikes.php";
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
@@ -490,7 +492,7 @@ public class SubTaskActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         // response
                         Log.d(response, response);
-                        SendUserLikesToServer(naam,token,id);
+                        sendUserLikesToServer(naam,token,id);
                     }
                 },
                 new Response.ErrorListener() {
@@ -515,7 +517,7 @@ public class SubTaskActivity extends AppCompatActivity {
         requestQueue.add(postRequest);
     }
 
-    public void SendSharesToServer(final String Shares,final String id){
+    public void sendSharesToServer(final String Shares,final String id){
 
         String url = "http://www.innovativelabs.xyz/insertTaskShares.php";
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
@@ -549,7 +551,7 @@ public class SubTaskActivity extends AppCompatActivity {
         requestQueue.add(postRequest);
     }
 
-    public void SendViewsToServer(final String Views,final String id){
+    public void sendViewsToServer(final String Views,final String id){
 
         String url = "http://www.innovativelabs.xyz/insertTaskViews.php";
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
@@ -583,7 +585,7 @@ public class SubTaskActivity extends AppCompatActivity {
         requestQueue.add(postRequest);
     }
 
-    public void SendUserLikesToServer(final String Name,final String Token,final String id){
+    public void sendUserLikesToServer(final String Name,final String Token,final String id){
 
         String url = "http://www.innovativelabs.xyz/insertUserTaskLikes.php";
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
@@ -618,7 +620,7 @@ public class SubTaskActivity extends AppCompatActivity {
         requestQueue.add(postRequest);
     }
 
-    public void SendUserDoneToServer(final String Name,final String Token,final String id){
+    public void sendUserDoneToServer(final String Name,final String Token,final String id){
 
         String url = "http://www.innovativelabs.xyz/insertUserTaskDone.php";
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
@@ -654,7 +656,7 @@ public class SubTaskActivity extends AppCompatActivity {
     }
 
 
-    public void GetDataFromEditText(){
+    public void getDataFromEditText(){
 
         String userName = edt.getText().toString();
         String storyName = "My experience for task - "+name+": \n\n\t\t"+edt1.getText().toString();
@@ -704,16 +706,13 @@ public class SubTaskActivity extends AppCompatActivity {
 
         else {
 
-            SendExpToServer(userName, storyName, currentDate, token);
+            sendExpToServer(userName, storyName, currentDate, token);
         }
 
     }
 
 
-
-
-
-    public void SendExpToServer(final String Name, final String Story, final String Time, final String token){
+    public void sendExpToServer(final String Name, final String Story, final String Time, final String token){
 
         String url = "http://www.innovativelabs.xyz/insert_story.php";
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
