@@ -232,7 +232,7 @@ public class LoginActivity extends AppCompatActivity {
             if (sharedpreferences.contains(SYNC_DATE)) {
                 syncStatusText.setText("Last Sync at: " + sharedpreferences.getString(SYNC_DATE, ""));
             } else {
-                syncStatusText.setText("No Sync performed");
+                syncStatusText.setText("No Sync performed! Click on Sync Now");
             }
 
             dashboardLay1.setOnClickListener(new View.OnClickListener() {

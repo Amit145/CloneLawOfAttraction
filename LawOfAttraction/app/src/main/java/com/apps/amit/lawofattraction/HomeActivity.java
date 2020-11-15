@@ -465,7 +465,7 @@ public class HomeActivity extends AppCompatActivity {
             Button cancel = dialogView.findViewById(R.id.btncancel);
             ImageView img = dialogView.findViewById(R.id.storyImage);
 
-            Glide.with(getApplicationContext()).load(R.drawable.affirmpager).thumbnail(0.1f).into(img);
+            Glide.with(getApplicationContext()).load(R.drawable.synclogo).thumbnail(0.1f).into(img);
 
             submit.setOnClickListener(new View.OnClickListener() {
                 @Override

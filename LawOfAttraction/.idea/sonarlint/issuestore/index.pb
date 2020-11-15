@@ -284,8 +284,6 @@ d
 d
 4app/src/main/res/drawable/ic_language_black_24dp.xml,3\1\3152275bc9fa7b7a7e7170b6c022bfd7a022aa7e
 d
-4app/src/main/res/drawable/ic_launcher_background.xml,4\9\49845c622cb06d895975c7b1e3f943e320bce688
-d
 4app/src/main/res/drawable/ic_settings_black_24dp.xml,8\d\8df83ecc15bdcd7178eb73b4fbcb2b8fc1e01970
 e
 5app/src/main/res/drawable/ic_fiber_new_black_24dp.xml,9\9\99b263a1b99e44052f25d1ad71c4b9498e9eb348
@@ -313,8 +311,6 @@ V
 &app/src/main/res/layout-large/item.xml,7\1\712776837e886e86f2080e07f73d253feac99f67
 Z
 *app/src/main/res/layout-large/internet.xml,4\d\4d1d471c4a4d8df702aa0ee3d08bdb7bbee9867b
-Z
-*app/src/main/res/layout-large/whatsnew.xml,3\f\3f76ff8859273f0c568f823eeeee7fb553bfb361
 \
 ,app/src/main/res/layout-large/dates_list.xml,e\5\e5693c3213e8ad6427ff57e1469d34611bb7d7fa
 \
@@ -357,8 +353,6 @@ W
 'app/src/main/res/layout-normal/item.xml,0\a\0a2c8eaf6db1d296b239f573ede33181164b4081
 [
 +app/src/main/res/layout-normal/internet.xml,a\9\a9b1030e9108d02496fa13a2745cee750669a924
-[
-+app/src/main/res/layout-normal/whatsnew.xml,6\2\62e4729ce08506675c3097bc58a0ebb27c91b417
 ]
 -app/src/main/res/layout-normal/dates_list.xml,2\1\21b0a3836cc5288dca339e3b40452ef369f38beb
 ]
@@ -385,8 +379,6 @@ W
 'app/src/main/res/layout-xlarge/item.xml,a\4\a4992d2a69370ec2a59a13fc8cbfcd25ccadc34b
 [
 +app/src/main/res/layout-xlarge/internet.xml,a\6\a64d5845369df3aa1338c9d33c79eef96678173f
-[
-+app/src/main/res/layout-xlarge/whatsnew.xml,6\4\64872c6cc679a6cd94752c9036b0cce34cbd96a0
 ]
 -app/src/main/res/layout-xlarge/dates_list.xml,e\4\e4a89ae3a7a3ea0be0bc2dcfdf6638c5e902ec91
 ]
@@ -741,8 +733,6 @@ d
 4app/src/main/res/layout-xlarge/activity_set_time.xml,e\5\e599e865c64244e9bf4f840401b4fb68b8dcb28b
 `
 0app/src/main/res/layout-normal/activity_task.xml,e\d\ed7183784fdd84b9c96939572c9586ba75c36e05
-T
-$app/src/main/res/layout/whatsnew.xml,0\4\04fc22af6473fde89204c0e1494cf5d3649f9c2b
 Œ
 \app/src/main/java/com/apps/amit/lawofattraction/service/AudienceNetworkInitializeHelper.java,8\9\89e7ca229f063cbfebfa7f9fd75b7b9b37838dd7
 b

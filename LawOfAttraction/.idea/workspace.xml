@@ -27,6 +27,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4a34cd3-0370-4e12-b0b5-94c93e1c7400" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/synclogo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/4/04fc22af6473fde89204c0e1494cf5d3649f9c2b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/f/3f76ff8859273f0c568f823eeeee7fb553bfb361" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/9/49845c622cb06d895975c7b1e3f943e320bce688" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/2/62e4729ce08506675c3097bc58a0ebb27c91b417" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/4/64872c6cc679a6cd94752c9036b0cce34cbd96a0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/HomeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/HomeActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/apps/amit/lawofattraction/LoginActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-large/whatsnew.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-large/whatsnew.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-normal/whatsnew.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-normal/whatsnew.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-xlarge/whatsnew.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-xlarge/whatsnew.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/whatsnew.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/whatsnew.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -299,14 +323,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1605093280369" />
-    <state x="499" y="141" key="chooseDestDirectoryDialog" timestamp="1604770507328">
+    <state x="499" y="141" key="chooseDestDirectoryDialog" timestamp="1605424891159">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="499" y="141" key="chooseDestDirectoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1604770507328" />
-    <state x="92" y="92" width="1182" height="544" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1604847690306">
+    <state x="499" y="141" key="chooseDestDirectoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1605424891159" />
+    <state x="3" y="58" width="1182" height="544" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1605424463940">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="92" y="92" width="1182" height="544" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1366.728@0.0.1366.728" timestamp="1604847690306" />
+    <state x="3" y="58" width="1182" height="544" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1366.728@0.0.1366.728" timestamp="1605424463940" />
     <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1603769508845">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -319,10 +343,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="315" y="63" width="736" height="602" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1605332849844" />
-    <state width="428" height="65" key="javadoc.popup.new" timestamp="1605418233673">
+    <state width="428" height="65" key="javadoc.popup.new" timestamp="1605425003569">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="428" height="65" key="javadoc.popup.new/0.0.1366.728@0.0.1366.728" timestamp="1605418233673" />
+    <state width="428" height="65" key="javadoc.popup.new/0.0.1366.728@0.0.1366.728" timestamp="1605425003569" />
     <state x="207" y="106" key="psd.add.library.dependency.panel.dimension" timestamp="1605100466769">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

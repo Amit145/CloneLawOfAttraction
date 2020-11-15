@@ -45,7 +45,7 @@
             android:layout_marginRight="10dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:text="\t Take The 30-Day Positive Affirmation Challenge and make a positive change in your Life."
+            android:text="\t Back up your wishes, manifestation logs on the cloud, and restore it to your existing or new device."
             android:textSize="15sp"
             android:textStyle="normal"
             android:fontFamily="@font/abeezee"/>
